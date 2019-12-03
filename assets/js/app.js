@@ -9,4 +9,9 @@
 require('../scss/app.scss');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
+// eslint-disable-next-line no-unused-vars
+const $ = require('jquery');
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('bootstrap');
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('@fortawesome/fontawesome-free/css/all.css');
