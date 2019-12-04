@@ -3,9 +3,12 @@
 header {
   font-family: $title-font;
   font-weight: 500;
+
   nav {
-    box-shadow: 0 1px 6px -1px rgba(0,0,0,0.75);
+    box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.75);
+
     .logo_nav {;
+
       img {
         height: 5.5rem;
       }
@@ -36,7 +39,7 @@ header {
       .md-icon {
         height: 22px;
         width: 22px;
-        fill:$light-color;
+        fill: $light-color;
         transform: rotate(360deg);
       }
     }
@@ -49,7 +52,6 @@ header {
     font-size: 1rem;
     font-weight: 800;
   }
-
 }
 
 .navbar-light .navbar-nav .nav-link {
