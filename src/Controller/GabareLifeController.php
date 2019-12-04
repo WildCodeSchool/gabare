@@ -5,7 +5,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class GabareLifeController extends AbstractController
 {
     /**
@@ -16,5 +15,4 @@ class GabareLifeController extends AbstractController
     {
         return $this->render('gabare_life/index.html.twig');
     }
-
 }
