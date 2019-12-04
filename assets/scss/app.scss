@@ -5,8 +5,8 @@
 @import "animation_style";
 
 @mixin headings($from: 1, $to: 6){
-    @for $i from $from through $to{
-      h#{$i}{
+      @for $i from $from through $to{
+        h#{$i}{
         @content
     }
   }
@@ -17,11 +17,11 @@
     color: $primary-color;
 }
 
-
 .btn-primary {
     background-color: $third-color;
     border-color: $third-color;
 }
+
 .btn-primary:hover {
     background-color: $primary-color;
     border-color: $primary-color;
