@@ -1,23 +1,26 @@
 <h2 class="text-center m-0 m-md-5">Les actualités de la Gabare</h2>
 
 <div class="row flex-wrap justify-content-center">
-    <div class="card-center" style="width: 20rem;">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+    {% for actuality in actualities %}
+    <div class="card-center m-2" style="width: 20rem;">
+        <img class="card-img-top" src="{{ actuality.image }}" alt="Card image cap">
             <div class="card-body">
-            <h3 class="card-title font-weight-bold">Titre article</h3>
-            <h4 class="card-title">Thème</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores fugit labore libero maxime odio odit omnis sapiente tempora vel. Aperiam beatae earum eius expedita iste nisi qui sed, totam vero?</p>
+            <h3 class="card-title font-weight-bold">{{ actuality.title }}</h3>
+            <h4 class="card-title">{{ actuality.theme.name }}</h4>
+            <p class="card-text">{{ actuality.description }}</p>
             <a href="#" class="btn btn-primary">Consulter</a>
             </div>
     </div>
+    {% endfor %}
 </div>
+
 
 <!--Consulter les autres articles-->
 
 <div class="container">
     <div class="historic text-center m-4">
         <div class="center-block">
-            <a href="#"><button class="btn btn-primary center-block btn-lg">Historique</button></a>
+            <button class="btn btn-primary center-block btn-lg"><a href="#" class="">Historique</a></button>
         </div>
     </div>
 </div>
