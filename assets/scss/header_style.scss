@@ -1,67 +1,68 @@
 @import "vars";
 
 header {
-  font-family: $title-font;
-  font-weight: 500;
+    font-family: $title-font;
+    font-weight: 500;
 
-  nav {
-    box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.75);
-    height: 5.5rem;
-    .logo_nav {;
-
-      img {
+    nav {
+        box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.75);
         height: 5.5rem;
-      }
+
+        .logo_nav {;
+
+            img {
+                height: 5.5rem;
+            }
+        }
+
+        .feather {
+            width: 22px;
+            height: 22px;
+            stroke: $primary-color;
+        }
+
+        .feather:hover {
+            stroke: $secondary-color;
+        }
+
+        .logos_nav_content {
+            width: 15rem;
+        }
+
+        .connexion_button {
+            height: 34px;
+            width: 150px;
+            border-radius: 17px;
+            background-color: $secondary-color;
+            color: $light-color;
+            font-weight: 700;
+
+            .md-icon {
+                height: 22px;
+                width: 22px;
+                fill: $light-color;
+                transform: rotate(360deg);
+            }
+        }
     }
 
-    .feather {
-      width: 22px;
-      height: 22px;
-      stroke: $primary-color;
+    .cooperateurs {
+        background-color: $secondary-color;
+        color: $light-color;
+        border-radius: 0 0 5px 0;
+        font-size: 1rem;
+        font-weight: 800;
     }
-
-    .feather:hover {
-      stroke: $secondary-color;
-    }
-
-    .logos_nav_content {
-      width: 15rem;
-    }
-
-    .connexion_button {
-      height: 34px;
-      width: 150px;
-      border-radius: 17px;
-      background-color: $secondary-color;
-      color: $light-color;
-      font-weight: 700;
-
-      .md-icon {
-        height: 22px;
-        width: 22px;
-        fill: $light-color;
-        transform: rotate(360deg);
-      }
-    }
-  }
-
-  .cooperateurs {
-    background-color: $secondary-color;
-    color: $light-color;
-    border-radius: 0 0 5px 0;
-    font-size: 1rem;
-    font-weight: 800;
-  }
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: $primary-color;
+    color: $primary-color;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: $secondary-color;
+    color: $secondary-color;
 }
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
-  color: $secondary-color;
+    color: $secondary-color;
 }
