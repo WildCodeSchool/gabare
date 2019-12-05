@@ -26,7 +26,7 @@ class AdminAnimationController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="animation_new", methods={"GET","POST"})
+     * @Route("/animation-ajouter", name="animation_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -59,7 +59,7 @@ class AdminAnimationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="animation_edit", methods={"GET","POST"})
+     * @Route("/{id}/animation-editer", name="animation_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Animation $animation): Response
     {
