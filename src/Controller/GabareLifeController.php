@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GabareLifeController extends AbstractController
 {
     /**
-     * @Route("/vie-coopérative", name="gabare_life")
+     * @Route("/vie-cooperative", name="gabare_life")
      */
     public function index()
     {

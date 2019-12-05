@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des animations{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <div class="">
+        <h1>Liste des animations</h1>
+    </div>
+    <div>
+        <a href="{{ path('animation_new') }}" class="btn btn-primary mb-4">Créer une animation</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Heure de début</th>
+                <th>Heure de fin</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animation in animations %}
+            <tr>
+                <td>{{ animation.title }}</td>
+                <td>{{ animation.description }}</td>
+                <td>{{ animation.schedule ? animation.schedule|date('Y-m-d') : '' }}</td>
+                <td>{{ animation.hourStart ? animation.hourStart|date('H:i:s') : '' }}</td>
+                <td>{{ animation.hourEnd ? animation.hourEnd|date('H:i:s') : '' }}</td>
+                <td>{{ animation.image }}</td>
+                <td>
+                    <a href="{{ path('animation_show', {'id': animation.id}) }}">show</a>
+                    <a href="{{ path('animation_edit', {'id': animation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Il n'y a pas d'animations.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
