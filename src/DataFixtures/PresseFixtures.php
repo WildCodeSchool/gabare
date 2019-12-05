@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 use App\Entity\Presse;
 
-class AppFixtures extends Fixture
+class PresseFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
@@ -16,7 +16,7 @@ class AppFixtures extends Fixture
         $press->setTitle($faker->sentence);
         $press->setImage($faker->imageUrl());
         $press->setResume($faker->text);
-        $press->setLien($faker->url);
+        $press->setLink($faker->url);
         $manager->persist($press);
         $manager->flush();
     }

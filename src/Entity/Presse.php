@@ -39,7 +39,7 @@ class Presse
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $lien;
+    private $link;
 
     public function getId(): ?int
     {
@@ -94,14 +94,14 @@ class Presse
         return $this;
     }
 
-    public function getLien(): ?string
+    public function getLink(): ?string
     {
-        return $this->lien;
+        return $this->link;
     }
 
-    public function setLien(?string $lien): self
+    public function setLink(?string $link): self
     {
-        $this->lien = $lien;
+        $this->link = $link;
 
         return $this;
     }
