@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Article;
 use App\Entity\Theme;
+use App\Entity\Report;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,6 +17,10 @@ class GabareLifeController extends AbstractController
 
     public function index()
     {
+        $reports=$this->getDoctrine()
+            ->getRepository(Report::class)
+            ->findAll();
+      
         $actualities =$this->getDoctrine()
             ->getRepository(Article::class)
             ->findAll();
@@ -26,6 +32,7 @@ class GabareLifeController extends AbstractController
         return $this->render('gabare_life/index.html.twig', [
             'actualities' => $actualities,
             'themes' => $themes,
-        ]);
-    }
-}
+            'reports'=>$reports,
+          ]);
+          }
+ }
