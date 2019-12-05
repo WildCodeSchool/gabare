@@ -8,7 +8,7 @@
                     <h3 class="">Liste des compte-rendu de La Gabare</h3>
                     {% for report in reports %}
                     <div class="pb-3">
-                        <p class="font-weight-bold mb-0">Compte rendu : {{report.title}} - {{ report.meetingDate |date("m/d/Y") }}</p>
+                        <p class="font-weight-bold mb-0">Compte rendu : {{report.title}} - {{ report.meetingDate |date("d/m/Y") }}</p>
                           <a href="{{report.link}}" target="_blank">
                               <button type="button" class="btn btn-primary"><i class="far fa-file-pdf"></i>  Télécharger</button>
                           </a>
