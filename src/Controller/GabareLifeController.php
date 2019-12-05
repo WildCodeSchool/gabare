@@ -16,6 +16,7 @@ class GabareLifeController extends AbstractController
         $reports=$this->getDoctrine()
             ->getRepository(Report::class)
             ->findAll();
+
         return $this->render('gabare_life/index.html.twig', [
             'reports'=>$reports
         ]);
