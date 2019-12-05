@@ -1,25 +1,23 @@
 <h2 class="text-center m-0 m-md-5">Presse</h2>
 
-<div class="row">
-    <div class="col-sm-6">
+<div class="row m-0">
+    <div class="col-sm-6 ">
         <div class="card article">
             <div class="card-body">
+                {% for press in presse %}
                 <img class="picture-article mb-4"
-                     src="https://image1.larep.fr/photoSRC/WlJTJ1xYUTgIDAVOKzc8Ik5iH3UMBQgfa15JWhcaSA4rFEgrEEgiLAlEShZNFxIUEkQE/la-gabare-supermarche-cooperatif-et-collaboratif_4473355.jpeg"
+                     src="{{ press.image }}"
                      alt="#">
                 <h4 class="mb-3">
-                    La Gabare, premier supermarché coopératif et collaboratif de la métropole d'Orléans, a ouvert à
-                    Olivet
+                    {{press.title}}
                 </h4>
                 <p class="mb-3">
-                    Paris a La Louve, son supermarché coopératif et collaboratif, la métropole d'Orléans a désormais La
-                    Gabare. Le magasin a ouvert ce mercredi et propose de l'alimentation, des produits d'entretien,
-                    d'hygiène, du vrac. C'est une nouvelle manière de consommer : les clients sont décisionnaires mais
-                    doivent aussi donner trois heures par mois pour faire fonctionner le lieu.
+                    {{ press.resume }}
                 </p>
                 <i class="fas fa-long-arrow-alt-right"><a
-                            href="https://www.larep.fr/orleans-45000/actualites/la-gabare-premier-supermarche-cooperatif-et-collaboratif-de-la-metropole-d-orleans-a-ouvert-a-olivet_13638341/"
+                            href="{{ press.lien }}"
                             target="_blank">lire l'article complet ici</a></i>
+                {% endfor %}
             </div>
         </div>
     </div>
