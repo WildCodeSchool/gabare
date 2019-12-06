@@ -1,8 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "vars";
-
 @import "header_style";
-
 @import "animation_style";
 
 @mixin headings($from: 1, $to: 6){
