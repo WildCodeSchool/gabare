@@ -15,3 +15,6 @@ const $ = require('jquery');
 require('bootstrap');
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('@fortawesome/fontawesome-free/css/all.css');
+const logoPath = require('../images/logo.png');
+
+var html = `<img src="${logoPath}">`;
