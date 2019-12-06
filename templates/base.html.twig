@@ -5,14 +5,16 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="" href="">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}La Gabare Olivet{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
         {% block header %}{% endblock %}
-        {% block body %}{% endblock %}
+        <main>
+            {% block body %}{% endblock %}
+        </main>
         {% block footer %}{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

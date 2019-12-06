@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Report index{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <h1>Liste des compte-rendus</h1>
+
+    <a href="{{ path('report_new') }}" class ="btn btn-primary mb-4">Ajouter</a>
+
+    <table class="table">
+        <thead class="thBackground">
+            <tr>
+                <th>Titre</th>
+                <th>Date de réunion</th>
+                <th>Lien</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+                <td>{{ report.title }}</td>
+                <td>{{ report.meetingDate ? report.meetingDate|date('d/m/Y') : '' }}</td>
+                <td>{{ report.link }}</td>
+                <td>
+                    <a href="{{ path('report_show', {'id': report.id}) }}" class="btn btn-secondary mr-2">afficher</a>
+                    <a href="{{ path('report_edit', {'id': report.id}) }}" class="btn btn-success">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun compte-rendu trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
