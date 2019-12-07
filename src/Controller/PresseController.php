@@ -17,6 +17,8 @@ class PresseController extends AbstractController
 {
     /**
      * @Route("/", name="presse_index", methods={"GET"})
+     * @param PresseRepository $presseRepository
+     * @return Response
      */
     public function index(PresseRepository $presseRepository): Response
     {
