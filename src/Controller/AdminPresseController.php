@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/presse")
+ * @Route("admin/presse")
  */
-class PresseController extends AbstractController
+class AdminPresseController extends AbstractController
 {
     /**
      * @Route("/", name="presse_index", methods={"GET"})
@@ -22,13 +22,13 @@ class PresseController extends AbstractController
      */
     public function index(PresseRepository $presseRepository): Response
     {
-        return $this->render('presse/index.html.twig', [
+        return $this->render('admin_presse/index.html.twig', [
             'presses' => $presseRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/new", name="presse_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="presse_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -44,7 +44,7 @@ class PresseController extends AbstractController
             return $this->redirectToRoute('presse_index');
         }
 
-        return $this->render('presse/new.html.twig', [
+        return $this->render('admin_presse/new.html.twig', [
             'presse' => $presse,
             'form' => $form->createView(),
         ]);
@@ -55,13 +55,13 @@ class PresseController extends AbstractController
      */
     public function show(Presse $presse): Response
     {
-        return $this->render('presse/show.html.twig', [
+        return $this->render('admin_presse/show.html.twig', [
             'presse' => $presse,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="presse_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="presse_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Presse $presse): Response
     {
@@ -74,7 +74,7 @@ class PresseController extends AbstractController
             return $this->redirectToRoute('presse_index');
         }
 
-        return $this->render('presse/edit.html.twig', [
+        return $this->render('admin_presse/edit.html.twig', [
             'presse' => $presse,
             'form' => $form->createView(),
         ]);
