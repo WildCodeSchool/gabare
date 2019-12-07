@@ -1,11 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Report{% endblock %}
+{% block title %}Nouveau compte-rendu{% endblock %}
 
 {% block body %}
-    <h1>Create new Report</h1>
-
-    {{ include('admin_report/_form.html.twig') }}
-
-    <a href="{{ path('report_index') }}">back to list</a>
+<div class="container-fluid p-5">
+    <h1 class="ml-3 mb-4">Ajouter un compte-rendu</h1>
+    <div class="col-lg-8 m-0 jumbotron">
+     {{ form_start(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.meetingDate) }}
+        {{ form_row(form.link) }}
+                <button class="btn btn-primary mt-2">Ajouter</button>
+    </div>
+    <div class="mt-5">
+      <a href="{{ path('report_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+    </div>
+</div>
 {% endblock %}

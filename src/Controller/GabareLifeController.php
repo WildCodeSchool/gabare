@@ -22,7 +22,10 @@ class GabareLifeController extends AbstractController
 
         $reports = $this->getDoctrine()
             ->getRepository(Report::class)
-            ->findAll();
+                ->createQueryBuilder('r')
+                ->addOrderBy('r.meetingDate', 'DESC')
+                ->getQuery()
+                ->execute();
 
         $actualities = $this->getDoctrine()
             ->getRepository(Article::class)

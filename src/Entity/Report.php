@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReportRepository")
@@ -18,16 +19,19 @@ class Report
 
     /**
      * @ORM\Column(type="string", length=255)
-     */
+    * @Assert\NotBlank()
+    */
     private $title;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date
      */
     private $meetingDate;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $link;
 
