@@ -34,3 +34,5 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 /Migrations/
+/composer.json
+/composer.lock
