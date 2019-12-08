@@ -8,6 +8,11 @@ header {
         box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.75);
         height: 5.5rem;
 
+        .navbar-toggler {
+            border: none;
+            margin: auto 0;
+        }
+
         .logo_nav {
 
             img {
@@ -71,12 +76,18 @@ header {
         }
     }
 
-    .cooperateurs {
-        background-color: $secondary-color;
-        color: $light-color;
-        border-radius: 0 0 5px 0;
-        font-size: 1rem;
-        font-weight: 800;
+    .cooperateurs_container {
+        height: 40px;
+        width: 100vw;
+        .cooperateurs {
+            background-color: $secondary-color;
+            color: $light-color;
+            border-radius: 0 0 5px 0;
+            font-size: 1rem;
+            font-weight: 800;
+            height: 100%;
+        }
+
     }
 }
 
