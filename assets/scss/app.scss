@@ -43,9 +43,7 @@ p {
     float: left;
     margin: -1px 0 0 -1px;
     color: $dark-color;
-    background: linear-gradient(
-                    $light-color, $light-color 50%, $dark-color 50%, $dark-color
-    );
+    background: linear-gradient($light-color, $light-color 50%, $dark-color 50%, $dark-color);
     background-size: 100% 202%;
     transition: all 0.2s ease;
 }
