@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "vars";
+@import "header_style";
 @import "animation_style";
+@import "admin_style";
+@import "presse_style";
+
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{

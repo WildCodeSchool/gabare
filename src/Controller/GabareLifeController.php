@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Presse;
 use App\Entity\Article;
 use App\Entity\Theme;
 use App\Entity\Report;
@@ -13,9 +14,12 @@ class GabareLifeController extends AbstractController
     /**
      * @Route("/vie-cooperative", name="gabare_life")
      */
-
     public function index()
     {
+        $presse = $this->getDoctrine()
+            ->getRepository(Presse::class)
+            ->findAll();
+
         $reports = $this->getDoctrine()
             ->getRepository(Report::class)
             ->findAll();
@@ -29,9 +33,10 @@ class GabareLifeController extends AbstractController
             ->findAll();
 
         return $this->render('gabare_life/index.html.twig', [
+            'reports'=>$reports,
+            'presse' => $presse,
             'actualities' => $actualities,
             'themes' => $themes,
-            'reports' => $reports,
         ]);
     }
 }
