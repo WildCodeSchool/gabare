@@ -9,6 +9,7 @@ header {
         height: 5.5rem;
 
         .logo_nav {
+
             img {
                 height: 5.5rem;
             }
@@ -25,7 +26,19 @@ header {
         }
 
         .logos_nav_content {
-            width: 15rem;
+            width: 10rem;
+        }
+
+        .nav-link {
+            cursor: pointer;
+        }
+
+        .dropdown-item {
+            color: $primary-color;
+
+            &:hover {
+                color: $secondary-color;
+            }
         }
 
         .connexion_button {
@@ -35,12 +48,25 @@ header {
             background-color: $secondary-color;
             color: $light-color;
             font-weight: 700;
+            border: solid 2px $secondary-color;
 
             .md-icon {
                 height: 22px;
                 width: 22px;
                 fill: $light-color;
                 transform: rotate(360deg);
+            }
+
+            &:hover {
+                color: $primary-color;
+                background-color: $light-color;
+                border-color: $primary-color;
+                transition-duration: 0.2s;
+
+                svg {
+                    fill: $primary-color;
+                    transition-duration: 0.2s;
+                }
             }
         }
     }
