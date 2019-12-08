@@ -6,6 +6,7 @@ use App\Entity\Presse;
 use App\Entity\Article;
 use App\Entity\Theme;
 use App\Entity\Report;
+use App\Entity\Animation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -32,11 +33,16 @@ class GabareLifeController extends AbstractController
             ->getRepository(Theme::class)
             ->findAll();
 
+        $animations = $this->getDoctrine()
+            ->getRepository(Animation::class)
+            ->findAll();
+
         return $this->render('gabare_life/index.html.twig', [
             'reports'=>$reports,
             'presse' => $presse,
             'actualities' => $actualities,
             'themes' => $themes,
+            'animations' => $animations,
         ]);
     }
 }
