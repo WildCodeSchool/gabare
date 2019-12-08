@@ -4,6 +4,7 @@
 @import "animation_style";
 @import "admin_style";
 @import "presse_style";
+@import "actualities_style";
 
 
 @mixin headings($from: 1, $to: 6){
@@ -17,9 +18,11 @@
 @include headings(){
     font-family:$title-font;
     color: $primary-color;
+    font-weight: 700;
 }
 
 .btn-primary {
+    color: $light-color;
     background-color: $third-color;
     border-color: $third-color;
 }
@@ -27,4 +30,46 @@
 .btn-primary:hover {
     background-color: $primary-color;
     border-color: $primary-color;
+}
+
+p {
+    font-family: $text-font;
+}
+
+.box {
+    padding: .5em;
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    margin: -1px 0 0 -1px;
+    color: $dark-color;
+    background: linear-gradient(
+                    $light-color, $light-color 50%, $dark-color 50%, $dark-color
+    );
+    background-size: 100% 202%;
+    transition: all 0.2s ease;
+}
+
+.box:hover {
+    background-position: 100% 100%;
+}
+
+.box:hover h5 {
+    color: $light-color;
+}
+
+.box:hover h4 {
+    color: $light-color;
+}
+
+.box:hover p {
+    color: $light-color;
+}
+
+.box:hover i {
+    color: $light-color;
+}
+
+.box:hover a {
+    color: $light-color;
 }
