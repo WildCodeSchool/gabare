@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Report index{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5">
+        <h1>Liste des compte-rendus</h1>
+
+        <a href="{{ path('report_new') }}" class ="btn btn-primary mb-4">Ajouter</a>
+
+        <table class="table">
+            <thead class="thBackground">
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.title }}</td>
+                    <td>{{ article.description }}</td>
+                    <td>{{ article.image }}</td>
+                    <td>{{ article.date ? article.date|date('Y-m-d') : '' }}</td>
+                    <td>
+                        <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-secondary mr-2">afficher</a>
+                        <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-success">éditer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucun article trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
