@@ -12,7 +12,6 @@
         <thead class="thBackground">
             <tr>
                 <th>Titre</th>
-                <th>Description</th>
                 <th>Date</th>
                 <th>Heure de début</th>
                 <th>Heure de fin</th>
@@ -24,7 +23,6 @@
         {% for animation in animations %}
             <tr>
                 <td>{{ animation.title }}</td>
-                <td>{{ animation.description }}</td>
                 <td>{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
                 <td>{{ animation.hourStart ? animation.hourStart|date('H:i') : '' }}</td>
                 <td>{{ animation.hourEnd ? animation.hourEnd|date('H:i') : '' }}</td>
