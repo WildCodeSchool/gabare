@@ -20,10 +20,8 @@ class Report
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
-     *      min = 2,
      *      max = 255,
-     *      minMessage = "Le titre doit faire au minimum {{ limit }} caractères",
-     *      maxMessage = "Le titre ne doit pas dépasser 255 {{ limit }} caractères")
+     *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
     * @Assert\NotBlank()
     */
     private $title;
@@ -36,11 +34,10 @@ class Report
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Url()
      * @Assert\Length(
-     *      min = 10,
      *      max = 255,
-     *      minMessage = "Le lien doit faire au minimum {{ limit }} caractères",
-     *      maxMessage = "Le titre ne doit pas dépasser 255 {{ limit }} caractères")
+     *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
      * @Assert\NotBlank()
      */
     private $link;

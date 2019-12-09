@@ -26,7 +26,7 @@ class AdminReportController extends AbstractController
     }
 
     /**
-     * @Route("/compte-rendu-ajouter", name="report_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="report_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -59,7 +59,7 @@ class AdminReportController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/compte-rendu-editer", name="report_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="report_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Report $report): Response
     {
