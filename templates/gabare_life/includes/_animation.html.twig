@@ -2,16 +2,20 @@
     <h2 class="text-center mt-md-3 mb-3">Planning des animations</h2>
     <h3 class="text-center">Réservez dès maintenant votre participation aux différentes animations de La Gabare</h3>
     <div class="container-fluid">
-        <div class="row flex-wrap justify-content-around">
-            <div class="card box text-center mb-5 m-md-5">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h4 class="card-title animation">Titre animation</h4>
-                    <p class="card-text">24 décembre 2019</p>
-                    <p class="card-text">18h30 - 20h30</p>
-                    <a href="#" class="btn btn-primary">Inscrivez-vous</a>
+        <div class="row flex-wrap justify-content-center">
+            {% for animation in animations %}
+                <div class="card-animation text-center m-5">
+                    <img src="{{ animation.image }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title animation">{{ animation.title }}</h4>
+                        <p class="card-title animation">{{ animation.description }}</p>
+                        <p class="card-text">{{ animation.schedule | date("d/m/Y") }}</p>
+                        <p class="card-text">{{ animation.hourStart | date("H:i") }}
+                            - {{ animation.hourEnd | date("H:i") }}</p>
+                        <a href="#" class="btn btn-primary">Inscrivez-vous</a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
