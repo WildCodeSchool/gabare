@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ReportType extends AbstractType
@@ -22,7 +23,7 @@ class ReportType extends AbstractType
                 'format' => 'ddMMMMyyyy',
                 'choice_translation_domain' => true,
             ])
-            ->add('link', TextType::class, [
+            ->add('link', UrlType::class, [
                 'label' => 'Lien',
             ]);
     }
