@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animation index{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <h1>Liste des animations</h1>
+
+    <a href="{{ path('animation_new') }}" class ="btn btn-primary mb-4">Ajouter</a>
+
+    <table class="table table-striped">
+        <thead class="thBackground">
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Heure de début</th>
+                <th>Heure de fin</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animation in animations %}
+            <tr>
+                <td>{{ animation.title }}</td>
+                <td>{{ animation.description }}</td>
+                <td>{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
+                <td>{{ animation.hourStart ? animation.hourStart|date('H:i') : '' }}</td>
+                <td>{{ animation.hourEnd ? animation.hourEnd|date('H:i') : '' }}</td>
+                <td>{{ animation.image }}</td>
+                <td>
+                    <a href="{{ path('animation_show', {'id': animation.id}) }}" class="btn btn-secondary mr-2">afficher</a>
+                    <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucune animation trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
