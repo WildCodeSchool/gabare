@@ -4,6 +4,7 @@
 @import "animation_style";
 @import "admin_style";
 @import "presse_style";
+@import "footer_style";
 
 
 @mixin headings($from: 1, $to: 6){
@@ -27,4 +28,8 @@
 .btn-primary:hover {
     background-color: $primary-color;
     border-color: $primary-color;
+}
+
+main {
+    min-height: 50vh;
 }

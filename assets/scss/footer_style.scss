@@ -1,0 +1,39 @@
+@import "vars";
+
+footer {
+    background-color: $secondary-color;
+    color: $light-color;
+    font-weight: 300;
+    ul {
+        width: 250px;
+        li {
+            list-style-type: none;
+        }
+        .feather {
+            width: 22px;
+            height: 22px;
+            stroke: $light-color;
+        }
+    }
+
+
+    img {
+        height: 150px;
+    }
+
+    h3 {
+        max-width: 350px;
+        font-size: 1.3rem;
+        color: $light-color;
+    }
+
+    p {
+        width: 250px;
+        font-size: 0.9rem;
+        margin: 0;
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
