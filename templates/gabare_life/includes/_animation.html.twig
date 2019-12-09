@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="row flex-wrap justify-content-center">
             {% for animation in animations %}
-                <div class="card-animation text-center m-5">
+                <div class="card m-0 mb-5 m-md-5 box col-11 col-md-3">
                     <img src="{{ animation.image }}" class="card-img-top" alt="">
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h4 class="card-title animation">{{ animation.title }}</h4>
                         <p class="card-title animation">{{ animation.description }}</p>
                         <p class="card-text">{{ animation.schedule | date("d/m/Y") }}</p>

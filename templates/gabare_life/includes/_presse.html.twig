@@ -9,9 +9,12 @@
                             <img class="picture-article mb-4" src="{{ press.image }}" alt="#">
                             <h4 class="mb-3">{{press.title}}</h4>
                             <p class="mb-3">{{ press.resume }}</p>
-                                <a href="{{ press.link }}" target="_blank">lire l'article complet ici <i class="fas fa-arrow-right"></i></a>
-
+                            <div class="test">
+                                <a href="{{ press.link }}" target="_blank" class="font-weight-bold">lire l'article complet ici <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
+
+
                     </div>
                 {% endfor %}
             </div>
