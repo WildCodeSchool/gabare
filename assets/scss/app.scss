@@ -28,10 +28,18 @@ h3 {
     font-size: 1.6rem;
 }
 
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
 .btn-primary {
-    color: $light-color;
-    background-color: $third-color;
-    border-color: $third-color;
+    color: $secondary-color;
+    background-color: $light-color;
+    border-color: $secondary-color;
 }
 
 .btn-primary:hover {
@@ -43,6 +51,9 @@ p {
     font-family: $text-font;
 }
 
+body {
+    background-image: url("/public/build/images/just-waves.png");
+}
 .box {
     padding: .5em;
     border: 1px solid #ccc;
@@ -50,9 +61,9 @@ p {
     float: left;
     margin: -1px 0 0 -1px;
     color: $dark-color;
-    background: linear-gradient($light-color, $light-color 50%, $dark-color 50%, $dark-color);
+    background: linear-gradient($light-color, $light-color 50%, $secondary-color 50%, $secondary-color);
     background-size: 100% 202%;
-    transition: all 0.2s ease;
+    transition: all 0.4s ease;
 }
 
 .box:hover {
@@ -72,9 +83,5 @@ p {
 }
 
 .box:hover i {
-    color: $light-color;
-}
-
-.box:hover a {
     color: $light-color;
 }

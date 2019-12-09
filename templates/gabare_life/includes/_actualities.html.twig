@@ -5,17 +5,17 @@
             {% for actuality in actualities %}
                     <div class="card m-0 mb-5 m-md-5 box" style="width: 20rem;">
                         <img class="card-img-top" src="{{ actuality.image }}" alt="Card image cap">
-                        <h4 class="theme position-absolute fixed-top mt-4 pl-3 pr-3 p-2">{{ actuality.theme.name }}</h4>
+                        <h5 class="theme position-absolute fixed-top mt-2 pl-2 pr-2 p-1">{{ actuality.theme.name }}</h5>
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ actuality.title }}</h5>
-                            <p class="card-text overflow-ellipsis">{{ actuality.description }}</p>
+                            <p class="card-text overflow-ellipsis">{{ actuality.description|truncate(80, true) }}</p>
                             <a href="" class="btn btn-primary">Consulter</a>
                         </div>
                     </div>
             {% endfor %}
         </div>
         <div class="historic text-center">
-            <a href="#" class="btn btn-primary button-blog">Voir plus d'actualités</a>
+            <a href="#" class="btn btn-primary btn-lg">Voir plus d'actualités</a>
         </div>
     </div>
 </section>
