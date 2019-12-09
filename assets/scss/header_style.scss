@@ -79,6 +79,7 @@ header {
     .cooperateurs_container {
         height: 40px;
         width: 100vw;
+
         .cooperateurs {
             background-color: $secondary-color;
             color: $light-color;
@@ -87,7 +88,6 @@ header {
             font-weight: 800;
             height: 100%;
         }
-
     }
 }
 
