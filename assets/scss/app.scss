@@ -18,7 +18,14 @@
 @include headings(){
     font-family:$title-font;
     color: $primary-color;
-    font-weight: 700;
+}
+
+h3, h4, h5, h6 {
+    font-weight: $font-weight-light;
+}
+
+h3 {
+    font-size: 1.6rem;
 }
 
 .btn-primary {
