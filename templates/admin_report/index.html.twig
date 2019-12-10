@@ -4,11 +4,11 @@
 
 {% block body %}
 <div class="container-fluid p-5">
-    <h1>Liste des compte-rendus</h1>
+    <h1 class="mb-4">Liste des compte-rendus</h1>
 
     <a href="{{ path('report_new') }}" class ="btn btn-primary mb-4">Ajouter</a>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead class="thBackground">
             <tr>
                 <th>Titre</th>
@@ -24,8 +24,8 @@
                 <td>{{ report.meetingDate ? report.meetingDate|date('d/m/Y') : '' }}</td>
                 <td>{{ report.link }}</td>
                 <td>
-                    <a href="{{ path('report_show', {'id': report.id}) }}" class="btn btn-secondary mr-2">afficher</a>
-                    <a href="{{ path('report_edit', {'id': report.id}) }}" class="btn btn-success">éditer</a>
+                    <a href="{{ path('report_show', {'id': report.id}) }}" class="btn btn-secondary mr-3">afficher</a>
+                    <a href="{{ path('report_edit', {'id': report.id}) }}" class="btn btn-success ml-3">éditer</a>
                 </td>
             </tr>
         {% else %}
