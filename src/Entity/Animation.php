@@ -30,7 +30,7 @@ class Animation
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      *      max = 255,
-     *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
+     *      maxMessage = "La description ne doit pas dépasser {{ limit }} caractères")
      * @Assert\NotBlank()
      */
     private $description;
