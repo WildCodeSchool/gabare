@@ -36,26 +36,12 @@ class AdminPresseController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('presse_index');
+            return $this->redirectToRoute('presse_show');
         }
 
         return $this->render('admin_presse/edit.html.twig', [
             'presse' => $presse,
             'form' => $form->createView(),
         ]);
-    }
-
-    /**
-     * @Route("/{id}", name="presse_delete", methods={"DELETE"})
-     */
-    public function delete(Request $request, Presse $presse): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$presse->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($presse);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('presse_index');
     }
 }
