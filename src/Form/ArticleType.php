@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Entity\Theme;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,9 +24,12 @@ class ArticleType extends AbstractType
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
             ])
-            ->add('image')
+            ->add('image', FileType::class, array('data_class' => null))
+
             ->add('date', DateType::class, [
                 'label' => 'Date de publication',
+                'format' => 'ddMMMMyyyy',
+                'choice_translation_domain' => true,
             ])
             ->add('theme', EntityType::class, [
                 'class' => Theme::class,
