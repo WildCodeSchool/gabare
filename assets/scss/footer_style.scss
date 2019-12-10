@@ -4,11 +4,14 @@ footer {
     background-color: $secondary-color;
     color: $light-color;
     font-weight: 300;
+
     ul {
         width: 250px;
+
         li {
             list-style-type: none;
         }
+
         .feather {
             width: 22px;
             height: 22px;
@@ -26,9 +29,9 @@ footer {
         width: 250px;
         font-size: 0.9rem;
         margin: 0;
+
         span {
             font-weight: bold;
         }
     }
 }
-
