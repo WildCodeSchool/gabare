@@ -34,12 +34,6 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Image(
-     *     minWidth = 250,
-     *     maxWidth = 450,
-     *     minHeight = 250,
-     *     maxHeight = 450
-     *     )
      * @Assert\NotBlank()
      */
     private $image;
