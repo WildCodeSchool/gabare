@@ -18,7 +18,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $actualities = new Article();
             $actualities->setImage($faker->imageUrl())
                 ->setTitle($faker->sentence())
-                ->setDescription($faker->sentence())
+                ->setDescription($faker->text(400))
                 ->setDate($faker->DateTime());
             $actualities->setTheme($this->getReference('themes_'.random_int(0, count(ThemeFixtures::THEMES)-1)));
             $manager->persist($actualities);
