@@ -1,37 +1,34 @@
-<h2 class="text-center m-0 m-md-5">Presse</h2>
-
-<div class="row m-0">
-    <div class="col-sm-6 ">
-        <div class="card article">
-            <div class="card-body">
+<section class="bgPresse pb-5">
+    <h2 class="text-center p-3 p-md-5">Presse</h2>
+    <div class="container-fluid">
+        <div class="row flex-wrap justify-content-around ml-md-5 mr-md-5">
+            <div class="col-12 col-sm-5 ">
                 {% for press in presse %}
-                <img class="picture-article mb-4"
-                     src="{{ press.image }}"
-                     alt="#">
-                <h4 class="mb-3">
-                    {{press.title}}
-                </h4>
-                <p class="mb-3">
-                    {{ press.resume }}
-                </p>
-                <i class="fas fa-long-arrow-alt-right"><a
-                            href="{{ press.link }}"
-                            target="_blank">lire l'article complet ici</a></i>
+                    <div class="card article mb-5 mb-md-0">
+                        <div class="card-body">
+                            <img class="picture-article mb-4" src="{{ press.image }}" alt="#">
+                            <h4 class="mb-3">{{press.title}}</h4>
+                            <p class="mb-3">{{ press.resume }}</p>
+                            <div class="test">
+                                <a href="{{ press.link }}" target="_blank" class="font-weight-bold">lire l'article complet ici <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+
+                    </div>
                 {% endfor %}
             </div>
-        </div>
-    </div>
-
-    <div class="col-sm-6">
-        <div class="card video">
-            <div class="card-body">
-                <iframe src="https://www.youtube.com/embed/0I4XEPtiWmA"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+            <div class="col-12 col-sm-7">
+                <div class="card video">
+                    <div class="card-body">
+                        <iframe src="https://www.youtube.com/embed/0I4XEPtiWmA"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+</section>
 
 
