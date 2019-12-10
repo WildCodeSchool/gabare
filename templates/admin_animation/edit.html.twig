@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Animation{% endblock %}
+
+{% block body %}
+    <h1>Edit Animation</h1>
+
+    {{ include('animation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('animation_index') }}">back to list</a>
+
+    {{ include('animation/_delete_form.html.twig') }}
+{% endblock %}
