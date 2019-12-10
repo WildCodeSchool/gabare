@@ -16,41 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminPresseController extends AbstractController
 {
     /**
-     * @Route("/", name="presse_index", methods={"GET"})
-     * @param PresseRepository $presseRepository
-     * @return Response
-     */
-    public function index(PresseRepository $presseRepository): Response
-    {
-        return $this->render('admin_presse/index.html.twig', [
-            'presses' => $presseRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/ajouter", name="presse_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $presse = new Presse();
-        $form = $this->createForm(PresseType::class, $presse);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($presse);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('presse_index');
-        }
-
-        return $this->render('admin_presse/new.html.twig', [
-            'presse' => $presse,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="presse_show", methods={"GET"})
      */
     public function show(Presse $presse): Response
