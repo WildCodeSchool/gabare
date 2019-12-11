@@ -47,7 +47,7 @@ class GabareLifeController extends AbstractController
 
         return $this->render('gabare_life/index.html.twig', [
             'reports'=>$reports,
-            'presse' => $presse,
+            'admin_presse' => $presse,
             'actualities' => $actualities,
             'themes' => $themes,
             'animations' => $animations,
