@@ -53,7 +53,7 @@ class AdminAnimationController extends AbstractController
      */
     public function show(Animation $animation): Response
     {
-        return $this->render('animation/show.html.twig', [
+        return $this->render('admin_animation/show.html.twig', [
             'animation' => $animation,
         ]);
     }
