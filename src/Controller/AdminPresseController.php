@@ -36,7 +36,7 @@ class AdminPresseController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('presse_show');
+            $this->addFlash('success', "Vous avez bien modifié les données");
         }
 
         return $this->render('admin_presse/edit.html.twig', [

@@ -3,10 +3,25 @@
 {% block title %}Edit Presse{% endblock %}
 
 {% block body %}
-    <h1>Edit Presse</h1>
-
-    {{ include('admin_presse/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="/admin/presse/1">back to list</a>
-
+    <div class="container-fluid p-5">
+        <h1>Edit Presse</h1>
+        <div class="col-lg-8 m-0 jumbotron">
+            {{ form_start(form) }}
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {{ form_row(form.video) }}
+            {{ form_row(form.image) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.resume) }}
+            {{ form_row(form.link) }}
+            <button class="btn btn-primary mt-2">Mettre à jour</button>
+            {{ form_end(form) }}
+        </div>
+        <div class="row mt-5 ml-1">
+            <a href="/admin/presse/1" class="btn btn-outline-dark mr-5">Retour</a>
+        </div>
+    </div>
 {% endblock %}
