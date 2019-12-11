@@ -1,20 +1,36 @@
-<div id="contactForm" class="mt-4">
+<div id="contactForm" class="row mt-4">
 
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="col">{{ form_row(form.name) }}</div>
-        <div class="col">{{ form_row(form.email) }}</div>
-    </div>
-    <div class="row">
-        <div class="col">{{ form_row(form.subject) }}</div>
-    </div>
-    <div class="row">
-        <div class="col">{{ form_row(form.message) }}</div>
+
+    <div class="map">
+
+    <div style="width: 100%">
+        <iframe class="frame-map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=1.89826101064682%2C47.90967769794333%2C1.9026035070419314%2C47.9112885806515&amp;layer=mapnik&amp;marker=47.91048314556521%2C1.900433599948883">
+        </iframe>
+        <br/>
     </div>
 
-    <div class="form-group">
-    <button type="submit" class="btn btn-success">Envoyer</button>
-    {{ form_end(form) }}
     </div>
+    <div class="form">
+
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col">{{ form_row(form.name) }}</div>
+            <div class="col">{{ form_row(form.email) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(form.subject) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(form.message) }}</div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+
+
 
 </div>
