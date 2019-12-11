@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,5 +29,4 @@ class HomeController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-
 }
