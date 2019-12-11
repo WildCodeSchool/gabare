@@ -2,15 +2,18 @@
 
 namespace App\Form;
 
-use App\Entity\Animation;
+use App\Entity\Article;
+use App\Entity\Theme;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AnimationType extends AbstractType
+class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -18,30 +21,28 @@ class AnimationType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre',
             ])
-            ->add('description')
-            ->add('schedule', DateType::class, [
-                'label' => 'Date',
+            ->add('description', TextareaType::class, [
+                'label' => 'Description',
+            ])
+            ->add('image', FileType::class, array('data_class' => null))
+
+            ->add('date', DateType::class, [
+                'label' => 'Date de publication',
                 'format' => 'ddMMMMyyyy',
                 'choice_translation_domain' => true,
             ])
-            ->add('hourStart', TimeType::class, [
-                'label' => 'Heure de début',
-                'input'  => 'datetime',
-                'widget' => 'choice',
+            ->add('theme', EntityType::class, [
+                'class' => Theme::class,
+                'choice_label' => 'name',
+                'label' => 'Thème',
             ])
-            ->add('hourEnd', TimeType::class, [
-                'label' => 'Heure de fin',
-                'input'  => 'datetime',
-                'widget' => 'choice',
-            ])
-            ->add('image')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Animation::class,
+            'data_class' => Article::class,
         ]);
     }
 }

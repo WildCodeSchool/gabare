@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnimationRepository")
@@ -18,26 +19,40 @@ class Animation
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank()
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "La description ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank()
      */
     private $description;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date
+     * @Assert\NotBlank()
      */
     private $schedule;
 
     /**
      * @ORM\Column(type="time")
+     * @Assert\Time
+     * @Assert\NotBlank()
      */
     private $hourStart;
 
     /**
      * @ORM\Column(type="time")
+     * @Assert\Time
+     * @Assert\NotBlank()
      */
     private $hourEnd;
 
