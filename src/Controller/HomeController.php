@@ -18,12 +18,6 @@ class HomeController extends AbstractController
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
-        /*$form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $notification->notify($contact);
-            $this->addFlash('success', "Votre email a bien été envoyé");
-        }*/
 
         return $this->render('home/index.html.twig', [
             'form' => $form->createView()
