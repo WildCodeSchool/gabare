@@ -5,7 +5,6 @@ namespace App\Entity;
 
 use Symfony\Component\Validator\Constraint as Assert;
 
-
 class Contact
 {
 
