@@ -7,11 +7,6 @@
         <h1>Editer le contenu</h1>
         <div class="col-lg-8 m-0 jumbotron">
             {{ form_start(form) }}
-            {% for message in app.flashes('success') %}
-                <div class="alert alert-success">
-                    {{ message }}
-                </div>
-            {% endfor %}
             {{ form_row(form.video) }}
             {{ form_row(form.image) }}
             {{ form_row(form.title) }}
