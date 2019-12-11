@@ -8,6 +8,7 @@
             <h3 class="card-title font-weight-bold">{{ actuality.title }}</h3>
             <h4 class="card-title">{{ actuality.theme.name }}</h4>
             <p class="card-text">{{ actuality.description }}</p>
+                <p class="card-text">{{ actuality.date | date("d/m/Y") }}</p>
             <a href="#" class="btn btn-primary">Consulter</a>
             </div>
     </div>
