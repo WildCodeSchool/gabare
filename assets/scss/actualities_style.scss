@@ -6,4 +6,27 @@
 }
 
 
+.bgActualities .jumbotron {
+    height: 400px;
+    background-size: cover;
+    background-image: url('../images/veg-basket.jpg');
+    background-color:$photo-hue;
+    background-blend-mode: color;
+    background-attachment: fixed;
+}
 
+.bgActualities
+{
+    min-height: $section-size;
+}
+
+.btn-info {
+    color: $light-color;
+    background-color: $primary-color;
+}
+
+.btn-info:hover {
+    color:$primary-color;
+    background-color: $light-color;
+    border-color: $primary-color;
+}
