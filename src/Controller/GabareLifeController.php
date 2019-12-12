@@ -31,7 +31,11 @@ class GabareLifeController extends AbstractController
 
         $actualities = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->findAll();
+            ->findBy(
+                [],
+                ['date' => 'DESC'],
+                3
+            );
 
         $themes = $this->getDoctrine()
             ->getRepository(Theme::class)
