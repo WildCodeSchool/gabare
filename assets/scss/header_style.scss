@@ -76,18 +76,20 @@ header {
         }
     }
 
+    .cooperators {
+        background-color: $third-color;
+        color: $light-color;
+        border-radius: 0 0 5px 0;
+        font-size: 1rem;
+        font-weight: 800;
+        height: 40px;
+        z-index: 10;
+    }
+
     .cooperators_container {
         height: 40px;
         width: 100vw;
-
-        .cooperators {
-            background-color: $secondary-color;
-            color: $light-color;
-            border-radius: 0 0 5px 0;
-            font-size: 1rem;
-            font-weight: 800;
-            height: 100%;
-        }
+        z-index: 10;
     }
 }
 

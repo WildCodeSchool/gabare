@@ -15,3 +15,7 @@ const $ = require('jquery');
 require('bootstrap');
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('@fortawesome/fontawesome-free/css/all.css');
+
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover();
+});
