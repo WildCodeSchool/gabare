@@ -11,7 +11,7 @@ class Contact
     /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=2, max=100)
+     * @Assert\Length(max=100)
      */
 
     private $name;
@@ -34,7 +34,6 @@ class Contact
     /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=10)
      */
 
     private $message;
