@@ -1,10 +1,12 @@
 .welcome {
     overflow: hidden;
+
     img{
         height: 90vh;
         object-fit: cover;
         object-position: bottom;
     }
+
     .under_message {
         bottom: 0;
         height: 250px;
@@ -14,8 +16,8 @@
         background-size: cover;
         filter: blur(10px) brightness(100%);
         transform: scale(1.1);
-
     }
+
     .message {
         background-color: $light-color;
         filter: opacity(70%);
