@@ -76,22 +76,6 @@ header {
             }
         }
     }
-
-    .cooperators {
-        background-color: $third-color;
-        color: $light-color;
-        border-radius: 0 0 5px 0;
-        font-size: 1rem;
-        font-weight: 800;
-        height: 40px;
-        z-index: 10;
-    }
-
-    .cooperators_container {
-        height: 40px;
-        width: 100vw;
-        z-index: 10;
-    }
 }
 
 .navbar-light .navbar-nav .nav-link {
