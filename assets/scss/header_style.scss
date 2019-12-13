@@ -76,20 +76,6 @@ header {
             }
         }
     }
-
-    .cooperators_container {
-        height: 40px;
-        width: 100vw;
-
-        .cooperators {
-            background-color: $secondary-color;
-            color: $light-color;
-            border-radius: 0 0 5px 0;
-            font-size: 1rem;
-            font-weight: 800;
-            height: 100%;
-        }
-    }
 }
 
 .navbar-light .navbar-nav .nav-link {
