@@ -26,7 +26,7 @@ class AdminAnimationController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="animation_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="animation_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -42,7 +42,7 @@ class AdminAnimationController extends AbstractController
             return $this->redirectToRoute('animation_index');
         }
 
-        return $this->render('animation/new.html.twig', [
+        return $this->render('admin_animation/new.html.twig', [
             'animation' => $animation,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class AdminAnimationController extends AbstractController
      */
     public function show(Animation $animation): Response
     {
-        return $this->render('animation/show.html.twig', [
+        return $this->render('admin_animation/show.html.twig', [
             'animation' => $animation,
         ]);
     }
@@ -72,7 +72,7 @@ class AdminAnimationController extends AbstractController
             return $this->redirectToRoute('animation_index');
         }
 
-        return $this->render('animation/edit.html.twig', [
+        return $this->render('admin_animation/edit.html.twig', [
             'animation' => $animation,
             'form' => $form->createView(),
         ]);

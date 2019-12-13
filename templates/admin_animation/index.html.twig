@@ -15,7 +15,6 @@
                 <th>Date</th>
                 <th>Heure de début</th>
                 <th>Heure de fin</th>
-                <th>Image</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,10 +25,12 @@
                 <td>{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
                 <td>{{ animation.hourStart ? animation.hourStart|date('H:i') : '' }}</td>
                 <td>{{ animation.hourEnd ? animation.hourEnd|date('H:i') : '' }}</td>
-                <td>{{ animation.image }}</td>
-                <td>
-                    <a href="{{ path('animation_show', {'id': animation.id}) }}" class="btn btn-secondary mr-2">afficher</a>
-                    <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success">éditer</a>
+                <td class="d-flex pt-3">
+                    <a href="{{ path('animation_show', {'id': animation.id}) }}" class="btn btn-secondary mr-4">Aperçu</a>
+                    <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success mr-4">Éditer</a>
+                    <div>
+                        {{ include('admin_animation/_delete_form.html.twig') }}
+                    </div>
                 </td>
             </tr>
         {% else %}

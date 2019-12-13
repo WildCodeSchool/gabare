@@ -1,0 +1,30 @@
+<div class="container-fluid m-5">
+    <div class="row">
+
+        <div class="col-lg-6 mr-5 ml-3">
+            <iframe class="map"
+                    src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1455%20Rue%20de%20la%20Bergeresse%2C%2045160%20Olivet+(La%20Gabare)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a
+                        href="https://www.maps.ie/coordinates.html">gps coordinates</a></iframe>
+        </div>
+
+        <div class="col-lg-5">
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col">{{ form_row(form.name)  }}</div>
+                <div class="col">{{ form_row(form.email) }}</div>
+            </div>
+            <div class="row">
+                <div class="col">{{ form_row(form.subject) }}</div>
+            </div>
+            <div class="row">
+                <div class="col">{{ form_row(form.message) }}</div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>

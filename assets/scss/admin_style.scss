@@ -1,4 +1,10 @@
+@import "admin_presse";
+
 .thBackground {
     background-color:$primary-color;
     color:$light-color;
+}
+
+.table td {
+    padding-top: 23px;
 }
