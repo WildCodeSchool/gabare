@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Animation{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <h1>Ajouter une animation</h1>
+    <div class="col-lg-8 m-0 jumbotron">
+        {{ form_start(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.schedule) }}
+        {{ form_row(form.hourStart) }}
+        {{ form_row(form.hourEnd) }}
+        {{ form_row(form.image) }}
+        <button class="btn btn-primary mt-2">Ajouter</button>
+        {{ form_end(form) }}
+    </div>
+    <div class="mt-5">
+        <a href="{{ path('animation_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+    </div>
+</div>
+{% endblock %}

@@ -3,10 +3,17 @@
 header {
     font-family: $title-font;
     font-weight: 500;
+    top: 0;
+    z-index: 10;
 
     nav {
         box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.75);
         height: 5.5rem;
+
+        .navbar-toggler {
+            border: none;
+            margin: auto 0;
+        }
 
         .logo_nav {
             img {
@@ -25,7 +32,19 @@ header {
         }
 
         .logos_nav_content {
-            width: 15rem;
+            width: 10rem;
+        }
+
+        .nav-link {
+            cursor: pointer;
+        }
+
+        .dropdown-item {
+            color: $primary-color;
+
+            &:hover {
+                color: $secondary-color;
+            }
         }
 
         .connexion_button {
@@ -35,6 +54,7 @@ header {
             background-color: $secondary-color;
             color: $light-color;
             font-weight: 700;
+            border: solid 2px $secondary-color;
 
             .md-icon {
                 height: 22px;
@@ -42,15 +62,35 @@ header {
                 fill: $light-color;
                 transform: rotate(360deg);
             }
+
+            &:hover {
+                color: $primary-color;
+                background-color: $light-color;
+                border-color: $primary-color;
+                transition-duration: 0.2s;
+
+                svg {
+                    fill: $primary-color;
+                    transition-duration: 0.2s;
+                }
+            }
         }
     }
 
-    .cooperateurs {
-        background-color: $secondary-color;
+    .cooperators {
+        background-color: $third-color;
         color: $light-color;
         border-radius: 0 0 5px 0;
         font-size: 1rem;
         font-weight: 800;
+        height: 40px;
+        z-index: 10;
+    }
+
+    .cooperators_container {
+        height: 40px;
+        width: 100vw;
+        z-index: 10;
     }
 }
 

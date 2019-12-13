@@ -1,24 +1,23 @@
-<section class="backgroundReport">
-    <div class="container-fluid">
-             <h2 class="text-center p-5">Assemblées Générales</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="card">
-                    <div class="card-body">
-                    <h3 class="">Liste des compte-rendu de La Gabare</h3>
+<section class="bgReport pt-4 pt-md-5">
+    <h2 class="text-center pb-0 pb-md-3">Assemblées Générales</h2>
+    <div class="container-fluid pt-2 pt-md-5">
+        <h4 class="text-center font-weight-bold text-md-left ml-md-5 pl-md-4">Liste des compte-rendu de La Gabare</h4>
+        <div class="row ml-md-5 mr-md-5">
+            <div class="card-body">
+                <table class="table table-hover pt-5">
+                    <tbody>
                     {% for report in reports %}
-                    <div class="pb-3">
-                        <p class="font-weight-bold mb-0">Compte rendu : {{report.title}} - {{ report.meetingDate |date("d/m/Y") }}</p>
-                          <a href="{{report.link}}" target="_blank">
-                              <button type="button" class="btn btn-primary"><i class="far fa-file-pdf"></i>  Télécharger</button>
-                          </a>
-                    </div>
-                {% endfor %}
-                    </div>
-                </div>
+                        <tr>
+                            <td class="mb-0">Compte rendu : {{report.title}} - {{ report.meetingDate |date("d/m/Y") }}</td>
+                            <td><a class="btn btn-danger btn-sm" href="{{report.link}}" target="_blank"><i class="far fa-file-pdf"></i>  Télécharger</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
-            <div class="col-lg-5 d-flex align-items-center justify-content-center">
-                <img src="https://via.placeholder.com/400" alt="image de groupe en réunion">
+            <div class="d-none d-sm-block pl-5 pr-5 pt-3">
+                <img src="{{ asset('build/images/reunion.jpeg') }}" class="meetingPhoto" alt="image de groupe en réunion">
             </div>
         </div>
     </div>

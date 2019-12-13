@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PresseRepository")
@@ -18,6 +19,11 @@ class Presse
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage = "La video ne doit pas dépasser {{limit}} caractères")
+     * @Assert\NotBlank()
+     *
      */
     private $video;
 
@@ -28,16 +34,28 @@ class Presse
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage="Le titre ne doit pas dépasser {{limit}} caractères"
+     * )
+     * @Assert\NotBlank()
      */
     private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\NotBlank()
      */
     private $resume;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Url()
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage="Le titre ne doit pas dépasser {{limit}} caractères"
+     * )
+     * @Assert\NotBlank()
      */
     private $link;
 

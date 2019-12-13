@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <h1 class="ml-3 mb-4">Ajouter un article</h1>
+    <div class="col-lg-8 m-0 jumbotron">
+
+    {{ include('admin_article/_form.html.twig') }}
+
+    </div>
+    <div class="mt-5">
+        <a href="{{ path('article_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+    </div>
+</div>
+{% endblock %}

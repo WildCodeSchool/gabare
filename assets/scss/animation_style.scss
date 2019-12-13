@@ -1,3 +1,47 @@
 .card-animation {
-    width: 18rem;
+    width: 300px;
 }
+
+.photoStripe{
+    position: relative;
+    height: 65vh;
+    width: 100%;
+    -webkit-filter: contrast(90%) brightness(90%);
+    filter: contrast(90%) brightness(90%);
+    z-index: 0;
+}
+
+.titlePhoto{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:$light-color;
+    font-family: $photo-font;
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 0 0 10px $dark-color;
+}
+
+.paraPhoto{
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    transform: translate(-30%, -50%);
+    color:$light-color;
+    font-family: $photo-font;
+    text-align: center;
+    font-size:40px;
+    text-shadow: 0 0 10px $dark-color;
+}
+
+.bgAnimation{
+    background-image:$texture-background;
+}
+
+@media screen and (max-width: 640px) {
+    .title-animation {
+        margin-top: 90px;
+    }
+}
+
