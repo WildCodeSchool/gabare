@@ -16,11 +16,11 @@ a:link {
     text-decoration: none;
 }
 
-.test {
+.show-link {
     transition: transform .6s;
 }
 
-.test:hover {
+.show-link:hover {
     transform: translate(10px);
 }
 
