@@ -9,6 +9,7 @@
 @import "report_style";
 @import "welcome.scss";
 @import "phone_style";
+@import "form";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
