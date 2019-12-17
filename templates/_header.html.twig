@@ -7,8 +7,8 @@
         </button>
         <div class="collapse navbar-collapse pt-5 pl-2" id="navbarNav">
             <ul class="navbar-nav justify-content-around w-100 mb-1">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">ACCUEIL<span class="sr-only">(current)</span></a>
+                <li class="nav-item {% if page == 'home' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('home') }}">ACCUEIL<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="dropdown nav-item">
                     <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">QUI SOMMES-NOUS
@@ -21,7 +21,7 @@
                         <a class="dropdown-item" href="#">Le Conseil d'Administration</a>
                     </div>
                 </li>
-                <li class="dropdown nav-item">
+                <li class="dropdown nav-item {% if page == 'gabare_life' %}active{% endif %}">
                     <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">LA VIE DE LA
                         GABARE</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
