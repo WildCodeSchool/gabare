@@ -39,6 +39,12 @@
     background-image:$texture-background;
 }
 
+.image-size-animation {
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
 @media screen and (max-width: 640px) {
     .title-animation {
         margin-top: 90px;
