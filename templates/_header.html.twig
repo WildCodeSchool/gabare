@@ -1,18 +1,19 @@
 <header class="position-fixed w-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 align-items-end">
-        <a class="navbar-brand logo_nav p-0" href="/"><img src="{{ asset('build/images/logo.png') }}" alt="Logo de la gabare"></a>
+        <a class="navbar-brand logo_nav p-0" href="/"><img src="{{ asset('build/images/logo.png') }}"
+                                                           alt="Logo de la gabare"></a>
         <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse pt-5 pl-2" id="navbarNav">
+        <div class="collapse navbar-collapse pt-5 pl-2 burger" id="navbarNav">
             <ul class="navbar-nav justify-content-around w-100 mb-1">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">ACCUEIL<span class="sr-only">(current)</span></a>
+                <li class="nav-item {% if page == 'home' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('home') }}">ACCUEIL<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="dropdown nav-item">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">QUI SOMMES-NOUS
-                        ?</a>
+                <li class="dropdown nav-item d-flex">
+                    <a class="nav-link">QUI SOMMES-NOUS ?</a>
+                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton" data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">Notre histoire</a>
                         <a class="dropdown-item" href="#">Nos valeurs</a>
@@ -21,9 +22,9 @@
                         <a class="dropdown-item" href="#">Le Conseil d'Administration</a>
                     </div>
                 </li>
-                <li class="dropdown nav-item">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">LA VIE DE LA
-                        GABARE</a>
+                <li class="dropdown nav-item d-flex {% if page == 'gabare_life' %}active{% endif %}">
+                        <a class="nav-link">LA VIE DE LA GABARE</a>
+                        <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton" data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">Planning des animations</a>
                         <a class="dropdown-item" href="#">Actualités de La Gabare</a>
