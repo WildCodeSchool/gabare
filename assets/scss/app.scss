@@ -109,6 +109,8 @@ p {
 
 .titleContainer {
     bottom: 0;
+    box-sizing: border-box;
+    padding-bottom: 50px;
 }
 
 .titlePhoto{
