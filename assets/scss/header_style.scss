@@ -9,10 +9,15 @@ header {
     nav {
         box-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.75);
         height: 5.5rem;
+        background-color: $light-color;
 
         .navbar-toggler {
             border: none;
             margin: auto 0;
+        }
+
+        .burger{
+            background-color: $light-color;
         }
 
         .logo_nav {
@@ -89,3 +94,4 @@ header {
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
     color: $secondary-color;
 }
+
