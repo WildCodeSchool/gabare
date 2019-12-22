@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block title %}Animation index{% endblock %}
 
@@ -6,7 +6,7 @@
 <div class="container-fluid p-5">
     <h1>Liste des animations</h1>
 
-    <a href="{{ path('animation_new') }}" class ="btn btn-primary mb-4">Ajouter</a>
+    <a href="{{ path('animation_new') }}" class ="btn btn-primary add mb-4">Ajouter</a>
 
     <table class="table table-striped">
         <thead class="thBackground">

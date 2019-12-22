@@ -1,0 +1,79 @@
+nav {
+    line-height: 1.2em;
+    height: 100vh;
+}
+.top-nav {
+    color: $light-color;
+}
+
+hr {
+    background-color: $light-color;
+}
+
+.backLink a {
+    color: $third-color;
+    font-size: 18px;
+    padding: 20px 10px;
+    text-decoration: none;
+    &:hover {
+        color:$light-color;
+    }
+}
+
+.vmenu {
+    h4 {
+        color: $light-color;
+        font-size: 18px;
+        padding: 5px 10px;
+        background: $dark-bootstrap;
+        a {
+            text-decoration: none;
+            color: $light-color;
+            display: block;
+        }
+        &:hover {
+            color: $light-color;
+        }
+    }
+    ul {
+        background: $dark-bootstrap;
+        font-size: 17px;
+        font-height: 20px;
+        list-style-type: none;
+        padding: 0px;
+        overflow: hidden;
+        height: 0px;
+        transition: height 0.8s ease;
+        a {
+            color: $light-color;
+            text-decoration: none;
+            margin-left: 15px;
+            line-height: 30px;
+            font-size: 16px;
+        }
+    }
+    li {
+        &:hover {
+            background: $primary-color;
+        }
+    }
+    &:hover {
+        #s2 {
+            height: 50px;
+        }
+        #s3 {
+            height: 90px;
+        }
+        #s4 {
+            height: 150px;
+        }
+    }
+}
+.bkm {
+    background-color: $dark-bootstrap;
+}
+
+.fa-cogs, .fa-user-shield {
+    color: $light-color;
+}
+
