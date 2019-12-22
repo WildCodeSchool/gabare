@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Worker;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,6 +17,12 @@ class AboutUsController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('about_us/index.html.twig');
+        $pioneers = $this->getDoctrine()
+            ->getRepository(Worker::class)
+            ->findAll();
+
+        return $this->render('about_us/index.html.twig', [
+            'pioneers' => $pioneers,
+        ]);
     }
 }
