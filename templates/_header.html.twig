@@ -11,7 +11,7 @@
                 <li class="nav-item {% if page == 'home' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('home') }}">ACCUEIL<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="dropdown nav-item d-flex">
+                <li class="dropdown nav-item d-flex {% if page == 'about_us' %}active{% endif %}">
                     <a class="nav-link">QUI SOMMES-NOUS ?</a>
                     <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton" data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
