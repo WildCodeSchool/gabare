@@ -1,8 +1,11 @@
+{% set page = 'gabare_life' %}
 {% extends 'layout.html.twig' %}
 
 {% block title %}La vie de La Gabare{% endblock %}
 
 {% block body %}
+    {#---bandeau image---#}
+    {% include 'gabare_life/includes/_stripe.html.twig' %}
     {#---Section Planning Animation---#}
     {% include 'gabare_life/includes/_animation.html.twig' %}
     {#---section Actualités---#}

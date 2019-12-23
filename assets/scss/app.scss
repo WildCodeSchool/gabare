@@ -7,8 +7,9 @@
 @import "footer_style";
 @import "actualities_style";
 @import "report_style";
-@import "welcome.scss";
 @import "phone_style";
+@import "gabare_brief_style";
+@import "form";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
@@ -93,4 +94,36 @@ p {
 
 .card-size {
     width: 20rem;
+}
+
+.photoStripe{
+    position: relative;
+    height: 95vh;
+    min-height: 550px;
+    width: 100%;
+    -webkit-filter: contrast(90%) brightness(90%);
+    filter: contrast(90%) brightness(90%);
+    z-index: 0;
+    object-fit: cover;
+}
+
+
+.titleContainer {
+    bottom: 0;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.titlePhoto{
+    color:$light-color;
+    font-family: $photo-font;
+    font-size: calc(65px + 6 * ((100vw - 320px) / 680));
+    text-shadow: 0 0 10px $dark-color;
+}
+
+.paraPhoto{
+    color:$light-color;
+    font-family: $photo-font;
+    font-size: calc(25px + 6 * ((100vw - 320px) / 680));
+    text-shadow: 0 0 15px $dark-color;
 }
