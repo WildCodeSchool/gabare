@@ -48,3 +48,21 @@ i {
         text-shadow: 0 0 5px $primary-color;
     }
 }
+
+.more-info-button{
+    height: 27px;
+    width: 170px;
+    border-radius: 8px;
+    background-color: $secondary-color;
+    color: $light-color;
+    border: solid 2px $secondary-color;
+}
+
+.download-membership {
+    height: 55px;
+    width: 300px;
+    border-radius: 8px;
+    background-color: $secondary-color;
+    color: $light-color;
+    border: solid 2px $secondary-color;
+}
