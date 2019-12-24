@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Contact;
-use App\Form\ContactType;
+use App\Entity\Timetable;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +15,11 @@ class JoinUsController extends AbstractController
      */
     public function index(): Response
     {
-
-        return $this->render('join_us/index.html.twig');
+        $timetables = $this->getDoctrine()
+            ->getRepository(Timetable::class)
+            ->findAll();
+        return $this->render('join_us/index.html.twig', [
+            'timetables'=>$timetables
+            ]);
     }
 }

@@ -1,0 +1,34 @@
+.card-timetable {
+    width: 180px;
+}
+
+.bgTimetable{
+    background-image:$texture-background;
+}
+
+.header-timetable {
+    background-color: $secondary-color;
+    color:$light-color;
+}
+
+.body-timetable{
+    font-size: 14px;
+}
+
+.timetableDate {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2em;
+}
+
+.timetableDay {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 1.2em;
+}
+
+
+.fa-clock{
+    color:$light-color;
+}
