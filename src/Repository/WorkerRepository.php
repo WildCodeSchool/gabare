@@ -22,7 +22,7 @@ class WorkerRepository extends ServiceEntityRepository
     public function findAllPioneers()
     {
         $qb = $this->createQueryBuilder('w')
-            ->innerJoin('w.activity', 'a' )
+            ->innerJoin('w.activity', 'a')
             ->addSelect('a')
             ->where('a.name = :name')
             ->setParameter('name', 'Pionnier')
