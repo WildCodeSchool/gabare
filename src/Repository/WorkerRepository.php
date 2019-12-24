@@ -18,4 +18,16 @@ class WorkerRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Worker::class);
     }
+
+    public function findAllPioneers()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->innerJoin('w.activity', 'a' )
+            ->addSelect('a')
+            ->where('a.name = :name')
+            ->setParameter('name', 'Pionnier')
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }

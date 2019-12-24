@@ -19,7 +19,7 @@ class AboutUsController extends AbstractController
     {
         $pioneers = $this->getDoctrine()
             ->getRepository(Worker::class)
-            ->findBy(array('activity' => '4'));
+            ->findAllPioneers();
 
         return $this->render('about_us/index.html.twig', [
             'pioneers' => $pioneers,
