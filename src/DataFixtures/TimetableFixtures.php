@@ -14,7 +14,7 @@ class TimetableFixtures extends Fixture
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for ($i = 0; $i < 6; $i++) {
+        for ($i = 0; $i < 12; $i++) {
             $timetable = new Timetable();
             $timetable->setVisitDate($faker->dateTimeBetween('+0 days', '+1 month', 'Europe/Paris'));
             $timetable->setVisitTime($faker->dateTime);
