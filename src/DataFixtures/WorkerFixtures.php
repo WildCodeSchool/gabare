@@ -49,11 +49,11 @@ class WorkerFixtures extends Fixture
         }
 
         for ($i = 0; $i <= 49; $i++) {
-            $worker = new Worker();
-            $worker->setFirstName($faker->firstName);
-            $worker->setLastName($faker->lastName);
-            $worker->setActivity($this->getReference('activities_3'));
-            $manager->persist($worker);
+            $pioneer = new Worker();
+            $pioneer->setFirstName($faker->firstName);
+            $pioneer->setLastName($faker->lastName);
+            $pioneer->setActivity($this->getReference('activities_3'));
+            $manager->persist($pioneer);
         }
 
         $manager->flush();
