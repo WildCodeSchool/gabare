@@ -9,7 +9,9 @@
     <div class="container-fluid">
 
         <div class="row justify-content-around m-4">
-        {% for timetable in timetables | slice(0,6) %}
+
+        {% for timetable in timetables %}
+            <div class="col-lg-2">
         <div class="card card-timetable mb-5 ">
             <div class="card-header header-timetable text-center">
                 <p class="timetableDay">{{timetable.visitDate | date("l") }}</p>
@@ -21,40 +23,9 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform" target="_blank" class="btn btn-primary">S'inscrire</a>
             </div>
         </div>
+            </div>
         {% endfor %}
         </div>
-            <div class="collapse" id="collapseExample">
-                <div class="row justify-content-around m-4">
-                    {% for timetable in timetables | slice(6,12) %}
-                            <div class="card card-timetable mb-5">
-                                <div class="card-header header-timetable text-center">
-                                    <p class="timetableDay">{{timetable.visitDate | date("l") }}</p>
-                                    <p class="timetableDate">{{timetable.visitDate | date("d M") }}</p>
-                                    <p class="timetableHour"><i class="far fa-clock mr-1"></i>
-                                        {{timetable.visitTime | date("H:i")}}</p>
-                                </div>
-                                <div class="card-body text-center p-4 body-timetable">
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform" target="_blank" class="btn btn-primary">S'inscrire</a>
-                                </div>
-                            </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-
-        </div>
-        <p class="text-center">
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          <span class="show-ctrl">
-                 <i class="fas fa-angle-up"></i>
-            </span>
-                <span class="hide-ctrl">
-                 <i class="fas fa-angle-down"></i>
-            </span>
-            </button>
-        </p>
-    </div>
-
     </div>
 </section>
 

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Timetable;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -19,32 +20,16 @@ class TimetableRepository extends ServiceEntityRepository
         parent::__construct($registry, Timetable::class);
     }
 
-    // /**
-    //  * @return Timetable[] Returns an array of Timetable objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findByDateExpiration()
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $qb = $this->createQueryBuilder('tt')
+            ->where('tt.visitDate >= :dateToday')
+            ->setParameter('dateToday', new DateTime('NOW'))
+            ->orderBy('tt.visitDate', 'ASC')
+            ->setMaxResults(12);
 
-    /*
-    public function findOneBySomeField($value): ?Timetable
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $query = $qb->getQuery();
+
+        return $query->execute();
     }
-    */
 }
