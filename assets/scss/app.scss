@@ -10,6 +10,7 @@
 @import "phone_style";
 @import "gabare_brief_style";
 @import "form";
+@import "joinforms_style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
