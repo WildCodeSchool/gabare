@@ -19,6 +19,7 @@ class AboutUsController extends AbstractController
 
         return $this->render('about_us/index.html.twig', [
             'pioneers' => $workerRepository->findAllPioneers(),
+            'employees' => $workerRepository->findAllEmployees(),
         ]);
     }
 }
