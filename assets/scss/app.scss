@@ -12,6 +12,7 @@
 @import "form";
 @import "bus_style";
 @import "employee_style";
+@import "CAMember_style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{

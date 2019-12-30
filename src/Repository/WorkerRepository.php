@@ -42,4 +42,16 @@ class WorkerRepository extends ServiceEntityRepository
 
         return $qb->execute();
     }
+
+    public function findAllCAMembers()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->innerJoin('w.activity', 'a')
+            ->addSelect('a')
+            ->where('a.name = :name')
+            ->setParameter('name', 'Membre_CA')
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }

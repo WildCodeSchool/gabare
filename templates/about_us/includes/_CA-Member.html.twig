@@ -1,0 +1,26 @@
+<section class="bgCA-Member">
+    <h2 class="text-center mt-md-5 title-animation">Le conseil d'administration</h2>
+    <div class="container-fluid">
+        <div class="row justify-content-start scrolling-wrapper-flexbox m-2">
+            {% for CAMember in CAMembers %}
+                <div class="card profile m-4">
+                    {% if CAMember.portrait %}
+                        <img class="profile-img" src="{{ CAMember.portrait }}"
+                             alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
+                    {% else %}
+                        <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
+                             alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
+                    {% endif %}
+                    <div class="text-center">
+                        <h3 class="m-3">{{ CAMember.firstname }} {{ CAMember.lastname }}</h3>
+                        <p>{{ CAMember.function }}</p>
+                        <div class="email-CA">
+                            <a href="mailto:{{ CAMember.email }}" ><i class="far fa-envelope"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
