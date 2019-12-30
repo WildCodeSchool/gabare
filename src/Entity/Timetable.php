@@ -18,11 +18,15 @@ class Timetable
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date
+     * @Assert\NotBlank()
      */
     private $visitDate;
 
     /**
      * @ORM\Column(type="time")
+     * @Assert\Date
+     * @Assert\NotBlank()
      */
     private $visitTime;
 

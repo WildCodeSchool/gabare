@@ -20,13 +20,15 @@ class TimetableRepository extends ServiceEntityRepository
         parent::__construct($registry, Timetable::class);
     }
 
+    const NUMBER_DATES = 12;
+
     public function findByDateExpiration()
     {
         $qb = $this->createQueryBuilder('tt')
             ->where('tt.visitDate >= :dateToday')
             ->setParameter('dateToday', new DateTime('NOW'))
             ->orderBy('tt.visitDate', 'ASC')
-            ->setMaxResults(12);
+            ->setMaxResults(self::NUMBER_DATES);
 
         $query = $qb->getQuery();
 
