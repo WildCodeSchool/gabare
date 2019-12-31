@@ -7,78 +7,44 @@ nav {
     color: $light-color;
 }
 
-hr {
-    background-color: $light-color;
-}
-
-.backLink a {
-    color: $third-color;
-    font-size: 18px;
-    padding: 20px 10px;
+.menulink {
+    color: $light-color;
     text-decoration: none;
+    font-size: 18px;
 
     &:hover {
-        color:$light-color;
+        color: $third-color;
+    }
+
+    &:active {
+        color: $third-color;
+    }
+
+    &:visited {
+        color: $third-color;
     }
 }
 
-.vmenu {
+ul {
+    padding-left: 0;
+}
 
-    h4 {
-        color: $light-color;
-        font-size: 18px;
-        padding: 5px 10px;
-        background: $dark-bootstrap;
-
-        a {
-            text-decoration: none;
-            color: $light-color;
-            display: block;
-        }
-
-        &:hover {
-            color: $light-color;
-        }
-    }
-
-    ul {
-        background: $dark-bootstrap;
-        font-size: 17px;
-        font-height: 20px;
-        list-style-type: none;
-        padding: 0px;
-        overflow: hidden;
-        height: 0px;
-        transition: height 0.8s ease;
-
-        a {
-            color: $light-color;
-            text-decoration: none;
-            margin-left: 15px;
-            line-height: 30px;
-            font-size: 16px;
-        }
-    }
-
-    li {
-        &:hover {
-            background: $primary-color;
-        }
-    }
+li {
+    color: $light-color;
+    list-style-type: none;
+    line-height: 22px;
 
     &:hover {
+        color: $third-color;
+    }
+}
 
-        #s2 {
-            height: 50px;
-        }
-
-        #s3 {
-            height: 90px;
-        }
-
-        #s4 {
-            height: 150px;
-        }
+a {
+    color:$light-color;
+    list-style-type: none;
+    line-height: 22px;
+    &:hover {
+        color: $third-color;
     }
 }
 
@@ -86,7 +52,7 @@ hr {
     background-color: $dark-bootstrap;
 }
 
-.fa-cogs, .fa-user-shield {
+.fa-cogs, .fa-user-shield, .fa-lock-open {
     color: $light-color;
 }
 
