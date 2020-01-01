@@ -27,8 +27,8 @@
                 <td>{{ article.theme.name }}</td>
                 <td>{{ article.image }}</td>
                 <td class="d-flex pt-3">
-                    <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-secondary mr-4">Aperçu</a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-success mr-4">Éditer</a>
+                    <a href="{{ path('article_show', {'id': article.id}) }}"><i class="fa fa-search fa-2x"></i></a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}"><i class="far fa-edit fa-2x"></i></a>
                     <div>
                         {{ include('admin_article/_delete_form.html.twig') }}
                     </div>
