@@ -1,0 +1,25 @@
+<section class="bgCA-Friend">
+    <h2 class="text-center mt-md-5 title-animation">Le conseil d'administration des amis de La Gabare</h2>
+    <div class="container-fluid">
+        <div class="row justify-content-start scrolling-wrapper-flexbox m-2">
+            {% for CAFriend in CAFriends %}
+                <div class="card profile m-4">
+                    {% if CAFriend.portrait %}
+                        <img class="profile-img" src="{{ CAFriend.portrait }}"
+                             alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
+                    {% else %}
+                        <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
+                             alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
+                    {% endif %}
+                    <div class="text-center">
+                        <h3 class="m-3">{{ CAFriend.firstname }} {{ CAFriend.lastname }}</h3>
+                        <p>{{ CAFriend.function }}</p>
+                        <div class="email-CA">
+                            <a href="mailto:{{ CAFriend.email }}"><i class="far fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
