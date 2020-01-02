@@ -1,0 +1,49 @@
+.history{
+  margin-top:40px;
+}
+
+.title_history{
+  margin-bottom:20px;
+}
+
+.ourStory{
+  font-family:$text-font;
+  font-size: 1.2rem;
+  text-align:left;
+}
+
+.button_join_us_div{
+  display:flex;
+  justify-content: center;
+  margin-top: 10px;
+
+}
+
+.button_join_us{
+  height: 40px;
+  width:20%;
+  border-radius: 3px;
+  background-color: $secondary-color;
+  color: $light-color;
+  border: solid 2px $secondary-color;
+}
+
+@media screen and (max-width: 540px) {
+  .history_section {
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .ourStory{
+    margin-top: 18px;
+    margin-bottom: 25px;
+  }
+
+  .button_join_us{
+    height: 40px;
+    width:40%;
+  }
+
+
+
+}
