@@ -126,9 +126,14 @@ p {
     text-shadow: 0 0 10px $dark-color;
 }
 
-.paraPhoto{
-    color:$light-color;
+.paraPhoto {
+    color: $light-color;
     font-family: $photo-font;
     font-size: calc(25px + 6 * ((100vw - 320px) / 680));
     text-shadow: 0 0 15px $dark-color;
+}
+
+.links {
+    margin-top: -90px;
+    padding-top: 90px;
 }
