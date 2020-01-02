@@ -30,4 +30,16 @@ class WorkerRepository extends ServiceEntityRepository
 
         return $qb->execute();
     }
+
+    public function findAllEmployees()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->innerJoin('w.activity', 'a')
+            ->addSelect('a')
+            ->where('a.name = :name')
+            ->setParameter('name', 'Salarié')
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }
