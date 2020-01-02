@@ -12,8 +12,8 @@
 @import "form";
 @import "timetable";
 @import "bus_style";
-@import "employee_style";
 @import "joinforms_style";
+@import "profile_card";
 
 
 @mixin headings($from: 1, $to: 6){
