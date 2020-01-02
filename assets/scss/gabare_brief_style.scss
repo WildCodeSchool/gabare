@@ -2,16 +2,20 @@
     width: 85%;
 }
 
+.secondImage{
+    width: 90%;
+}
+
 .brief{
     font-family: var(--text-font);
     font-size: 18px;
 }
 
-i {
+.logIcon {
     color: $primary-color;
 }
 
-.icon {
+.iconBrief {
     position: relative;
     display: block;
     width: 60px;
@@ -50,7 +54,9 @@ i {
 }
 
 .more-info-button{
-    height: 27px;
+    display: block;
+    margin : auto;
+    height: 35px;
     width: 140px;
     border-radius: 10px;
     background-color: $secondary-color;
@@ -59,7 +65,9 @@ i {
 }
 
 .download-membership {
-    height: 55px;
+    display: block;
+    margin : auto;
+    height: 65px;
     width: 227px;
     border-radius: 10px;
     background-color: $secondary-color;
