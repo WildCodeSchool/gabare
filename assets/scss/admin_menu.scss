@@ -1,11 +1,11 @@
-.adminSectionNav{
-   height: 100%;
+.adminSectionNav {
+    height: 100%;
     min-height: 100vh;
     background-color: $dark-bootstrap;
 }
 
-.nameHeader{
-    color:$light-color;
+.nameHeader {
+    color: $light-color;
 }
 
 .menulink {
@@ -26,7 +26,7 @@
     }
 }
 
-li {
+.bulletNav {
     color: $light-color;
     list-style-type: none;
 
@@ -35,8 +35,8 @@ li {
     }
 }
 
-a {
-    color:$light-color;
+.linkAdmin {
+    color: $light-color;
     list-style-type: none;
 
     &:hover {
