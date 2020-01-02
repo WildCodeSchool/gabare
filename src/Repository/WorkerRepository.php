@@ -19,13 +19,20 @@ class WorkerRepository extends ServiceEntityRepository
         parent::__construct($registry, Worker::class);
     }
 
+    const ACTIVITY = [
+        'Salarié',
+        'Membre_CA',
+        'Ami_CA',
+        'Pionnier',
+    ];
+
     public function findAllPioneers()
     {
         $qb = $this->createQueryBuilder('w')
             ->innerJoin('w.activity', 'a')
             ->addSelect('a')
             ->where('a.name = :name')
-            ->setParameter('name', 'Pionnier')
+            ->setParameter('name', self::ACTIVITY[3])
             ->getQuery();
 
         return $qb->execute();
@@ -37,7 +44,19 @@ class WorkerRepository extends ServiceEntityRepository
             ->innerJoin('w.activity', 'a')
             ->addSelect('a')
             ->where('a.name = :name')
-            ->setParameter('name', 'Salarié')
+            ->setParameter('name', self::ACTIVITY[0])
+            ->getQuery();
+
+        return $qb->execute();
+    }
+
+    public function findAllCAMembers()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->innerJoin('w.activity', 'a')
+            ->addSelect('a')
+            ->where('a.name = :name')
+            ->setParameter('name', self::ACTIVITY[1])
             ->getQuery();
 
         return $qb->execute();
