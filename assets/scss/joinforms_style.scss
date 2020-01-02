@@ -1,0 +1,24 @@
+.formHeader {
+    background-color: $primary-color;
+    color: $light-color;
+}
+
+.footerForm {
+    background-color: $light-color;
+}
+
+
+a {
+    &:link {
+        color: $primary-color;
+    }
+
+    &:visited {
+        color: $primary-color;
+    }
+
+    &:hover {
+        color: $third-color;
+    }
+}
+
