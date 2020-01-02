@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+{% set page = 'home' %}
 
 {% block title %}La Gabare Olivet{% endblock %}
 
@@ -9,7 +10,7 @@
     {#---section Caroussel---#}
 
     {#---section Gabare en bref---#}
-
+    {% include 'home/includes/_gabare.html.twig' %}
     {#---section map et formulaire---#}
     {% include 'home/includes/_form.html.twig' %}
 

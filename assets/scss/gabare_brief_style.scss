@@ -1,0 +1,76 @@
+.firstImage{
+    width: 85%;
+}
+
+.secondImage{
+    width: 90%;
+}
+
+.brief{
+    font-family: var(--text-font);
+    font-size: 18px;
+}
+
+.logIcon {
+    color: $primary-color;
+}
+
+.iconBrief {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 63px;
+    background: $light-color;
+    border-radius: 50%;
+    border: solid $primary-color 1px;
+    font-size: 25px;
+    transition: .5s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: $primary-color;
+        transition: .5s;
+        z-index: -1;
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1.1);
+            box-shadow: 0 0 5px $primary-color;
+        }
+
+        color: $primary-color;
+        box-shadow: 0 0 5px $primary-color;
+        text-shadow: 0 0 5px $primary-color;
+    }
+}
+
+.more-info-button{
+    display: block;
+    margin : auto;
+    height: 35px;
+    width: 140px;
+    border-radius: 10px;
+    background-color: $secondary-color;
+    color: $light-color;
+    border: solid 2px $secondary-color;
+}
+
+.download-membership {
+    display: block;
+    margin : auto;
+    height: 65px;
+    width: 227px;
+    border-radius: 10px;
+    background-color: $secondary-color;
+    color: $light-color;
+    border: solid 2px $secondary-color;
+}

@@ -6,7 +6,6 @@
     z-index:8;
 }
 
-
 .bgActualities .jumbotron {
     height: 400px;
     background-size: cover;
@@ -30,4 +29,10 @@
     color:$primary-color;
     background-color: $light-color;
     border-color: $primary-color;
+}
+
+.image-size-article {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
 }

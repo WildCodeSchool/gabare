@@ -1,0 +1,39 @@
+.profile{
+    width: 18rem;
+}
+
+.profile-img {
+    width: 100%;
+}
+
+.email-CA {
+    border: none;
+    padding: 8px;
+    background-color: $primary-color;
+    cursor: pointer;
+    width: 100%;
+}
+
+.email-CA:hover {
+    opacity: 0.7;
+}
+
+.fa-envelope {
+    color: $light-color;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 540px) {
+    .scrolling-wrapper-flexbox {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .card {
+        flex: 0 0 auto;
+    }
+
+    .scrolling-wrapper-flexbox {
+        -webkit-overflow-scrolling: touch;
+    }
+}

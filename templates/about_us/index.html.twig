@@ -1,0 +1,27 @@
+{% set page = 'about_us' %}
+{% extends 'layout.html.twig' %}
+
+{% block title %}Qui sommes-nous{% endblock %}
+
+{% block body %}
+
+    {#---Section bandeau image---#}
+    {% include 'about_us/includes/_stripe.html.twig' %}
+    {#---section notre histoire---#}
+
+    {#---section nos valeurs en carte JS---#}
+
+    {#---section partenaires---#}
+
+    {#---section salariés---#}
+    {% include 'about_us/includes/_employee.html.twig' %}
+
+    {#---section CA de la Gabare---#}
+    {% include 'about_us/includes/_CA-Member.html.twig' %}
+
+    {#---section CA du supermarché---#}
+
+    {#---section pionnier---#}
+    {% include 'about_us/includes/_pioneer.html.twig' %}
+
+{% endblock %}

@@ -1,9 +1,4 @@
-<div class="d-none d-sm-block">
-    <img src="{{ asset('build/images/etalage.jpg') }}" class="photoStripe mb-0" alt="étalage">
-    <h1 class="titlePhoto">La vie de La Gabare</h1>
-    <p class="paraPhoto">Ses animations, actualités, compte-rendus et revues de presse !</p>
-</div>
-<section class="bgAnimation pt-5 pb-5">
+<section class="bgAnimation pb-5 links" id="planning-des-animations">
     <h2 class="text-center mt-md-3 mb-3 title-animation">Planning des animations</h2>
     <h4 class="text-center">Réservez dès maintenant votre participation aux différentes animations de La Gabare</h4>
     <div class="container-fluid">
@@ -11,7 +6,7 @@
             {% for animation in animations %}
                 <div class="mt-0 mt-3 ">
                     <div class="card box m-3 m-md-5 card-animation">
-                        <img src="{{ animation.image }}" class="card-img-top" alt="">
+                        <img src="{{ animation.image }}" class="card-img-top image-size-animation" alt="">
                         <div class="card-body text-center">
                             <h4 class="card-title animation">{{ animation.title }}</h4>
                             <p class="card-title animation">{{ animation.description }}</p>

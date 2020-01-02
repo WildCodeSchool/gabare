@@ -1,0 +1,22 @@
+<section class="bgEmployee links" id="les-salaries">
+    <h2 class="text-center mt-md-5 title-animation">Les salariés</h2>
+    <div class="container-fluid">
+        <div class="row justify-content-between scrolling-wrapper-flexbox m-2">
+            {% for employee in employees %}
+                <div class="card profile m-4">
+                    {% if employee.portrait %}
+                        <img class="profile-img" src="{{ employee.portrait }}"
+                             alt="{{ employee.firstname }} {{ employee.lastname }}">
+                    {% else %}
+                        <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
+                             alt="{{ employee.firstname }} {{ employee.lastname }}">
+                    {% endif %}
+                    <div class="text-center">
+                        <h3 class="m-3">{{ employee.firstname }} {{ employee.lastname }}</h3>
+                        <p>{{ employee.function }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
