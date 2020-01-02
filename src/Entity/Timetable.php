@@ -25,7 +25,7 @@ class Timetable
 
     /**
      * @ORM\Column(type="time")
-     * @Assert\Date
+     * @Assert\Time
      * @Assert\NotBlank()
      */
     private $visitTime;
