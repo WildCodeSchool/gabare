@@ -11,11 +11,7 @@
         {% endblock %}
     </head>
     <body>
-        {% block header %}{% endblock %}
-        <main>
-            {% block body %}{% endblock %}
-        </main>
-        {% block footer %}{% endblock %}
+        {% block layout %}{% endblock %}
         {% block javascripts %}
         {% endblock %}
         {{ encore_entry_script_tags('app') }}

@@ -1,112 +1,127 @@
-    <div class="row">
-        <div class="col-lg-2 flex-column bkm">
-    <nav>
-        <div class="top-nav ml-4 mt-5">
-            <p class="font-weight-bold mt-2 mb-3"><i class="fas fa-cogs mr-3"></i>
-                LA GABARE</p>
-            <p><i class="fas fa-user-shield mr-3 mb-2"></i></p>
-            <p class="mb-5"><i class="fas fa-lock-open mr-3"></i>Se déconnecter</p>
+<nav class="adminSectionNav">
+    <div id="accordion">
+        <div class="card rounded-0 border-0">
+            <div class="card-header rounded-0 border-0 bkm " id="headingOne">
+                <h5 class="mb-0 nameHeader">
+                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                            data-target="#collapseOne"
+                            aria-expanded="false" aria-controls="collapseOne">
+                        <p><i class="fas fa-cogs mr-3"></i>LA GABARE</p>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
+                    <p><i class="fas fa-user-shield mr-3"></i></p>
+                    <p><i class="fas fa-lock-open mr-3"></i>Se déconnecter</p>
+                </div>
+            </div>
         </div>
 
-        <div id="accordion">
-            <div class="card ml-3 border-0">
-                <div class="card-header bkm pl-1" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link menulink collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accueil
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body bkm">
-                        <ul>
-                            <li>Alerte</li>
-                            <li>Bandeau d'image</li>
-                            <li>Carroussel</li>
-                        </ul>
-                    </div>
+        <div class="card rounded-0 border-0">
+            <div class="card-header bkm rounded-0 border-0" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                            data-target="#collapseTwo"
+                            aria-expanded="true" aria-controls="collapseTwo">
+                        Accueil
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body bkm rounded-0 border-0">
+                    <ul class="pl-3">
+                        <li>Alerte</li>
+                        <li>Bandeau d'image</li>
+                        <li>Carroussel</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="card ml-3 border-0">
-                <div class="card-header bkm pl-1" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link menulink collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Qui sommes-nous ?
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body bkm">
-                        <ul>
-                            <li>Histoire</li>
-                            <li>Valeurs en chiffres</li>
-                            <li>Partenaires</li>
-                            <li>Personnes</li>
-                            <li>Fonctions</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card ml-3 border-0">
-                <div class="card-header bkm pl-1" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link menulink collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            La vie de la Gabare
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body bkm">
-                        <ul class="list-group">
-                            <li><a href="{{path('animation_index')}}">Animations</a></li>
-                            <li><a href="{{path('article_index')}}">Articles</a></li>
-                            <li><a href="#">Thèmes des articles</a></li>
-                            <li><a href="{{path('report_index')}}">Comptes-rendus</a></li>
-                            <li><a href="#">Presse</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card border-0">
-                    <div class="card-header bkm pl-1" id="headingFour">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link menulink collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Nous rejoindre
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                        <div class="card-body bkm">
-                            <ul>
-                                <li>Agenda</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card ml-3 border-0">
-                <div class="card-header bkm pl-1" id="headingFive">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link menulink collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
-                            Super Admin
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                    <div class="card-body bkm">
-                        <ul>
-                            <li>Gestion des rôles</li>
-                            <li>Site en maintenance</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-   </nav>
-</div>
+        <div class="card rounded-0 border-0">
+            <div class="card-header bkm rounded-0 border-0" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                            data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                        Qui sommes-nous ?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body bkm rounded-0 border-0">
+                    <ul class="pl-3">
+                        <li>Histoire</li>
+                        <li>Valeurs en chiffres</li>
+                        <li>Partenaires</li>
+                        <li>Personnes</li>
+                        <li>Fonctions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rounded-0 border-0">
+            <div class="card-header bkm rounded-0 border-0" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                            data-target="#collapseFour"
+                            aria-expanded="false" aria-controls="collapseFour">
+                        La vie de la Gabare
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body bkm rounded-0 border-0">
+                    <ul class="pl-3">
+                        <li><a href="{{ path('animation_index') }}">Animations</a></li>
+                        <li><a href="{{ path('article_index') }}">Articles</a></li>
+                        <li><a href="#">Thèmes des articles</a></li>
+                        <li><a href="{{ path('report_index') }}">Comptes-rendus</a></li>
+                        <li><a href="#">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rounded-0 border-0">
+            <div class="card-header bkm rounded-0 border-0" id="headingFive">
+                <h5 class="mb-0">
+                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                            data-target="#collapseFive"
+                            aria-expanded="false" aria-controls="collapseFive">
+                        Nous rejoindre
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body bkm rounded-0 border-0">
+                    <ul class="pl-3">
+                        <li>Agenda</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rounded-0 border-0">
+            <div class="card-header bkm rounded-0 border-0" id="headingSix">
+                <h5 class="mb-0">
+                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                            data-target="#collapseSix"
+                            aria-expanded="false" aria-controls="collapseFive">
+                        Super Admin
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                <div class="card-body bkm">
+                    <ul class="pl-3">
+                        <li>Gestion des rôles</li>
+                        <li>Site en maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
