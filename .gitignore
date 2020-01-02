@@ -8,6 +8,7 @@
 /vendor/
 /templates/admin_article/_delete_form.html.twig
 /templates/admin_article/index.html.twig
+yarn.lock
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
