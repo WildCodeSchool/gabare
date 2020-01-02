@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GabareLifeController extends AbstractController
 {
     /**
-     * @Route("/vie-cooperative", name="gabare_life")
+     * @Route("/la-vie-de-la-gabare", name="gabare_life")
      */
     public function index()
     {
