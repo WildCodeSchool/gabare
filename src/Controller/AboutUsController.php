@@ -21,6 +21,7 @@ class AboutUsController extends AbstractController
             'pioneers' => $workerRepository->findAllPioneers(),
             'employees' => $workerRepository->findAllEmployees(),
             'CAMembers' => $workerRepository->findAllCAMembers(),
+            'CAFriends' => $workerRepository->findAllCAFriends(),
         ]);
     }
 }
