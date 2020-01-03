@@ -36,7 +36,7 @@ class Carousel
      * @Assert\Url()
      * @Assert\Length(
      *     max=255,
-     *     maxMessage="Le titre ne doit pas dépasser {{limit}} caractères"
+     *     maxMessage="Le lien ne doit pas dépasser {{limit}} caractères"
      * )
      */
     private $link;
