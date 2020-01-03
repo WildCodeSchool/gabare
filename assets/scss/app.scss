@@ -14,7 +14,7 @@
 @import "bus_style";
 @import "joinforms_style";
 @import "profile_card";
-
+@import "alert_style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
