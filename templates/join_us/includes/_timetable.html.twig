@@ -14,8 +14,8 @@
             <div class="col-lg-2">
         <div class="card card-timetable mb-5 ">
             <div class="card-header header-timetable text-center">
-                <p class="timetableDay">{{timetable.visitDate | date("l") }}</p>
-                <p class="timetableDate">{{timetable.visitDate | date("d M") }}</p>
+                <p class="timetableDate">{{timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'EEEE')  }}</p>
+                <p class="timetableDate">{{timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'D MMM')  }}</p>
                 <p class="timetableHour"><i class="far fa-clock mr-1"></i>
                      {{timetable.visitTime | date("H:i")}}</p>
             </div>
