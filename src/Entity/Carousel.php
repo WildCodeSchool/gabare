@@ -18,20 +18,31 @@ class Carousel
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Assert\Length(
+     *      max = 150,
+     *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank()
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $picture;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Url()
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage="Le titre ne doit pas dépasser {{limit}} caractères"
+     * )
      */
     private $link;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
