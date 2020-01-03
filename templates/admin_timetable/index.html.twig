@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for timetable in timetables %}
+        {% for timetable in timetables |sortbyfield('visitDate') %}
             <tr>
                 <td>{{ timetable.visitDate ? timetable.visitDate|date('d/m/Y') : '' }}</td>
                 <td>{{ timetable.visitTime ? timetable.visitTime|date('H:i:s') : '' }}</td>
