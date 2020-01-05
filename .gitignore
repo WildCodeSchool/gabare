@@ -6,6 +6,12 @@
 /public/bundles/
 /var/
 /vendor/
+/templates/admin_article/_delete_form.html.twig
+/templates/admin_article/index.html.twig
+/.env
+/composer.lock
+/composer.json
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

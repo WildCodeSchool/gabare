@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div style="background-color: whitesmoke">
+
+        <h2>{{ dataContact.name }} vous a envoyé un nouveau message.</h2>
+        <h4>Email : {{ dataContact.email }}</h4>
+        <h4>Sujet : {{ dataContact.subject }}</h4>
+        <p>Message : {{ dataContact.message }}</p>
+
+    </div>
+
+{% endblock %}
