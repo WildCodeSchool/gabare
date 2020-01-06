@@ -6,13 +6,13 @@
 @import "presse_style";
 @import "footer_style";
 @import "actualities_style";
-@import "report_style";
 @import "phone_style";
 @import "gabare_brief_style";
 @import "form";
 @import "timetable";
 @import "bus_style";
 @import "joinforms_style";
+@import 'history';
 @import "profile_card";
 
 
@@ -136,4 +136,14 @@ p {
 .links {
     margin-top: -90px;
     padding-top: 90px;
+}
+
+.alert-success.flash{
+    background-color:#d4edda;
+    position:fixed;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    z-index:10;
+    border-radius:0;
 }

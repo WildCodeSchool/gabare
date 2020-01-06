@@ -1,0 +1,54 @@
+.adminSectionNav {
+    height: 100%;
+    min-height: 100vh;
+    background-color: $dark-bootstrap;
+}
+
+.nameHeader {
+    color: $light-color;
+}
+
+.menulink {
+    color: $light-color;
+    text-decoration: none;
+    font-size: 18px;
+
+    &:hover {
+        color: $third-color;
+    }
+
+    &:active {
+        color: $third-color;
+    }
+
+    &:visited {
+        color: $third-color;
+    }
+}
+
+.bulletNav {
+    color: $light-color;
+    list-style-type: none;
+
+    &:hover {
+        color: $third-color;
+    }
+}
+
+.linkAdmin {
+    color: $light-color;
+    list-style-type: none;
+
+    &:hover {
+        color: $third-color;
+    }
+}
+
+.bkm {
+    background-color: $dark-bootstrap;
+}
+
+.fa-cogs, .fa-user-shield, .fa-lock-open {
+    color: $light-color;
+}
+
