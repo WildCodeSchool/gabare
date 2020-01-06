@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use function Sodium\add;
 
 /**
  * @Route("admin/history")
@@ -36,10 +35,7 @@ class AdminHistoryController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash(
-                'success',
-                'Les modifications ont été réalisées avec succès'
-            );
+            $this->addFlash('success', 'Les modifications ont été réalisées avec succès');
 
             return $this->redirectToRoute('history_show', ['id' => $history->getId()]);
         }
