@@ -20,7 +20,7 @@ class AdminHistoryController extends AbstractController
      */
     public function show(History $history): Response
     {
-        return $this->render('history/show.html.twig', [
+        return $this->render('admin_history/show.html.twig', [
             'history' => $history,
         ]);
     }
@@ -36,10 +36,10 @@ class AdminHistoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('history_index');
+            return $this->redirectToRoute('history_index', ['id' => $history->getId()]);
         }
 
-        return $this->render('history/edit.html.twig', [
+        return $this->render('admin_history/edit.html.twig', [
             'history' => $history,
             'form' => $form->createView(),
         ]);
