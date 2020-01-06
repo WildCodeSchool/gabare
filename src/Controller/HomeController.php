@@ -20,17 +20,13 @@ class HomeController extends AbstractController
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
 
-        $alerts = $this->getDoctrine()
+        $alert = $this->getDoctrine()
             ->getRepository(Alert::class)
-            ->findBy(
-                [],
-                ['id' => 'DESC'],
-                1
-            );
+            ->findOneBy([]);
 
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
-            'alerts'=> $alerts
+            'alert'=> $alert,
         ]);
     }
 }

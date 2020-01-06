@@ -21,6 +21,11 @@ class Alert
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $activated;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,18 @@ class Alert
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getActivated(): ?bool
+    {
+        return $this->activated;
+    }
+
+    public function setActivated(bool $activated): self
+    {
+        $this->activated = $activated;
 
         return $this;
     }
