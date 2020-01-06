@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("admin/history")
  */
-class HistoryController extends AbstractController
+class AdminHistoryController extends AbstractController
 {
     /**
      * @Route("/{id}", name="history_show", methods={"GET"})
