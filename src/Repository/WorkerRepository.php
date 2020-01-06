@@ -84,4 +84,13 @@ class WorkerRepository extends ServiceEntityRepository
 
         return $qb->execute();
     }
+
+    public function findByLastNamesOrder()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->orderBy('w.lastName', 'ASC')
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }

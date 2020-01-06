@@ -21,7 +21,8 @@ class AdminWorkerController extends AbstractController
     public function index(WorkerRepository $workerRepository): Response
     {
         return $this->render('admin_worker/index.html.twig', [
-            'workers' => $workerRepository->findByActivitiesOrder(),
+            'test' => $workerRepository->findByActivitiesOrder(),
+            'workers' => $workerRepository->findByLastNamesOrder(),
         ]);
     }
 
