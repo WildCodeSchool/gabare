@@ -14,7 +14,7 @@
 @import "joinforms_style";
 @import 'history';
 @import "profile_card";
-
+@import "alert_style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
@@ -136,4 +136,14 @@ p {
 .links {
     margin-top: -90px;
     padding-top: 90px;
+}
+
+.alert-success.flash{
+    background-color:#d4edda;
+    position:fixed;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    z-index:10;
+    border-radius:0;
 }
