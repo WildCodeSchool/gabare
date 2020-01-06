@@ -11,12 +11,7 @@
         {% endblock %}
     </head>
     <body>
-        {% block header %}{% endblock %}
-        <main>
-            {% include '_flash_message.html.twig' %}
-            {% block body %}{% endblock %}
-        </main>
-        {% block footer %}{% endblock %}
+        {% include '_flash_message.html.twig' %}
         {% block layout %}{% endblock %}
         {% block javascripts %}
         {% endblock %}
