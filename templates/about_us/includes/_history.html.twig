@@ -3,16 +3,20 @@
         {% if history is defined %}
             {% for historic in history %}
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <h2 class="mt-md-4 mx-auto title_history">{{ historic.title }}</h2>
                         <div class="gabare_image">
-                            <img src="{{ historic.image }}" alt="Image de La Gabare"/>
+                            <img src="{{ historic.image }}" alt="Image de La Gabare" class="w-75"/>
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <p>{{ historic.description|raw }}</p>
-                        <div class="button_join_us_div">
-                            <button class="button_join_us">Nous rejoindre</button>
+                    <div class="col-md-6">
+                        <div class="row align-items-center h-100">
+                            <div class="col">
+                                <p class="lead">{{ historic.description|raw }}</p>
+                                <div class="button_join_us_div">
+                                    <button class="button_join_us">Nous rejoindre</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
