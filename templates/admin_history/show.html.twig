@@ -1,9 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block title %}History{% endblock %}
 
 {% block body %}
-    <h1>History</h1>
+
+    <h1>Notre histoire</h1>
 
     <table class="table">
         <tbody>
@@ -19,12 +20,15 @@
                 <th>Description</th>
                 <td>{{ history.description }}</td>
             </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ history.image }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('history_index') }}">back to list</a>
+    <div class="card-footer text-muted">
+        <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success m-3">Modifier</a>
+    </div>
 
-    <a href="{{ path('history_edit', {'id': history.id}) }}">edit</a>
-
-    {{ include('history/_delete_form.html.twig') }}
 {% endblock %}

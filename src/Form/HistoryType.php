@@ -21,6 +21,7 @@ class HistoryType extends AbstractType
                 'label' => 'Description',
                 'trim' => true,
             ])
+            ->add('image')
         ;
     }
 
