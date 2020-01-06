@@ -26,7 +26,7 @@ class AdminHistoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="history_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="history_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, History $history): Response
     {
