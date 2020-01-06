@@ -74,7 +74,7 @@ class WorkerRepository extends ServiceEntityRepository
         return $qb->execute();
     }
 
-    public function findByActivityOrder()
+    public function findByActivitiesOrder()
     {
         $qb = $this->createQueryBuilder('w')
             ->innerJoin('w.activity', 'a')
