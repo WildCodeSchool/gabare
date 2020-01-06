@@ -38,7 +38,7 @@ class HomeController extends AbstractController
                 ]));
             $mailer->send($email);
             $this->addFlash('success', 'Votre email a été envoyé avec succès');
-            return $this->redirectToRoute('home', ['id' => $contact]);
+            return $this->redirect('#contact');
         }
 
         return $this->render('home/index.html.twig', [
