@@ -1,6 +1,7 @@
 {% set page = 'about_us' %}
 {% extends 'layout.html.twig' %}
 
+
 {% block title %}Qui sommes-nous{% endblock %}
 
 {% block body %}
@@ -8,6 +9,7 @@
     {#---Section bandeau image---#}
     {% include 'about_us/includes/_stripe.html.twig' %}
     {#---section notre histoire---#}
+    {% include 'about_us/includes/_history.html.twig' %}
 
     {#---section nos valeurs en carte JS---#}
 
