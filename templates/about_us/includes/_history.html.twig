@@ -1,29 +1,20 @@
 <section class="history_section">
     <div class="container">
-        <h2 class="mt-md-5 mx-auto title_history">Notre histoire</h2>
+        {% for histor in history %}
+        <h2 class="mt-md-5 mx-auto title_history">{{ history.title }}</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="gabare_image">
-                    <img src="https://via.placeholder.com/350" alt="Image de La Gabare"/>
+                    <img src="{{ history.image }}" alt="Image de La Gabare"/>
                 </div>
             </div>
             <div class="col-md-8">
-                <h3 class="little_history">Petit historique</h3>
-                <p class="ourStory">2018 : Une trentaine de personnes toutes passionnées d'alimentation et du mieux
-                    manger se lancent dans le projet un peu fou de la Gabare : une coopérative alimentaire d’un genre
-                    nouveau en France soutenue et inspirée par la Park Slope Food Coop à Brooklyn (qui a déjà 16 000
-                    adhérents) et, plus près de nous, à Paris, La Louve, et bien d'autres encore en France. </p>
-                <h3 class="gabare_values">Nos valeurs</h3>
-                <p class="ourStory">Garantir l’excellence des produits sélectionnés grâce à une exigence gustative,
-                    nutritionnelle et sanitaire élevée. C'est pourquoi La Gabare soutient les producteurs locaux qui
-                    s’inscrivent dans une démarche éthique et respectueuse de l’environnement. La Gabare pratique la
-                    transparence dans tous ses actes d’achat, de vente, de gestion et d’administration. Elle est gérée
-                    et gouvernée par ses membres, lesquels assurent bénévolement – aux cotés de quelques salariés – la
-                    totalité des tâches nécessaires à son bon fonctionnement.</p>
+                <p>{{ history.description }}</p>
                 <div class="button_join_us_div">
                     <button class="button_join_us">Nous rejoindre</button>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </section>

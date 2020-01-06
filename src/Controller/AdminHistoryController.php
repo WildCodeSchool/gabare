@@ -36,7 +36,7 @@ class AdminHistoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('history_index', ['id' => $history->getId()]);
+            return $this->redirectToRoute('history_show', ['id' => $history->getId()]);
         }
 
         return $this->render('admin_history/edit.html.twig', [
