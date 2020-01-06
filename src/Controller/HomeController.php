@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Alert;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,8 +42,13 @@ class HomeController extends AbstractController
             return $this->redirect('#contact');
         }
 
+        $alert = $this->getDoctrine()
+            ->getRepository(Alert::class)
+            ->findOneBy([]);
+
         return $this->render('home/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'alert'=> $alert,
         ]);
     }
 }
