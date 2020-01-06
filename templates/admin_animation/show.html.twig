@@ -4,7 +4,14 @@
 
 {% block body %}
 <div class="container-fluid p-5">
-    <h1 class="ml-3 mb-4">Aperçu de l'animation</h1>
+    <h1 class="ml-2 mb-4">Aperçu de l'animation</h1>
+    <div class="row ml-2 mb-4">
+        <a href="{{ path('animation_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+        <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success ml-3">Éditer<i class="fas fa-pen ml-1"></i></a>
+        <div class="ml-3">
+            {{ include('admin_animation/_delete_form.html.twig') }}
+        </div>
+    </div>
 
     <table class="table">
         <tbody>
@@ -30,16 +37,9 @@
         </tr>
         <tr>
             <th>Image</th>
-            <td>{{ animation.image }}</td>
+            <td><img src="{{ animation.image }}" alt="" style="width: 400px;"></td>
         </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('animation_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
-
-    <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success ml-3">Éditer</a>
-    <div class="mt-4">
-        {{ include('admin_animation/_delete_form.html.twig') }}
-    </div>
 </div>
 {% endblock %}

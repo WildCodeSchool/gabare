@@ -1,45 +1,52 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Animation index{% endblock %}
+{% block title %}Liste des animations{% endblock %}
 
 {% block body %}
-<div class="container-fluid p-5">
-    <h1>Liste des animations</h1>
+    <div class="container-fluid p-5">
+        {% for label, messages in app.flashes(['success', 'danger']) %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
 
-    <a href="{{ path('animation_new') }}" class ="btn btn-primary add mb-4">Ajouter</a>
+        <h1>Liste des animations</h1>
 
-    <table class="table table-striped">
-        <thead class="thBackground">
+        <a href="{{ path('animation_new') }}" class="btn btn-primary add mb-4">Ajouter<i
+                    class="fas fa-plus ml-2"></i></a>
+
+        <table class="table table-striped">
+            <thead class="thBackground">
             <tr>
                 <th>Titre</th>
                 <th>Date</th>
-                <th>Heure de début</th>
-                <th>Heure de fin</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for animation in animations %}
-            <tr>
-                <td>{{ animation.title }}</td>
-                <td>{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
-                <td>{{ animation.hourStart ? animation.hourStart|date('H:i') : '' }}</td>
-                <td>{{ animation.hourEnd ? animation.hourEnd|date('H:i') : '' }}</td>
-                <td class="d-flex pt-3">
-                    <a href="{{ path('animation_show', {'id': animation.id}) }}" class="btn btn-secondary mr-4">Aperçu<i class="fas fa-file-alt ml-1"></i></a>
-                    <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success mr-4">Éditer<i class="fas fa-pen ml-1"></i></a>
-                    <div>
-                        {{ include('admin_animation/_delete_form.html.twig') }}
-                    </div>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">Aucune animation trouvée</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for animation in animations %}
+                <tr>
+                    <td>{{ animation.title }}</td>
+                    <td>{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
+                    <td class="d-flex pt-3">
+                        <a href="{{ path('animation_show', {'id': animation.id}) }}" class="btn btn-secondary mr-4">Aperçu<i
+                                    class="fas fa-file-alt ml-1"></i></a>
+                        <a href="{{ path('animation_edit', {'id': animation.id}) }}" class="btn btn-success mr-4">Éditer<i
+                                    class="fas fa-pen ml-1"></i></a>
+                        <div>
+                            {{ include('admin_animation/_delete_form.html.twig') }}
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucune animation trouvée</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-</div>
+    </div>
 {% endblock %}
