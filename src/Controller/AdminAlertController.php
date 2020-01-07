@@ -16,28 +16,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminAlertController extends AbstractController
 {
     /**
-     * @Route("/", name="alert_index", methods={"GET"})
+     * @Route("/editer", name="alert_edit", methods={"GET","POST"})
+     * @return Response
      */
-    public function index(AlertRepository $alertRepository): Response
+    public function edit(Request $request): Response
     {
-        return $this->render('admin_alert/index.html.twig', [
-            'alerts' => $alertRepository->findAll(),
-        ]);
-    }
+        $alert = $this->getDoctrine()
+            ->getRepository(Alert::class)
+            ->findOneBy([]);
+        if (!$alert instanceof Alert) {
+            $alert = new Alert();
+        }
 
-
-    /**
-     * @Route("/{id}/editer", name="alert_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Alert $alert): Response
-    {
         $form = $this->createForm(AlertType::class, $alert);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', "Votre alerte a bien été modifiée");
 
-            return $this->redirectToRoute('alert_index');
+            return $this->redirectToRoute('alert_edit');
         }
 
         return $this->render('admin_alert/edit.html.twig', [
