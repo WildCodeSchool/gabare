@@ -39,6 +39,11 @@ class AdminTimetableController extends AbstractController
             $entityManager->persist($timetable);
             $entityManager->flush();
 
+            $this->addFlash(
+                'danger',
+                'Votre article a été supprimé'
+            );
+
             return $this->redirectToRoute('timetable_index');
         }
 
