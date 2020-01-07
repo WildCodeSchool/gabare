@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Timetable;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,10 +18,11 @@ class TimetableType extends AbstractType
                 'label' => 'Date',
                 'format' => 'ddMMMMyyyy',
                 'choice_translation_domain' => true,])
-            ->add('visitTime', DateType::class, [
+            ->add('visitTime', TimeType::class, [
                 'label' => 'Heure',
-                'format' => 'ddMMMMyyyy',
-                'choice_translation_domain' => true,])
+                'input'  => 'datetime',
+                'widget' => 'choice',
+                ])
         ;
     }
 
