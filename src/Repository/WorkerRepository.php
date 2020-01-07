@@ -79,7 +79,6 @@ class WorkerRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('w')
             ->innerJoin('w.activity', 'a')
             ->addSelect('a')
-            ->orderBy('a.name', 'ASC')
             ->add('orderBy', ['a.name ASC, w.lastName ASC'])
             ->getQuery();
 
