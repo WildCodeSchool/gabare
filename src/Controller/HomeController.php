@@ -23,7 +23,7 @@ class HomeController extends AbstractController
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function index(Request $request, MailerInterface $mailer,CarouselRepository $carouselRepository): Response
+    public function index(Request $request, MailerInterface $mailer, CarouselRepository $carouselRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
