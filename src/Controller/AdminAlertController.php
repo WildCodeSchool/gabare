@@ -27,7 +27,7 @@ class AdminAlertController extends AbstractController
 
 
     /**
-     * @Route("/{id}/edit", name="alert_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="alert_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Alert $alert): Response
     {
