@@ -11,15 +11,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiController extends AbstractController
 {
     /**
-     * @Route("/produits", name="products")
+     * @Route("/nos-produits", name="products")
      * @return Response
      */
 
     public function index(ConnectOdooService $connectOdooService): Response
     {
-        $connectOdooService->connectApi();
-        var_dump($connectOdooService);
-        die();
+
         return $this->render('products/index.html.twig', [
 
         ]);
