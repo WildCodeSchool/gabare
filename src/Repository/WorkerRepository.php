@@ -80,15 +80,7 @@ class WorkerRepository extends ServiceEntityRepository
             ->innerJoin('w.activity', 'a')
             ->addSelect('a')
             ->orderBy('a.name', 'ASC')
-            ->getQuery();
-
-        return $qb->execute();
-    }
-
-    public function findByLastNamesOrder()
-    {
-        $qb = $this->createQueryBuilder('w')
-            ->orderBy('w.lastName', 'ASC')
+            ->add('orderBy', ['a.name ASC, w.lastName ASC'])
             ->getQuery();
 
         return $qb->execute();
