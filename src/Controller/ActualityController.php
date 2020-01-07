@@ -4,16 +4,17 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class ActualityController extends AbstractController
 {
     /**
-     * @Route("/actuality", name="actuality_list")
+     * @Route("/actualites", name="actuality_list")
      */
-    public function index()
+    public function show(): Response
     {
         return $this->render('actuality/index.html.twig', [
-            'controller_name' => 'ActualityController',
+            'actualities' => $actualities,
         ]);
     }
 }
