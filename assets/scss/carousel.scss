@@ -1,0 +1,44 @@
+.carousel {
+    width: 75%;
+    margin: 50px auto;
+
+    .carousel-item {
+        height: 500px;
+
+        .carousel-caption {
+            z-index: 1;
+            width: -moz-fit-content;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .title_carousel {
+            background-color: $photo-hue;
+            margin: auto;
+            padding: 10px 20px 5px 20px;
+
+            h4 {
+                font-family: "Satisfy", cursive;
+                font-size: 2em;
+                color: $light-color;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: $third-color;
+            border: none;
+            border-radius: 2px;
+            color: $light-color;
+            padding: 5px 10px;
+            margin: 15px 0;
+        }
+    }
+
+
+}
