@@ -1,11 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}New Timetable{% endblock %}
+{% block title %}Ajouter une réunion d'information{% endblock %}
 
 {% block body %}
-    <h1>Create new Timetable</h1>
+<div class="container-fluid p-5">
+    <h1 class="ml-3 mb-4">Ajouter un une réunion d'information</h1>
+    <div class="col-lg-8 m-0 jumbotron">
 
-    {{ include('admin_timetable/_form.html.twig') }}
+        {{ form_start(form) }}
+        {{ form_row(form.visitDate) }}
+        {{ form_row(form.visitTime) }}
+        <button class="btn btn-primary mt-2">Ajouter</button>
+        {{ form_end(form) }}
 
-    <a href="{{ path('timetable_index') }}">back to list</a>
+    </div>
+    <div class="mt-5">
+        <a href="{{ path('timetable_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+    </div>
+</div>
 {% endblock %}
