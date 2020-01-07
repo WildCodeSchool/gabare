@@ -11,7 +11,7 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ history.title }}</td>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
     </table>
 
     <div class="card-footer text-muted">
-        <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success m-3">Modifier</a>
+        <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success m-3">Modifier<i class="fas fa-pen"></i></a>
     </div>
 
 {% endblock %}
