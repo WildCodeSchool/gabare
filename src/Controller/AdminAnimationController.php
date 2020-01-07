@@ -39,6 +39,11 @@ class AdminAnimationController extends AbstractController
             $entityManager->persist($animation);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre animation a été ajoutée'
+            );
+
             return $this->redirectToRoute('animation_index');
         }
 
@@ -69,6 +74,11 @@ class AdminAnimationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre animation a été mise à jour'
+            );
+
             return $this->redirectToRoute('animation_index');
         }
 
@@ -87,6 +97,11 @@ class AdminAnimationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($animation);
             $entityManager->flush();
+
+            $this->addFlash(
+                'danger',
+                'Votre animation a été supprimée'
+            );
         }
 
         return $this->redirectToRoute('animation_index');
