@@ -4,14 +4,6 @@
 
 {% block body %}
     <div class="container-fluid p-5">
-        {% for label, messages in app.flashes(['success', 'danger']) %}
-            {% for message in messages %}
-                <div class="alert alert-{{ label }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endfor %}
-
         <h1>Liste des animations</h1>
 
         <a href="{{ path('animation_new') }}" class="btn btn-primary add mb-4">Ajouter<i

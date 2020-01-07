@@ -3,15 +3,7 @@
 {% block title %}Liste des articles{% endblock %}
 
 {% block body %}
-<div class="container-fluid p-5">
-    {% for label, messages in app.flashes(['success', 'danger']) %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endfor %}
-
+    <div class="container-fluid p-5">
     <h1>Liste des articles</h1>
 
     <a href="{{ path('article_new') }}" class="btn btn-primary mb-4">Ajouter<i class="fas fa-plus ml-2"></i></a>
@@ -48,4 +40,4 @@
         {% endfor %}
         </tbody>
     </table>
-    {% endblock %}
+{% endblock %}
