@@ -16,7 +16,7 @@ class ProductController extends AbstractController
      * @return Response
      */
 
-    public function index(ConnectOdooService $connectOdooService, ProductRepository $productRepository): Response
+    public function index(ProductRepository $productRepository): Response
     {
         $products = $productRepository->findAll();
 
