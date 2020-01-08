@@ -10,8 +10,10 @@ use Faker;
 class ThemeFixtures extends Fixture
 {
     const THEMES = [
-        'Cuisine',
-        'Découverte',
+        'Animations',
+        'Evènements',
+        'Portraits',
+        'Livre de bord',
         'Nouveautés',
     ];
 
