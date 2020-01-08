@@ -10,16 +10,29 @@ use Symfony\Component\HttpFoundation\Response;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/la-vie-de-la-gabare/article", name="article_list")
+     * @Route("/", name="article_list")
+     * @return Response
      */
-    public function show(): Response
+    public function list(): Response
     {
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findAll();
 
-        return $this->render('article/show.html.twig', [
+        return $this->render('article/list.html.twig', [
             'articles' => $articles,
+        ]);
+    }
+
+    /**
+     * @Route("/show/{slug<^[a-z0-9-]+$>}", defaults={"slug" = null}, name="article_show")
+     * @param Article $article
+     * @return Response
+     */
+    public function show(Article $article): Response
+    {
+        return $this->render('article/show.html.twig', [
+            'article' => $article,
         ]);
     }
 }
