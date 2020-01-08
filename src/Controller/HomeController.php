@@ -20,6 +20,7 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      * @param Request $request
      * @param MailerInterface $mailer
+     * @param CarouselRepository $carouselRepository
      * @return Response
      * @throws TransportExceptionInterface
      */
@@ -49,7 +50,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
             'carousels' => $carouselRepository->findAll(),
-            'alert'=> $alert,
+            'alert' => $alert,
         ]);
     }
 }
