@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block title %}Associés index{% endblock %}
 
 {% block body %}
     <div class="container-fluid p-5">
         <h1>Liste des associés</h1>
-        <a href="{{ path('worker_new') }}" class="btn btn-primary mb-4">Ajouter</a>
+        <a href="{{ path('worker_new') }}" class="btn btn-primary mb-4">Ajouter<i class="fas fa-plus ml-2"></i></a>
         <table class="table table-striped">
             <thead class="thBackground">
             <tr>
