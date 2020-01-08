@@ -10,17 +10,21 @@ use Symfony\Component\HttpFoundation\Response;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="article_list")
+     * @Route("/article", name="article_list")
      * @return Response
      */
     public function list(): Response
     {
-        $articles = $this->getDoctrine()
+        $actualities = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->findAll();
+            ->findBy(
+                [],
+                ['date' => 'DESC'],
+                20
+            );
 
         return $this->render('article/list.html.twig', [
-            'articles' => $articles,
+            'actualities' => $actualities,
         ]);
     }
 

@@ -14,7 +14,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker  =  Faker\Factory::create('fr_FR');
 
-        for ($i = 0; $i <= 2; $i++) {
+        for ($i = 0; $i <= 17; $i++) {
             $actualities = new Article();
             $actualities->setImage($faker->imageUrl())
                 ->setTitle($faker->sentence())
