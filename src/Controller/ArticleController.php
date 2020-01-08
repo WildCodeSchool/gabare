@@ -7,10 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @Route("/article", name="article_")
+ */
+
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/article", name="article_list")
+     * @Route("/", name="list")
      * @return Response
      */
     public function list(): Response
@@ -22,21 +26,25 @@ class ArticleController extends AbstractController
                 ['date' => 'DESC'],
                 20
             );
-
         return $this->render('article/list.html.twig', [
             'actualities' => $actualities,
         ]);
     }
 
     /**
-     * @Route("/show/{slug<^[a-z0-9-]+$>}", defaults={"slug" = null}, name="article_show")
-     * @param Article $article
+     * @Route("/show/{id}", name="show", methods={"GET"})
+     * @param int $id
      * @return Response
      */
-    public function show(Article $article): Response
+    public function show(int $id): Response
     {
+        $actualities = $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->find($id);
+
         return $this->render('article/show.html.twig', [
-            'article' => $article,
+            'actualities' => $actualities,
+            'id' => $id,
         ]);
     }
 }

@@ -4,16 +4,16 @@
     <div class="container-fluid">
         <div class="row flex-wrap m-0 justify-content-around">
             {% for actuality in actualities %}
-                    <div class="card m-0 mb-5 m-md-5 box col-11 col-md-3" >
-                        <img class="card-img-top image-size-article" src="{{ actuality.image }}" alt="Card image cap">
-                        <h5 class="theme position-absolute fixed-top mt-2 pl-2 pr-2 p-1">{{ actuality.theme.name }}</h5>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">{{ actuality.title }}</h5>
-                            <p class="card-text">{{ actuality.date | date("d/m/Y") }}</p>
-                            <p class="card-text overflow-ellipsis">{{ actuality.description|truncate(80, true)|raw }}</p>
-                            <a href="" class="btn btn-primary">Consulter</a>
-                        </div>
+                <div class="card m-0 mb-5 m-md-5 box col-11 col-md-3">
+                    <img class="card-img-top image-size-article" src="{{ actuality.image }}" alt="Card image cap">
+                    <h5 class="theme position-absolute fixed-top mt-2 pl-2 pr-2 p-1">{{ actuality.theme.name }}</h5>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ actuality.title }}</h5>
+                        <p class="card-text">{{ actuality.date | date("d/m/Y") }}</p>
+                        <p class="card-text overflow-ellipsis">{{ actuality.description|truncate(80, true)|raw }}</p>
+                        <a href="{{ path('article_show', {'id' : actuality.id}) }}" class="btn btn-primary">Consulter</a>
                     </div>
+                </div>
             {% endfor %}
         </div>
         <div class="text-center">
