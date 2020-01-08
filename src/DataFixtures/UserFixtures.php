@@ -25,7 +25,7 @@ class UserFixtures extends Fixture
             'the_new_password'
         ));
 
-        // Création d’un utilisateur de type “SuperAdministrateur”
+
         $admin = new User();
         $admin->setEmail('admin@monsite.com');
         $admin->setRoles(['ROLE_SUPER_ADMIN']);
@@ -36,7 +36,7 @@ class UserFixtures extends Fixture
 
         $manager->persist($admin);
 
-        // Création d’un utilisateur de type “administrateurHome”
+
         $adminHome = new User();
         $adminHome->setEmail('admin@home.com');
         $adminHome->setRoles(['ROLE_ADMIN_HOME']);
@@ -47,7 +47,7 @@ class UserFixtures extends Fixture
 
         $manager->persist($adminHome);
 
-        // Création d’un utilisateur de type “administrateurWho”
+
         $adminWho = new User();
         $adminWho->setEmail('admin@who.com');
         $adminWho->setRoles(['ROLE_ADMIN_WHO']);
@@ -59,7 +59,7 @@ class UserFixtures extends Fixture
         $manager->persist($adminWho);
 
 
-        // Création d’un utilisateur de type “administrateurGabareLife”
+
         $adminGabareLife = new User();
         $adminGabareLife->setEmail('admin@gabarelife.com');
         $adminGabareLife->setRoles(['ROLE_ADMIN_GABARE_LIFE']);
@@ -71,7 +71,7 @@ class UserFixtures extends Fixture
         $manager->persist($adminGabareLife);
 
 
-        // Création d’un utilisateur de type “administrateurJoinUs”
+
         $adminJoinUs = new User();
         $adminJoinUs->setEmail('admin@joinus.com');
         $adminJoinUs->setRoles(['ROLE_ADMIN_JOIN_US']);
@@ -83,7 +83,7 @@ class UserFixtures extends Fixture
         $manager->persist($adminJoinUs);
 
 
-        // Sauvegarde des  nouveaux utilisateurs :
+
         $manager->flush();
     }
 }

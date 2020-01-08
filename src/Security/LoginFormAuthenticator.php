@@ -75,7 +75,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
 
         if (!$user) {
-            // fail authentication with a custom error
             throw new CustomUserMessageAuthenticationException('Email could not be found.');
         }
 
@@ -99,7 +98,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             return new RedirectResponse($this->getTargetPath($request->getSession(), $providerKey));
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+
         return new RedirectResponse($this->urlGenerator->generate('article_index'));
     }
 
