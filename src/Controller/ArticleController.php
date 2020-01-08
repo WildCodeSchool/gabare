@@ -32,15 +32,28 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id}", name="show", methods={"GET"})
-     * @param int $id
+     * @Route("/show/{slug}",
+     *     requirements={"slug"="[a-z0-9\-]+"},
+     *     defaults={"slug"="Aucun article trouvé."},
+     *     methods={"GET"},
+     *     name="show")
+     * @param string $slug
+     * @param $id
      * @return Response
      */
-    public function show(int $id): Response
+    public function show(string $slug, int $id): Response
     {
+        $slug = preg_replace(
+            '/-/',
+            ' ',
+            ucwords(trim(strip_tags($slug)), "-")
+        );
+
         $actualities = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->find($id);
+            ->findBy(
+                ['article.id' => mb_strtolower($slug)]
+            );
 
         return $this->render('article/show.html.twig', [
             'actualities' => $actualities,

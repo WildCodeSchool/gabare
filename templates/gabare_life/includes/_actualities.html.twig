@@ -11,7 +11,7 @@
                         <h5 class="card-title">{{ actuality.title }}</h5>
                         <p class="card-text">{{ actuality.date | date("d/m/Y") }}</p>
                         <p class="card-text overflow-ellipsis">{{ actuality.description|truncate(80, true)|raw }}</p>
-                        <a href="{{ path('article_show', {'id' : actuality.id}) }}" class="btn btn-primary">Consulter</a>
+                        <a href="{{ path('article_show', {'slug' : actuality.slug}) }}" class="btn btn-primary">Consulter</a>
                     </div>
                 </div>
             {% endfor %}
