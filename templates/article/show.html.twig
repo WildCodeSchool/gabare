@@ -3,16 +3,24 @@
 
 {% block body %}
 
-    <section class="container-fluid">
+    <div class="container-fluid container-title container-article mt-lg-5">
         <div class="row no-gutters">
             <div class="col-lg-12 col-xs-1">
-                {% for actuality in actualities %}
-                    <h1 class="text-center text-uppercase m-4">{{ actuality.title }}</h1>
-
-
-                {% endfor %}
+                <h1 class="title"> {{ article.title }}</h1>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <p class="card-text date">
+            {{ article.date | date("d/m/Y") }}
+        </p>
+        <div class="card mb-3 border-none">
+            <img src="https://via.placeholder.com/640x200" class="card-img-top" alt="article image">
+            <div class="card-body">
+                <p class="card-text">{{ article.description|raw }}</p>
+            </div>
+        </div>
+    </div>
 
 
         <div class="text-center">
