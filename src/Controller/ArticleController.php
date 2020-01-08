@@ -19,7 +19,7 @@ class ArticleController extends AbstractController
      */
     public function list(): Response
     {
-        $actualities = $this->getDoctrine()
+        $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(
                 [],
@@ -27,7 +27,7 @@ class ArticleController extends AbstractController
                 20
             );
         return $this->render('article/list.html.twig', [
-            'actualities' => $actualities,
+            'articles' => $articles,
         ]);
     }
 
@@ -49,14 +49,14 @@ class ArticleController extends AbstractController
             ucwords(trim(strip_tags($slug)), "-")
         );
 
-        $actualities = $this->getDoctrine()
+        $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(
                 ['article.id' => mb_strtolower($slug)]
             );
 
         return $this->render('article/show.html.twig', [
-            'actualities' => $actualities,
+            'articles' => $articles,
             'id' => $id,
         ]);
     }

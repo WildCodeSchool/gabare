@@ -15,14 +15,14 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
         $faker  =  Faker\Factory::create('fr_FR');
 
         for ($i = 0; $i <= 17; $i++) {
-            $actualities = new Article();
-            $actualities->setImage($faker->imageUrl())
+            $articles = new Article();
+            $articles->setImage($faker->imageUrl())
                 ->setTitle($faker->sentence())
                 ->setDescription($faker->text(400))
                 ->setDate($faker->DateTime());
-            $actualities->setTheme($this->getReference('themes_'.random_int(0, count(ThemeFixtures::THEMES)-1)));
-            $manager->persist($actualities);
-            //$this->addReference('actualities' . $i, $actualities);
+            $articles->setTheme($this->getReference('themes_'.random_int(0, count(ThemeFixtures::THEMES)-1)));
+            $manager->persist($articles);
+            //$this->addReference('articles' . $i, $articles);
         }
         $manager->flush();
     }
