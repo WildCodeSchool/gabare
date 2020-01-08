@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Product;
 use App\Service\ConnectOdooService;
 
 class ProductRepository
@@ -20,14 +21,19 @@ class ProductRepository
     {
         $client = $this->connectOdooService->connectApi();
 
-        $ids = $client->search('res.partner', [['customer', '=', true]], 0, 10);
+        $ids = $client->search('product.template', [['sale_ok', '=', true]], 0, 10);
 
-        $fields = ['name'];
+        $fields = ['name', 'base_price'];
 
-        $products = $client->read('res.partner', $ids, $fields);
+        $products = $client->read('product.template', $ids, $fields);
 
-        // hydrate des objets products
-
-        return $products;
+        $articles = [];
+        foreach ($products as $product) {
+            $article = new Product();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $articles[] = $article;
+        }
+        return $articles;
     }
 }

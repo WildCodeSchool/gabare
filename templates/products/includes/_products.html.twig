@@ -9,12 +9,11 @@
     <div class="container-fluid">
         <div class="">
             <h2 class="text-center">Nos produits</h2>
-
-            {% for customer in customers %}
+            {% for product in products %}
                 <ul>
                     <li>
-                        {{ customer.name }}
-
+                        {{ product.name }}
+                        {{ product.price }}
                     </li>
                 </ul>
             {% endfor %}

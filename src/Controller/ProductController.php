@@ -18,10 +18,11 @@ class ProductController extends AbstractController
 
     public function index(ConnectOdooService $connectOdooService, ProductRepository $productRepository): Response
     {
+        $products = $productRepository->findAll();
 
-        $products = $this->$productRepository->findall();
         return $this->render('products/index.html.twig', [
-            'customers' => $products
+            'products' => $products,
+
         ]);
     }
 }
