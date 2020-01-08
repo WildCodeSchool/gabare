@@ -21,6 +21,11 @@ class Theme
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="string", length=7)
+     */
+    private $color;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,18 @@ class Theme
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): self
+    {
+        $this->color = $color;
 
         return $this;
     }
