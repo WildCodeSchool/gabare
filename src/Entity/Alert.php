@@ -28,7 +28,6 @@ class Alert
 
     /**
      * @ORM\Column(type="boolean")
-     * @Assert\NotBlank()
      */
     private $activated;
 

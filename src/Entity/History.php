@@ -19,6 +19,9 @@ class History
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *     max = 255,
+     *     maxMessage = "Le titre ne doit pas excéder {{ limit }} caractères")
      * @Assert\NotBlank
      */
     private $title;

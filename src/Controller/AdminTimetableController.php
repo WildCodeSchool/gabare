@@ -39,22 +39,17 @@ class AdminTimetableController extends AbstractController
             $entityManager->persist($timetable);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre réunion d\'information a été ajoutée'
+            );
+
             return $this->redirectToRoute('timetable_index');
         }
 
         return $this->render('admin_timetable/new.html.twig', [
             'admin_timetable' => $timetable,
             'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="timetable_show", methods={"GET"})
-     */
-    public function show(Timetable $timetable): Response
-    {
-        return $this->render('admin_timetable/show.html.twig', [
-            'admin_timetable' => $timetable,
         ]);
     }
 
@@ -69,11 +64,16 @@ class AdminTimetableController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre réunion d\'information a été modifiée'
+            );
+
             return $this->redirectToRoute('timetable_index');
         }
 
         return $this->render('admin_timetable/edit.html.twig', [
-            'admin_timetable' => $timetable,
+            'timetable' => $timetable,
             'form' => $form->createView(),
         ]);
     }
