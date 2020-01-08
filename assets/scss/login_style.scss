@@ -22,14 +22,14 @@
     text-transform: uppercase;
     transition: transform 80ms ease-in;
 
-  &:active {
-    transform: scale(0.95);
-  }
+    &:active {
+        transform: scale(0.95);
+    }
 
-  &.ghost {
-    background-color: transparent;
-    border-color: $light-color;
-  }
+    &.ghost {
+        background-color: transparent;
+        border-color: $light-color;
+    }
 }
 
 .membreText {
