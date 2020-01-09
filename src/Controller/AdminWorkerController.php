@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/worker")
+ * @Route("/admin/associé")
  */
 class AdminWorkerController extends AbstractController
 {
@@ -59,7 +59,7 @@ class AdminWorkerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="worker_edit", methods={"GET","POST"})
+     * @Route("/{id}/éditer", name="worker_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Worker $worker): Response
     {
@@ -68,6 +68,11 @@ class AdminWorkerController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre associé a été mis à jour'
+            );
 
             return $this->redirectToRoute('worker_index');
         }
