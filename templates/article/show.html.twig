@@ -3,29 +3,42 @@
 
 {% block body %}
 
-    <div class="container-fluid container-title container-article mt-lg-5">
+    <div class="container-fluid container-title container-article article_show">
         <div class="row no-gutters">
             <div class="col-lg-12 col-xs-1">
-                <h1 class="title"> {{ article.title }}</h1>
+                <h1 class="title text-center"> {{ article.title }}</h1>
             </div>
         </div>
     </div>
+
+    <hr class="delimite_line_title">
+
     <div class="container">
-        <p class="card-text date">
-            {{ article.date | date("d/m/Y") }}
-        </p>
+        <p class="card-text date_show_article">{{ article.date | date("d/m/Y") }}</p>
         <div class="card mb-3 border-none">
-            <img src="https://via.placeholder.com/640x200" class="card-img-top" alt="article image">
+            <img src="https://via.placeholder.com/480x160" class="card-img-top" alt="Image de l'article">
             <div class="card-body">
-                <p class="card-text">{{ article.description|raw }}</p>
+                <p class="card-text text_article_show">{{ article.description|truncate(500, true)|raw }}</p>
+                <p class="card-text text_article_show">{{ article.description|slice(100)|raw }}</p>
+                <p class="card-text text_article_show">{{ article.description|truncate(500, true)|raw }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container button_show">
+        <div class="row button_style">
+            <div class="col-xs-5 mr-2 text-right">
+                <a href="{{ path('article_list') }}" class="btn btn-info btn-lg actu">Liste des articles</a>
+            </div>
+            <div class="col-xs-5 mr-2 text-right">
+                <a href="{{ path('gabare_life') }}" class="btn btn-info btn-lg actu">Vie de la Gabare</a>
             </div>
         </div>
     </div>
 
 
-        <div class="text-center">
-            <a href="{{ path('article_list') }}" class="btn btn-info btn-lg actu">Retour</a>
-        </div>
+
+
     </section>
 
 {% endblock %}

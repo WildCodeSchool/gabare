@@ -15,6 +15,7 @@
 @import 'history';
 @import "profile_card";
 @import "alert_style";
+@import "article";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
