@@ -13,18 +13,22 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends AbstractController
 {
+
+    const ARTICLES = 9;
+
     /**
      * @Route("/", name="list")
      * @return Response
      */
     public function list(): Response
     {
+        $articles = 0;
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(
                 [],
                 ['date' => 'DESC'],
-                20
+                self::ARTICLES
             );
         return $this->render('article/list.html.twig', [
             'articles' => $articles,
