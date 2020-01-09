@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Alert;
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\CarouselRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,11 +20,11 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      * @param Request $request
      * @param MailerInterface $mailer
+     * @param CarouselRepository $carouselRepository
      * @return Response
      * @throws TransportExceptionInterface
      */
-
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer, CarouselRepository $carouselRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -48,7 +49,8 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
-            'alert'=> $alert,
+            'carousels' => $carouselRepository->findAll(),
+            'alert' => $alert,
         ]);
     }
 }

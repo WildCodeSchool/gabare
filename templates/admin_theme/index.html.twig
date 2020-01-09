@@ -1,0 +1,42 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Liste des thèmes{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5">
+        <h1>Theme index</h1>
+
+        <a href="{{ path('theme_new') }}" class="btn btn-primary add mb-4">Ajouter<i
+                    class="fas fa-plus ml-2"></i></a>
+
+        <table class="table table-striped">
+            <thead class="thBackground">
+            <tr>
+                <th>Nom</th>
+                <th>Couleur</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for theme in themes %}
+                <tr>
+                    <td>{{ theme.name }}</td>
+                    <td><div class="color_picker" style="background-color: {{ theme.color }}">{{ theme.color }}</div></td>
+                    <td class="d-flex pt-3">
+                        <a href="{{ path('theme_show', {'id': theme.id}) }}" class="btn btn-secondary mr-4">Aperçu<i
+                                    class="fas fa-file-alt ml-1"></i></a>
+                        <a href="{{ path('theme_edit', {'id': theme.id}) }}" class="btn btn-success mr-4">Éditer<i
+                                    class="fas fa-pen ml-1"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucun thème trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+{% endblock %}
