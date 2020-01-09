@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/admin/theme")
  */
-class ThemeController extends AbstractController
+class AdminThemeController extends AbstractController
 {
     /**
      * @Route("/", name="theme_index", methods={"GET"})
@@ -47,7 +47,7 @@ class ThemeController extends AbstractController
             return $this->redirectToRoute('theme_index');
         }
 
-        return $this->render('theme/new.html.twig', [
+        return $this->render('admin_theme/new.html.twig', [
             'theme' => $theme,
             'form' => $form->createView(),
         ]);
