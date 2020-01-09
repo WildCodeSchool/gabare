@@ -35,17 +35,6 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-
-                "Artistic-1.0"
-            ],
-            "description": "String transliterator",
-            "keywords": [
-                "i18n",
-                "slug",
-                "transliterator"
-            ],
-            "time": "2017-04-04T11:38:05+00:00"
-
                 "MIT"
             ],
             "authors": [
@@ -61,7 +50,7 @@
                 "xmlrpc"
             ],
             "time": "2019-01-02T06:13:30+00:00"
->>>>>>> 24e594f19d0cdb6eaadbd305f5d899aa09f1bbd4
+
         },
         {
             "name": "doctrine/annotations",
