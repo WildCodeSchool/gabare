@@ -6,6 +6,8 @@
 /public/bundles/
 /var/
 /vendor/
+/.env
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -37,3 +39,5 @@ yarn-error.log
 /Migrations/
 
 /src/Migrations/*
+
+/.DS_Store/

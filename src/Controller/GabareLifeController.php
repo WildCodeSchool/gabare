@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Presse;
 use App\Entity\Article;
 use App\Entity\Theme;
-use App\Entity\Report;
 use App\Entity\Animation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,13 +20,6 @@ class GabareLifeController extends AbstractController
             ->getRepository(Presse::class)
             ->findAll();
 
-        $reports = $this->getDoctrine()
-            ->getRepository(Report::class)
-                ->findBy(
-                    [],
-                    ['meetingDate' => 'DESC'],
-                    6
-                );
 
         $actualities = $this->getDoctrine()
             ->getRepository(Article::class)
@@ -46,7 +38,6 @@ class GabareLifeController extends AbstractController
             ->findAll();
 
         return $this->render('gabare_life/index.html.twig', [
-            'reports'=>$reports,
             'presse' => $presse,
             'actualities' => $actualities,
             'themes' => $themes,
