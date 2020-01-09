@@ -1,24 +1,24 @@
 <?php
 
-
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraint as Assert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Contact
 {
-
     /**
      * @var string|null
-     * @Assert\NotBlank()
-     * @Assert\Length(max=100)
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
+     * @Assert\Length(
+     *     max=100
+     *)
      */
 
     private $name;
 
     /**
      * @var string|null
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      * @Assert\Email()
      */
 
@@ -26,14 +26,14 @@ class Contact
 
     /**
      * @var string|null
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
 
     private $subject;
 
     /**
      * @var string|null
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Veuillez remplir ce champ")
      */
 
     private $message;

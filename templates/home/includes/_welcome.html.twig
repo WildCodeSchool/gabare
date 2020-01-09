@@ -1,8 +1,13 @@
 <section class="welcome">
     <div class="position-relative">
-        <img src="{{ asset('build/images/grocery-store-2119702_1920.jpg') }}" class="photoStripe mb-0 mt-5" alt="étalage">
+        {% if alert.activated == true %}
+            <div class="message-alert alert alert-danger text-center m-0" role="alert">
+                {{alert.message }}
+            </div>
+        {% endif %}
+        <img src="{{ asset('build/images/grocery-store-2119702_1920.jpg') }}" class="photoStripe mb-0 " alt="étalage">
         <div class="titleContainer position-absolute w-100 d-flex flex-column justify-content-around h-50 px-3">
-            <h1 class="titlePhoto w-100 text-center">Bienvenue à bord de<br>La Gabare</h1>
+            <h1 class="titlePhoto w-100 text-center ">Bienvenue à bord de<br>La Gabare</h1>
             <p class="paraPhoto w-100 text-center">Votre supermarché coopératif à Olivet<br>Ouvert du mardi au samedi de 9h à 20h sans
                 interruption</p>
         </div>

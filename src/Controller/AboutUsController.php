@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Partner;
+use App\Entity\History;
 use App\Entity\Worker;
 use App\Repository\WorkerRepository;
 use App\Repository\PartnerRepository;
@@ -20,12 +21,17 @@ class AboutUsController extends AbstractController
     {
         $partners = $partnerRepository->findAll();
 
+        $history = $this->getDoctrine()
+            ->getRepository(History::class)
+            ->findAll();
+
         return $this->render('about_us/index.html.twig', [
             'pioneers' => $workerRepository->findAllPioneers(),
             'employees' => $workerRepository->findAllEmployees(),
             'CAMembers' => $workerRepository->findAllCAMembers(),
             'CAFriends' => $workerRepository->findAllCAFriends(),
             'partners' => $partners,
+            'history' => $history,
         ]);
     }
 }

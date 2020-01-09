@@ -1,0 +1,23 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Ajouter un associé{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <h1>Ajouter un nouvel associé</h1>
+    <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
+        {{ form_start(form) }}
+        {{ form_row(form.activity) }}
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.function) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.portrait) }}
+        <button class="btn btn-primary mt-2">Ajouter</button>
+        {{ form_end(form) }}
+        <div class="mt-4">
+    <a href="{{ path('worker_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

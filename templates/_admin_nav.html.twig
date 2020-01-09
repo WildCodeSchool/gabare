@@ -31,7 +31,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body bkm rounded-0 border-0">
                     <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Alerte</a></li>
+                        <li class="bulletNav"><a href="{{ path('alert_edit') }}" class="linkAdmin">Alerte</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Bandeau d'image</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Carroussel</a></li>
                     </ul>
@@ -54,8 +54,7 @@
                     <ul class="listNav pl-3">
                         <li class="bulletNav"><a href="#" class="linkAdmin">Histoire</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Valeurs en chiffres</a></li>
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Partenaires</a></li>
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Personnes</a></li>
+                        <li class="bulletNav"><a href="{{ path('worker_index') }}" class="linkAdmin">Associés</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Fonctions</a></li>
                     </ul>
                 </div>
@@ -77,8 +76,7 @@
                     <ul class="listNav pl-3">
                         <li class="bulletNav"><a href="{{ path('animation_index') }} " class="linkAdmin">Animations</a></li>
                         <li class="bulletNav"><a href="{{ path('article_index') }}" class="linkAdmin">Articles</a></li>
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Thèmes des articles</a></li>
-                        <li class="bulletNav"><a href="{{ path('report_index') }}" class="linkAdmin">Comptes-rendus</a></li>
+                        <li class="bulletNav"><a href="{{ path('theme_index') }}" class="linkAdmin">Thèmes des articles</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Presse</a></li>
                     </ul>
                 </div>
@@ -98,7 +96,7 @@
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                 <div class="card-body bkm rounded-0 border-0">
                     <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Agenda</a></li>
+                        <li class="bulletNav"><a href="{{ path('timetable_index') }}" class="linkAdmin">Agenda</a></li>
                     </ul>
                 </div>
             </div>
