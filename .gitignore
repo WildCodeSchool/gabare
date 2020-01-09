@@ -39,3 +39,5 @@ yarn-error.log
 /Migrations/
 
 /src/Migrations/*
+
+/.DS_Store/

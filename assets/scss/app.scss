@@ -15,6 +15,7 @@
 @import 'history';
 @import "profile_card";
 @import "login_style";
+@import "carousel";
 @import "alert_style";
 
 @mixin headings($from: 1, $to: 6){
@@ -139,12 +140,3 @@ p {
     padding-top: 90px;
 }
 
-.alert-success.flash{
-    background-color:#d4edda;
-    position:fixed;
-    top: 82px;
-    left: 0;
-    width: 100%;
-    z-index:10;
-    border-radius:0;
-}

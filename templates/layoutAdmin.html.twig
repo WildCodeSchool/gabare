@@ -6,6 +6,7 @@
             {% block header %}{% include '_admin_nav.html.twig' %}{% endblock %}
         </header>
         <main class="col-lg-10 no-gutters">
+            {% include '_flash_message.html.twig' %}
             {% block body %}{% endblock %}
         </main>
     </div>
