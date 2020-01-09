@@ -16,6 +16,7 @@
 @import "profile_card";
 @import "carousel";
 @import "alert_style";
+@import "values.style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{

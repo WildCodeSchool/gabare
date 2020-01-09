@@ -1,0 +1,51 @@
+.value{
+  padding:60px;
+  background: $primary-color;
+  color:white;
+}
+
+.titleValue, .titleCardValue{
+  color:white;
+}
+
+.boxValue{
+  background: $secondary-color;
+  border-color: $primary-color;
+  border-radius: 10px;
+  margin: 0 15px;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  height: 100%;
+}
+
+.boxValue:hover {
+  background: #F7A600;
+  border-color: #003b7a;
+}
+
+.iconValue{
+  font-size: 48px;
+  padding-top: 15px;
+  color: #fff;
+}
+
+.titleCardValue{
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.textCardValue{
+  font-size: 15px;
+}
+
+.counters{
+  padding-top: 40px;
+}
+
+.counter-up{
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+}
