@@ -14,7 +14,7 @@
 
         .title_carousel {
             background-color: $photo-hue;
-            margin: auto;
+            margin: 20px auto;
             padding: 10px 20px 5px 20px;
 
             h4 {
@@ -30,13 +30,11 @@
             object-fit: cover;
         }
 
-        button {
+        a {
             background-color: $third-color;
-            border: none;
             border-radius: 2px;
             color: $light-color;
             padding: 5px 10px;
-            margin: 15px 0;
         }
     }
 }
