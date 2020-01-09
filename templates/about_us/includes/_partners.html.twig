@@ -3,50 +3,12 @@
     <h3 class="text-center m-5">Ils nous inspirent ou nous soutiennent</h3>
     <div class="container">
         <div class="row no-gutters m-2">
+            {% for partner in partners %}
             <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-1.jpg') }}"
-                     alt="">
+                <img class="img-fluid img-partner" src="{{ partner.image }}"
+                     alt={{ partner.name }}>
             </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-2.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-3.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-4.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-5.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-7.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-8.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-10.jpg') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-11.png') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-12.png') }}"
-                     alt="">
-            </div>
-            <div class="logo-partner text-center col-lg-3 col-md-4 col-xs-6">
-                <img class="img-fluid img-partner" src="{{ asset('build/images/partenaires/partenaire-13.png') }}"
-                     alt="">
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
