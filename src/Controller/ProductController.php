@@ -25,7 +25,7 @@ class ProductController extends AbstractController
         $form = $this->createForm(SearchProductType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $products = $productRepository->findByName($data['search']);
         }
