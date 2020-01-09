@@ -17,7 +17,6 @@ class AboutUsController extends AbstractController
      */
     public function index(WorkerRepository $workerRepository): Response
     {
-
         $history = $this->getDoctrine()
             ->getRepository(History::class)
             ->findAll();
