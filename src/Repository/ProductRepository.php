@@ -21,7 +21,28 @@ class ProductRepository
     {
         $client = $this->connectOdooService->connectApi();
 
-        $ids = $client->search('product.template', [['sale_ok', '=', true]], 0, 10);
+        $ids = $client->search('product.template', [['sale_ok', '=', true]], 0, 12);
+
+        $fields = ['name', 'base_price'];
+
+
+        $products = $client->read('product.template', $ids, $fields);
+
+        $articles = [];
+        foreach ($products as $product) {
+            $article = new Product();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $articles[] = $article;
+        }
+        return $articles;
+    }
+
+    public function findByName($name)
+    {
+        $client = $this->connectOdooService->connectApi();
+
+        $ids = $client->search('product.template', [['name','=ilike', '%'.$name.'%']], 0, 50);
 
         $fields = ['name', 'base_price'];
 
