@@ -1,10 +1,26 @@
 @import "admin_presse";
+@import "admin_menu";
+@import "vars";
 
 .thBackground {
-    background-color:$primary-color;
-    color:$light-color;
+    background-color: $primary-color;
+    color: $light-color;
 }
 
 .table td {
     padding-top: 23px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.img-crud {
+    width: 400px;
+}
+
+.color_picker {
+    width: fit-content;
+    width: -moz-fit-content;
+    padding: 5px 10px;
 }

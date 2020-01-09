@@ -61,4 +61,27 @@ class WorkerRepository extends ServiceEntityRepository
 
         return $qb->execute();
     }
+
+    public function findAllCAFriends()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->innerJoin('w.activity', 'a')
+            ->addSelect('a')
+            ->where('a.name = :name')
+            ->setParameter('name', self::ACTIVITY[2])
+            ->getQuery();
+
+        return $qb->execute();
+    }
+
+    public function findByActivitiesOrder()
+    {
+        $qb = $this->createQueryBuilder('w')
+            ->innerJoin('w.activity', 'a')
+            ->addSelect('a')
+            ->add('orderBy', ['a.name ASC, w.lastName ASC'])
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }

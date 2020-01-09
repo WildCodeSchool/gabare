@@ -6,15 +6,16 @@
 @import "presse_style";
 @import "footer_style";
 @import "actualities_style";
-@import "report_style";
 @import "phone_style";
 @import "gabare_brief_style";
 @import "form";
 @import "timetable";
 @import "bus_style";
 @import "joinforms_style";
+@import 'history';
 @import "profile_card";
-
+@import "carousel";
+@import "alert_style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
@@ -137,3 +138,4 @@ p {
     margin-top: -90px;
     padding-top: 90px;
 }
+
