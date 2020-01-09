@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -19,6 +20,12 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="L'adresse mail est obligatoire")
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage="Votre adresse mail ne doit être au plus {{limit}} caractères de long"
+     * )
+     * @Assert\Email(message = "Format d'adresse invalide"
      */
     private $email;
 
