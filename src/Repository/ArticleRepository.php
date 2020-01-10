@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use App\Controller\ArticleController;
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -18,24 +17,5 @@ class ArticleRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Article::class);
-    }
-
-    /**
-     * @param int $page
-     * @return array
-     */
-
-    public function findAllPagesAndSort($page = null)
-    {
-        $qb = $this->createQueryBuilder('a')
-            ->where('CURRENT_DATE() >= a.date')
-            ->orderBy('a.date', 'DESC');
-
-        if ($page !== null) {
-            $firstResult = ($page - 1) * ArticleController::ARTICLES;
-            $qb->setFirstResult($firstResult)->setMaxResults(ArticleController::ARTICLES);
-        }
-
-        return $qb->getQuery()->getResult();
     }
 }
