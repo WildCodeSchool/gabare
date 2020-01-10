@@ -18,6 +18,7 @@
 @import "carousel";
 @import "alert_style";
 @import "values.style";
+@import "article";
 @import "partners_style";
 
 @mixin headings($from: 1, $to: 6){
@@ -142,3 +143,6 @@ p {
     padding-top: 90px;
 }
 
+.list_article{
+    margin-top:100px;
+}
