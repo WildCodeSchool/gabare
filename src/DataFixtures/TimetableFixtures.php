@@ -9,11 +9,9 @@ use Faker;
 
 class TimetableFixtures extends Fixture
 {
-
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
-
         for ($i = 0; $i < 20; $i++) {
             $timetable = new Timetable();
             $timetable->setVisitDate($faker->dateTimeBetween('-7 days', '+1 month', 'Europe/Paris'));
