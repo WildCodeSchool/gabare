@@ -59,4 +59,17 @@ class ProductRepository
         }
         return $articles;
     }
+
+    public function countAll()
+    {
+        $client = $this->connectOdooService->connectApi();
+
+        $criteria = [
+            ['sale_ok', '=', true],
+        ];
+
+        $products = $client->search_count('product.template', $criteria);
+
+        return $products;
+    }
 }
