@@ -15,6 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class ArticleController extends AbstractController
 {
+
     const ARTICLES = 9;
 
     /**
@@ -23,6 +24,7 @@ class ArticleController extends AbstractController
      */
     public function list(ArticleRepository $articleRepository, int $page): Response
     {
+        $articles = 0;
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(
