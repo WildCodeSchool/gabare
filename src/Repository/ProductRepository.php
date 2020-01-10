@@ -12,6 +12,8 @@ class ProductRepository
      */
     private $connectOdooService;
 
+    const LIMIT = 20;
+
     public function __construct(ConnectOdooService $connectOdooService)
     {
         $this->connectOdooService = $connectOdooService;
@@ -21,7 +23,7 @@ class ProductRepository
     {
         $client = $this->connectOdooService->connectApi();
 
-        $ids = $client->search('product.template', [['sale_ok', '=', true]], 0, 12);
+        $ids = $client->search('product.template', [['sale_ok', '=', true]], 0, self::LIMIT);
 
         $fields = ['name', 'base_price'];
 
@@ -38,11 +40,11 @@ class ProductRepository
         return $articles;
     }
 
-    public function findByName($name)
+    public function findByName($name) :array
     {
         $client = $this->connectOdooService->connectApi();
 
-        $ids = $client->search('product.template', [['name','=ilike', '%'.$name.'%']], 0, 50);
+        $ids = $client->search('product.template', [['name','=ilike', '%'.$name.'%']], 0, self::LIMIT);
 
         $fields = ['name', 'base_price'];
 

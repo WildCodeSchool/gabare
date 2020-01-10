@@ -27,6 +27,7 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
+            $this->redirect('#productSection');
             $products = $productRepository->findByName($data['search']);
         }
 
