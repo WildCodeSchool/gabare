@@ -20,7 +20,6 @@ class ArticleController extends AbstractController
      */
     public function list(): Response
     {
-        $articles = 0;
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(
