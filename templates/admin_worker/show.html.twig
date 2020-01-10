@@ -1,42 +1,38 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Worker{% endblock %}
+{% block title %}{{ worker.firstName }} {{ worker.lastName }}{% endblock %}
 
 {% block body %}
-    <h1>Worker</h1>
-
+<div class="container-fluid p-5">
+    <h1 class="ml-2 mb-4">Aperçu de l'associé</h1>
+    <div class="row ml-2 mb-4">
+        <a href="{{ path('worker_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+        <a href="{{ path('worker_edit', {'id': worker.id}) }}" class="btn btn-success ml-3">Éditer<i class="fas fa-pen ml-1"></i></a>
+        <div class="ml-3">
+            {{ include('admin_worker/_delete_form.html.twig') }}
+        </div>
+    </div>
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ worker.id }}</td>
-            </tr>
-            <tr>
-                <th>FirstName</th>
+                <th>Prénom</th>
                 <td>{{ worker.firstName }}</td>
+                <th>Portrait</th>
+                <td rowspan="4"><img class="img-crud" src="{{ asset('build/images/jam.jpg') }}" alt=""></td>
             </tr>
             <tr>
-                <th>LastName</th>
+                <th>Nom</th>
                 <td>{{ worker.lastName }}</td>
             </tr>
             <tr>
-                <th>Function</th>
+                <th>Fonction</th>
                 <td>{{ worker.function }}</td>
             </tr>
             <tr>
                 <th>Email</th>
                 <td>{{ worker.email }}</td>
             </tr>
-            <tr>
-                <th>Portrait</th>
-                <td>{{ worker.portrait }}</td>
-            </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('worker_index') }}">back to list</a>
-
-    <a href="{{ path('worker_edit', {'id': worker.id}) }}">edit</a>
-
-    {{ include('admin_worker/_delete_form.html.twig') }}
+</div>
 {% endblock %}
