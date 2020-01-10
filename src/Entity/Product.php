@@ -10,6 +10,60 @@ class Product
 
     private $price;
 
+    private $category;
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category): void
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+    /**
+     * @param mixed $brand
+     */
+    public function setBrand($brand): void
+    {
+        $this->brand = $brand;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProducer()
+    {
+        return $this->producer;
+    }
+
+    /**
+     * @param mixed $producer
+     */
+    public function setProducer($producer): void
+    {
+        $this->producer = $producer;
+    }
+
+    private $brand;
+
+    private $producer;
+
     /**
      * @return mixed
      */
