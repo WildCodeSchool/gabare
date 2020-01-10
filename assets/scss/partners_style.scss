@@ -1,0 +1,16 @@
+.bgPartner {
+    background-image:$texture-background;
+}
+
+.logo-partner {
+    border-right: 1px solid $borderLinePartner;
+    border-bottom: 1px solid $borderLinePartner;
+    background: $light-color;
+    height: 160px;
+}
+
+.img-partner {
+    height: 100%;
+    width: 75%;
+    object-fit: contain;
+}
