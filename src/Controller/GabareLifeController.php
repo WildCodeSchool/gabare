@@ -21,7 +21,7 @@ class GabareLifeController extends AbstractController
             ->findAll();
 
 
-        $actualities = $this->getDoctrine()
+        $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(
                 [],
@@ -39,7 +39,7 @@ class GabareLifeController extends AbstractController
 
         return $this->render('gabare_life/index.html.twig', [
             'presse' => $presse,
-            'actualities' => $actualities,
+            'articles' => $articles,
             'themes' => $themes,
             'animations' => $animations,
         ]);
