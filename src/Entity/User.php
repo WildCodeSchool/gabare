@@ -25,7 +25,7 @@ class User implements UserInterface
      *     max=255,
      *     maxMessage="Votre adresse mail ne doit être au plus {{limit}} caractères de long"
      * )
-     * @Assert\Email(message = "Format d'adresse invalide"
+     * @Assert\Email(message = "Format d'adresse invalide")
      */
     private $email;
 
