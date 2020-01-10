@@ -15,21 +15,29 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Prénom</th>
+                <th class="worker-show">Prénom</th>
                 <td>{{ worker.firstName }}</td>
-                <th>Portrait</th>
-                <td rowspan="4"><img class="img-crud" src="{{ asset('build/images/jam.jpg') }}" alt=""></td>
+                <th></th>
+                <td rowspan="4">
+                    {% if worker.portrait %}
+                        <img class="img-crud" src="{{ worker.portrait }}"
+                             alt="">
+                    {% else %}
+                        <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
+                             alt="">
+                    {% endif %}
+                </td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th class="worker-show">Nom</th>
                 <td>{{ worker.lastName }}</td>
             </tr>
             <tr>
-                <th>Fonction</th>
+                <th class="worker-show">Fonction</th>
                 <td>{{ worker.function }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th class="worker-show">Email</th>
                 <td>{{ worker.email }}</td>
             </tr>
         </tbody>
