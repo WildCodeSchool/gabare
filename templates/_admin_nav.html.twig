@@ -11,10 +11,13 @@
                 </h5>
             </div>
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
-                    <p><i class="fas fa-user-shield mr-3"></i></p>
-                    <p><i class="fas fa-lock-open mr-3"></i>Se déconnecter</p>
-                </div>
+                {% if app.user %}
+                    <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
+                        <p><i class="fas fa-user-shield mr-3"> {{ app.user.username }}</i></p>
+                        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                    </div>
+                {% endif %}
+
             </div>
         </div>
 
@@ -74,7 +77,8 @@
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                 <div class="card-body bkm rounded-0 border-0">
                     <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('animation_index') }} " class="linkAdmin">Animations</a></li>
+                        <li class="bulletNav"><a href="{{ path('animation_index') }} " class="linkAdmin">Animations</a>
+                        </li>
                         <li class="bulletNav"><a href="{{ path('article_index') }}" class="linkAdmin">Articles</a></li>
                         <li class="bulletNav"><a href="{{ path('theme_index') }}" class="linkAdmin">Thèmes des articles</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Presse</a></li>
