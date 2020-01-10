@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ArticleController extends AbstractController
 {
+
     const ARTICLES = 9;
     /**
      * @Route("/", name="list")
@@ -19,6 +20,7 @@ class ArticleController extends AbstractController
      */
     public function list(): Response
     {
+        $articles = 0;
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(

@@ -20,3 +20,20 @@ require('@fortawesome/fontawesome-free/css/all.css');
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
 });
+
+// eslint-disable-next-line func-names
+$('.counter-up').each(function () {
+    $(this)
+        .prop('Counter', 0)
+        .animate({
+            Counter: $(this)
+                .text(),
+        }, {
+            duration: 4000,
+            easing: 'swing',
+            step(now) {
+                $(this)
+                    .text(Math.ceil(now));
+            },
+        });
+});
