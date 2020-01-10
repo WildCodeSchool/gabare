@@ -23,7 +23,6 @@ class AboutUsController extends AbstractController
         ProductRepository $productRepository,
         CustomerRepository $customerRepository
     ): Response {
-
         $history = $this->getDoctrine()
             ->getRepository(History::class)
             ->findAll();
