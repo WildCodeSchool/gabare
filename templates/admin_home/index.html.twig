@@ -5,47 +5,59 @@
 {% block body %}
     <div class="container-fluid p-5">
         <h1>Bienvenue sur l'espace administrateur de La Gabare</h1>
-
-        <h2>Manuel d'utilisation</h2>
-
-        <h3 class="manualTitle">Légendes</h3>
-        <div class="card card-body mb-3">
-            <p>Voici les différents boutons à cliquer qui figurent sur les différentes pages de l'espace administrateur.
-            </br>
-            <p><span class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>
-                : ouvre une page qui permet de créer une nouvelle fiche dans la base de données.
-            <p><span class="btn btn-secondary mr-2">Aperçu<i class="fas fa-file-alt ml-1"></i></span>
-                : ouvre une page qui permet juste de voir le détail de la fiche de la ligne cliquée.</p>
-            <p><span class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>
-                : ouvre une page qui permet de modifier le détail de la fiche d'une ligne cliquée, les champs sont pré-remplis.
-            <p><span class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span> : supprime la fiche en question de la base de données.
-                Une fenêtre s'ouvre avec un message de confirmation (cliquer sur annuler ou OK).</p>
-            <p><span class="btn btn-outline-dark mr-2">Retour à la liste</span> : permet de revenir à la liste.</p>
+        <h2 class="secondTitle">Manuel d'utilisation</h2>
+        <h3 class="manualTitle">Légendes
+            <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseLegend" role="button"
+               aria-expanded="false" aria-controls="collapseLegend">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </h3>
+        <div class="collapse show" id="collapseLegend">
+            <div class="card card-body mb-3">
+                <p>Voici les différents boutons à cliquer qui figurent sur les différentes pages de l'espace
+                    administrateur.
+                    </br>
+                <p><span class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>
+                    : ouvre une page qui permet de créer une nouvelle fiche dans la base de données.
+                <p><span class="btn btn-secondary mr-2">Aperçu<i class="fas fa-file-alt ml-1"></i></span>
+                    : ouvre une page qui permet juste de voir le détail de la fiche de la ligne cliquée.</p>
+                <p><span class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>
+                    : ouvre une page qui permet de modifier le détail de la fiche d'une ligne cliquée, les champs sont
+                    pré-remplis.
+                <p><span class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span> : supprime la
+                    fiche en question de la base de données.
+                    Une fenêtre s'ouvre avec un message de confirmation (cliquer sur annuler ou OK).</p>
+                <p><span class="btn btn-outline-dark mr-2">Retour à la liste</span> : permet de revenir à la liste.</p>
+            </div>
         </div>
 
-        <h5>Onglet La Gabare
+        <h3 class="manualTitle">Onglet LA GABARE
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseGabare" role="button"
                aria-expanded="false" aria-controls="collapseGabare">
                 <i class="fas fa-chevron-down"></i>
             </a>
-        </h5>
-        <div class="collapse show" id="collapseGabare">
+        </h3>
+        <div class="collapse" id="collapseGabare">
             <div class="card card-body mb-3">
-                <p>Une fois connecté, l'administrateur voit dans la menu de navigation noir à droite de l'écran, en haut
-                    à droite, son email</p>
-                <p>Cliquer sur se déconnecter, déconnecter l'administrateur de cet espace et le renverra vers la page du
-                    d'accueil
-                    du site utilisateur</p>
-                <p>En cliquant sur LA GABARE, l'administrateur à tout moment peut revenir dans cet onglet</p>
+                <ol>
+                    <li class="manualSubTitle">Manuel d'utilisation</li>
+                    <p>Cliquer sur Manuel d'utilisation permet de revenir ici aux instructions.</p>
+                    <li class="manualSubTitle">Identifiant</li>
+                    <p>Après s'être identifié sur le formulaire de connexion depuis le site internet de La Gabare,
+                        l'administrateur peut voir son email</p>
+                    <li class="manualSubTitle">Se déconnecter</li>
+                    <p>Cliquer sur se déconnecter, déconnecte l'administrateur de cet espace et le renverra vers la page
+                        du d'accueil site internet de La Gabare. Pour des raisons de sécurité, il faut bien se déconnecter une fois les actions requises terminées.</p>
+                </ol>
             </div>
         </div>
 
-        <h5 class="mt-4">Onglet Accueil
+        <h3 class="manualTitle">Onglet Accueil
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseHome" role="button"
                aria-expanded="false" aria-controls="collapseHome">
                 <i class="fas fa-chevron-down"></i>
             </a>
-        </h5>
+        </h3>
         <div class="collapse" id="collapseHome">
             <div class="card card-body mb-3">
                 <ol>
@@ -65,12 +77,12 @@
             </div>
         </div>
 
-        <h5 class="mt-4">Onglet Qui sommes-nous ?
+        <h3 class="manualTitle">Onglet Qui sommes-nous ?
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseWho" role="button"
                aria-expanded="false" aria-controls="collapseWho">
                 <i class="fas fa-chevron-down"></i>
             </a>
-        </h5>
+        </h3>
         <div class="collapse" id="collapseWho">
             <div class="card card-body mb-3">
                 <ol>
@@ -86,22 +98,25 @@
                 </ol>
             </div>
         </div>
-        <h5 class="mt-4">Onglet La Vie de La Gabare
+        <h3 class="manualTitle">Onglet La Vie de La Gabare
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseLife" role="button"
                aria-expanded="false" aria-controls="collapseLife">
                 <i class="fas fa-chevron-down"></i>
-            </a></h5>
+            </a>
+        </h3>
         <div class="collapse" id="collapseLife">
             <div class="card card-body mb-3">
                 <ol>
                     <li>Animations</li>
                     <p>En cliquant sur Animations, l'administrateur arrive sur la page où sont listées toutes les
-                        animations qui peuvent être renvoyées sur la page "La Vie de La Gabare" où les 6 dernières animations créées sont affichées.
+                        animations qui peuvent être renvoyées sur la page "La Vie de La Gabare" où les 6 dernières
+                        animations créées sont affichées.
                         Il s'agit des animations organisées par La Gabare.
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Titre", "Date" et
                         "Actions".</p>
                     <p>En haut sous le titre, se trouve un bouton blanc/vert "Ajouter".
-                        Dans la colonne Actions, il y a un bouton rouge "Aperçu", bouton vert "Editer" et bouton rouge "Supprimer".
+                        Dans la colonne Actions, il y a un bouton rouge "Aperçu", bouton vert "Editer" et bouton rouge
+                        "Supprimer".
                         Cliquer sur un de ces boutons pour effectuer une action</p>
                     <p>Ajouter : remplir tous les champs. Cliquer ensuite sur "Ajouter".</p>
                     <p>Aperçu : permet de voir toutes les informations.</p>
@@ -116,11 +131,14 @@
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Titre", "Date", "Thème" et
                         "Actions".</p>
                     <p>En haut sous le titre, se trouve un bouton blanc/vert "Ajouter".
-                        Dans la colonne Actions, il y a un bouton rouge "Aperçu", bouton vert "Editer" et bouton rouge "Supprimer".
+                        Dans la colonne Actions, il y a un bouton rouge "Aperçu", bouton vert "Editer" et bouton rouge
+                        "Supprimer".
                         Cliquer sur un de ces boutons pour effectuer une action</p>
-                    <p>Ajouter : remplir tous les champs. Dans le champ "Description", il y a une barre avec des icônes qui permettent de styliser le texte.
+                    <p>Ajouter : remplir tous les champs. Dans le champ "Description", il y a une barre avec des icônes
+                        qui permettent de styliser le texte.
                         Au survol de l'icône par la souris, apparait une fenêtre qui indique la fonction.
-                        Si un thème n'est pas dans la liste déroulante, il faut d'abord le créér dans Thème. Puis Ajouter un article.
+                        Si un thème n'est pas dans la liste déroulante, il faut d'abord le créér dans Thème. Puis
+                        Ajouter un article.
                         Cliquer ensuite sur "Ajouter".</p>
                     <p>Aperçu : permet de voir toutes les informations.</p>
                     <p>Editer : permet de changer certaines informations, les champs sont pré-remplis.
@@ -132,11 +150,16 @@
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Nom", "Couleur" et
                         "Actions".</p>
                     <p>En haut sous le titre, se trouve un bouton blanc/vert "Ajouter".
-                        Dans la colonne Actions, il y a un bouton rouge "Aperçu", bouton vert "Editer" et bouton rouge "Supprimer".
+                        Dans la colonne Actions, il y a un bouton rouge "Aperçu", bouton vert "Editer" et bouton rouge
+                        "Supprimer".
                         Cliquer sur un de ces boutons pour effectuer une action</p>
-                    <p>Ajouter : remplir tous les champs. En cliquant dans le champ "Couleur", une fenêtre s'ouvre pour choisir la couleur.
-                        On peut tourner le curseur (trait blanc) de la roue chromatique pour choisir une couleur, par défaut il est mis sur rouge, puis cliquer au milieu du triangle et déplacer le petit rond blanc choisir une nuance de cette couleur.
-                        ou bien remplir les valeurs. Une fois la couleur choisie cliquer sur "Sélectionner", cela ferme cette fenêtre.
+                    <p>Ajouter : remplir tous les champs. En cliquant dans le champ "Couleur", une fenêtre s'ouvre pour
+                        choisir la couleur.
+                        On peut tourner le curseur (trait blanc) de la roue chromatique pour choisir une couleur, par
+                        défaut il est mis sur rouge, puis cliquer au milieu du triangle et déplacer le petit rond blanc
+                        choisir une nuance de cette couleur.
+                        ou bien remplir les valeurs. Une fois la couleur choisie cliquer sur "Sélectionner", cela ferme
+                        cette fenêtre.
                         Cliquer ensuite sur "Ajouter".</p>
                     <p>Aperçu : permet de voir toutes les informations.</p>
                     <p>Editer : permet de changer certaines informations, les champs sont pré-remplis.
@@ -146,37 +169,41 @@
                 </ol>
             </div>
         </div>
-        <h5 class="mt-4">Onglet Nous Rejoindre
+        <h3 class="manualTitle">Onglet Nous Rejoindre
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseJoin" role="button"
                aria-expanded="false" aria-controls="collapseJoin">
                 <i class="fas fa-chevron-down"></i>
-            </a></h5>
+            </a>
+        </h3>
         <div class="collapse" id="collapseJoin">
             <div class="card card-body mb-3">
                 <ol>
                     <li>Agenda</li>
                     <p>En cliquant sur Agenda, l'administrateur arrive sur la page où sont listées toutes les
                         réunions d'information sur la page "Nous Rejoindre". Il s'agit des réunions de découverte.
-                        Par défaut, 12 cartes de réunion sont affichées sur la page "Nous Rejoindre", une fois la date passée,
-                        la carte de la réunion s'enlève automatiquement, les cartes se décalent et la date suivante s'ajoute.
+                        Par défaut, 12 cartes de réunion sont affichées sur la page "Nous Rejoindre", une fois la date
+                        passée,
+                        la carte de la réunion s'enlève automatiquement, les cartes se décalent et la date suivante
+                        s'ajoute.
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Date", "Heure", et
                         "Actions".</p>
                     <p>En haut sous le titre, se trouve un bouton blanc/vert "Ajouter".
                         Dans la colonne Actions, il y a un bouton vert "Editer" et bouton rouge "Supprimer".
                         Cliquer sur un de ces boutons pour effectuer une action</p>
-                    <p>Ajouter : remplir tous les champs, s'il n'y a pas de photo une image est mise par défaut. Cliquer sur "Ajouter".</p>
+                    <p>Ajouter : remplir tous les champs, s'il n'y a pas de photo une image est mise par défaut. Cliquer
+                        sur "Ajouter".</p>
                     <p>Editer : permet de changer certaines informations, les champs sont pré-remplis.
                         Une fois les modifications faites cliquer sur "Mettre à jour".</p>
                     <p>Supprimer : supprime cette fiche de la base de données.</p>
                 </ol>
             </div>
         </div>
-        <h5 class="mt-4">Onglet Super Admin
+        <h3 class="manualTitle">Onglet Super Admin
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseAdmin" role="button"
                aria-expanded="false" aria-controls="collapseAdmin">
                 <i class="fas fa-chevron-down"></i>
             </a>
-        </h5>
+        </h3>
         <div class="collapse" id="collapseAdmin">
             <div class="card card-body mb-3">
                 <ol>
