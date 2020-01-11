@@ -1,0 +1,35 @@
+.bgError {
+    background-image: url("https://images.unsplash.com/photo-1488375634201-b85b28653a79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1573&q=80");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+object-fit: cover;
+
+}
+
+.error-text {
+    color:$light-color;
+    font-family: $photo-font;
+    font-size: calc(50px + 6 * ((100vw - 320px) / 680));
+    text-shadow: 0 0 10px $dark-color;
+}
+
+.error-box {
+    padding-top: 100px;
+
+}
+
+.btn-error {
+    font-family: Lato,sans-serif;
+    text-decoration: none;
+    padding: 1% 2%;
+    color: $light-color;
+    font-size: calc(12px + 6*(100vw - 300px)/1300);
+    font-weight: 500;
+    background-color: $secondary-color;
+    ;
+
+}
+
+
+
