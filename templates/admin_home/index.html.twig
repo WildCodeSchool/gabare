@@ -70,7 +70,9 @@
                     <p>Cocher la case "activé", active le message qui apparait sur le site.</p>
                     <p>Décocher la case "activé", désactive le message qui n'apparait plus sur le site.</p>
                     <p>Cliquer sur le bouton <span class="btn btn-primary add ml-2">Mettre à jour</span></p> permet d'enregister les modifications.</p>
+
                     <li class="manualSubTitle">Carousel <i class="fas fa-chevron-down ml-2"></i></li>
+                    {# ici instructions Carrousel#}
                 </ol>
             </div>
         </div>
@@ -85,14 +87,34 @@
             <div class="card card-body mb-3">
                 <ol>
                     <li class="manualSubTitle">Histoire</li>
+                    {# ici instructions Histoire#}
+
                     <li class="manualSubTitle">Valeurs en chiffres</li>
+                    {# ici instructions Valeurs#}
+
                     <li class="manualSubTitle">Associés</li>
                     <p>En cliquant sur Associés, l'administrateur arrive sur la page où sont listées toutes les
                         personnes affichées sur la page "Qui sommes nous ?" du site internet de La Gabare.
                         Il s'agit des salariés de La Gabare, des membres du Conseil d'Administration,
                         des membres du Conseil des Amis de la Gabare, et des pionniers qui ont aidé à sa fondation.
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Poste", "Prénom", "Nom" et
-                        "Actions". La liste est triée par ordre alphabétique de poste et de nom de famille.</p>
+                        "Actions". La liste est triée par ordre alphabétique de poste et de nom de famille. Dans la colonne
+                        "Actions" se trouvent les boutons "Aperçu", "Editer" et Supprimer".</p>
+                    <p><span class="boldText">Création d'une nouvel associé :</span> Appuyer sur le bouton <span class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
+                        </i></span>en dessous du titre. </br>Dans la page Ajouter un nouvel associé, il faut remplir tous les champs : "Poste" (sélectionner dans la liste déroulante),
+                        "Prénom", "Nom", "Fonction" (non-obligatoire), "Email" (non-obligatoire) et "Portrait" (non obligatoire). Pour "Portrait", sélectionner une photo depuis
+                        un dossier en cliquant sur le bouton "Parcourir. (<span class="boldText">Attention</span> ! Le titre du fichier de la photo n'apparait pas dans le champ même une fois chargée). Si aucune photo n'est sélectionnée,
+                        une image d'une silhouette grise sera mise par défaut). Ensuite cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
+                        L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert confirme la création de l'associé dans la base de données.
+                    <p><span class="boldText">Modification d'un associé existant :</span> depuis la la page de la liste, appuyer sur le bouton Editer sur la ligne correspondante à la personne à modifier</span></br>
+                        Dans la page Ajouter un associé, la fiche de la personne est pré-remplie, modifier directement les renseignements dans les champs si besoin. Puis cliquer sur
+                        <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder. L'administrateur est ensuite redirigé vers la page de la liste,
+                        un message dans un bandeau vert confirme la modification de l'associé dans la base de données.</p>
+                    <p><span class="boldText">Aperçu d'un associé existant :</span> depuis la page de la liste, appuyer sur le bouton Aperçu sur la ligne correspondante à la personne à modifier.</span></br>
+                        Dans la page Ajouter un associé, la fiche de la personne est renseignée.</p>
+                    <p><span class="boldText">Aperçu de l'associé :</span> depuis la la page de la liste, appuyer sur le bouton Supprimer sur la ligne correspondante à la personne à supprimer.</span></br>
+                        </p>
+                    </p>
                 </ol>
             </div>
         </div>
@@ -163,7 +185,9 @@
                     <p>Editer : permet de changer certaines informations, les champs sont pré-remplis.
                         Une fois les modifications faites, cliquer sur "Mettre à jour".</p>
                     <p>Supprimer : supprime cette fiche de la base de données.</p>
+
                     <li>Presse</li>
+                    {# ici instructions Presse#}
                 </ol>
             </div>
         </div>
@@ -176,10 +200,10 @@
         <div class="collapse" id="collapseJoin">
             <div class="card card-body mb-3">
                 <ol>
-                    <li>Agenda</li>
+                    <li class="manualSubTitle">Agenda</li>
                     <p>En cliquant sur Agenda, l'administrateur arrive sur la page où sont listées toutes les
-                        réunions d'information sur la page "Nous Rejoindre". Il s'agit des réunions de découverte.
-                        Par défaut, 12 cartes de réunion sont affichées sur la page "Nous Rejoindre", une fois la date
+                        réunions d'information dont certaines sont renvoyées à la page "Nous Rejoindre" du site internet de La Gabare.
+                        Il s'agit des réunions de découverte. Par défaut, 12 cartes de réunion sont affichées sur la page "Nous Rejoindre", une fois la date
                         passée,
                         la carte de la réunion s'enlève automatiquement, les cartes se décalent et la date suivante
                         s'ajoute.
@@ -192,7 +216,6 @@
                         sur "Ajouter".</p>
                     <p>Editer : permet de changer certaines informations, les champs sont pré-remplis.
                         Une fois les modifications faites cliquer sur "Mettre à jour".</p>
-                    <p>Supprimer : supprime cette fiche de la base de données.</p>
                 </ol>
             </div>
         </div>
@@ -206,6 +229,7 @@
             <div class="card card-body mb-3">
                 <ol>
                     <li>Gestion des rôles</li>
+                    {# ici instructions rôles#}
                 </ol>
             </div>
         </div>
