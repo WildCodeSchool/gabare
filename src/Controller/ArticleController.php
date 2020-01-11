@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Repository\CustomerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +21,7 @@ class ArticleController extends AbstractController
      * @Route("/", name="list")
      * @return Response
      */
-    public function list(): Response
+    public function list(CustomerRepository $customerRepository): Response
     {
         $articles = 0;
         $articles = $this->getDoctrine()
@@ -32,6 +33,7 @@ class ArticleController extends AbstractController
             );
         return $this->render('article/list.html.twig', [
             'articles' => $articles,
+            'customers' => $customerRepository->countAll(),
         ]);
     }
 
@@ -40,10 +42,11 @@ class ArticleController extends AbstractController
      * @param Article $article
      * @return Response
      */
-    public function show(Article $article): Response
+    public function show(Article $article, CustomerRepository $customerRepository): Response
     {
         return $this->render('article/show.html.twig', [
             'article' => $article,
+            'customers' => $customerRepository->countAll(),
         ]);
     }
 }

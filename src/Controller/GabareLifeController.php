@@ -6,6 +6,7 @@ use App\Entity\Presse;
 use App\Entity\Article;
 use App\Entity\Theme;
 use App\Entity\Animation;
+use App\Repository\CustomerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,7 +15,7 @@ class GabareLifeController extends AbstractController
     /**
      * @Route("/la-vie-de-la-gabare", name="gabare_life")
      */
-    public function index()
+    public function index(CustomerRepository $customerRepository)
     {
         $presse = $this->getDoctrine()
             ->getRepository(Presse::class)
@@ -42,6 +43,7 @@ class GabareLifeController extends AbstractController
             'articles' => $articles,
             'themes' => $themes,
             'animations' => $animations,
+            'customers' => $customerRepository->countAll(),
         ]);
     }
 }
