@@ -2,10 +2,10 @@
 
 namespace App\Repository;
 
-use App\Controller\ArticleController;
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,21 +21,16 @@ class ArticleRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param int $page
-     * @return array
+     * @return Query
      */
-
-    public function findAllPagesAndSort($page = null)
+    public function findAllVisibleQuery(): Query
     {
         $qb = $this->createQueryBuilder('a')
             ->where('CURRENT_DATE() >= a.date')
             ->orderBy('a.date', 'DESC');
 
-        if ($page !== null) {
-            $firstResult = ($page - 1) * ArticleController::ARTICLES;
-            $qb->setFirstResult($firstResult)->setMaxResults(ArticleController::ARTICLES);
-        }
+        $query = $qb->getQuery();
 
-        return $qb->getQuery()->getResult();
+        return $query->execute();
     }
 }
