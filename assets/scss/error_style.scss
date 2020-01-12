@@ -1,9 +1,8 @@
 .bgError {
-    background-image: url("https://images.unsplash.com/photo-1488375634201-b85b28653a79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1573&q=80");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    background: url("../images/compass.jpeg") no-repeat fixed center;
     height: 100vh;
-object-fit: cover;
+
 
 }
 
@@ -16,7 +15,6 @@ object-fit: cover;
 
 .error-box {
     padding-top: 100px;
-
 }
 
 .btn-error {
@@ -27,8 +25,6 @@ object-fit: cover;
     font-size: calc(12px + 6*(100vw - 300px)/1300);
     font-weight: 500;
     background-color: $secondary-color;
-    ;
-
 }
 
 
