@@ -14,6 +14,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Image;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ArticleType extends AbstractType
 {
@@ -29,6 +30,8 @@ class ArticleType extends AbstractType
                 'trim' => true,
             ])
             ->add('image')
+
+            ->add('imageFile', VichImageType::class)
 
             ->add('date', DateType::class, [
                 'label' => 'Date de publication',

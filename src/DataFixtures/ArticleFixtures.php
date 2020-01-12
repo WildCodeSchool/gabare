@@ -12,7 +12,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $faker  =  Faker\Factory::create('fr_FR');
+        $faker = Faker\Factory::create('fr_FR');
 
         for ($i = 0; $i <= 50; $i++) {
             $articles = new Article();
@@ -21,8 +21,8 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
                 ->setDescription($faker->text(4000))
                 ->setDate($faker->DateTime())
                 ->setUpdatedAt(new \DateTime());
-            $articles->setImageFile('');
-            $articles->setTheme($this->getReference('themes_'.random_int(0, count(ThemeFixtures::THEMES)-1)));
+            $articles->setImageName('uploads/placeholder1.png');
+            $articles->setTheme($this->getReference('themes_' . random_int(0, count(ThemeFixtures::THEMES) - 1)));
             $manager->persist($articles);
             //$this->addReference('articles' . $i, $articles);
         }
