@@ -1,21 +1,26 @@
-<section class="bgProduct pb-5 links">
-    <div class="d-none d-sm-block position-relative">
-        <img src="{{ asset('build/images/door-join-us-2.jpg') }}" class="photoStripe mb-0" alt="étalage">
-        <div class="titleContainer position-absolute w-100 d-flex flex-column justify-content-around h-50">
-            <h1 class="titlePhoto w-100 text-center">Nos produits</h1>
-            <p class="paraPhoto w-100 text-center">Découvrez nos nouveautés en magasin</p>
-        </div>
-    </div>
+<section class="productSection">
     <div class="container-fluid">
-        <div class="">
-            <h2 class="text-center">Nos produits</h2>
+            <h2 class="text-center p-5">Nos produits</h2>
+            <div class="container">
+                        {{ form_start(form) }}
+
+                        {{ form_widget(form) }}
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                   </button>
+                        {{ form_end(form) }}
+            </div>
+
+            <div class="row justify-content-center">
             {% for product in products %}
-                <ul>
-                    <li>
-                        {{ product.name }}
-                        {{ product.price }}
-                    </li>
-                </ul>
+
+                <div class="card border-success m-3" style="width: 14rem;">
+                    <div class="card-header bg-transparent border-success pl-2">Catégorie </div>
+                    <div class="card-body text-success p-0">
+                        <div class=""><img src="https://via.placeholder.com/222x140 "></div>
+                        <h5 class="card-title p-2">{{product.name |lower }} </h5>
+                        <p class="card-text pl-2 pb-2">{{product.price | number_format(2, ',', '.')}} €</p>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
