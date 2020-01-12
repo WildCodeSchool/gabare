@@ -23,7 +23,9 @@
             <tr>
                 <td>{{ article.title }}</td>
                 <td>{{ article.date ? article.date|date('d/m/Y') : '' }}</td>
-                <td><img src="/uploads/articles_images/{{ article.imageName }}" alt="{{ article.title }}"></td>
+                <td>
+                    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}" />
+                </td>
                 <td>{{ article.theme.name }}</td>
                 <td class="d-flex pt-3">
                     <a href="{{ path('article_show', {'slug': article.slug}) }}" class="btn btn-secondary mr-4">Aperçu<i
