@@ -10,6 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  * @UniqueEntity("title", message="Un article porte déjà le même titre que vous venez d'indiquer.")
+ * @Vich\Uploadable
  */
 class Article
 {
