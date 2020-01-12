@@ -23,8 +23,8 @@
             <tr>
                 <td>{{ article.title }}</td>
                 <td>{{ article.date ? article.date|date('d/m/Y') : '' }}</td>
-                <td>
-                    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}" />
+                <td class="text-right">
+                    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}" class="w-50" />
                 </td>
                 <td>{{ article.theme.name }}</td>
                 <td class="d-flex pt-3">

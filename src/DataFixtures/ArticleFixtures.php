@@ -24,7 +24,6 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $articles->setImageName('uploads/placeholder1.png');
             $articles->setTheme($this->getReference('themes_' . random_int(0, count(ThemeFixtures::THEMES) - 1)));
             $manager->persist($articles);
-            //$this->addReference('articles' . $i, $articles);
         }
         $manager->flush();
     }
