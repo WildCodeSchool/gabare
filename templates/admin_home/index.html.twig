@@ -101,6 +101,7 @@
                         personnes affichées sur la page "Qui sommes nous ?" du site internet de La Gabare.
                         Il s'agit des salariés de La Gabare, des membres du Conseil d'Administration,
                         des membres du Conseil des Amis de la Gabare, et des pionniers qui ont aidé à sa fondation.
+                        Toutes ces personnes ont regroupées sous le terme "Associés.
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Poste", "Prénom", "Nom" et
                         "Actions". La liste est triée par ordre alphabétique de poste et de nom de famille. Dans la
                         colonne
@@ -145,7 +146,7 @@
         <div class="collapse" id="collapseLife">
             <div class="card card-body mb-3">
                 <ol>
-                    <li>Animations</li>
+                    <li class="manualSubTitle">Animations</li>
                     <p>En cliquant sur Animations, l'administrateur arrive sur la page où sont listées toutes les
                         animations qui peuvent être renvoyées sur la page "La Vie de La Gabare" où les 6 dernières
                         animations créées sont affichées. Il s'agit des animations organisées par La Gabare et qui ont
@@ -181,7 +182,7 @@
                         supprimer.
                     </p>
 
-                    <li>Articles</li>
+                    <li class="manualSubTitle">Articles</li>
                     <p>En cliquant sur Articles, l'administrateur arrive sur la page où sont listés tous les
                         articles qui peuvent être renvoyés sur la page "La Vie de La Gabare" du site internet de La
                         Gabare.
@@ -204,7 +205,7 @@
                         L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
                         confirme la création de l'article dans la base de données.
                     <p><span class="boldText">Modification d'un article existant :</span> depuis la la page de la liste,
-                        appuyer sur le bouton Editer sur la ligne correspondante à l'animation à modifier.</p>
+                        appuyer sur le bouton Editer sur la ligne correspondante à l'article à modifier.</p>
                     <p>Dans la page Editer un article, la fiche de l'article est pré-remplie, modifier directement les
                         renseignements dans les champs si besoin. Puis cliquer sur
                         <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
@@ -218,7 +219,7 @@
                         appuyer sur le bouton Supprimer sur la ligne correspondante à l'article à supprimer.
                     </p>
 
-                    <li>Thèmes des Articles</li>
+                    <li class="manualSubTitle">Thèmes des Articles</li>
                     <p>En cliquant sur Thèmes des Articles, l'administrateur arrive sur la page où sont listés tous les
                         thèmes des articles d'actualités. Il s'agit de la vignette colorée en haut d'une carte
                         article d'actualités qui apparait dans la page "La Vie de La Gabare" du site internet de La
@@ -231,12 +232,12 @@
                     <p><span class="boldText">Création d'un nouveau thème :</span> Appuyer sur le bouton <span
                                 class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
                         </i></span>en dessous du titre. </br>Dans la page Ajouter un nouveau thème, il faut remplir
-                        tous les champs : "Nom" et "Couleur'. En cliquer dans le champ "Couleur" qui est par défaut
+                        tous les champs : "Nom" et "Couleur'. En cliquant dans le champ "Couleur", qui est par défaut
                         noir, une fenêtre s'ouvre pour choisir la couleur.
                         Tourner le curseur (trait blanc) de la roue chromatique pour choisir une couleur, par
                         défaut il est mis sur rouge, puis cliquer au milieu du triangle et déplacer le petit rond blanc
-                        choisir une nuance de cette couleur.
-                        L'autre possibilité est de remplir les valeurs. Nom de la couleur: il s'agit d'un code
+                        pour choisir une nuance de cette couleur.
+                        L'autre possibilité est de remplir les champs à droite de la roue. "Nom de la couleur" : il s'agit d'un code
                         hexadécimale. "Rouge", "Vert", "Bleu" : il s'agit d'un format de codage de fusion des trois
                         couleurs primaires, la valeur maximum est 255. Cela correspond au code
                         couleur RGB). La couleur peut être affinée par les champ "Teinte", "Saturation". Le champ
@@ -258,7 +259,7 @@
                     <p>
                     </p>
 
-                    <li>Presse</li>
+                    <li class="manualSubTitle">Presse</li>
                     {# ici instructions Presse#}
                 </ol>
             </div>
@@ -277,9 +278,10 @@
                         réunions d'information dont certaines sont renvoyées à la page "Nous Rejoindre" du site internet
                         de La Gabare.
                         Il s'agit des réunions de découverte où toute personne intéressée peut s'inscrire à un créneau
-                        de visite via un formulaire Google. Par défaut, 12 cartes de dates de réunions sont
+                        de visite via un formulaire Google. Par défaut, 12 cartes de dates de réunion sont
                         affichées sur la page "Nous Rejoindre" du site internet
-                        de La Gabare. Une fois la date passée, la carte de la réunion s'enlève
+                        de La Gabare (cela correspond à 4 semaines environ). Une fois la date passée,
+                        la carte de la réunion s'enlève
                         automatiquement, et la date suivante s'ajoute.
                         Sur la page de la liste, on peut voir dans l'en-tête du tableau "Date", "Heure", et
                         "Actions". Dans la colonne "Actions", il y a un bouton vert "Editer" et bouton rouge
@@ -287,11 +289,11 @@
                     <p><span class="boldText">Création d'une nouvelle réunion d'information :</span>
                         Appuyer sur le bouton <span class="btn btn-primary add ml-2 mr-2">Ajouter
                             <i class="fas fa-plus ml-2"></i></span>en dessous du titre. </br>
-                        Dans la page Ajouter une nouvelle animation, il faut remplir tous les champs :
+                        Dans la page Ajouter une réunion d'information, il faut remplir tous les champs :
                         "Date" et "Heure" (sélectionner dans la liste déroulante). Ensuite
                         cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
                         L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
-                        confirme la création de la date de réunion dans la base de données.
+                        confirme la création de la réunion dans la base de données.
                     <p><span class="boldText">Modification d'une réunion d'information existante :</span>
                         depuis la page de la liste, appuyer sur le bouton Editer sur la ligne correspondante
                         à la réunion d'information à modifier.</p>
@@ -319,7 +321,7 @@
         <div class="collapse" id="collapseAdmin">
             <div class="card card-body mb-3">
                 <ol>
-                    <li>Gestion des rôles</li>
+                    <li class="manualSubTitle">Gestion des rôles</li>
                     {# ici instructions rôles#}
                 </ol>
             </div>
