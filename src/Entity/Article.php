@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -83,7 +84,7 @@ class Article
     /**
      * @ORM\Column(type="datetime")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     private $updatedAt;
 
@@ -162,6 +163,14 @@ class Article
         $this->slug = $slug;
 
         return $this;
+    }
+
+    /**
+     * @param DateTime $updatedAt
+     */
+    public function setUpdatedAt(DateTime $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 
     /**
