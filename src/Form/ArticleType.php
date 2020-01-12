@@ -31,7 +31,14 @@ class ArticleType extends AbstractType
             ])
             ->add('image')
 
-            ->add('imageFile', VichImageType::class)
+            ->add('imageFile', VichImageType::class, [
+            'required' => false,
+            'allow_delete' => true,
+            'download_label' => '...',
+            'download_uri' => true,
+            'image_uri' => true,
+            'asset_helper' => true,
+                ])
 
             ->add('date', DateType::class, [
                 'label' => 'Date de publication',
