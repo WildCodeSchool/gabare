@@ -37,7 +37,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         UrlGeneratorInterface $urlGenerator,
         CsrfTokenManagerInterface $csrfTokenManager,
         UserPasswordEncoderInterface $passwordEncoder
-    ) {
+    )
+    {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
@@ -97,7 +98,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         if ($this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($this->getTargetPath($request->getSession(), $providerKey));
         }
-
 
         return new RedirectResponse($this->urlGenerator->generate('alert_edit'));
     }
