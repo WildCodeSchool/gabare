@@ -26,7 +26,11 @@
                 <a href="{{ path('gabare_life') }}" class="btn btn-info btn-lg actu">Retour</a>
             </div>
         </div>
-    </section>
 
+        <nav class="page_navigation ml-5">
+            {{ knp_pagination_render(articles) }}
+        </nav>
+
+    </section>
 
 {% endblock %}
