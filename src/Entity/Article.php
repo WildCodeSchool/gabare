@@ -8,8 +8,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -130,7 +130,7 @@ class Article
     }
 
     /**
-     * @param File|UploadedFile $imageFile
+     * @param File|UploadedFile|null $imageFile
      * @throws Exception
      */
     public function setImageFile(?File $imageFile = null): void
