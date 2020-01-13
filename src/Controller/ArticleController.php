@@ -17,7 +17,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class ArticleController extends AbstractController
 {
     const ARTICLES = 9;
-
     /**
      * @Route("/", name="list")
      * @return Response
@@ -43,7 +42,6 @@ class ArticleController extends AbstractController
             'articles' => $articles,
         ]);
     }
-
     /**
      * @Route("/show/{slug}", name="show")
      * @param Article $article
