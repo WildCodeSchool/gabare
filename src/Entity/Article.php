@@ -56,13 +56,13 @@ class Article
     /**
      * @Vich\UploadableField(mapping="articles_images", fileNameProperty="imageName")
      *
-     * @var File
+     * @var File|null
      */
     private $imageFile;
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @var string
+     * @var string|null
      */
     private $imageName;
     /**
@@ -130,11 +130,8 @@ class Article
     }
 
 
-    /**
-     * @param File $imageFile
-     * @throws Exception
-     */
-    public function setImageFile(File $imageFile = null): void
+
+    public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
         if (null !== $imageFile) {
