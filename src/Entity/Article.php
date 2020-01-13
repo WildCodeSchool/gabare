@@ -129,11 +129,12 @@ class Article
         $this->updatedAt = $updatedAt;
     }
 
+
     /**
-     * @param File|UploadedFile|null $imageFile
+     * @param File $imageFile
      * @throws Exception
      */
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
         if (null !== $imageFile) {
