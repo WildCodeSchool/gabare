@@ -16,12 +16,11 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
 
         for ($i = 0; $i <= 50; $i++) {
             $articles = new Article();
-            $articles->setImage($faker->imageUrl())
-                ->setTitle($faker->sentence())
+            $articles->setTitle($faker->sentence())
                 ->setDescription($faker->text(4000))
                 ->setDate($faker->DateTime())
                 ->setUpdatedAt(new \DateTime());
-            $articles->setImageName('uploads/placeholder1.png');
+            $articles->setImageName('');
             $articles->setTheme($this->getReference('themes_' . random_int(0, count(ThemeFixtures::THEMES) - 1)));
             $manager->persist($articles);
         }
