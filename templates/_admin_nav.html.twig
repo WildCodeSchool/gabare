@@ -13,11 +13,11 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 {% if app.user %}
                     <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
-                        <p><i class="fas fa-user-shield mr-3"> {{ app.user.username }}</i></p>
-                        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                        <a href="{{ path('admin_home') }}"><i class="fas fa-home mr-3"></i>Manuel d'utilisation</a>
+                        <p><i class="fas fa-user-shield mr-3"></i>{{ app.user.username }}</p>
+                        <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt mr-3"></i>Se déconnecter</a>
                     </div>
                 {% endif %}
-
             </div>
         </div>
 
@@ -35,8 +35,7 @@
                 <div class="card-body bkm rounded-0 border-0">
                     <ul class="listNav pl-3">
                         <li class="bulletNav"><a href="{{ path('alert_edit') }}" class="linkAdmin">Alerte</a></li>
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Bandeau d'image</a></li>
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Carroussel</a></li>
+                        <li class="bulletNav"><a href="#" class="linkAdmin">Carrousel</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +57,6 @@
                         <li class="bulletNav"><a href="#" class="linkAdmin">Histoire</a></li>
                         <li class="bulletNav"><a href="#" class="linkAdmin">Valeurs en chiffres</a></li>
                         <li class="bulletNav"><a href="{{ path('worker_index') }}" class="linkAdmin">Associés</a></li>
-                        <li class="bulletNav"><a href="#" class="linkAdmin">Fonctions</a></li>
                     </ul>
                 </div>
             </div>
