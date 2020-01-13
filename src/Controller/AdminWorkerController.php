@@ -92,6 +92,11 @@ class AdminWorkerController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($worker);
             $entityManager->flush();
+
+            $this->addFlash(
+                'danger',
+                'Votre associé a été supprimé'
+            );
         }
 
         return $this->redirectToRoute('worker_index');
