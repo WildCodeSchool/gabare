@@ -21,7 +21,7 @@ class ArticleController extends AbstractController
      * @Route("/", name="list")
      * @return Response
      */
-    public function list(CustomerRepository $customerRepository): Response
+    public function list(): Response
     {
         $articles = 0;
         $articles = $this->getDoctrine()
@@ -33,7 +33,6 @@ class ArticleController extends AbstractController
             );
         return $this->render('article/list.html.twig', [
             'articles' => $articles,
-            'customers' => $customerRepository->countAll(),
         ]);
     }
 
