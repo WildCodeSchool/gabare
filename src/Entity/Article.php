@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use DateTime;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -138,18 +137,18 @@ class Article
     {
         $this->imageFile = $imageFile;
         if (null !== $imageFile) {
-            $this->updatedAt = new DateTimeImmutable();
+            $this->updatedAt = new DateTime();
         }
     }
     public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
-    public function setImageName(?string $imageName): void
+    public function setImageName(string $imageName): void
     {
         $this->imageName = $imageName;
     }
-    public function getImageName(): ?string
+    public function getImageName(): string
     {
         return $this->imageName;
     }
