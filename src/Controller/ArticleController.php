@@ -42,11 +42,10 @@ class ArticleController extends AbstractController
      * @param Article $article
      * @return Response
      */
-    public function show(Article $article, CustomerRepository $customerRepository): Response
+    public function show(Article $article): Response
     {
         return $this->render('article/show.html.twig', [
             'article' => $article,
-            'customers' => $customerRepository->countAll(),
         ]);
     }
 }

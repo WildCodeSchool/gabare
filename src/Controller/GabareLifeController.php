@@ -15,7 +15,7 @@ class GabareLifeController extends AbstractController
     /**
      * @Route("/la-vie-de-la-gabare", name="gabare_life")
      */
-    public function index(CustomerRepository $customerRepository)
+    public function index()
     {
         $presse = $this->getDoctrine()
             ->getRepository(Presse::class)
@@ -43,7 +43,6 @@ class GabareLifeController extends AbstractController
             'articles' => $articles,
             'themes' => $themes,
             'animations' => $animations,
-            'customers' => $customerRepository->countAll(),
         ]);
     }
 }

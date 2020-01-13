@@ -99,6 +99,8 @@
         </div>
     </nav>
     <div>
-        <h4 class="customersAdd">{{ customers }} Coopérateurs</h4>
+        {{ render(controller(
+            'App\\Controller\\HeaderController::lastestCustomers'
+        )) }}
     </div>
 </header>

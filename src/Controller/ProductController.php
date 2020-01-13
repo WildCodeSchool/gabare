@@ -20,8 +20,7 @@ class ProductController extends AbstractController
      */
     public function index(
         ProductRepository $productRepository,
-        Request $request,
-        CustomerRepository $customerRepository
+        Request $request
     ): Response {
         $products = $productRepository->findAll();
 
@@ -37,7 +36,6 @@ class ProductController extends AbstractController
         return $this->render('products/index.html.twig', [
             'products' => $products,
             'form' => $form->createView(),
-            'customers' => $customerRepository->countAll(),
         ]);
     }
 }

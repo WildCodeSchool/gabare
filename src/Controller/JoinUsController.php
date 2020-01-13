@@ -15,11 +15,10 @@ class JoinUsController extends AbstractController
      * @Route("/nous-rejoindre", name="join_us")
      * @return Response
      */
-    public function index(TimetableRepository $timetableRepository, CustomerRepository $customerRepository): Response
+    public function index(TimetableRepository $timetableRepository): Response
     {
         return $this->render('join_us/index.html.twig', [
             'timetables'=> $timetableRepository->findByDateExpiration(),
-            'customers' => $customerRepository->countAll(),
         ]);
     }
 }

@@ -28,8 +28,7 @@ class HomeController extends AbstractController
     public function index(
         Request $request,
         MailerInterface $mailer,
-        CarouselRepository $carouselRepository,
-        CustomerRepository $customerRepository
+        CarouselRepository $carouselRepository
     ): Response {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -56,7 +55,6 @@ class HomeController extends AbstractController
             'form' => $form->createView(),
             'carousels' => $carouselRepository->findAll(),
             'alert' => $alert,
-            'customers' => $customerRepository->countAll(),
         ]);
     }
 }
