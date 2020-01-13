@@ -5,7 +5,7 @@
         <div class="row flex-wrap m-0 justify-content-around">
             {% for article in articles %}
                 <div class="card m-0 mb-5 m-md-5 box col-11 col-md-3">
-                    <img class="card-img-top image-size-article" src="{{ article.image }}" alt="Card image cap">
+                    <img class="card-img-top image-size-article" src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}">
                     <h5 class="theme position-absolute fixed-top mt-2 pl-2 pr-2 p-1">{{ article.theme.name }}</h5>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ article.title }}</h5>

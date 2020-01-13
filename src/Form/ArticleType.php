@@ -26,10 +26,10 @@ class ArticleType extends AbstractType
                 'label' => "Description",
                 'trim' => true,
             ])
-            ->add('image')
+            //->add('image')
 
             ->add('imageFile', VichImageType::class, [
-            'required' => false,
+            'required' => true,
             'allow_delete' => false,
             'download_uri' => false,
             'image_uri' => true,

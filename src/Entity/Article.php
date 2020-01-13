@@ -40,8 +40,7 @@ class Article
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
 
@@ -63,11 +62,7 @@ class Article
      */
     private $slug;
 
-    // ... other fields
-
     /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     *
      * @Vich\UploadableField(mapping="articles_images", fileNameProperty="imageName")
      *
      * @var File

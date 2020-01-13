@@ -13,8 +13,8 @@
             <tr>
                 <th>Titre</th>
                 <th>Date</th>
-                <th class="text-right">Thème</th>
-                <th>Image</th>
+                <th>Thème</th>
+                <th class="text-right">Image</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -23,11 +23,11 @@
                 <tr>
                     <td>{{ article.title }}</td>
                     <td>{{ article.date ? article.date|date('d/m/Y') : '' }}</td>
+                    <td>{{ article.theme.name }}</td>
                     <td class="text-right">
                         <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}"
                              class="w-50"/>
                     </td>
-                    <td>{{ article.theme.name }}</td>
                     <td class="d-flex pt-3">
                         <a href="{{ path('article_show', {'slug': article.slug}) }}" class="btn btn-secondary mr-4">Aperçu<i
                                     class="fas fa-file-alt ml-1"></i></a>
