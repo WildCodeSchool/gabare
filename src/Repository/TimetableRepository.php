@@ -21,7 +21,7 @@ class TimetableRepository extends ServiceEntityRepository
     }
 
     const NUMBER_DATES = 12;
-
+    
     public function findByDateExpiration()
     {
         $qb = $this->createQueryBuilder('tt')
@@ -29,9 +29,7 @@ class TimetableRepository extends ServiceEntityRepository
             ->setParameter('dateToday', new DateTime('NOW'))
             ->orderBy('tt.visitDate', 'ASC')
             ->setMaxResults(self::NUMBER_DATES);
-
         $query = $qb->getQuery();
-
         return $query->execute();
     }
 }
