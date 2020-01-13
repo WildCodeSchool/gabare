@@ -13,16 +13,14 @@
     <table class="table table-striped">
         <thead class="thBackground">
             <tr>
-                <th>Id</th>
-                <th>Number</th>
-                <th>Title</th>
+                <th>Valeur</th>
+                <th>Titre</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for value in values %}
             <tr>
-                <td>{{ value.id }}</td>
                 <td>{{ value.number }}</td>
                 <td>{{ value.title }}</td>
                 <td class="d-flex pt-3">
