@@ -5,6 +5,8 @@ namespace App\Entity;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -24,7 +26,6 @@ class Article
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\Length(
@@ -33,114 +34,91 @@ class Article
      * @Assert\NotBlank
      */
     private $title;
-
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
      */
     private $description;
-
     /**
      * @ORM\Column(type="date")
      * @Assert\Date
      */
     private $date;
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Theme")
      * @ORM\JoinColumn(nullable=false)
      */
     private $theme;
-
     /**
      * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(length=255, unique=true)
      */
     private $slug;
-
     /**
      * @Vich\UploadableField(mapping="articles_images", fileNameProperty="imageName")
      *
      * @var File
      */
     private $imageFile;
-
     /**
      * @ORM\Column(type="string", length=255)
      *
      * @var string
      */
     private $imageName;
-
     /**
      * @ORM\Column(type="datetime")
      *
      * @var DateTime
      */
     private $updatedAt;
-
     public function getId(): ?int
     {
         return $this->id;
     }
-
     public function getTitle(): ?string
     {
         return $this->title;
     }
-
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
         return $this;
     }
-
     public function getDescription(): ?string
     {
         return $this->description;
     }
-
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
         return $this;
     }
-
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
-
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
-
         return $this;
     }
-
     public function getTheme(): ?Theme
     {
         return $this->theme;
     }
-
     public function setTheme(?Theme $theme): self
     {
         $this->theme = $theme;
-
         return $this;
     }
-
     public function getSlug(): ?string
     {
         return $this->slug;
     }
-
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
-
         return $this;
     }
 
@@ -153,27 +131,24 @@ class Article
     }
 
     /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
+     * @param File|UploadedFile $imageFile
+     * @throws Exception
      */
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
-
         if (null !== $imageFile) {
             $this->updatedAt = new DateTimeImmutable();
         }
     }
-
     public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
-
     public function setImageName(?string $imageName): void
     {
         $this->imageName = $imageName;
     }
-
     public function getImageName(): ?string
     {
         return $this->imageName;

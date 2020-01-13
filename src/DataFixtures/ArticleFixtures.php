@@ -19,7 +19,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $articles->setTitle($faker->sentence())
                 ->setDescription($faker->text(4000))
                 ->setDate($faker->DateTime())
-                ->setUpdatedAt(new \DateTime());
+                ->setUpdatedAt($faker->DateTime());
             $articles->setImageName('');
             $articles->setTheme($this->getReference('themes_' . random_int(0, count(ThemeFixtures::THEMES) - 1)));
             $manager->persist($articles);

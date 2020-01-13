@@ -15,19 +15,6 @@
                 <th>Date</th>
                 <th>Thème</th>
                 <th>Actions</th>
-                <td>{{ article.title }}</td>
-                <td>{{ article.date ? article.date|date('d/m/Y') : '' }}</td>
-                <td>{{ article.theme.name }}</td>
-                <td class="d-flex pt-3">
-                    <a href="{{ path('article_show', {'slug': article.slug}) }}" class="btn btn-secondary mr-4">Aperçu<i
-                                class="fas fa-file-alt ml-1"></i></a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-success mr-4">Éditer<i
-                                class="fas fa-pen ml-1"></i></a>
-                    <div>
-                        {{ include('admin_article/_delete_form.html.twig') }}
-                    </div>
-                </td>
-            </tr>
             </thead>
             <tbody>
             {% for article in articles %}
