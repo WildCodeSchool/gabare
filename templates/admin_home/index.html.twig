@@ -53,6 +53,7 @@
             </div>
         </div>
 
+        {% if is_granted('ROLE_ADMIN_HOME') %}
         <h3 class="manualTitle">Onglet Accueil
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseHome" role="button"
                aria-expanded="false" aria-controls="collapseHome">
@@ -80,7 +81,11 @@
                 </ol>
             </div>
         </div>
+        {% endif %}
 
+
+
+        {% if is_granted('ROLE_ADMIN_WHO') %}
         <h3 class="manualTitle">Onglet Qui sommes-nous ?
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseWho" role="button"
                aria-expanded="false" aria-controls="collapseWho">
@@ -137,6 +142,11 @@
                 </ol>
             </div>
         </div>
+        {% endif %}
+
+
+
+        {% if is_granted('ROLE_ADMIN_GABARE_LIFE') %}
         <h3 class="manualTitle">Onglet La Vie de La Gabare
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseLife" role="button"
                aria-expanded="false" aria-controls="collapseLife">
@@ -264,6 +274,9 @@
                 </ol>
             </div>
         </div>
+        {% endif %}
+
+            {% if is_granted('ROLE_ADMIN_JOIN_US') %}
         <h3 class="manualTitle">Onglet Nous Rejoindre
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseJoin" role="button"
                aria-expanded="false" aria-controls="collapseJoin">
@@ -312,6 +325,10 @@
                 </ol>
             </div>
         </div>
+        {% endif %}
+
+
+        {% if is_granted('SUPER_ADMIN')%}
         <h3 class="manualTitle">Onglet Super Admin
             <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseAdmin" role="button"
                aria-expanded="false" aria-controls="collapseAdmin">
@@ -326,6 +343,7 @@
                 </ol>
             </div>
         </div>
+        {% endif %}
 
     </div>
 {% endblock %}
