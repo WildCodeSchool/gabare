@@ -1,0 +1,16 @@
+{% if is_granted('SUPER_ADMIN')%}
+    <h3 class="manualTitle">Onglet Super Admin
+        <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseAdmin" role="button"
+           aria-expanded="false" aria-controls="collapseAdmin">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </h3>
+    <div class="collapse" id="collapseAdmin">
+        <div class="card card-body mb-3">
+            <ol>
+                <li class="manualSubTitle">Gestion des rôles</li>
+                {# ici instructions rôles#}
+            </ol>
+        </div>
+    </div>
+{% endif %}

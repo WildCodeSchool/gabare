@@ -1,8 +1,11 @@
-{% extends 'layoutAdmin.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Page d'accueil Administrateur{% endblock %}
+    {% block title %}Instructions en PDF{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
 
-{% block body %}
+{% block layout %}
     <div class="container-fluid p-5">
         {#---Section intro---#}
         {% include 'admin_home/includes/_intro.html.twig' %}
