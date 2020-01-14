@@ -16,8 +16,6 @@ class CategoryRepository
 
     const LIMIT = 50;
 
-    const AVOID_CATEGORY = ['Hy', 'Hygi', 'Poubelle', 'All'];
-
     public function __construct(ConnectOdooService $connectOdooService)
     {
         $this->connectOdooService = $connectOdooService;
@@ -37,7 +35,7 @@ class CategoryRepository
 
         $productsCategories = [];
         foreach ($categoriesApi as $category) {
-            if ($category['parent_id'] == false && !in_array($category['complete_name'], self::AVOID_CATEGORY)) {
+            if ($category['parent_id'] == false) {
                 $productCategory = new Category();
                 $productCategory->setName($category['complete_name']);
                 $productCategory->setId($category['id']);
