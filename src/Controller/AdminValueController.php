@@ -41,7 +41,7 @@ class AdminValueController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre valeur a été ajouté'
+                'Votre valeur a été ajoutée'
             );
 
             return $this->redirectToRoute('value_index');
@@ -76,7 +76,7 @@ class AdminValueController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre valeur a été mis à jour'
+                'Votre valeur a été mise à jour'
             );
 
             return $this->redirectToRoute('value_index');
@@ -100,7 +100,7 @@ class AdminValueController extends AbstractController
 
             $this->addFlash(
                 'danger',
-                'Votre valeur a été supprimé'
+                'Votre valeur a été supprimée'
             );
         }
 
