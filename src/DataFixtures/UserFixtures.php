@@ -27,33 +27,33 @@ class UserFixtures extends Fixture
 
 
         $admin = new User();
-        $admin->setEmail('admin@monsite.com');
+        $admin->setEmail('superAdmin@gabare.com');
         $admin->setRoles(['ROLE_SUPER_ADMIN']);
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
-            'adminpassword'
+            'LaGabare45'
         ));
 
         $manager->persist($admin);
 
 
         $adminHome = new User();
-        $adminHome->setEmail('admin@home.com');
+        $adminHome->setEmail('homeAdmin@gabare.com');
         $adminHome->setRoles(['ROLE_ADMIN_HOME']);
         $adminHome->setPassword($this->passwordEncoder->encodePassword(
             $adminHome,
-            'homepassword'
+            'HomePageGabare45'
         ));
 
         $manager->persist($adminHome);
 
 
         $adminWho = new User();
-        $adminWho->setEmail('admin@who.com');
+        $adminWho->setEmail('whoAdmin@gabare.com');
         $adminWho->setRoles(['ROLE_ADMIN_WHO']);
         $adminWho->setPassword($this->passwordEncoder->encodePassword(
             $adminWho,
-            'whopassword'
+            'WhoPageGabare45'
         ));
 
         $manager->persist($adminWho);
@@ -61,11 +61,11 @@ class UserFixtures extends Fixture
 
 
         $adminGabareLife = new User();
-        $adminGabareLife->setEmail('admin@gabarelife.com');
+        $adminGabareLife->setEmail('GabareLifeAdmin@gabare.com');
         $adminGabareLife->setRoles(['ROLE_ADMIN_GABARE_LIFE']);
         $adminGabareLife->setPassword($this->passwordEncoder->encodePassword(
             $adminGabareLife,
-            'gabarelifepassword'
+            'GabarelifePageGabare45'
         ));
 
         $manager->persist($adminGabareLife);
@@ -73,11 +73,11 @@ class UserFixtures extends Fixture
 
 
         $adminJoinUs = new User();
-        $adminJoinUs->setEmail('admin@joinus.com');
+        $adminJoinUs->setEmail('joinUsAdmin@gabare.com');
         $adminJoinUs->setRoles(['ROLE_ADMIN_JOIN_US']);
         $adminJoinUs->setPassword($this->passwordEncoder->encodePassword(
             $adminJoinUs,
-            'joinuspassword'
+            'JoinUsPageGabare45'
         ));
 
         $manager->persist($adminJoinUs);
