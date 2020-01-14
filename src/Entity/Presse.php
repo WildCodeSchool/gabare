@@ -23,17 +23,17 @@ class Presse
      *     max=255,
      *     maxMessage = "La video ne doit pas dépasser {{limit}} caractères")
      * @Assert\NotBlank()
-     *
      */
     private $video;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $image;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      *     max=255,
      *     maxMessage="Le titre ne doit pas dépasser {{limit}} caractères"
@@ -43,13 +43,13 @@ class Presse
     private $title;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      * @Assert\NotBlank()
      */
     private $resume;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\Url()
      * @Assert\Length(
      *     max=255,
