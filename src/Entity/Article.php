@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use DateTime;
-use Exception;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -54,7 +53,11 @@ class Article
     private $slug;
     /**
      * @Vich\UploadableField(mapping="articles_images", fileNameProperty="imageName")
-     *
+     * @Assert\File(
+     *     maxSize = "200k",
+     *     mimeTypes = {"image/jpeg", "image/JPEG", "image/png", "image/PNG", "image/jpg", "image/JPG"},
+     *     mimeTypesMessage = "Seuls les formats JEPG, JPG et PNG sont acceptés"
+     * )
      * @var File|null
      */
     private $imageFile;
