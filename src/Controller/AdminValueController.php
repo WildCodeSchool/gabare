@@ -11,22 +11,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/value")
+ * @Route("admin/valeur")
  */
-class ValueController extends AbstractController
+class AdminValueController extends AbstractController
 {
     /**
      * @Route("/", name="value_index", methods={"GET"})
      */
     public function index(ValueRepository $valueRepository): Response
     {
-        return $this->render('value/index.html.twig', [
+        return $this->render('admin_value/index.html.twig', [
             'values' => $valueRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/new", name="value_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="value_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -39,10 +39,15 @@ class ValueController extends AbstractController
             $entityManager->persist($value);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre valeur a été ajoutée'
+            );
+
             return $this->redirectToRoute('value_index');
         }
 
-        return $this->render('value/new.html.twig', [
+        return $this->render('admin_value/new.html.twig', [
             'value' => $value,
             'form' => $form->createView(),
         ]);
@@ -53,13 +58,13 @@ class ValueController extends AbstractController
      */
     public function show(Value $value): Response
     {
-        return $this->render('value/show.html.twig', [
+        return $this->render('admin_value/show.html.twig', [
             'value' => $value,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="value_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="value_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Value $value): Response
     {
@@ -69,10 +74,15 @@ class ValueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre valeur a été mise à jour'
+            );
+
             return $this->redirectToRoute('value_index');
         }
 
-        return $this->render('value/edit.html.twig', [
+        return $this->render('admin_value/edit.html.twig', [
             'value' => $value,
             'form' => $form->createView(),
         ]);
@@ -87,6 +97,11 @@ class ValueController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($value);
             $entityManager->flush();
+
+            $this->addFlash(
+                'danger',
+                'Votre valeur a été supprimée'
+            );
         }
 
         return $this->redirectToRoute('value_index');
