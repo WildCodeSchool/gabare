@@ -28,6 +28,10 @@ class Presse
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *     max=255,
+     *     maxMessage="Le lien image ne doit pas dépasser {{limit}} caractères"
+     * )
      * @Assert\NotBlank()
      */
     private $image;
