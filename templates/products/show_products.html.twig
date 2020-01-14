@@ -1,18 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
 <section class="productSection">
     <div class="container-fluid">
-            <h2 class="text-center p-5">Nos produits</h2>
-            <div class="container">
-                        {{ form_start(form) }}
-
-                        {{ form_widget(form) }}
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
-                   </button>
-                        {{ form_end(form) }}
-            </div>
-
             <div class="row justify-content-center">
             {% for product in products  %}
-
 
                 <div class="card border-success m-3" style="width: 14rem;">
                     <div class="card-header bg-transparent border-success pl-2">{{ product.category.1 | capitalize }}</div>
@@ -24,6 +16,6 @@
                 </div>
             {% endfor %}
         </div>
-
     </div>
 </section>
+{% endblock %}
