@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\SearchProductType;
+use App\Repository\CustomerRepository;
 use App\Repository\ProductRepository;
 use App\Service\ConnectOdooService;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,9 +18,10 @@ class ProductController extends AbstractController
      * @Route("/nos-produits", name="products")
      * @return Response
      */
-
-    public function index(ProductRepository $productRepository, Request $request): Response
-    {
+    public function index(
+        ProductRepository $productRepository,
+        Request $request
+    ): Response {
         $products = $productRepository->findAll();
 
         $form = $this->createForm(SearchProductType::class);
