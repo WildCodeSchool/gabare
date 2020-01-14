@@ -16,7 +16,7 @@ class CategoryRepository
 
     const LIMIT = 50;
 
-    const AVOID_CATEGORY = ['Hy', 'Hygi'];
+    const AVOID_CATEGORY = ['Hy', 'Hygi', 'Poubelle', 'All'];
 
     public function __construct(ConnectOdooService $connectOdooService)
     {
@@ -29,45 +29,22 @@ class CategoryRepository
 
         $categoryIds = $client->search('product.category', [], 0, 150);
 
-        $productFields = ['complete_name'];
+        $productFields = ['complete_name', 'parent_id'];
+
 
         $categoriesApi = $client->read('product.category', $categoryIds, $productFields);
 
-        $categories = [];
+
         $productsCategories = [];
-
         foreach ($categoriesApi as $category) {
-            $categoryTotal = explode(' / ', $category['complete_name']);
-
-            if (!in_array($categoryTotal[0], $categories) && !in_array($categoryTotal[0], self::AVOID_CATEGORY)) {
+            if ($category['parent_id'] == false && !in_array($category['complete_name'], self::AVOID_CATEGORY)) {
                 $productCategory = new Category();
-                $productCategory->setName($categoryTotal[0]);
-                $categories[] = $categoryTotal[0];
+                $productCategory->setName($category['complete_name']);
+                $productCategory->setId($category['id']);
                 $productsCategories[] = $productCategory;
             }
         }
 
         return $productsCategories;
-    }
-
-    public function showByCategory($category)
-    {
-        $category = 'Viandes';
-        $client = $this->connectOdooService->connectApi();
-
-        $ids = $client->search('product.template', [['categ_id', '=', $category]], 0, 150);
-
-        $fields = ['categ_id', 'name'];
-
-        $products = $client->read('product.template', $ids, $fields);
-
-        $articles = [];
-        foreach ($products as $product) {
-            $article = new Product();
-            $article->setName($product['name']);
-            $article->setCategory('categ_id');
-            $articles[] = $article;
-        }
-        return $articles;
     }
 }

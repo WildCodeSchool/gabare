@@ -49,35 +49,19 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/nos-produits/{categoryName}", name="products_category")
+     * @Route("/nos-produits/{categoryId}", name="products_category")
      * @param ProductRepository $productRepository
      * @param Request $request
      * @return Response
      */
     public function showByCategory(
-        $categoryName,
+        $categoryId,
         ProductRepository $productRepository,
         Request $request
     ): Response {
 
-        $products = $productRepository->findAll(3000);
-
-        $productsByCategory = [];
-        $index = 1;
-        foreach ($products as $product) {
-            $productCategory = $product->getCategory();
-            if (substr($productCategory[1], 0, strlen($categoryName)) == $categoryName) {
-                $category = explode(' / ', $productCategory[1]);
-                if (count($category) > 1) {
-                    $product->setCategory([$index, $category[1]]);
-                    $index++;
-                }
-                $productsByCategory[] = $product;
-            }
-        }
-
         return $this->render('products/show_products.html.twig', [
-            'products' => $productsByCategory,
+            'products' => $productRepository->findByCategory($categoryId),
         ]);
     }
 }

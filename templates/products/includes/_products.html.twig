@@ -2,8 +2,9 @@
     <div class="container-fluid">
         <h2 class="text-center p-5">Nos produits</h2>
         <ul>
+
             {% for category in categories %}
-                <a href="{{ path('products_category', {'categoryName' : category.name})}}"><li>
+                <a href="{{ path('products_category', {'categoryId' : category.id})}}"><li>
                         {{ category.name | capitalize }}
                     </li></a>
             {% endfor %}

@@ -39,13 +39,12 @@ class ProductRepository
         return $articles;
     }
 
-    public function findByName($name, $number = 20): array
+    public function findByCategory(int $id)
     {
         $client = $this->connectOdooService->connectApi();
 
-        $ids = $client->search('product.template', [['name', '=ilike', '%' . $name . '%']], 0, $number);
-
-        $fields = ['name', 'base_price'];
+        $ids = $client->search('product.template', [['sale_ok', '=', true], ['categ_id', '=', $id]]);
+        $fields = ['name', 'base_price', 'categ_id'];
 
         $products = $client->read('product.template', $ids, $fields);
 
@@ -54,6 +53,27 @@ class ProductRepository
             $article = new Product();
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
+            $article->setCategory($product['categ_id']);
+            $articles[] = $article;
+        }
+        return $articles;
+    }
+
+    public function findByName($name) :array
+    {
+        $client = $this->connectOdooService->connectApi();
+        $ids = $client->search('product.template', [['name','=ilike', '%'.$name.'%']]);
+
+        $fields = ['name', 'base_price', 'categ_id'];
+
+        $products = $client->read('product.template', $ids, $fields);
+
+        $articles = [];
+        foreach ($products as $product) {
+            $article = new Product();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $article->setCategory($product['categ_id']);
             $articles[] = $article;
         }
         return $articles;
