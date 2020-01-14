@@ -6,6 +6,7 @@ use App\Entity\Alert;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\CarouselRepository;
+use App\Repository\CustomerRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,8 +25,11 @@ class HomeController extends AbstractController
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function index(Request $request, MailerInterface $mailer, CarouselRepository $carouselRepository): Response
-    {
+    public function index(
+        Request $request,
+        MailerInterface $mailer,
+        CarouselRepository $carouselRepository
+    ): Response {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);

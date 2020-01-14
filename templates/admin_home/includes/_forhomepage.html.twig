@@ -1,0 +1,29 @@
+{% if is_granted('ROLE_ADMIN_HOME') %}
+    <h3 class="manualTitle">Onglet Accueil
+        <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseHome" role="button"
+           aria-expanded="false" aria-controls="collapseHome">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </h3>
+    <div class="collapse" id="collapseHome">
+        <div class="card card-body mb-3">
+            <ol>
+                <li class="manualSubTitle">Alerte <i class="fas fa-chevron-down ml-2"></i></li>
+                <p>En cliquant sur Alerte, l'administrateur peut gérer une notification qui s'affiche sur le site
+                    internet de La Gabare.
+                    C'est un bandeau rouge avec un message qui apparait en dessous de la barre de navigation sur le
+                    site internet de La Gabare une fois activé. Il s'agit notamment d'indiquer les jours de
+                    fermeture ou d'ouverture inhabituels.
+                    Un message par défaut est inscrit, il suffit de cliquer dans le champ du message pour le
+                    modifier.</p>
+                <p>Cocher la case "activé", active le message qui apparait sur le site.</p>
+                <p>Décocher la case "activé", désactive le message qui n'apparait plus sur le site.</p>
+                <p>Cliquer sur le bouton <span class="btn btn-primary add ml-2">Mettre à jour</span> permet
+                    d'enregister les modifications.</p>
+
+                <li class="manualSubTitle">Carousel <i class="fas fa-chevron-down ml-2"></i></li>
+                {# ici instructions Carrousel#}
+            </ol>
+        </div>
+    </div>
+{% endif  %}

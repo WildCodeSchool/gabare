@@ -1,0 +1,58 @@
+{% if is_granted('ROLE_ADMIN_WHO') %}
+<h3 class="manualTitle">Onglet Qui sommes-nous ?
+    <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseWho" role="button"
+       aria-expanded="false" aria-controls="collapseWho">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</h3>
+<div class="collapse" id="collapseWho">
+    <div class="card card-body mb-3">
+        <ol>
+            <li class="manualSubTitle">Histoire</li>
+            {# ici instructions Histoire#}
+
+            <li class="manualSubTitle">Valeurs en chiffres</li>
+            {# ici instructions Valeurs#}
+
+            <li class="manualSubTitle">Associés</li>
+            <p>En cliquant sur Associés, l'administrateur arrive sur la page où sont listées toutes les
+                personnes affichées sur la page "Qui sommes nous ?" du site internet de La Gabare.
+                Il s'agit des salariés de La Gabare, des membres du Conseil d'Administration,
+                des membres du Conseil des Amis de la Gabare, et des pionniers qui ont aidé à sa fondation.
+                Toutes ces personnes ont regroupées sous le terme "Associés.
+                Sur la page de la liste, on peut voir dans l'en-tête du tableau "Poste", "Prénom", "Nom" et
+                "Actions". La liste est triée par ordre alphabétique de poste et de nom de famille. Dans la
+                colonne
+                "Actions" se trouvent les boutons "Aperçu", "Editer" et Supprimer".</p>
+            <p><span class="boldText">Création d'un nouvel associé :</span> Appuyer sur le bouton <span
+                        class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
+                        </i></span>en dessous du titre. </br>Dans la page Ajouter un nouvel associé, il faut remplir
+                tous les champs : "Poste" (sélectionner dans la liste déroulante),
+                "Prénom", "Nom", "Fonction" (non-obligatoire), "Email" (non-obligatoire) et "Portrait" (non
+                obligatoire). Pour "Portrait", sélectionner une photo depuis
+                un dossier en cliquant sur le bouton "Parcourir. (<span class="boldText">Attention</span> ! Le
+                titre du fichier de la photo n'apparait pas dans le champ même une fois chargée). Si aucune
+                photo n'est sélectionnée,
+                une image d'une silhouette grise sera mise par défaut). Ensuite cliquer sur <span
+                        class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
+                confirme la création de l'associé dans la base de données.
+            <p><span class="boldText">Modification d'un associé existant :</span> depuis la la page de la liste,
+                appuyer sur le bouton Editer sur la ligne correspondante à la personne à modifier.
+                Dans la page Editer un associé, la fiche de la personne est pré-remplie, modifier directement
+                les renseignements dans les champs si besoin. Puis cliquer sur
+                <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste,
+                un message dans un bandeau vert confirme la modification de l'associé dans la base de données.
+            </p>
+            <p><span class="boldText">Aperçu d'un associé existant :</span> depuis la page de la liste, appuyer
+                sur le bouton Aperçu sur la ligne correspondante à la personne à voir.
+                Dans la page Aperçu d'un associé, la fiche de la personne est renseignée.</p>
+            <p><span class="boldText">Supprimer un associé existant :</span> depuis la la page de la liste,
+                appuyer sur le bouton Supprimer sur la ligne correspondante à la personne à
+                supprimer.
+            </p>
+        </ol>
+    </div>
+</div>
+{% endif %}

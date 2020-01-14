@@ -1,0 +1,50 @@
+{% if is_granted('ROLE_ADMIN_JOIN_US') %}
+    <h3 class="manualTitle">Onglet Nous Rejoindre
+        <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseJoin" role="button"
+           aria-expanded="false" aria-controls="collapseJoin">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </h3>
+    <div class="collapse" id="collapseJoin">
+        <div class="card card-body mb-3">
+            <ol>
+                <li class="manualSubTitle">Agenda</li>
+                <p>En cliquant sur Agenda, l'administrateur arrive sur la page où sont listées toutes les
+                    réunions d'information dont certaines sont renvoyées à la page "Nous Rejoindre" du site internet
+                    de La Gabare.
+                    Il s'agit des réunions de découverte où toute personne intéressée peut s'inscrire à un créneau
+                    de visite via un formulaire Google. Par défaut, 12 cartes de dates de réunion sont
+                    affichées sur la page "Nous Rejoindre" du site internet
+                    de La Gabare (cela correspond à 4 semaines environ). Une fois la date passée,
+                    la carte de la réunion s'enlève
+                    automatiquement, et la date suivante s'ajoute.
+                    Sur la page de la liste, on peut voir dans l'en-tête du tableau "Date", "Heure", et
+                    "Actions". Dans la colonne "Actions", il y a un bouton vert "Editer" et bouton rouge
+                    "Supprimer".
+                <p><span class="boldText">Création d'une nouvelle réunion d'information :</span>
+                    Appuyer sur le bouton <span class="btn btn-primary add ml-2 mr-2">Ajouter
+                            <i class="fas fa-plus ml-2"></i></span>en dessous du titre. </br>
+                    Dans la page Ajouter une réunion d'information, il faut remplir tous les champs :
+                    "Date" et "Heure" (sélectionner dans la liste déroulante). Ensuite
+                    cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
+                    L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
+                    confirme la création de la réunion dans la base de données.
+                <p><span class="boldText">Modification d'une réunion d'information existante :</span>
+                    depuis la page de la liste, appuyer sur le bouton Editer sur la ligne correspondante
+                    à la réunion d'information à modifier.</p>
+                <p>Dans la page Editer une réunion d'information, la fiche de l'animation est pré-remplie,
+                    modifier directement les renseignements dans les champs si besoin. Puis cliquer sur
+                    <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
+                    L'administrateur est ensuite redirigé vers la page de la liste,
+                    un message dans un bandeau vert confirme la modification de la réunion d'information dans la
+                    base de données.
+                </p>
+                <p><span class="boldText">Suppression d'une réunion d'information existante :</span> depuis la la page de la
+                    liste, appuyer sur le bouton Supprimer sur la ligne correspondante à la réunion d'information à
+                    supprimer.
+                </p>
+
+            </ol>
+        </div>
+    </div>
+{% endif %}

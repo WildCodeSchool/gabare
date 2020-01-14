@@ -1,0 +1,31 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}{{ value.title }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5">
+        <h1 class="ml-2 mb-4">Aperçu de la valeur</h1>
+        <div class="row ml-2 mb-4">
+            <a href="{{ path('value_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+            <a href="{{ path('value_edit', {'id': value.id}) }}" class="btn btn-success ml-3">Éditer<i
+                        class="fas fa-pen ml-1"></i></a>
+        </div>
+        <div class="ml-3">
+            {{ include('admin_value/_delete_form.html.twig') }}
+        </div>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ value.title }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ value.number }}</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
