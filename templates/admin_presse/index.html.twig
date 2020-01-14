@@ -12,9 +12,9 @@
         <thead class="thBackground">
         <thead>
             <tr>
-                <th>Vidéo</th>
-                <th>Image</th>
-                <th>Titre</th>
+                <th>Lien Vidéo</th>
+                <th>Lien Image</th>
+                <th class="col-4">Titre</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,7 +22,7 @@
         {% for presse in presses %}
             <tr>
                 <td>{{ presse.video }}</td>
-                <td>{{ presse.image }}</td>
+                <td><img class="img-crud-index" src="{{ presse.image }}" alt="photo d'un article"></td>
                 <td>{{ presse.title }}</td>
                 <td class="d-flex pt-3">
                     <a href="{{ path('presse_show', {'id': presse.id}) }}" class="btn btn-secondary mr-4">Aperçu<i

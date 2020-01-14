@@ -1,12 +1,12 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Editer une valeur{% endblock %}
+{% block title %}Editer un capital{% endblock %}
 
 {% block body %}
     <div class="container-fluid p-5">
         <h1>Editer une valeur</h1>
         <div class="mb-3">
-            <a href="{{ path('value_index') }}" class="btn btn-outline-dark mr-3">Retour à la liste</a>
+            <a href="{{ path('capital_index') }}" class="btn btn-outline-dark mr-3">Retour à la liste</a>
         </div>
         <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
             {{ form_start(form) }}
@@ -15,7 +15,7 @@
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
             <div class="mt-4">
-                {{ include('admin_value/_delete_form.html.twig') }}
+                {{ include('admin_capital/_delete_form.html.twig') }}
             </div>
         </div>
 
