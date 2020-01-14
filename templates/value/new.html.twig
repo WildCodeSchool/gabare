@@ -1,11 +1,19 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}New Value{% endblock %}
+{% block title %}Ajouter une valeur{% endblock %}
 
 {% block body %}
-    <h1>Create new Value</h1>
-
-    {{ include('value/_form.html.twig') }}
-
-    <a href="{{ path('value_index') }}">back to list</a>
+    <div class="container-fluid p-5">
+        <h1>Ajouter une valeur</h1>
+        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
+            {{ form_start(form) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.number) }}
+            <button class="btn btn-primary mt-2">Ajouter</button>
+            {{ form_end(form) }}
+            <div class="mt-4">
+                <a href="{{ path('value_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
