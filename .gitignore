@@ -41,3 +41,5 @@ yarn-error.log
 /src/Migrations/*
 
 /.DS_Store/
+
+public/uploads/

@@ -16,7 +16,7 @@
     <div class="container">
         <p class="card-text date_show_article">{{ article.date | date("d/m/Y") }}</p>
         <div class="card mb-3 border-none">
-            <img src="https://via.placeholder.com/480x160" class="card-img-top" alt="Image de l'article">
+            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}" class="w-auto h-auto">
             <div class="card-body">
                 <p class="card-text text_article_show">{{ article.description|truncate(500, true)|raw }}</p>
                 <p class="card-text text_article_show">{{ article.description|slice(100)|raw }}</p>
