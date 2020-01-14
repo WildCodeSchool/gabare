@@ -37,6 +37,7 @@ class ArticleController extends AbstractController
         );
         return $this->render('article/list.html.twig', [
             'articles' => $articles,
+            'themes' => $articleRepository->findArticleByTheme(),
         ]);
     }
     /**

@@ -28,9 +28,19 @@ class ArticleRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('a')
             ->where('CURRENT_DATE() >= a.date')
             ->orderBy('a.date', 'DESC');
-
         $query = $qb->getQuery();
-
         return $query->execute();
+    }
+
+    public function findArticleByTheme()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->innerJoin('a.theme', 't')
+            ->addSelect('t')
+            ->where('t.name = :name')
+            ->setParameter('name', 'Portraits')
+            ->getQuery();
+
+        return $qb->execute();
     }
 }
