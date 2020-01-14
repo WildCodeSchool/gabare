@@ -1,19 +1,23 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Ajouter une valeur{% endblock %}
+{% block title %}Editer un capital{% endblock %}
 
 {% block body %}
     <div class="container-fluid p-5">
-        <h1>Ajouter une valeur</h1>
+        <h1>Editer un capital</h1>
+        <div class="mb-3">
+            <a href="{{ path('capital_index') }}" class="btn btn-outline-dark mr-3">Retour à la liste</a>
+        </div>
         <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
             {{ form_start(form) }}
             {{ form_row(form.title) }}
             {{ form_row(form.number) }}
-            <button class="btn btn-primary mt-2">Ajouter</button>
+            <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
             <div class="mt-4">
-                <a href="{{ path('value_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+                {{ include('admin_capital/_delete_form.html.twig') }}
             </div>
         </div>
+
     </div>
 {% endblock %}
