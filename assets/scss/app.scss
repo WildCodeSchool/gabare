@@ -21,6 +21,7 @@
 @import "values.style";
 @import "article";
 @import "partners_style";
+@import "error_style";
 
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{

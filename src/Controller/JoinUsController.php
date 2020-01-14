@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Timetable;
+use App\Repository\CustomerRepository;
 use App\Repository\TimetableRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,6 +19,6 @@ class JoinUsController extends AbstractController
     {
         return $this->render('join_us/index.html.twig', [
             'timetables'=> $timetableRepository->findByDateExpiration(),
-            ]);
+        ]);
     }
 }
