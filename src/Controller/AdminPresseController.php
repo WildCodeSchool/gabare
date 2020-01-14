@@ -16,6 +16,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminPresseController extends AbstractController
 {
     /**
+     * @Route("/", name="presse_index", methods={"GET"})
+     */
+    public function index(PresseRepository $presseRepository): Response
+    {
+        return $this->render('admin_presse/index.html.twig', [
+            'presses' => $presseRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}", name="presse_show", methods={"GET"})
      */
     public function show(Presse $presse): Response
