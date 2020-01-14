@@ -60,16 +60,21 @@ class ProductController extends AbstractController
         Request $request
     ): Response {
 
-        $products = $productRepository->findAll();
+        $products = $productRepository->findAll(3000);
 
         $productsByCategory = [];
+        $index = 1;
         foreach ($products as $product) {
-            if (substr($product->getCategory()[1], 0, strlen($categoryName)) == $categoryName) {
+            $productCategory = $product->getCategory();
+            if (substr($productCategory[1], 0, strlen($categoryName)) == $categoryName) {
+                $category = explode(' / ', $productCategory[1]);
+                if (count($category) > 1) {
+                    $product->setCategory([$index, $category[1]]);
+                    $index++;
+                }
                 $productsByCategory[] = $product;
             }
         }
-
-        dump($productsByCategory);
 
         return $this->render('products/show_products.html.twig', [
             'products' => $productsByCategory,
