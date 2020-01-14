@@ -98,4 +98,9 @@
             </ul>
         </div>
     </nav>
+    <div>
+        {{ render(controller(
+            'App\\Controller\\HeaderController::lastestCustomers'
+        )) }}
+    </div>
 </header>

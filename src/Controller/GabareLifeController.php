@@ -6,6 +6,7 @@ use App\Entity\Presse;
 use App\Entity\Article;
 use App\Entity\Theme;
 use App\Entity\Animation;
+use App\Repository\CustomerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
