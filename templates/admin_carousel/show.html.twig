@@ -1,0 +1,38 @@
+{% extends 'layoutAmin.html.twig' %}
+
+{% block title %}Carousel{% endblock %}
+
+{% block body %}
+    <h1>Carousel</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ carousel.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ carousel.title }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ carousel.picture }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ carousel.link }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ carousel.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('carousel_index') }}">back to list</a>
+
+    <a href="{{ path('carousel_edit', {'id': carousel.id}) }}">edit</a>
+
+    {{ include('carousel/_delete_form.html.twig') }}
+{% endblock %}
