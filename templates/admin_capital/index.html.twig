@@ -1,10 +1,10 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Liste des capital{% endblock %}
+{% block title %}Liste des valeurs{% endblock %}
 
 {% block body %}
 <div class="container-fluid p-5">
-    <h1>Liste des capitals</h1>
+    <h1>Liste des valeurs</h1>
 
 
     <a href="{{ path('capital_new') }}" class="btn btn-primary add mb-4">Ajouter<i
@@ -13,7 +13,7 @@
     <table class="table table-striped">
         <thead class="thBackground">
             <tr>
-                <th>Capital</th>
+                <th>Valeurs</th>
                 <th>Titre</th>
                 <th>actions</th>
             </tr>
@@ -35,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">Aucun capital trouvé</td>
+                <td colspan="8">Aucune valeur trouvée</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -41,7 +41,7 @@ class AdminCapitalController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre capital a été ajoutée'
+                'Votre valeur a été ajoutée'
             );
 
             return $this->redirectToRoute('capital_index');
@@ -76,7 +76,7 @@ class AdminCapitalController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre capital a été mise à jour'
+                'Votre valeur a été mise à jour'
             );
 
             return $this->redirectToRoute('capital_index');
@@ -100,7 +100,7 @@ class AdminCapitalController extends AbstractController
 
             $this->addFlash(
                 'danger',
-                'Votre capital a été supprimée'
+                'Votre valeur a été supprimée'
             );
         }
 
