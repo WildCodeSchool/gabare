@@ -3,9 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Article;
+use App\Entity\Theme;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
-use Doctrine\ORM\Query;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,16 +21,17 @@ class ArticleRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Query
+     * @return Article[]
      */
-    public function findAllVisibleQuery(): Query
+    public function findArticleByTheme(?Theme $theme = null)
     {
         $qb = $this->createQueryBuilder('a')
-            ->where('CURRENT_DATE() >= a.date')
-            ->orderBy('a.date', 'DESC');
-
-        $query = $qb->getQuery();
-
-        return $query->execute();
+            ->where('a.theme = :theme')
+            ->setParameter('theme', $theme);
+        if ($theme == empty([$qb])) {
+            return $qb = $this->findBy([], ['date' => 'DESC']);
+        }
+        $qb->orderBy('a.date', 'DESC');
+        return $qb->getQuery()->getResult();
     }
 }
