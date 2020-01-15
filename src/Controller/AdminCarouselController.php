@@ -26,7 +26,7 @@ class AdminCarouselController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="carousel_new", methods={"GET","POST"})
+     * @Route("/ajouter", name="carousel_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -38,6 +38,11 @@ class AdminCarouselController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($carousel);
             $entityManager->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre contenu a été ajouté au carrousel'
+            );
 
             return $this->redirectToRoute('carousel_index');
         }
