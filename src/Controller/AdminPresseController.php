@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminPresseController extends AbstractController
 {
     /**
-     * @Route("/", name="animation_index", methods={"GET"})
+     * @Route("/", name="presse_index", methods={"GET"})
      */
     public function index(PresseRepository $presseRepository): Response
     {

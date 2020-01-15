@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+    {% for product in products %}
+        <div class="card_product card border-success m-3">
+            <div class="card-header bg-transparent border-success pl-2">{{ product.category.1 | capitalize }}</div>
+            <div class="card-body text-success p-0">
+                <div class=""><img src="https://via.placeholder.com/222x140 "></div>
+                <h5 class="card-title p-2">{{ product.name | lower }} </h5>
+                <p class="card-text pl-2 pb-2">{{ product.price | number_format(2, ',', '.') }} €</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
