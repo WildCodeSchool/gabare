@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -33,6 +34,18 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+
+            ->add('roles', ChoiceType::class, [
+                'choices' => [
+                    'HomePage' => 'ROLE_ADMIN_HOME',
+                    'Qui-Sommes Nous?' => 'ROLE_ADMIN_WHO',
+                    'La Vie de La Gabare'=> 'ROLE_ADMIN_GABARE_LIFE',
+                    'Nous Rejoindre' => 'ROLE_ADMIN_JOIN_US',
+                ],
+                'expanded' => true,
+                'multiple' => true,
+            ])
+
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller

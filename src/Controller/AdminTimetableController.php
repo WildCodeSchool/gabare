@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Timetable;
 use App\Form\TimetableType;
 use App\Repository\TimetableRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminTimetableController extends AbstractController
 {
     /**
      * @Route("/", name="timetable_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_JOIN_US", message = "Vous ne passerez pas!")
      */
     public function index(TimetableRepository $timetableRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminTimetableController extends AbstractController
 
     /**
      * @Route("/new", name="timetable_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_JOIN_US", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +58,7 @@ class AdminTimetableController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="timetable_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_JOIN_US", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Timetable $timetable): Response
     {
@@ -80,6 +84,7 @@ class AdminTimetableController extends AbstractController
 
     /**
      * @Route("/{id}", name="timetable_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_JOIN_US", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Timetable $timetable): Response
     {

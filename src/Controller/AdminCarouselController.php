@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Carousel;
 use App\Form\CarouselType;
 use App\Repository\CarouselRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminCarouselController extends AbstractController
 {
     /**
      * @Route("/", name="carousel_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      */
     public function index(CarouselRepository $carouselRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminCarouselController extends AbstractController
 
     /**
      * @Route("/ajouter", name="carousel_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +58,7 @@ class AdminCarouselController extends AbstractController
 
     /**
      * @Route("/{id}", name="carousel_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      */
     public function show(Carousel $carousel): Response
     {
@@ -65,6 +69,7 @@ class AdminCarouselController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="carousel_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Carousel $carousel): Response
     {
@@ -85,6 +90,7 @@ class AdminCarouselController extends AbstractController
 
     /**
      * @Route("/{id}", name="carousel_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Carousel $carousel): Response
     {
