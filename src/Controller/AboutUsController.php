@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Capital;
 use App\Entity\History;
 use App\Entity\Worker;
-use App\Entity\Value;
 use App\Repository\CustomerRepository;
 use App\Repository\ProductRepository;
 use App\Repository\WorkerRepository;
@@ -27,8 +27,8 @@ class AboutUsController extends AbstractController
             ->getRepository(History::class)
             ->findAll();
 
-        $values = $this->getDoctrine()
-            ->getRepository(Value::class)
+        $capitals = $this->getDoctrine()
+            ->getRepository(Capital::class)
             ->findAll();
 
         $products = $productRepository->countAll();
@@ -43,7 +43,7 @@ class AboutUsController extends AbstractController
             'history' => $history,
             'product' => $products,
             'customers' => $customers,
-            'values' => $values,
+            'capitals' => $capitals,
         ]);
     }
 }

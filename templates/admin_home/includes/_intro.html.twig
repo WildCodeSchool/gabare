@@ -1,0 +1,51 @@
+<h1>Bienvenue sur l'espace administrateur de La Gabare</h1>
+<div class="d-inline"><h2 class="secondTitle">Manuel d'utilisation</h2> <a href="{{ path('pdf_view') }}">
+        <i class="fas fa-print"></i>
+        imprimer</a></div>
+<h3 class="manualTitle">Légendes
+    <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseLegend" role="button"
+       aria-expanded="false" aria-controls="collapseLegend">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</h3>
+<div class="collapse show" id="collapseLegend">
+    <div class="card card-body mb-3">
+        <p>Voici les principaux boutons à cliquer qui figurent sur les différentes pages de l'espace
+            administrateur.
+            </br>
+        <p><span class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>
+            : ouvre une page qui permet de créer une nouvelle fiche dans la base de données.
+        <p><span class="btn btn-secondary mr-2">Aperçu<i class="fas fa-file-alt ml-1"></i></span>
+            : ouvre une page qui permet juste de voir le détail de la fiche de la ligne cliquée.</p>
+        <p><span class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>
+            : ouvre une page qui permet de modifier le détail de la fiche d'une ligne cliquée, les champs sont
+            pré-remplis.
+        <p><span class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span> : supprime la
+            fiche en question de la base de données.
+            Une fenêtre s'ouvre avec un message de confirmation (cliquer sur annuler ou OK).</p>
+        <p><span class="btn btn-outline-dark mr-2">Retour à la liste</span> : permet de revenir à la liste.</p>
+    </div>
+</div>
+
+<h3 class="manualTitle">Onglet LA GABARE
+    <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseGabare" role="button"
+       aria-expanded="false" aria-controls="collapseGabare">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</h3>
+<div class="collapse" id="collapseGabare">
+    <div class="card card-body mb-3">
+        <ol>
+            <li class="manualSubTitle">Manuel d'utilisation</li>
+            <p>En cliquant sur Manuel d'utilisation, l'administrateur peut revenir ici aux instructions.</p>
+            <li class="manualSubTitle">Identifiant</li>
+            <p>Après s'être identifié sur le formulaire de connexion depuis le site internet de La Gabare,
+                l'administrateur voit son email affiché</p>
+            <li class="manualSubTitle">Se déconnecter</li>
+            <p>Cliquer sur se déconnecter, déconnecte l'administrateur de cet espace et le renverra vers la page
+                du d'accueil site internet de La Gabare. Pour des raisons de sécurité, il faut bien se
+                déconnecter une fois les actions requises terminées.</p>
+        </ol>
+    </div>
+</div>
+

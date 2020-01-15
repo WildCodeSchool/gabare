@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\SearchProductType;
 use App\Repository\CustomerRepository;
+use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 use App\Service\ConnectOdooService;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,12 +17,17 @@ class ProductController extends AbstractController
 {
     /**
      * @Route("/nos-produits", name="products")
+     * @param ProductRepository $productRepository
+     * @param Request $request
+     * @param CategoryRepository $categoryRepository
      * @return Response
      */
     public function index(
         ProductRepository $productRepository,
-        Request $request
+        Request $request,
+        CategoryRepository $categoryRepository
     ): Response {
+
         $products = $productRepository->findAll();
 
         $form = $this->createForm(SearchProductType::class);
@@ -33,9 +39,29 @@ class ProductController extends AbstractController
             $products = $productRepository->findByName($data['search']);
         }
 
+        $categories = $categoryRepository->selectAllCategories();
+
         return $this->render('products/index.html.twig', [
             'products' => $products,
             'form' => $form->createView(),
+            'categories' => $categories,
+        ]);
+    }
+
+    /**
+     * @Route("/nos-produits/{categoryId}", name="products_category")
+     * @param ProductRepository $productRepository
+     * @param Request $request
+     * @return Response
+     */
+    public function showByCategory(
+        $categoryId,
+        ProductRepository $productRepository,
+        Request $request
+    ): Response {
+
+        return $this->render('products/show_products.html.twig', [
+            'products' => $productRepository->findByCategory($categoryId),
         ]);
     }
 }

@@ -5,18 +5,60 @@ namespace App\Controller;
 use App\Entity\Presse;
 use App\Form\PresseType;
 use App\Repository\PresseRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("admin/presse")
+ * @Route("/admin/presse")
  */
 class AdminPresseController extends AbstractController
 {
     /**
+     * @Route("/", name="presse_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
+     */
+    public function index(PresseRepository $presseRepository): Response
+    {
+        return $this->render('admin_presse/index.html.twig', [
+            'presses' => $presseRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/ajouter", name="presse_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
+     */
+    public function new(Request $request): Response
+    {
+        $presse = new Presse();
+        $form = $this->createForm(PresseType::class, $presse);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($presse);
+            $entityManager->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre revue de presse a été ajoutée'
+            );
+
+            return $this->redirectToRoute('presse_index');
+        }
+
+        return $this->render('admin_presse/new.html.twig', [
+            'presse' => $presse,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}", name="presse_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function show(Presse $presse): Response
     {
@@ -26,7 +68,8 @@ class AdminPresseController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/modifier", name="presse_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="presse_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Presse $presse): Response
     {
@@ -36,12 +79,37 @@ class AdminPresseController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('presse_show', ['id' => $presse->getId()]);
+            $this->addFlash(
+                'success',
+                'Votre revue de presse a été mise à jour'
+            );
+
+            return $this->redirectToRoute('presse_index');
         }
 
         return $this->render('admin_presse/edit.html.twig', [
             'presse' => $presse,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/{id}", name="presse_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
+     */
+    public function delete(Request $request, Presse $presse): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$presse->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($presse);
+            $entityManager->flush();
+
+            $this->addFlash(
+                'danger',
+                'Votre revue de presse a bien été supprimée'
+            );
+        }
+
+        return $this->redirectToRoute('presse_index');
     }
 }
