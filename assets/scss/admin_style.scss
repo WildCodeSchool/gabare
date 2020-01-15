@@ -1,6 +1,7 @@
 @import "admin_presse";
 @import "admin_menu";
 @import "vars";
+@import "admin_manual";
 
 .thBackground {
     background-color: $primary-color;
@@ -11,12 +12,20 @@
     padding-top: 23px;
 }
 
+.table .worker-show {
+    padding-top: 23px;
+}
+
 h1 {
     font-size: 2em;
 }
 
 .img-crud {
     width: 400px;
+}
+
+.img-crud-index {
+    width: 200px;
 }
 
 .color_picker {

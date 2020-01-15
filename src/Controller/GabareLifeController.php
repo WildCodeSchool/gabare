@@ -6,6 +6,7 @@ use App\Entity\Presse;
 use App\Entity\Article;
 use App\Entity\Theme;
 use App\Entity\Animation;
+use App\Repository\CustomerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,7 +17,7 @@ class GabareLifeController extends AbstractController
      */
     public function index()
     {
-        $presse = $this->getDoctrine()
+        $pressArticle = $this->getDoctrine()
             ->getRepository(Presse::class)
             ->findAll();
 
@@ -38,7 +39,7 @@ class GabareLifeController extends AbstractController
             ->findAll();
 
         return $this->render('gabare_life/index.html.twig', [
-            'presse' => $presse,
+            'pressArticles' => $pressArticle,
             'articles' => $articles,
             'themes' => $themes,
             'animations' => $animations,

@@ -1,13 +1,23 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block title %}Edit Theme{% endblock %}
 
 {% block body %}
-    <h1>Edit Theme</h1>
+    <div class="container-fluid p-5">
+        <h1>Éditer un thème</h1>
+        <div class="mb-3">
+            <a href="{{ path('theme_index') }}" class="btn btn-outline-dark mr-5">Retour à la liste</a>
+        </div>
+        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
+            {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.color) }}
+            <button class="btn btn-primary mt-2">Mettre à jour</button>
+            {{ form_end(form) }}
 
-    {{ include('theme/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('theme_index') }}">back to list</a>
-
-    {{ include('theme/_delete_form.html.twig') }}
+            <div class="mt-4">
+                {{ include('admin_theme/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,34 +1,43 @@
-<section class="bgPresse pb-5 links" id="dans-la-presse">
+<section class="bgPresse pb-5 links container-fluid" id="dans-la-presse">
+
     <h2 class="text-center p-3 p-md-5">Presse</h2>
-    <div class="container-fluid">
-        <div class="row flex-wrap justify-content-around ml-md-5 mr-md-5">
-            <div class="col-12 col-sm-5 ">
-                {% for press in presse %}
-                    <div class="card article mb-5 mb-md-0">
-                        <div class="card-body">
-                            <img class="picture-article mb-4" src="{{ press.image }}" alt="#">
-                            <h4 class="mb-3">{{press.title}}</h4>
-                            <p class="mb-3">{{ press.resume }}</p>
-                            <div class="show-link">
-                                <a href="{{ press.link }}" target="_blank" class="font-weight-bold">lire l'article complet ici <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
+
+    <div class="row">
 
 
+        <div class="card article col-md-6">
+            {% for pressArticle in pressArticles %}
+                <div class="card-body row">
+                    <img class="picture-article col-md-4" src="{{ pressArticle.image }}" alt="#">
+                    <div class="row col-md-8">
+                        <h4 class="presseTitle">{{ pressArticle.title|striptags|truncate(35,true)|raw }}</h4>
+                        <p class="mb-5">{{ pressArticle.resume|striptags|truncate(250,true)|raw }}</p>
                     </div>
-                {% endfor %}
-            </div>
-            <div class="col-12 col-sm-7">
-                <div class="card video">
-                    <div class="card-body">
-                        <iframe src="https://www.youtube.com/embed/0I4XEPtiWmA"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                    <div class="show-link">
+                        <a href="{{ pressArticle.link }}" target="_blank" class="font-weight-bold">lire l'article complet ici
+                            <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
+
+
+        <div class="card col-md-6">
+                <div class="card-body row">
+                    {% for pressArticle in pressArticles %}
+                    <div class="col-lg-6">
+                        <iframe src="https://www.youtube.com/embed/{{ pressArticle.video }}"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                class="video" allowfullscreen></iframe>
+                    </div>
+                    {% endfor %}
+                </div>
+
+        </div>
+
+
     </div>
+
 </section>
 
 

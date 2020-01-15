@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Worker;
 use App\Form\WorkerType;
 use App\Repository\WorkerRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminWorkerController extends AbstractController
 {
     /**
      * @Route("/", name="worker_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function index(WorkerRepository $workerRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminWorkerController extends AbstractController
 
     /**
      * @Route("/new", name="worker_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +53,7 @@ class AdminWorkerController extends AbstractController
 
     /**
      * @Route("/{id}", name="worker_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function show(Worker $worker): Response
     {
@@ -60,6 +64,7 @@ class AdminWorkerController extends AbstractController
 
     /**
      * @Route("/{id}/éditer", name="worker_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Worker $worker): Response
     {
@@ -85,6 +90,7 @@ class AdminWorkerController extends AbstractController
 
     /**
      * @Route("/{id}", name="worker_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Worker $worker): Response
     {
@@ -92,6 +98,11 @@ class AdminWorkerController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($worker);
             $entityManager->flush();
+
+            $this->addFlash(
+                'danger',
+                'Votre associé a été supprimé'
+            );
         }
 
         return $this->redirectToRoute('worker_index');

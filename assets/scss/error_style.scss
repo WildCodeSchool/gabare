@@ -1,0 +1,31 @@
+.bgError {
+    background-size: cover;
+    background: url("../images/compass.jpeg") no-repeat fixed center;
+    height: 100vh;
+
+
+}
+
+.error-text {
+    color:$light-color;
+    font-family: $photo-font;
+    font-size: calc(50px + 6 * ((100vw - 320px) / 680));
+    text-shadow: 0 0 10px $dark-color;
+}
+
+.error-box {
+    padding-top: 100px;
+}
+
+.btn-error {
+    font-family: Lato,sans-serif;
+    text-decoration: none;
+    padding: 1% 2%;
+    color: $light-color;
+    font-size: calc(12px + 6*(100vw - 300px)/1300);
+    font-weight: 500;
+    background-color: $secondary-color;
+}
+
+
+

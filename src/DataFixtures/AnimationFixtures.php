@@ -22,7 +22,8 @@ class AnimationFixtures extends Fixture
             $animation->setSchedule($faker->dateTime);
             $animation->setHourStart($faker->dateTime);
             $animation->setHourEnd($faker->dateTime);
-            $animation->setImage($faker->imageUrl());
+            $animation->setUpdatedAt($faker->DateTime());
+            $animation->setImageName('');
             $manager->persist($animation);
         }
         $manager->flush();

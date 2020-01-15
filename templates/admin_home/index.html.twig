@@ -1,0 +1,25 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Page d'accueil Administrateur{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5">
+        {#---Section intro---#}
+        {% include 'admin_home/includes/_intro.html.twig' %}
+
+        {#---Section instructions pour accueil---#}
+        {% include 'admin_home/includes/_forhomepage.html.twig' %}
+
+        {#---Section instructions pour page qui sommes nous---#}
+        {% include 'admin_home/includes/_foraboutus.html.twig' %}
+
+        {#---Section instructions pour page vie de la gabare---#}
+        {% include 'admin_home/includes/_forgabarelife.html.twig' %}
+
+        {#---Section instructions pour page vie de la gabare---#}
+        {% include 'admin_home/includes/_forjoinus.html.twig' %}
+
+        {#---Section instructions pour page vie de la gabare---#}
+        {% include 'admin_home/includes/_superadmin.html.twig' %}
+    </div>
+{% endblock %}
