@@ -17,10 +17,10 @@
             <tr>
                 <th class="worker-show">Prénom</th>
                 <td>{{ worker.firstName }}</td>
-                <th></th>
+                <th>Image</th>
                 <td rowspan="4">
-                    {% if worker.portrait %}
-                        <img class="img-crud" src="{{ worker.portrait }}"
+                    {% if worker.imageName %}
+                        <img class="img-crud" src="{{ vich_uploader_asset(worker, 'imageFile')}}"
                              alt="">
                     {% else %}
                         <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"

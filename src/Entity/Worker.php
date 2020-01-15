@@ -4,12 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\WorkerRepository")
+ * @Vich\Uploadable
  */
 class Worker
 {
@@ -43,7 +45,6 @@ class Worker
      * @Assert\Length(
      *      max = 255,
      *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
-     * @Assert\NotBlank()
      */
     private $function;
 
@@ -52,10 +53,8 @@ class Worker
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email."
      * )
-     * @assert\NotBlank()
      */
     private $email;
-
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Activity", inversedBy="workers")
@@ -73,14 +72,16 @@ class Worker
      * @var File|null
      */
     private $imageFile;
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string|null
      */
     private $imageName;
+
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime",nullable=true)
      *
      * @var DateTime
      */

@@ -26,9 +26,11 @@ class WorkerType extends AbstractType
             ])
             ->add('function', TextType::class, [
                 'label' => 'Fonction',
+                'required' => false,
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Email',
+                'required' => false,
             ])
             ->add('activity', EntityType::class, [
                 'class' => Activity::class,
@@ -40,7 +42,7 @@ class WorkerType extends AbstractType
                 'label' => 'Poste',
             ])
             ->add('imageFile', VichImageType::class, [
-                'required' => true,
+                'required' => false,
                 'allow_delete' => false,
                 'download_uri' => false,
                 'image_uri' => true,
