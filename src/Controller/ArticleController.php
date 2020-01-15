@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Form\ArticleTypeSearchType;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Knp\Component\Pager\PaginatorInterface;
@@ -26,18 +27,30 @@ class ArticleController extends AbstractController
         Request $request,
         PaginatorInterface $paginator
     ): Response {
-        $articles = $articleRepository->findBy(
-            [],
-            ['date' => 'DESC']
-        );
+
+        $form = $this->createForm(ArticleTypeSearchType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $theme = $data["theme"];
+            $articles = $articleRepository->findArticleByTheme($theme);
+        } else {
+            $articles = $articleRepository->findBy(
+                [],
+                ['date' => 'DESC']
+            );
+        }
+
         $articles = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1),
             self::ARTICLES
         );
+
         return $this->render('article/list.html.twig', [
             'articles' => $articles,
-            'themes' => $articleRepository->findArticleByTheme(),
+            'form' => $form->createView(),
         ]);
     }
     /**
