@@ -34,22 +34,27 @@
 
     <div class="container-fluid product">
         <div class="card_product_container row justify-content-center">
-            {% for product in products %}
-                <div class="card_product mb-5 mx-3 d-flex flex-column justify-content-between">
-                    <div class="card_body d-flex flex-column align-items-center pt-2 {% if (product.name | length) > 39 %} card_truncated {% endif %}">
-                        {% if (product.name | length) > 39 %}
-                            <h5 class="card-title p-3 text-center truncated_text">{{ product.name | capitalize | truncate(40) }} </h5>
-                            <h5 class="card-title p-3 text-center not_truncated_text">{{ product.name | capitalize }} </h5>
-                        {% else %}
-                            <h5 class="card-title p-3 text-center">{{ product.name | capitalize }} </h5>
-                        {% endif %}
-                        <div class="mb-2 card_category">{{ product.category.1 | upper }}</div>
-                        <div class="mb-3 card_image"><img
-                                    src="https://static.cuisineaz.com/680x357/i140769-carotte.jpeg"></div>
+            {% if products == [] %}
+                <h4 class="mt-5">Pas de produits {% if app.request.get('search_product') is not null %}correspondant à votre recherche{% else %}dans cette catégorie{% endif %}...</h4>
+            {% else %}
+                {% for product in products %}
+                    <div class="card_product mb-5 mx-3 d-flex flex-column justify-content-between">
+                        <div class="card_body d-flex flex-column align-items-center pt-2 {% if (product.name | length) > 39 %} card_truncated {% endif %}">
+                            {% if (product.name | length) > 39 %}
+                                <h5 class="card-title p-3 text-center truncated_text">{{ product.name | capitalize | truncate(40) }} </h5>
+                                <h5 class="card-title p-3 text-center not_truncated_text">{{ product.name | capitalize }} </h5>
+                            {% else %}
+                                <h5 class="card-title p-3 text-center">{{ product.name | capitalize }} </h5>
+                            {% endif %}
+                            <div class="mb-2 card_category">{{ product.category.1 | upper }}</div>
+                            <div class="mb-3 card_image"><img
+                                        src="https://static.cuisineaz.com/680x357/i140769-carotte.jpeg"></div>
+                        </div>
+                        <p class="card_text pl-3 pb-3 m-0">{% if product.price == 0 %}Prix indisponible{% else %}{{ product.price | number_format(2, ',', '.') }} €{% endif %}</p>
                     </div>
-                    <p class="card_text pl-3 pb-3 m-0">{% if product.price == 0 %}Prix indisponible{% else %}{{ product.price | number_format(2, ',', '.') }} €{% endif %}</p>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
+
         </div>
     </div>
 </section>
