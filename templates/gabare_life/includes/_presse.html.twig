@@ -6,15 +6,15 @@
 
 
         <div class="card article col-md-6">
-            {% for press in presse %}
+            {% for pressArticle in pressArticles %}
                 <div class="card-body row">
-                    <img class="picture-article col-md-4" src="{{ press.image }}" alt="#">
+                    <img class="picture-article col-md-4" src="{{ pressArticle.image }}" alt="#">
                     <div class="row col-md-8">
-                        <h4 class="presseTitle">{{ press.title|striptags|truncate(35,true)|raw }}</h4>
-                        <p class="mb-5">{{ press.resume|striptags|truncate(250,true)|raw }}</p>
+                        <h4 class="presseTitle">{{ pressArticle.title|striptags|truncate(35,true)|raw }}</h4>
+                        <p class="mb-5">{{ pressArticle.resume|striptags|truncate(250,true)|raw }}</p>
                     </div>
                     <div class="show-link">
-                        <a href="{{ press.link }}" target="_blank" class="font-weight-bold">lire l'article complet ici
+                        <a href="{{ pressArticle.link }}" target="_blank" class="font-weight-bold">lire l'article complet ici
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
 
         <div class="card col-md-6">
                 <div class="card-body row">
-                    {% for press in presse %}
+                    {% for pressArticle in pressArticles %}
                     <div class="col-lg-6">
-                        <iframe src="https://www.youtube.com/embed/{{ press.video }}"
+                        <iframe src="https://www.youtube.com/embed/{{ pressArticle.video }}"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 class="video" allowfullscreen></iframe>
                     </div>
