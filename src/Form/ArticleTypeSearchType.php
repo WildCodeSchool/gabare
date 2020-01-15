@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Theme;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -28,7 +27,6 @@ class ArticleTypeSearchType extends AbstractType
     {
         $resolver->setDefaults([
             'csrf_protection' => false,
-            // Configure your form options here
         ]);
     }
 }
