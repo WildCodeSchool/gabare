@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class CarouselType extends AbstractType
 {
@@ -16,8 +17,13 @@ class CarouselType extends AbstractType
             ->add('title', TextType::class, [
                 'label'  => 'Titre',
             ])
-            ->add('picture', TextType::class, [
-                'label'  => 'Image',
+            ->add('imageFile', VichImageType::class, [
+                'required' => true,
+                'allow_delete' => false,
+                'download_uri' => false,
+                'image_uri' => true,
+                'asset_helper' => true,
+                'label' => 'Image',
             ])
             ->add('link', TextType::class, [
                 'label'  => 'Lien',
