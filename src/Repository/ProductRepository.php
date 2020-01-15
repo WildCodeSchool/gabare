@@ -33,9 +33,11 @@ class ProductRepository
             $article = new Product();
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
-            $article->setCategory($product['categ_id']);
+            $category = explode(' / ', $product['categ_id'][1]);
+            $article->setCategory([$product['categ_id'][0],$category[0]]);
             $articles[] = $article;
         }
+
         return $articles;
     }
 
@@ -53,7 +55,13 @@ class ProductRepository
             $article = new Product();
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
-            $article->setCategory($product['categ_id']);
+            $category = explode(' / ', $product['categ_id'][1]);
+            if (isset($category[1])) {
+                $category = $category[1];
+            } else {
+                $category = $category[0];
+            }
+            $article->setCategory([$product['categ_id'][0], $category]);
             $articles[] = $article;
         }
         return $articles;
@@ -73,7 +81,8 @@ class ProductRepository
             $article = new Product();
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
-            $article->setCategory($product['categ_id']);
+            $category = explode(' / ', $product['categ_id'][1]);
+            $article->setCategory([$product['categ_id'][0],$category[0]]);
             $articles[] = $article;
         }
         return $articles;
