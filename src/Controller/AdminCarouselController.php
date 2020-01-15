@@ -79,6 +79,11 @@ class AdminCarouselController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre contenu a été mis à jour dans le carrousel'
+            );
+
             return $this->redirectToRoute('carousel_show');
         }
 
