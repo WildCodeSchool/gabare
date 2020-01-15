@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Presse;
 use App\Form\PresseType;
 use App\Repository\PresseRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminPresseController extends AbstractController
 {
     /**
      * @Route("/", name="presse_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function index(PresseRepository $presseRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminPresseController extends AbstractController
 
     /**
      * @Route("/ajouter", name="presse_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +58,7 @@ class AdminPresseController extends AbstractController
 
     /**
      * @Route("/{id}", name="presse_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function show(Presse $presse): Response
     {
@@ -65,6 +69,7 @@ class AdminPresseController extends AbstractController
 
     /**
      * @Route("/{id}/editer", name="presse_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Presse $presse): Response
     {
@@ -90,6 +95,7 @@ class AdminPresseController extends AbstractController
 
     /**
      * @Route("/{id}", name="presse_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Presse $presse): Response
     {

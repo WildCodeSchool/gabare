@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Animation;
 use App\Form\AnimationType;
 use App\Repository\AnimationRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminAnimationController extends AbstractController
 {
     /**
      * @Route("/", name="animation_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function index(AnimationRepository $animationRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminAnimationController extends AbstractController
 
     /**
      * @Route("/ajouter", name="animation_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +58,7 @@ class AdminAnimationController extends AbstractController
 
     /**
      * @Route("/{id}", name="animation_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function show(Animation $animation): Response
     {
@@ -65,6 +69,7 @@ class AdminAnimationController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="animation_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Animation $animation): Response
     {
@@ -90,6 +95,7 @@ class AdminAnimationController extends AbstractController
 
     /**
      * @Route("/{id}", name="animation_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Animation $animation): Response
     {

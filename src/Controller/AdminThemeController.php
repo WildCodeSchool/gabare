@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Theme;
 use App\Form\ThemeType;
 use App\Repository\ThemeRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminThemeController extends AbstractController
 {
     /**
      * @Route("/", name="theme_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function index(ThemeRepository $themeRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminThemeController extends AbstractController
 
     /**
      * @Route("/ajouter", name="theme_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +58,7 @@ class AdminThemeController extends AbstractController
 
     /**
      * @Route("/{id}", name="theme_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function show(Theme $theme): Response
     {
@@ -65,6 +69,7 @@ class AdminThemeController extends AbstractController
 
     /**
      * @Route("/{id}/éditer", name="theme_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Theme $theme): Response
     {
@@ -90,6 +95,7 @@ class AdminThemeController extends AbstractController
 
     /**
      * @Route("/{id}", name="theme_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Theme $theme): Response
     {
