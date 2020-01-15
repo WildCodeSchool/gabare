@@ -1,11 +1,14 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Editer le contenu{% endblock %}
+{% block title %}Éditer une revue de presse{% endblock %}
 
 {% block body %}
     <div class="container-fluid p-5">
-        <h1>Editer le contenu</h1>
-        <div class="col-lg-8 m-0 jumbotron">
+        <h1>Éditer une revue de presse</h1>
+        <div class="mb-3">
+            <a href="{{ path('article_index') }}" class="btn btn-outline-dark mr-5">Retour à la liste</a>
+        </div>
+        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
             {{ form_start(form) }}
             {{ form_row(form.video) }}
             {{ form_row(form.image) }}
@@ -14,9 +17,9 @@
             {{ form_row(form.link) }}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
-        </div>
-        <div class="row mt-5 ml-1">
-            <a href="{{ path('presse_show', {'id': presse.id}) }}" class="btn btn-outline-dark mr-5">Retour</a>
+            <div class="mt-4">
+                {{ include('admin_presse/_delete_form.html.twig') }}
+            </div>
         </div>
     </div>
 {% endblock %}

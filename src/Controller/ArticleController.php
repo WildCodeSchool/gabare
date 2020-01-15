@@ -41,7 +41,7 @@ class ArticleController extends AbstractController
                 ['date' => 'DESC']
             );
         }
-
+      
         $articles = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1),

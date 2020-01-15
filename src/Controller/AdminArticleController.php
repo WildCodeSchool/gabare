@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,7 @@ class AdminArticleController extends AbstractController
 {
     /**
      * @Route("/", name="article_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function index(ArticleRepository $articleRepository): Response
     {
@@ -28,6 +30,7 @@ class AdminArticleController extends AbstractController
 
     /**
      * @Route("/ajouter", name="article_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -56,6 +59,7 @@ class AdminArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function show(Article $article): Response
     {
@@ -66,6 +70,7 @@ class AdminArticleController extends AbstractController
 
     /**
      * @Route("/{id}/éditer", name="article_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Article $article): Response
     {
@@ -91,6 +96,7 @@ class AdminArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Article $article): Response
     {

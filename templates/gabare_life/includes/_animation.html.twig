@@ -6,7 +6,7 @@
             {% for animation in animations %}
                 <div class="mt-0 mt-3 ">
                     <div class="card box m-3 m-md-5 card-animation">
-                        <img src="{{ animation.image }}" class="card-img-top image-size-animation" alt="">
+                        <img src="{{ vich_uploader_asset(animation, 'imageFile') }}" class="card-img-top image-size-animation" alt="">
                         <div class="card-body text-center">
                             <h4 class="card-title animation">{{ animation.title }}</h4>
                             <p class="card-title animation">{{ animation.description }}</p>

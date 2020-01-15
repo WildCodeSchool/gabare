@@ -1,0 +1,39 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}{{ carousel.title }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5">
+        <h1 class="ml-2 mb-4">Aperçu : {{ carousel.title }}</h1>
+        <div class="row ml-2 mb-4">
+            <a href="{{ path('carousel_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
+            <a href="{{ path('carousel_edit', {'id': carousel.id}) }}" class="btn btn-success ml-3">Éditer<i
+                        class="fas fa-pen ml-1"></i></a>
+            <div class="ml-3">
+                {{ include('admin_carousel/_delete_form.html.twig') }}
+            </div>
+        </div>
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ carousel.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ carousel.description }}</td>
+            </tr>
+            <tr>
+                <th>Lien</th>
+                <td>{{ carousel.link }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img class="img-crud" src="{{ carousel.picture }} " alt=""></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+{% endblock %}

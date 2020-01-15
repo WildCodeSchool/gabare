@@ -15,16 +15,20 @@ class PresseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('video')
-            ->add('image')
+            ->add('video', TextType::class, [
+                'label' => 'Lien de la vidéo',
+                ])
+            ->add('image', UrlType::class, [
+                'label' => 'Lien de l\'image de l\'article',
+            ])
             ->add('title', TextType::class, [
-                'label' => 'Titre',
+                'label' => 'Titre de l\'article',
             ])
             ->add('resume', TextareaType::class, [
-                'label' => 'Résumé',
+                'label' => 'Résumé de l\'article',
             ])
             ->add('link', UrlType::class, [
-                'label' => 'Lien',
+                'label' => 'Lien de l\'article',
             ])
         ;
     }

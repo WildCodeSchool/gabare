@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\History;
 use App\Form\HistoryType;
 use App\Repository\HistoryRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminHistoryController extends AbstractController
 {
     /**
      * @Route("/{id}", name="history_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function show(History $history): Response
     {
@@ -27,6 +29,7 @@ class AdminHistoryController extends AbstractController
 
     /**
      * @Route("/{id}/modifier", name="history_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, History $history): Response
     {
