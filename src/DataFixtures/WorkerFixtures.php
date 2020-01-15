@@ -21,6 +21,7 @@ class WorkerFixtures extends Fixture
             $worker->setFirstName($faker->firstName);
             $worker->setLastName($faker->lastName);
             $worker->setFunction($faker->sentence(3, true));
+            $worker->setUpdatedAt($faker->imageUrl(200, 200, 'people'));
             $worker->setPortrait($faker->imageUrl(200, 200, 'people'));
             $worker->setActivity($this->getReference('activities_0'));
             $manager->persist($worker);
