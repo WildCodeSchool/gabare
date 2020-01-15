@@ -42,6 +42,11 @@ class AdminWorkerController extends AbstractController
             $entityManager->persist($worker);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre associé a été ajouté'
+            );
+
             return $this->redirectToRoute('worker_index');
         }
 
