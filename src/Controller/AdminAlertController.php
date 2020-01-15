@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Alert;
 use App\Form\AlertType;
 use App\Repository\AlertRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminAlertController extends AbstractController
 {
     /**
      * @Route("/editer", name="alert_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      * @return Response
      */
     public function edit(Request $request): Response

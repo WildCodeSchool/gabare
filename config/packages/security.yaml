@@ -33,19 +33,7 @@ security:
             # https://symfony.com/doc/current/security/form_login_setup.html
 
     # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-         - { path: ^/admin/carousel, roles: ROLE_ADMIN_HOME }
-         - { path: ^/admin/alerte, roles: ROLE_ADMIN_HOME }
-         - { path: ^/admin/histoire, roles: ROLE_ADMIN_WHO }
-         - { path: ^/admin/capital, roles: ROLE_ADMIN_WHO }
-         - { path: ^/admin/associé, roles: ROLE_ADMIN_WHO }
-         - { path: ^/admin/article, roles: ROLE_ADMIN_GABARE_LIFE }
-         - { path: ^/admin/theme, roles: ROLE_ADMIN_GABARE_LIFE }
-         - { path: ^/admin/presse, roles: ROLE_ADMIN_GABARE_LIFE }
-         - { path: ^/admin/animation, roles: ROLE_ADMIN_GABARE_LIFE }
-         - { path: ^/admin/agenda, roles: ROLE_ADMIN_JOIN_US }
-         - { path: ^/admin/inscription, roles: ROLE_SUPER_ADMIN }
+    # Note: Only the *first* access control that matches will be used}
 
     role_hierarchy:
         ROLE_SUPER_ADMIN: [ROLE_ADMIN_HOME, ROLE_ADMIN_WHO, ROLE_ADMIN_GABARE_LIFE, ROLE_ADMIN_JOIN_US]

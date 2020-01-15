@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Capital;
 use App\Form\CapitalType;
 use App\Repository\CapitalRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class AdminCapitalController extends AbstractController
 {
     /**
      * @Route("/", name="capital_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function index(CapitalRepository $capitalRepository): Response
     {
@@ -27,6 +29,7 @@ class AdminCapitalController extends AbstractController
 
     /**
      * @Route("/ajouter", name="capital_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function new(Request $request): Response
     {
@@ -55,6 +58,7 @@ class AdminCapitalController extends AbstractController
 
     /**
      * @Route("/{id}", name="capital_show", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function show(Capital $capital): Response
     {
@@ -65,6 +69,7 @@ class AdminCapitalController extends AbstractController
 
     /**
      * @Route("/{id}/editer", name="capital_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Capital $capital): Response
     {
@@ -90,6 +95,7 @@ class AdminCapitalController extends AbstractController
 
     /**
      * @Route("/{id}", name="capital_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function delete(Request $request, Capital $capital): Response
     {
