@@ -68,7 +68,7 @@ class AdminPresseController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="presse_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="presse_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Presse $presse): Response
@@ -106,7 +106,7 @@ class AdminPresseController extends AbstractController
 
             $this->addFlash(
                 'danger',
-                'Votre revue de presse a été supprimée'
+                'Votre revue de presse a bien été supprimée'
             );
         }
 
