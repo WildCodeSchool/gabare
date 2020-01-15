@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\WorkerRepository")
@@ -53,11 +55,6 @@ class Worker
      */
     private $email;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank()
-     */
-    private $portrait;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Activity", inversedBy="workers")
@@ -118,17 +115,6 @@ class Worker
         return $this;
     }
 
-    public function getPortrait(): ?string
-    {
-        return $this->portrait;
-    }
-
-    public function setPortrait(?string $portrait): self
-    {
-        $this->portrait = $portrait;
-
-        return $this;
-    }
 
     public function getActivity(): ?Activity
     {

@@ -11,6 +11,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class WorkerType extends AbstractType
 {
@@ -29,7 +30,6 @@ class WorkerType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Email',
             ])
-            ->add('portrait')
             ->add('activity', EntityType::class, [
                 'class' => Activity::class,
                 'query_builder' => function (ActivityRepository $er) {
@@ -38,6 +38,14 @@ class WorkerType extends AbstractType
                 },
                 'choice_label' => 'name',
                 'label' => 'Poste',
+            ])
+            ->add('imageFile', VichImageType::class, [
+                'required' => true,
+                'allow_delete' => false,
+                'download_uri' => false,
+                'image_uri' => true,
+                'asset_helper' => true,
+                'label' => 'Image',
             ])
         ;
     }
