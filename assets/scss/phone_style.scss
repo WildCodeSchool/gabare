@@ -1,14 +1,17 @@
 .bgPhone {
-    background-image: url("../images/sea.jpg");
+    background-image: url("../images/sea-min.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+
     a {
         &:link {
             color: $light-color;
         }
+
         &:visited {
             color: $light-color;
         }
+
         &:active {
             color: $light-color;
         }
