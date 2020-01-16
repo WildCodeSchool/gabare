@@ -12,7 +12,7 @@
                         <img src="{{ asset('build/images/placeholder1.png') }}" alt="{{ article.title }}"
                              class="card-img-top image-size-article"/>
                     {% endif %}
-                    <h5 class="theme position-absolute fixed-top mt-2 pl-2 pr-2 p-1">{{ article.theme.name }}</h5>
+                    <h5 class="theme position-absolute fixed-top mt-2 p-3" style="background: {{ article.theme.color }}">{{ article.theme.name }}</h5>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ article.title }}</h5>
                         <p class="card-text">{{ article.date | date("d/m/Y") }}</p>

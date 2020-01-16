@@ -8,15 +8,14 @@
         <div class="mb-3">
             <a href="{{ path('worker_index') }}" class="btn btn-outline-dark mr-3">Retour à la liste</a>
         </div>
-        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
+        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron img-admin-view">
             {{ form_start(form) }}
             {{ form_row(form.activity) }}
             {{ form_row(form.firstName) }}
             {{ form_row(form.lastName) }}
-
             {{ form_row(form.function) }}
             {{ form_row(form.email) }}
-            {{ form_row(form.portrait) }}
+            {{ form_row(form.imageFile) }}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
             <div class="mt-4">

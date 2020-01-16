@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\WorkerRepository")
+ * @Vich\Uploadable
  */
 class Worker
 {
@@ -40,7 +45,6 @@ class Worker
      * @Assert\Length(
      *      max = 255,
      *      maxMessage = "Le titre ne doit pas dépasser {{ limit }} caractères")
-     * @Assert\NotBlank()
      */
     private $function;
 
@@ -49,21 +53,39 @@ class Worker
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email."
      * )
-     * @assert\NotBlank()
      */
     private $email;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank()
-     */
-    private $portrait;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Activity", inversedBy="workers")
      * @ORM\JoinColumn(nullable=false)
      */
     private $activity;
+
+    /**
+     * @Vich\UploadableField(mapping="uploads_images", fileNameProperty="imageName")
+     * @Assert\File(
+     *     maxSize = "200k",
+     *     mimeTypes = {"image/jpeg", "image/JPEG", "image/png", "image/PNG", "image/jpg", "image/JPG"},
+     *     mimeTypesMessage = "Seuls les formats JEPG, JPG et PNG sont acceptés"
+     * )
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string|null
+     */
+    private $imageName;
+
+    /**
+     * @ORM\Column(type="datetime",nullable=true)
+     *
+     * @var DateTime
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -118,18 +140,6 @@ class Worker
         return $this;
     }
 
-    public function getPortrait(): ?string
-    {
-        return $this->portrait;
-    }
-
-    public function setPortrait(?string $portrait): self
-    {
-        $this->portrait = $portrait;
-
-        return $this;
-    }
-
     public function getActivity(): ?Activity
     {
         return $this->activity;
@@ -140,5 +150,38 @@ class Worker
         $this->activity = $activity;
 
         return $this;
+    }
+
+    /**
+     * @param DateTime $updatedAt
+     */
+    public function setUpdatedAt(DateTime $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            $this->updatedAt = new DateTime();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
     }
 }
