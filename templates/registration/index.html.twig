@@ -1,0 +1,40 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Gestion des administrateurs{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-5">
+    <h1>Gestion des administrateurs</h1>
+
+    <table class="table table-striped">
+        <thead class="thBackground">
+        <thead>
+        <tr>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles|join(' | ') }}</td>
+            </tr>
+            <td class="d-flex pt-3">
+                <a href="{{ path('admin_edit', {'id': user.id}) }}" class="btn btn-success mr-4">Éditer<i
+                            class="fas fa-pen ml-1"></i></a>
+                <div>
+                    {{ include('registration/delete.html.twig') }}
+                </div>
+            </td>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucune revue de presse trouvée</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
