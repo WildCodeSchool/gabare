@@ -1,9 +1,8 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        {% for i in 1..(carousels | length - 1)  %}
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}"></li>
-         {% endfor %}
+        {% for i in 0..(carousels | length - 1)  %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}" class={% if i == 0 %}active{% endif %}></li>
+        {% endfor %}
     </ol>
     <div class="carousel-inner">
         {% for carousel in carousels %}
