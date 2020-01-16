@@ -1,11 +1,11 @@
-<section class="bgCA-Member">
+<section class="bgCA-Member links" id="le-conseil-administration">
     <h2 class="text-center mt-md-5 title-animation">Le conseil d'administration de La Gabare</h2>
     <div class="container-fluid">
         <div class="row justify-content-start justify-content-lg-center scrolling-wrapper-flexbox m-2">
             {% for CAMember in CAMembers %}
                 <div class="card profile m-4">
-                    {% if CAMember.portrait %}
-                        <img class="profile-img" src="{{ CAMember.portrait }}"
+                    {% if CAMember.imageName %}
+                        <img class="profile-img" src="{{ CAMember.imageName }}"
                              alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
                     {% else %}
                         <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
