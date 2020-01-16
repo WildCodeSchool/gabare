@@ -15,7 +15,7 @@
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
-                    <h1 class="titleLog">Login</h1>
+                    <h1 class="titleLogAdmin"><i class="fas fa-sign-in-alt"></i> Espace Professionnel</h1>
 
                     <label for="inputEmail" class="mt-3">Adresse Mail</label>
                     <input type="email" placeholder="JohnDoe@outlook.fr" value="{{ last_username }}" name="email"
@@ -41,10 +41,11 @@
             <div class="overlay-container col-md-6">
                 <div class="overlay">
                     <div class="overlay-panel justify-content-center align-items-center">
-                        <h1 class="titleLog mb-5">Bonjour, Membres!</h1>
-                        <p class="membreText mb-5">Ici vous avez accès au planning et aux compte-rendu du mois. </p>
+                        <h1 class="titleLog mb-5"> <i class="far fa-handshake"></i> Bonjour Membre!</h1>
+                        <p class="membreText mb-5">Connectez-vous à votre espace personnel sur Odoo, pour accéder
+                        aux comptes-rendus mensuels ainsi qu'au planning à venir avec votre statut membre.</p>
                         <a href="https://test-lagabare.druidoo.io/web/login" target="_blank">
-                        <button class="logButton ghost mt-5" id="signUp">Vers ODOO</button>
+                            <button class="logButton ghost mt-5" id="signUp">Vers ODOO</button>
                         </a>
                     </div>
                 </div>
