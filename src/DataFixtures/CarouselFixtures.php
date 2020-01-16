@@ -23,8 +23,9 @@ class CarouselFixtures extends Fixture
             if (array_key_exists($i, self::LINKS)) {
                 $carousel->setLink(self::LINKS[$i]);
             }
-            $carousel->setTitle($faker->sentence);
-            $carousel->setPicture($faker->imageUrl());
+            $carousel->setTitle($faker->sentence(6, true));
+            $carousel->setUpdatedAt($faker->DateTime());
+            $carousel->setImageName('');
             $carousel->setDescription($faker->text);
             $manager->persist($carousel);
         }

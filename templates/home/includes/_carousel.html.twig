@@ -1,13 +1,13 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        {% for i in 0..(carousels | length - 1)  %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}" class={% if i == 0 %}active{% endif %}></li>
+        {% endfor %}
     </ol>
     <div class="carousel-inner">
         {% for carousel in carousels %}
             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
-                <img src="{{ carousel.picture }}"
+                <img src="{{ vich_uploader_asset(carousel, 'imageFile')}}"
                      alt="{{ carousel.title }}">
                 <div class="carousel-caption">
                     <div class="title_carousel">
