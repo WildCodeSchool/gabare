@@ -1,7 +1,13 @@
-.message-alert{
-    height: 120px;
+.message-alert {
+    height: 60px;
     text-align: center;
-    padding-top: 80px;
+    border-radius: 0;
+    border-color: none;
+    background-color: crimson;
+    color: white;
 
+    & h4 {
+        color: white;
+        font-weight: bold;
+    }
 }
-

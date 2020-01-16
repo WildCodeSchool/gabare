@@ -8,7 +8,7 @@
         {% for carousel in carousels %}
             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
                 <img src="{{ vich_uploader_asset(carousel, 'imageFile')}}"
-                     alt="{{ carousel.title }}">
+                     alt="{{ carousel.title }}" class="carouselImageSize">
                 <div class="carousel-caption">
                     <div class="title_carousel">
                         <h4>{{ carousel.title }}</h4>

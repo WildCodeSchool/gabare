@@ -97,8 +97,10 @@ header {
 
 .customersAdd{
     background: $secondary-color;
+    height: 60px;
     width:250px;
     color:white;
+    font-weight: bold;
     display: flex;
     justify-content: center;
 }
