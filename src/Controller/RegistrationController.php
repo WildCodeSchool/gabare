@@ -102,7 +102,12 @@ class RegistrationController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($user->getId() == 0) {
+            $this->addFlash(
+                'danger',
+                'Vous ne pouvez pas supprimer le Super Admin'
+            );
+        } elseif ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
