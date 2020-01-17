@@ -1,6 +1,9 @@
+.bgEmployee .bgCA-Member .bgCA-Friend {
+    background-image:$texture-background;
+}
+
 .profile{
     height: 250px;
-    flex: 0 0 auto;
 }
 
 .profile-img {
@@ -56,9 +59,7 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }
-ul {
 
-}
 .ul-scroll::-webkit-scrollbar {
     display: none;
 }
@@ -75,8 +76,4 @@ ul {
 
 .li-scroll, .img-scroll {
     width: 250px;
-}
-
-.bgEmployee {
-    background-color: cadetblue;
 }

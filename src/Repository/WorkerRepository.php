@@ -33,6 +33,7 @@ class WorkerRepository extends ServiceEntityRepository
             ->addSelect('a')
             ->where('a.name = :name')
             ->setParameter('name', self::ACTIVITY[3])
+            ->orderBy('w.lastName', 'ASC')
             ->getQuery();
 
         return $qb->execute();
@@ -45,6 +46,7 @@ class WorkerRepository extends ServiceEntityRepository
             ->addSelect('a')
             ->where('a.name = :name')
             ->setParameter('name', self::ACTIVITY[0])
+            ->orderBy('w.lastName', 'ASC')
             ->getQuery();
 
         return $qb->execute();
@@ -57,6 +59,7 @@ class WorkerRepository extends ServiceEntityRepository
             ->addSelect('a')
             ->where('a.name = :name')
             ->setParameter('name', self::ACTIVITY[1])
+            ->orderBy('w.lastName', 'ASC')
             ->getQuery();
 
         return $qb->execute();
@@ -69,6 +72,7 @@ class WorkerRepository extends ServiceEntityRepository
             ->addSelect('a')
             ->where('a.name = :name')
             ->setParameter('name', self::ACTIVITY[2])
+            ->orderBy('w.lastName', 'ASC')
             ->getQuery();
 
         return $qb->execute();
