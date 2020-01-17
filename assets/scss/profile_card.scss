@@ -41,6 +41,7 @@
     font-size:34px;
     transition: 0.2s;
 }
+
 .scroll-arrow:hover {
     transition: 0.2s;
     opacity:1;
@@ -63,6 +64,7 @@
 .ul-scroll::-webkit-scrollbar {
     display: none;
 }
+
 .li-scroll {
     list-style: none;
     display: inline-block;
