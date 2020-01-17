@@ -10,6 +10,30 @@ class Category
 
     private $childIds;
 
+    private $childName;
+
+    /**
+     * @return mixed
+     */
+    public function getChildName()
+    {
+        return $this->childName;
+    }
+
+    /**
+     * @param array $product
+     */
+    public function setChildName(array $product): void
+    {
+        $completeName = explode(' / ', $product['categ_id'][1]);
+        if (isset($completeName[1])) {
+            $childName = $completeName[1];
+        } else {
+            $childName = $completeName[0];
+        }
+        $this->childName = $childName;
+    }
+
     /**
      * @param mixed $id
      */

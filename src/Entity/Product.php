@@ -13,17 +13,17 @@ class Product
     private $category;
 
     /**
-     * @return mixed
+     * @return Category
      */
-    public function getCategory()
+    public function getCategory():Category
     {
         return $this->category;
     }
 
     /**
-     * @param mixed $category
+     * @param Category $category
      */
-    public function setCategory($category): void
+    public function setCategory(Category $category): void
     {
         $this->category = $category;
     }

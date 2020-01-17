@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use App\Service\ConnectOdooService;
-use App\Service\GetArticlesCategoryService;
 use phpDocumentor\Reflection\DocBlock\Tags\Deprecated;
 
 class ProductRepository
@@ -16,10 +16,9 @@ class ProductRepository
 
     private $categoryService;
 
-    public function __construct(ConnectOdooService $connectOdooService, GetArticlesCategoryService $categoryService)
+    public function __construct(ConnectOdooService $connectOdooService)
     {
         $this->connectOdooService = $connectOdooService;
-        $this->categoryService = $categoryService;
     }
 
     public function findAll($number = 20)
@@ -32,7 +31,17 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = $this->categoryService->setCategory($products);
+        $articles = [];
+        foreach ($products as $product) {
+            $article = new Product();
+            $category = new Category();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $category->setChildName($product);
+            $category->setId($product['categ_id'][0]);
+            $article->setCategory($category);
+            $articles[] = $article;
+        }
 
         return $articles;
     }
@@ -46,7 +55,18 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = $articles = $this->categoryService->setCategory($products);
+        $articles = [];
+        foreach ($products as $product) {
+            $category = new Category();
+            $category->setChildName($product);
+            $category->setId($product['categ_id'][0]);
+
+            $article = new Product();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $article->setCategory($category);
+            $articles[] = $article;
+        }
 
         return $articles;
     }
@@ -60,7 +80,17 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = $articles = $this->categoryService->setCategory($products);
+        $articles = [];
+        foreach ($products as $product) {
+            $article = new Product();
+            $category = new Category();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $category->setChildName($product);
+            $category->setId($product['categ_id'][0]);
+            $article->setCategory($category);
+            $articles[] = $article;
+        }
 
         return $articles;
     }
