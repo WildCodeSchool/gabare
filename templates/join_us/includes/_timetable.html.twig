@@ -1,4 +1,4 @@
-<section class="bgTimetable" id="agenda-des-reunions-information">
+<section class="bgTimetable p-5" id="agenda-des-reunions-information">
     <h2 class="text-center title-animation">Agenda des réunions d'information</h2>
     <h4 class="text-center">La réunion d'information est le passage obligé pour rejoindre la coopérative !</h4>
     <div class="container  mt-3 mb-5">
@@ -6,23 +6,29 @@
             fonctionnement de la coopérative et souscrire aux parts sociales.
             Ce rendez-vous comprend une visite du magasin et la remise d'une invitation pour y faire vos courses et
             tester nos produits !
-            Les réunions d'information ont lieu à la coopérative au 1455 rue de la Bergeresse à Olivet.</p>
+            Les réunions d'information ont généralement lieu à la coopérative.</p>
     </div>
     <div class="container-fluid">
-        <div class="row justify-content-center justify-content-lg-center scrolling-wrapper-flexbox">
+        <div class="row justify-content-start justify-content-lg-center scrolling-wrapper-flexbox">
             {% for timetable in timetables %}
-                <div class="m-4">
-                    <div class="card card-timetable mb-5 mx-auto">
+                <div class="mr-4 mb-4">
+                    <div class="card card-timetable mx-auto">
                         <div class="card-header header-timetable text-center">
-                            <p class="timetableDate">{{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'EEEE') }}</p>
-                            <p class="timetableDate">{{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'd MMM') }}</p>
+                            <p class="timetableDate">{{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'EEEE') }}
+                                {{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'd MMMM') }}</p>
+                        </div>
+                        <div class="card-body body-timetable">
                             <p class="timetableHour"><i
                                         class="fas fa-clock mr-1"></i>{{ timetable.visitTime | date("H:i") }}</p>
-                            <p class="timetablePlace"><i
-                                        class="fas fa-map-marker-alt mr-1"></i>{{ timetable.visitPlace  }}</p>
+                            <div class="align-self-center">
+                            <p class="timetablePlace">
+                                <i class="fas fa-map-marker-alt mr-1"></i>La gabare</p>
+                            </div>
                         </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform"
-                           target="_blank" class="btn btn-primary">S'inscrire</a>
+                        <div class="card-footer text-center pt-0">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform"
+                               target="_blank" class="btn btn-primary">S'inscrire</a>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
