@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Repository\UserRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,5 +49,70 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @param UserRepository $userRepository
+     * @Route("admin/user", name="admin_index", methods={"GET"})
+     * @IsGranted("ROLE_SUPER_ADMIN", message = "Vous ne passerez pas!")
+     * @return Response
+     */
+    public function index(UserRepository $userRepository) :Response
+    {
+        return $this->render('registration/index.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/editer", name="admin_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_SUPER_ADMIN", message = "Vous ne passerez pas!")
+     */
+    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
+    {
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user->setPassword(
+                $passwordEncoder->encodePassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+            $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre administrateur a été mise à jour'
+            );
+
+            return $this->redirectToRoute('admin_index');
+        }
+
+        return $this->render('registration/edit.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="admin_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_SUPER_ADMIN", message = "Vous ne passerez pas!")
+     */
+    public function delete(Request $request, User $user): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($user);
+            $entityManager->flush();
+
+            $this->addFlash(
+                'danger',
+                'Votre revue de presse a bien été supprimée'
+            );
+        }
+
+        return $this->redirectToRoute('admin_index');
     }
 }

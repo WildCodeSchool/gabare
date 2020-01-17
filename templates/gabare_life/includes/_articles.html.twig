@@ -1,6 +1,6 @@
-<section class="bgActualities pb-5">
+<section class="bgActualities">
     <div class="jumbotron mb-0 d-none d-sm-block mb-3"></div>
-    <h2 class="text-center pb-2 pb-md-0 links" id="actualites-de-la-gabare">Les actualités de la Gabare</h2>
+    <h2 class="text-center links" id="actualites-de-la-gabare">Les actualités de la Gabare</h2>
     <div class="container-fluid">
         <div class="row flex-wrap m-0 justify-content-around">
             {% for article in articles %}
@@ -12,7 +12,7 @@
                         <img src="{{ asset('build/images/placeholder1.png') }}" alt="{{ article.title }}"
                              class="card-img-top image-size-article"/>
                     {% endif %}
-                    <h5 class="theme position-absolute fixed-top mt-2 pl-2 pr-2 p-1">{{ article.theme.name }}</h5>
+                    <h5 class="theme position-absolute fixed-top mt-2 p-3" style="background: {{ article.theme.color }}">{{ article.theme.name }}</h5>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ article.title }}</h5>
                         <p class="card-text">{{ article.date | date("d/m/Y") }}</p>

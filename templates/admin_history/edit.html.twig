@@ -6,10 +6,10 @@
 
     <div class="container-fluid p-5">
         <h2>Éditer le contenu</h2>
-        <div class="col-lg-8 m-0 jumbotron">
+        <div class="col-lg-8 m-0 jumbotron img-admin-view">
             {{ form_start(form) }}
             {{ form_row(form.description) }}
-            {{ form_row(form.image) }}
+            {{ form_row(form.imageFile) }}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
         </div>

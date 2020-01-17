@@ -21,7 +21,8 @@ class WorkerFixtures extends Fixture
             $worker->setFirstName($faker->firstName);
             $worker->setLastName($faker->lastName);
             $worker->setFunction($faker->sentence(3, true));
-            $worker->setPortrait($faker->imageUrl(200, 200, 'people'));
+            $worker->setUpdatedAt($faker->dateTime());
+            $worker->setImageName('');
             $worker->setActivity($this->getReference('activities_0'));
             $manager->persist($worker);
         }
@@ -31,7 +32,8 @@ class WorkerFixtures extends Fixture
             $worker->setFirstName($faker->firstName);
             $worker->setLastName($faker->lastName);
             $worker->setFunction($faker->sentence(2, true));
-            $worker->setPortrait($faker->imageUrl(200, 200, 'people'));
+            $worker->setUpdatedAt($faker->dateTime());
+            $worker->setImageName('');
             $worker->setEmail($faker->safeEmail);
             $worker->setActivity($this->getReference('activities_1'));
             $manager->persist($worker);
@@ -42,7 +44,8 @@ class WorkerFixtures extends Fixture
             $worker->setFirstName($faker->firstName);
             $worker->setLastName($faker->lastName);
             $worker->setFunction($faker->sentence(2, true));
-            $worker->setPortrait($faker->imageUrl(200, 200, 'people'));
+            $worker->setUpdatedAt($faker->dateTime());
+            $worker->setImageName('');
             $worker->setEmail($faker->safeEmail);
             $worker->setActivity($this->getReference('activities_2'));
             $manager->persist($worker);

@@ -1,23 +1,25 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}carrousel index{% endblock %}
+{% block title %}Contenu du carrousel{% endblock %}
 
 {% block body %}
 <div class="container-fluid p-5">
-    <h1>carrousel index</h1>
+    <h1>Contenu du carrousel</h1>
     <a href="{{ path('carousel_new') }}" class="btn btn-primary add mb-4">Ajouter<i
                 class="fas fa-plus ml-2"></i></a>
     <table class="table table-striped">
         <thead class="thBackground">
             <tr>
                 <th>Titre</th>
-                <th>actions</th>
+                <th>Photo</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for carousel in carousels %}
             <tr>
                 <td>{{ carousel.title }}</td>
+                <td><img class="img-crud-index" src="{{ vich_uploader_asset(carousel, 'imageFile')}}" alt={{carousel.title}}></td>
                 <td class="d-flex pt-3">
                     <a href="{{ path('carousel_show', {'id': carousel.id}) }}" class="btn btn-secondary mr-4">Aperçu<i
                                 class="fas fa-file-alt ml-1"></i></a>

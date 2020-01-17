@@ -84,7 +84,7 @@ class AdminCarouselController extends AbstractController
                 'Votre contenu a été mis à jour dans le carrousel'
             );
 
-            return $this->redirectToRoute('carousel_show');
+            return $this->redirectToRoute('carousel_index');
         }
 
         return $this->render('admin_carousel/edit.html.twig', [

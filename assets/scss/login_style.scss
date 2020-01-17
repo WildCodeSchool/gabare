@@ -1,39 +1,39 @@
 .user {
-    height: 100vh;
+    padding-top: 16%;
+    padding-bottom: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image:$texture-background;
 }
 
-
 .titleLog {
+    font-weight: bold;
+    color:$light-color;
+}
+
+.titleLogAdmin{
     font-weight: bold;
 }
 
 .logButton {
     border-radius: 20px;
-    border: 1px solid $secondary-color;
-    background-color: $secondary-color;
+    background-color: $primary-color;
     color: $light-color;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: transform 80ms ease-in;
-
-    &:active {
-        transform: scale(0.95);
-    }
 
     &.ghost {
-        background-color: transparent;
-        border-color: $light-color;
+        background-color: $light-color;
+        color: $primary-color;
     }
 }
 
 .membreText {
-    font-size: 17px;
+    font-size: 20px;
     line-height: 20px;
     letter-spacing: 0.5px;
     margin: 20px 0 30px;
@@ -54,13 +54,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 50px;
     height: 450px;
   }
 
 .userPart {
-    background-color: #eee;
-    border: none;
+    background-color: $light-color;
+    border:none;
     padding: 12px 15px;
     margin: 8px 0;
     width: 115%;
@@ -70,17 +69,15 @@
 .form-container {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.25), 0 15px 15px rgba(0, 0, 0, 0.22);
+    background-color: $light-color;
 }
 
 .overlay-container {
-    background: $third-color;
-    background: linear-gradient(to right, $third-color, $secondary-color);
-    background-repeat: no-repeat;
+    background:rgba(33,53,141,0.7);
     background-size: cover;
     color: $light-color;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.25), 0 15px 15px rgba(0, 0, 0, 0.22);
 }
-

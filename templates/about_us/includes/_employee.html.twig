@@ -4,8 +4,8 @@
         <div class="row justify-content-between justify-content-md-center scrolling-wrapper-flexbox m-2">
             {% for employee in employees %}
                 <div class="card profile m-4">
-                    {% if employee.portrait %}
-                        <img class="profile-img" src="{{ employee.portrait }}"
+                    {% if employee.imageName %}
+                        <img class="profile-img" src="{{ employee.imageName }}"
                              alt="{{ employee.firstname }} {{ employee.lastname }}">
                     {% else %}
                         <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
