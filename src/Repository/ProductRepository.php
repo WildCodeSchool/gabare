@@ -14,8 +14,6 @@ class ProductRepository
      */
     private $connectOdooService;
 
-    private $categoryService;
-
     public function __construct(ConnectOdooService $connectOdooService)
     {
         $this->connectOdooService = $connectOdooService;
