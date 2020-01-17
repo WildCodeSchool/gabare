@@ -34,14 +34,19 @@ class ProductRepository
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
             $category = explode(' / ', $product['categ_id'][1]);
-            $article->setCategory([$product['categ_id'][0],$category[0]]);
+            if (isset($category[1])) {
+                $category = $category[1];
+            } else {
+                $category = $category[0];
+            }
+            $article->setCategory([$product['categ_id'][0],$category]);
             $articles[] = $article;
         }
 
         return $articles;
     }
 
-    public function findByCategory(int $id)
+    public function findByCategory(array $id)
     {
         $client = $this->connectOdooService->connectApi();
 
@@ -82,7 +87,12 @@ class ProductRepository
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
             $category = explode(' / ', $product['categ_id'][1]);
-            $article->setCategory([$product['categ_id'][0],$category[0]]);
+            if (isset($category[1])) {
+                $category = $category[1];
+            } else {
+                $category = $category[0];
+            }
+            $article->setCategory([$product['categ_id'][0], $category]);
             $articles[] = $article;
         }
         return $articles;

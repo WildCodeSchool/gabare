@@ -58,8 +58,14 @@ class ProductController extends AbstractController
         CategoryRepository $categoryRepository,
         Request $request
     ): Response {
-        $products = $productRepository->findByCategory($categoryId);
 
+        $categories = $categoryRepository->selectAllCategories();
+
+        $parameters = $categories[$categoryId]->getChildIds();
+
+        $parameters[] = intval($categoryId);
+
+        $products = $productRepository->findByCategory($parameters);
         $form = $this->createForm(SearchProductType::class);
         $form->handleRequest($request);
 
@@ -68,8 +74,6 @@ class ProductController extends AbstractController
             $this->redirect('#productSection');
             $products = $productRepository->findByName($data['search']);
         }
-
-        $categories = $categoryRepository->selectAllCategories();
 
         return $this->render('products/index.html.twig', [
             'products' => $products,

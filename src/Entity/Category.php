@@ -8,6 +8,8 @@ class Category
 
     private $name;
 
+    private $childIds;
+
     /**
      * @param mixed $id
      */
@@ -38,5 +40,23 @@ class Category
     public function setName($name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChildIds()
+    {
+        return $this->childIds;
+    }
+
+    /**
+     * @param mixed $childIds
+     */
+    public function setChildIds($childIds): void
+    {
+        foreach ($childIds as $childId) {
+            $this->childIds[] = $childId;
+        }
     }
 }
