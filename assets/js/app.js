@@ -37,3 +37,26 @@ $('.counter-up').each(function () {
             },
         });
 });
+
+const imgList = document.getElementById('imgList');
+const scrollRight = document.getElementById('scroll-right');
+const scrollLeft = document.getElementById('scroll-left');
+const imgList1 = document.getElementById('imgList1');
+const scrollRight1 = document.getElementById('scroll-right1');
+const scrollLeft1 = document.getElementById('scroll-left1');
+
+scrollRight.addEventListener('click', (event) => {
+    imgList.scrollBy(260, 0);
+});
+
+scrollLeft.addEventListener('click', (event) => {
+    imgList.scrollBy(-260, 0);
+});
+
+scrollRight1.addEventListener('click', (event) => {
+    imgList1.scrollBy(260, 0);
+});
+
+scrollLeft1.addEventListener('click', (event) => {
+    imgList1.scrollBy(-260, 0);
+});
