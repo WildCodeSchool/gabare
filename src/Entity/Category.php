@@ -17,21 +17,14 @@ class Category
      */
     public function getChildName()
     {
-        return $this->childName;
-    }
-
-    /**
-     * @param array $product
-     */
-    public function setChildName(array $product): void
-    {
-        $completeName = explode(' / ', $product['categ_id'][1]);
+        $completeName = explode(' / ', $this->getName());
         if (isset($completeName[1])) {
             $childName = $completeName[1];
         } else {
             $childName = $completeName[0];
         }
         $this->childName = $childName;
+        return $this->childName;
     }
 
     /**

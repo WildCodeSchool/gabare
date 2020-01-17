@@ -46,7 +46,7 @@
                             {% else %}
                                 <h5 class="card-title p-3 text-center">{{ product.name | capitalize }} </h5>
                             {% endif %}
-                            <div class="mb-2 card_category">{{ product.category.childName | upper }}</div>
+                            <div class="mb-2 card_category">{{ product.category.childName | upper | truncate(20) }}</div>
                             <div class="mb-3 card_image"><img
                                         src="https://static.cuisineaz.com/680x357/i140769-carotte.jpeg"></div>
                         </div>

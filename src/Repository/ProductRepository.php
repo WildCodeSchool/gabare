@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Service\ConnectOdooService;
-use phpDocumentor\Reflection\DocBlock\Tags\Deprecated;
 
 class ProductRepository
 {
@@ -29,17 +28,7 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = [];
-        foreach ($products as $product) {
-            $article = new Product();
-            $category = new Category();
-            $article->setName($product['name']);
-            $article->setPrice($product['base_price']);
-            $category->setChildName($product);
-            $category->setId($product['categ_id'][0]);
-            $article->setCategory($category);
-            $articles[] = $article;
-        }
+        $articles = $this->hydrateArticles($products);
 
         return $articles;
     }
@@ -53,18 +42,7 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = [];
-        foreach ($products as $product) {
-            $category = new Category();
-            $category->setChildName($product);
-            $category->setId($product['categ_id'][0]);
-
-            $article = new Product();
-            $article->setName($product['name']);
-            $article->setPrice($product['base_price']);
-            $article->setCategory($category);
-            $articles[] = $article;
-        }
+        $articles = $articles = $this->hydrateArticles($products);
 
         return $articles;
     }
@@ -78,17 +56,7 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = [];
-        foreach ($products as $product) {
-            $article = new Product();
-            $category = new Category();
-            $article->setName($product['name']);
-            $article->setPrice($product['base_price']);
-            $category->setChildName($product);
-            $category->setId($product['categ_id'][0]);
-            $article->setCategory($category);
-            $articles[] = $article;
-        }
+        $articles = $articles = $this->hydrateArticles($products);
 
         return $articles;
     }
@@ -104,5 +72,21 @@ class ProductRepository
         $products = $client->search_count('product.template', $criteria);
 
         return $products;
+    }
+
+    private function hydrateArticles($products)
+    {
+        $articles = [];
+        foreach ($products as $product) {
+            $category = new Category();
+            $category->setName($product['categ_id'][1]);
+            $category->setId($product['categ_id'][0]);
+            $article = new Product();
+            $article->setName($product['name']);
+            $article->setPrice($product['base_price']);
+            $article->setCategory($category);
+            $articles[] = $article;
+        }
+        return $articles;
     }
 }
