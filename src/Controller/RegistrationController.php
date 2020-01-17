@@ -109,7 +109,7 @@ class RegistrationController extends AbstractController
 
             $this->addFlash(
                 'danger',
-                'Votre revue de presse a bien été supprimée'
+                'Votre administrateur a bien été supprimée'
             );
         }
 
