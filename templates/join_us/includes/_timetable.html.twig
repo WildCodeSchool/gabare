@@ -18,6 +18,8 @@
                             <p class="timetableDate">{{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'd MMM') }}</p>
                             <p class="timetableHour"><i
                                         class="far fa-clock mr-1"></i>{{ timetable.visitTime | date("H:i") }}</p>
+                            <p class="timetablePlace"><i
+                                        class="far fa-clock mr-1"></i>{{ timetable.visitPlace |truncate (13) }}</p>
                         </div>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform"
                            target="_blank" class="btn btn-primary">S'inscrire</a>

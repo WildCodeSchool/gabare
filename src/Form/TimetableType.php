@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Timetable;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,7 +24,9 @@ class TimetableType extends AbstractType
                 'input'  => 'datetime',
                 'widget' => 'choice',
                 ])
-        ;
+            ->add('visitPlace', TextType::class, [
+                'label' => 'Lieu',
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
