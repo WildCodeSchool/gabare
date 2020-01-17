@@ -1,5 +1,6 @@
 @import "vars";
 
+/*Nav bar */
 header {
     font-family: $title-font;
     font-weight: 500;
@@ -95,12 +96,45 @@ header {
     color: $secondary-color;
 }
 
-.customersAdd{
+/* box Cooperateur */
+.customersAdd {
     background: $secondary-color;
-    height: 60px;
-    width:250px;
-    color:white;
+    height: 50px;
+    color:$light-color;
     font-weight: bold;
-    display: flex;
+    display:flex;
+    align-items: center;
     justify-content: center;
+}
+
+
+/* message d'alerte activé */
+.message-alert {
+    height: 50px;
+    text-align: center;
+    border-radius: 0;
+    border: none;
+    background-color: $third-color;
+    color: $light-color;
+    font-weight: bold;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+
+    & h5 {
+        color: $light-color;
+        font-weight: bold;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .customersAdd {
+        font-size: 1em;
+    }
+
+    .message-alert-font {
+        font-size: 1em;
+    }
 }

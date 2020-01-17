@@ -16,7 +16,7 @@ class HeaderController extends AbstractController
             ->getRepository(Alert::class)
             ->findOneBy([]);
 
-        return $this->render('_customers.html.twig', [
+        return $this->render('_cooperators_and_alert.html.twig', [
             'customers' => $customer,
             'alert' => $alert,
         ]);
