@@ -8,6 +8,25 @@ class Category
 
     private $name;
 
+    private $childIds;
+
+    private $childName;
+
+    /**
+     * @return mixed
+     */
+    public function getChildName()
+    {
+        $completeName = explode(' / ', $this->getName());
+        if (isset($completeName[1])) {
+            $childName = $completeName[1];
+        } else {
+            $childName = $completeName[0];
+        }
+        $this->childName = $childName;
+        return $this->childName;
+    }
+
     /**
      * @param mixed $id
      */
@@ -38,5 +57,23 @@ class Category
     public function setName($name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChildIds()
+    {
+        return $this->childIds;
+    }
+
+    /**
+     * @param mixed $childIds
+     */
+    public function setChildIds($childIds): void
+    {
+        foreach ($childIds as $childId) {
+            $this->childIds[] = $childId;
+        }
     }
 }

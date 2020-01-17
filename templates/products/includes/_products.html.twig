@@ -1,23 +1,68 @@
 <section class="productSection">
-    <div class="container-fluid">
-        <h2 class="text-center p-5">Nos produits</h2>
-        <ul>
+    <h2 class="text-center p-4 title_category">{% if app.request.get('search_product') is not null %}Résultats de recherche : "{{ app.request.get('search_product')['search'] }}"{% else %}Nos produits{% endif %}</h2>
+    <div class="search_categories">
+        {{ form_start(form, {'attr': {'class': 'search'}}) }}
 
-            {% for category in categories %}
-                <a href="{{ path('products_category', {'categoryId' : category.id})}}"><li>
+        {{ form_widget(form.search, {'attr': {'class': 'search_champ'}}) }}
+
+
+        <button class="search_button" type="submit">
+            <svg class="svg_search" viewBox="0 0 26.235 26.235">
+                <path id="Icon_material-search" data-name="Icon material-search"
+                      d="M23.25,21H22.065l-.42-.405a9.765,9.765,0,1,0-1.05,1.05l.405.42V23.25l7.5,7.485L30.735,28.5Zm-9,0A6.75,6.75,0,1,1,21,14.25,6.741,6.741,0,0,1,14.25,21Z"
+                      transform="translate(-4.5 -4.5)"/>
+            </svg>
+        </button>
+        {{ form_end(form) }}
+        <a href="{{ path('products') }}">
+            <div class="category {% if app.request.attributes.get('_route') == 'products' and app.request.get('search_product') == null %}active_category{% endif %}">
+                <div class="category_name">
+                    Nouveautés
+                </div>
+            </div>
+        </a>
+        {% for category in categories %}
+            <a href="{{ path('products_category', {'categoryId' : category.id}) }}">
+                <div class="category {% if app.request.attributes.get('_route_params') != null %}{% if app.request.attributes.get('_route_params').categoryId | number_format == category.id and app.request.get('search_product') == null %}active_category{% endif %}{% endif %}">
+                    <div class="category_name">
                         {{ category.name | capitalize }}
-                    </li></a>
-            {% endfor %}
-        </ul>
-        <div class="container">
-            {{ form_start(form) }}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 
-            {{ form_widget(form) }}
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
-            </button>
-            {{ form_end(form) }}
+    <div class="container-fluid product">
+        <div class="card_product_container row justify-content-center">
+            {% if products == [] %}
+                <h4 class="mt-5">Pas de
+                    produits {% if app.request.get('search_product') is not null %}correspondant à votre recherche{% else %}dans cette catégorie{% endif %}
+                    ...</h4>
+            {% else %}
+                {% for product in products %}
+                    <div class="card_product mb-5 mx-3 d-flex flex-column justify-content-between">
+                        <div class="card_body d-flex flex-column align-items-center pt-2 {% if (product.name | length) > 39 %} card_truncated {% endif %}">
+                            {% if (product.name | length) > 39 %}
+                                <h5 class="card-title p-3 text-center truncated_text">{{ product.name | capitalize | truncate(40) }} </h5>
+                                <h5 class="card-title p-3 text-center not_truncated_text">{{ product.name | capitalize }} </h5>
+                            {% else %}
+                                <h5 class="card-title p-3 text-center">{{ product.name | capitalize }} </h5>
+                            {% endif %}
+                            <div class="mb-2 card_category">{{ product.category.childName | upper | truncate(20) }}</div>
+                            {% if product.picture == null %}
+                                <div class="mb-3 card_image"><img
+                                            src="{{ asset('build/images/logo.png') }}"></div>
+                            {% else %}
+                                <div class="mb-3 card_image"><img
+                                            src="data:image/jpeg;base64, {{ product.picture }}"></div>
+                            {% endif %}
+
+                        </div>
+                        <p class="card_text pl-3 pb-3 m-0">{% if product.price == 0 %}Prix indisponible{% else %}{{ product.price | number_format(2, ',', '.') }} €{% endif %}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
         </div>
-
-        {% include 'products/includes/_product_cards.html.twig' %}
     </div>
 </section>

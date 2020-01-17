@@ -13,7 +13,10 @@ class SearchProductType extends AbstractType
     {
         $builder
             ->add('search', SearchType::class, [
-                'label'=>'Rechercher',
+                'label'=>' ',
+                'attr' => [
+                    'placeholder' => 'Saisir un produit...',
+                ]
             ]);
     }
 
