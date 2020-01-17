@@ -15,7 +15,7 @@ class SearchProductType extends AbstractType
             ->add('search', SearchType::class, [
                 'label'=>' ',
                 'attr' => [
-                    'placeholder' => 'Taper un produit...',
+                    'placeholder' => 'Saisir un produit...',
                 ]
             ]);
     }

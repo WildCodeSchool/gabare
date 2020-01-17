@@ -48,7 +48,7 @@
                             {% endif %}
                             <div class="mb-2 card_category">{{ product.category.childName | upper | truncate(20) }}</div>
                             <div class="mb-3 card_image"><img
-                                        src="https://static.cuisineaz.com/680x357/i140769-carotte.jpeg"></div>
+                                        src="{{ asset('build/images/logo.png') }}"></div>
                         </div>
                         <p class="card_text pl-3 pb-3 m-0">{% if product.price == 0 %}Prix indisponible{% else %}{{ product.price | number_format(2, ',', '.') }} €{% endif %}</p>
                     </div>
