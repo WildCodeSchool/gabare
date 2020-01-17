@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide p-2" data-ride="carousel">
     <ol class="carousel-indicators">
         {% for i in 0..(carousels | length - 1)  %}
             <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}" class={% if i == 0 %}active{% endif %}></li>

@@ -1,16 +1,11 @@
-<section class="brief mt-5 mb-5">
-
+<section class="brief pt-5 pb-5 ">
     <h2 class="text-center">La Gabare en bref</h2>
-
     <div class="container">
-
         <div class="d-flex justify-content-between row mt-5">
-
             <div class="d-flex flex-column justify-content-around col-md-6">
-
                 <div class="mb-5 row">
-                    <div class="iconBrief"><i class="logIcon fas fa-users"></i></div>
-                    <div class="col-10">
+                    <div class="d-none d-sm-block iconBrief"><i class="logIcon fas fa-users"></i></div>
+                    <div class="col-xs-12 col-lg-10 text-justify">
                         <h4 class="font-weight-bold">Un projet citoyen</h4>
                         <p>
                             La Gabare est tout d'abord une communauté, une organisation citoyenne, qui appartient à ses
@@ -24,8 +19,8 @@
                 </div>
 
                 <div class="mb-5 row">
-                    <div class="iconBrief"><i class="logIcon fas fa-hands-helping"></i></div>
-                    <div class="col-10">
+                    <div class="d-none d-sm-block iconBrief"><i class="logIcon fas fa-hands-helping"></i></div>
+                    <div class="col-xs-12 col-lg-10 text-justify">
                         <h4 class="font-weight-bold">Une coopérative</h4>
                         <p>
                             La Gabare est ensuite une coopérative où les consommateurs deviennent des consom' acteurs,
@@ -40,8 +35,8 @@
                 </div>
 
                 <div class="row">
-                    <div class="iconBrief"><i class="logIcon fas fa-store-alt"></i></div>
-                    <div class="col-10">
+                    <div class="d-none d-sm-block iconBrief"><i class="logIcon fas fa-store-alt"></i></div>
+                    <div class="col-xs-12 col-lg-10 text-justify">
                         <h4 class="font-weight-bold">Un supermarché</h4>
                         <p>
                             La Gabare est enfin un lieu convivial d'animations ainsi qu'un supermarché dont le choix des
@@ -55,23 +50,19 @@
                 </div>
 
             </div>
-            <div class="d-flex justify-content-center">
-
+            <div class="d-none d-sm-flex justify-content-center">
                 <img class="firstImage"
                      src="{{ asset('build/images/rayon.jpg') }}"
                      alt="La_Gabare">
-
             </div>
         </div>
 
 
         <div class="d-flex justify-content-between row mt-5">
-
             <div class="d-flex justify-content-center col-md-6">
                 <img class="secondImage"
                      src="{{ asset('build/images/interieur.jpg') }}"
                      alt="La_Gabare">
-
             </div>
 
             <div class="d-flex flex-column justify-content-around col-md-5">
@@ -101,16 +92,13 @@
                         avec l’appui de l’Association « Les Amis de La Gabare ».
                     </p>
                 </div>
-
             </div>
-
-
         </div>
 
     </div>
 
     <div class="mt-5 mb-4">
-        <a href="nous-rejoindre">
+        <a href="{{path('join_us')}}">
             <button type="button" class="more-info-button">Plus d'infos</button>
         </a>
     </div>
