@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Product;
 use App\Service\ConnectOdooService;
+use App\Service\GetArticlesCategoryService;
 use phpDocumentor\Reflection\DocBlock\Tags\Deprecated;
 
 class ProductRepository
@@ -13,9 +14,12 @@ class ProductRepository
      */
     private $connectOdooService;
 
-    public function __construct(ConnectOdooService $connectOdooService)
+    private $categoryService;
+
+    public function __construct(ConnectOdooService $connectOdooService, GetArticlesCategoryService $categoryService)
     {
         $this->connectOdooService = $connectOdooService;
+        $this->categoryService = $categoryService;
     }
 
     public function findAll($number = 20)
@@ -28,20 +32,7 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = [];
-        foreach ($products as $product) {
-            $article = new Product();
-            $article->setName($product['name']);
-            $article->setPrice($product['base_price']);
-            $category = explode(' / ', $product['categ_id'][1]);
-            if (isset($category[1])) {
-                $category = $category[1];
-            } else {
-                $category = $category[0];
-            }
-            $article->setCategory([$product['categ_id'][0],$category]);
-            $articles[] = $article;
-        }
+        $articles = $this->categoryService->setCategory($products);
 
         return $articles;
     }
@@ -55,46 +46,22 @@ class ProductRepository
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = [];
-        foreach ($products as $product) {
-            $article = new Product();
-            $article->setName($product['name']);
-            $article->setPrice($product['base_price']);
-            $category = explode(' / ', $product['categ_id'][1]);
-            if (isset($category[1])) {
-                $category = $category[1];
-            } else {
-                $category = $category[0];
-            }
-            $article->setCategory([$product['categ_id'][0], $category]);
-            $articles[] = $article;
-        }
+        $articles = $articles = $this->categoryService->setCategory($products);
+
         return $articles;
     }
 
-    public function findByName($name) :array
+    public function findByName($name): array
     {
         $client = $this->connectOdooService->connectApi();
-        $ids = $client->search('product.template', [['name','=ilike', '%'.$name.'%']]);
+        $ids = $client->search('product.template', [['name', '=ilike', '%' . $name . '%']]);
 
         $fields = ['name', 'base_price', 'categ_id'];
 
         $products = $client->read('product.template', $ids, $fields);
 
-        $articles = [];
-        foreach ($products as $product) {
-            $article = new Product();
-            $article->setName($product['name']);
-            $article->setPrice($product['base_price']);
-            $category = explode(' / ', $product['categ_id'][1]);
-            if (isset($category[1])) {
-                $category = $category[1];
-            } else {
-                $category = $category[0];
-            }
-            $article->setCategory([$product['categ_id'][0], $category]);
-            $articles[] = $article;
-        }
+        $articles = $articles = $this->categoryService->setCategory($products);
+
         return $articles;
     }
 
