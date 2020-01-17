@@ -12,6 +12,24 @@ class Product
 
     private $category;
 
+    private $picture;
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture): void
+    {
+        $this->picture = $picture;
+    }
+
     /**
      * @return Category
      */

@@ -35,7 +35,9 @@
     <div class="container-fluid product">
         <div class="card_product_container row justify-content-center">
             {% if products == [] %}
-                <h4 class="mt-5">Pas de produits {% if app.request.get('search_product') is not null %}correspondant à votre recherche{% else %}dans cette catégorie{% endif %}...</h4>
+                <h4 class="mt-5">Pas de
+                    produits {% if app.request.get('search_product') is not null %}correspondant à votre recherche{% else %}dans cette catégorie{% endif %}
+                    ...</h4>
             {% else %}
                 {% for product in products %}
                     <div class="card_product mb-5 mx-3 d-flex flex-column justify-content-between">
@@ -47,8 +49,14 @@
                                 <h5 class="card-title p-3 text-center">{{ product.name | capitalize }} </h5>
                             {% endif %}
                             <div class="mb-2 card_category">{{ product.category.childName | upper | truncate(20) }}</div>
-                            <div class="mb-3 card_image"><img
-                                        src="{{ asset('build/images/logo.png') }}"></div>
+                            {% if product.picture == null %}
+                                <div class="mb-3 card_image"><img
+                                            src="{{ asset('build/images/logo.png') }}"></div>
+                            {% else %}
+                                <div class="mb-3 card_image"><img
+                                            src="data:image/jpeg;base64, {{ product.picture }}"></div>
+                            {% endif %}
+
                         </div>
                         <p class="card_text pl-3 pb-3 m-0">{% if product.price == 0 %}Prix indisponible{% else %}{{ product.price | number_format(2, ',', '.') }} €{% endif %}</p>
                     </div>

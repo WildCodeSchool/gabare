@@ -24,7 +24,7 @@ class ProductRepository
 
         $ids = $client->search('product.template', [['sale_ok', '=', true]], 0, $number);
 
-        $fields = ['name', 'base_price', 'categ_id'];
+        $fields = ['name', 'base_price', 'categ_id', 'image_medium'];
 
         $products = $client->read('product.template', $ids, $fields);
 
@@ -38,7 +38,7 @@ class ProductRepository
         $client = $this->connectOdooService->connectApi();
 
         $ids = $client->search('product.template', [['sale_ok', '=', true], ['categ_id', '=', $id]]);
-        $fields = ['name', 'base_price', 'categ_id'];
+        $fields = ['name', 'base_price', 'categ_id', 'image_medium'];
 
         $products = $client->read('product.template', $ids, $fields);
 
@@ -52,7 +52,7 @@ class ProductRepository
         $client = $this->connectOdooService->connectApi();
         $ids = $client->search('product.template', [['name', '=ilike', '%' . $name . '%']]);
 
-        $fields = ['name', 'base_price', 'categ_id'];
+        $fields = ['name', 'base_price', 'categ_id', 'image_medium'];
 
         $products = $client->read('product.template', $ids, $fields);
 
@@ -85,6 +85,7 @@ class ProductRepository
             $article->setName($product['name']);
             $article->setPrice($product['base_price']);
             $article->setCategory($category);
+            $article->setPicture($product['image_medium']);
             $articles[] = $article;
         }
         return $articles;
