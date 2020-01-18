@@ -1,78 +1,63 @@
-<section class="value links" id="nos-valeurs">
-
-    <div class="container">
-
-        <header class="hearderValue">
-            <h2 class="titleValue text-center">Nos valeurs</h2>
-            <p class="text-center mt-3 mb-5">À La Gabare nous respectons des valeurs simples.</p>
-        </header>
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-3 mb-3">
-                <div class="card boxValue">
-                    <i class="iconValue fas fa-carrot"></i>
-                    <div class="card-body">
-                        <h5 class=" titleCardValue card-title"><b>Une alimentation saine !</b></h5>
-                        <p class="textCardValue card-text">Le bio accessible à tous</p>
+<section class="links" id="nos-valeurs">
+    <div class="bgValue">
+        <h2 class="titleValue text-center pt-5 pt-md-5 mb-3">Nos valeurs</h2>
+        <h3 class="titleValue text-center m-4">À La Gabare nous respectons des valeurs simples.</h3>
+        <div class="container pt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 mb-3">
+                    <div class="card boxValue">
+                        <i class="iconValue fas fa-carrot"></i>
+                        <div class="card-body">
+                            <h5 class=" titleCardValue card-title"><b>Une alimentation saine !</b></h5>
+                            <p class="textCardValue card-text">Le bio accessible à tous</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card boxValue">
+                        <i class="iconValue fas fa-euro-sign"></i>
+                        <div class="card-body">
+                            <h5 class="titleCardValue card-title"><b>Un gain de pouvoir</br>d’achat !</b></h5>
+                            <p class="textCardValue card-text">110 euros économisés chaque mois</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card boxValue">
+                        <i class="iconValue fas fa-project-diagram"></i>
+                        <div class="card-body">
+                            <h5 class="titleCardValue card-title"><b>Un projet citoyen !</b></h5>
+                            <p class="textCardValue card-text">1 personne, 1 voix. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card boxValue">
+                        <i class="iconValue fas fa-hands-helping"></i>
+                        <div class="card-body">
+                            <h5 class="titleCardValue card-title"><b>Un lien social nouveau !</b></h5>
+                            <p class="textCardValue card-text">Entre consom’acteurs et producteurs. </p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 mb-3">
-                <div class="card boxValue">
-                    <i class="iconValue fas fa-euro-sign"></i>
-                    <div class="card-body">
-                        <h5 class="titleCardValue card-title"><b>Un gain de pouvoir</br>d’achat !</b></h5>
-                        <p class="textCardValue card-text">110 euros économisés chaque mois</p>
+            <div class="row counters pt-3 pb-5">
+                {% for capital in capitals %}
+                    <div class="col-lg-2 col-6 text-center">
+                        <span class="counter-up">{{ capital.number }}</span>
+                        <p class="textCardValue">{{ capital.title }}</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-3">
-                <div class="card boxValue">
-                    <i class="iconValue fas fa-project-diagram"></i>
-                    <div class="card-body">
-                        <h5 class="titleCardValue card-title"><b>Un projet citoyen !</b></h5>
-                        <p class="textCardValue card-text">1 personne, 1 voix. </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 mb-3">
-                <div class="card boxValue">
-                    <i class="iconValue fas fa-hands-helping"></i>
-                    <div class="card-body">
-                        <h5 class="titleCardValue card-title"><b>Un lien social nouveau !</b></h5>
-                        <p class="textCardValue card-text">Entre consom’acteurs et producteurs. </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row counters">
-
-            {% for capital in capitals %}
+                {% endfor %}
                 <div class="col-lg-2 col-6 text-center">
-                    <span class="counter-up">{{capital.number}}</span>
-                    <p class="textCardValue" >{{capital.title}}</p>
+                    <span class="counter-up">{{ product }}</span>
+                    <p class="textCardValue">Références produits</p>
                 </div>
-            {% endfor %}
-
-            <div class="col-lg-2 col-6 text-center">
-                <span class="counter-up">{{product}}</span>
-                <p class="textCardValue">Références produits</p>
+                <div class="col-lg-2 col-6 text-center">
+                    <span class="counter-up">{{ customers }}</span>
+                    <p class="textCardValue">Coopérateurs</p>
+                </div>
             </div>
-
-            <div class="col-lg-2 col-6 text-center">
-                <span class="counter-up">{{customers}}</span>
-                <p class="textCardValue">Coopérateurs</p>
-            </div>
-
-
         </div>
-
     </div>
 </section>
 
