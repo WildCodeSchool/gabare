@@ -1,9 +1,15 @@
+.bgEmployee .bgCA-Member .bgCA-Friend {
+    background-image:$texture-background;
+}
+
 .profile{
-    width: 18rem;
+    height: 250px;
 }
 
 .profile-img {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .email-CA {
@@ -23,17 +29,53 @@
     font-size: 24px;
 }
 
-@media screen and (max-width: 540px) {
-    .scrolling-wrapper-flexbox {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
+.scroll-arrow {
+    width: 10%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    padding:0;
+    margin:0;
+    opacity: 0.5;
+    font-size:34px;
+    transition: 0.2s;
+}
 
-    .card {
-        flex: 0 0 auto;
-    }
+.scroll-arrow:hover {
+    transition: 0.2s;
+    opacity:1;
+}
 
-    .scrolling-wrapper-flexbox {
-        -webkit-overflow-scrolling: touch;
-    }
+.ul-scroll {
+    padding: 0;
+    width: 70%;
+    scroll-behavior: smooth;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ul-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.li-scroll {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    transition: 0.2s;
+}
+
+.li-scroll, .img-scroll {
+    width: 250px;
 }
