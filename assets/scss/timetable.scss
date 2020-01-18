@@ -1,5 +1,6 @@
 .card-timetable {
-    width: 180px;
+    width: 220px;
+    font-size: 18px;
 }
 
 .bgTimetable{
@@ -13,6 +14,8 @@
 
 .body-timetable{
     font-size: 14px;
+    height: 130px;
+    max-height: 130px;
 }
 
 .timetableDate {
@@ -28,8 +31,7 @@
     line-height: 1.2em;
 }
 
-
-.fa-clock{
-    color:$light-color;
+.card-footer {
+    border:none;
+    background-color: $light-color;
 }
-

@@ -31,6 +31,31 @@ class Timetable
      */
     private $visitTime;
 
+    /**
+     * @return mixed
+     */
+    public function getVisitPlace()
+    {
+        return $this->visitPlace;
+    }
+
+    /**
+     * @param mixed $visitPlace
+     */
+    public function setVisitPlace($visitPlace): void
+    {
+        $this->visitPlace = $visitPlace;
+    }
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "Le nom du lieu ne doit pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank()
+     */
+    private $visitPlace;
+
     public function getId(): ?int
     {
         return $this->id;

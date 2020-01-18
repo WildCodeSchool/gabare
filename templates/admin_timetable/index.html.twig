@@ -13,6 +13,7 @@
             <tr>
                 <th>Date</th>
                 <th>Heure</th>
+                <th>Lieu</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,6 +22,8 @@
             <tr>
                 <td>{{ timetable.visitDate ? timetable.visitDate|date('d/m/Y') : '' }}</td>
                 <td>{{ timetable.visitTime ? timetable.visitTime|date('H:i:s') : '' }}</td>
+                <td>{{ timetable.visitPlace}}</td>
+
                 <td class="d-flex pt-3">
                     <a href="{{ path('timetable_edit', {'id': timetable.id}) }}" class="btn btn-success mr-4">Éditer</a>
                           <div>
