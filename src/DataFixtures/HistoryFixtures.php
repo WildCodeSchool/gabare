@@ -14,7 +14,7 @@ class HistoryFixtures extends Fixture
         $historic = new History();
         $faker = Faker\Factory::create('fr_FR');
         $historic->setTitle($faker->sentence);
-        $historic->setDescription($faker->text(400));
+        $historic->setDescription($faker->text(1000));
         $historic->setImageName('');
         $historic->setUpdatedAt($faker->DateTime());
         $manager->persist($historic);
