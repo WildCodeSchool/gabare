@@ -1,10 +1,13 @@
-<section class="bgPioneer links" id="les-pionniers">
-    <h2 class="text-center mt-md-5 mb-3 title-animation">Les pionniers</h2>
-    <div class="container-fluid">
-        <div class="row justify-content-start m-0 m-md-5">
+<section class="links" id="les-pionniers">
+    <div class="bgPioneer">
+        <h2 class="text-center pt-5 pt-md-5 mb-3">Les pionniers</h2>
+        <h3 class="text-center m-4">Ils ont fait partie de l'aventure de La Gabare</h3>
+        <div class="container">
+            <div class="row justify-content-start pt-3 pb-5">
                 {% for pioneer in pioneers %}
-                <p class="col-4 col-md-2">{{ pioneer.firstname }} {{ pioneer.lastname }}</p>
+                    <p class="col-6 col-md-3 text-center {{ cycle(['odd', 'even'], loop.index) }}">{{ pioneer.firstname }} {{ pioneer.lastname }}</p>
                 {% endfor %}
+            </div>
         </div>
     </div>
 </section>

@@ -1,37 +1,39 @@
-<section class="bgCA-Member links" id="le-conseil-administration">
-    <h2 class="text-center mt-5">Le conseil d'administration de La Gabare</h2>
-    <div class="container-fluid text-center">
-        <div class="scroll-arrow" id="scroll-leftOne">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <ul id="imgListOne" class="ul-scroll">
-            {% for CAMember in CAMembers %}
-                <li class="li-scroll">
-                    <div class="img-scroll">
-                        <div class="profile">
-                            {% if CAMember.imageName %}
-                                <img class="img-fluid profile-img"
-                                     src="{{ vich_uploader_asset(CAMember, 'imageFile') }}"
-                                     alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
-                            {% else %}
-                                <img class="img-fluid profile_img"
-                                     src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
-                                     alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
-                            {% endif %}
-                        </div>
-                        <div class="text-center">
-                            <h3 class="m-3">{{ CAMember.firstname }} {{ CAMember.lastname }}</h3>
-                            <p>{{ CAMember.function }}</p>
-                            <div class="email-CA">
-                                <a href="mailto:{{ CAMember.email }}"><i class="far fa-envelope"></i></a>
+<section class="links" id="le-conseil-administration">
+    <div class="bgCA-Member pt-4 pt-md-5 pb-5">
+        <h2 class="text-center">Le conseil d'administration de La Gabare</h2>
+        <div class="container-fluid text-center p-0">
+            <div class="scroll-arrow" id="scroll-leftOne">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <ul id="imgListOne" class="ul-scroll">
+                {% for CAMember in CAMembers %}
+                    <li class="li-scroll">
+                        <div class="img-scroll">
+                            <div class="profile">
+                                {% if CAMember.imageName %}
+                                    <img class="img-fluid profile-img"
+                                         src="{{ vich_uploader_asset(CAMember, 'imageFile') }}"
+                                         alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
+                                {% else %}
+                                    <img class="img-fluid profile_img"
+                                         src="{{ asset('build/images/Portrait_Placeholder.png') }}"
+                                         alt="{{ CAMember.firstname }} {{ CAMember.lastname }}">
+                                {% endif %}
+                            </div>
+                            <div class="profile-text">
+                                <h3 class="text-center p-3">{{ CAMember.firstname }} {{ CAMember.lastname }}</h3>
+                                <p class="text-center">{{ CAMember.function }}</p>
+                                <div class="email-CA">
+                                    <a href="mailto:{{ CAMember.email }}"><i class="far fa-envelope"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-        <div class="scroll-arrow" id="scroll-rightOne" onclick="scrollRight()">
-            <i class="fas fa-chevron-right"></i>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="scroll-arrow" id="scroll-rightOne" onclick="scrollRight()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
         </div>
     </div>
 </section>

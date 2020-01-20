@@ -16,30 +16,38 @@
     <table class="table">
         <tbody>
         <tr>
-            <th>Titre</th>
-            <td>{{ animation.title }}</td>
+            <th class="worker-show">Titre</th>
+            <td class="centerLegend">{{ animation.title }}</td>
+            <th>Image</th>
+            <td rowspan="4">
+                {% if animation.imageName %}
+                    <img class="img-crud" src="{{ vich_uploader_asset(animation, 'imageFile')}}"
+                         alt="">
+                {% else %}
+                    <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
+                         alt="">
+                {% endif %}
+            </td>
         </tr>
         <tr>
             <th>Description</th>
-            <td>{{ animation.description }}</td>
+            <td class="centerLegend">{{ animation.description }}</td>
         </tr>
         <tr>
             <th>Date</th>
-            <td>{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
+            <td class="centerLegend">{{ animation.schedule ? animation.schedule|date('d/m/Y') : '' }}</td>
         </tr>
         <tr>
             <th>Heure de début</th>
-            <td>{{ animation.hourStart ? animation.hourStart|date('H:i') : '' }}</td>
+            <td class="centerLegend">{{ animation.hourStart ? animation.hourStart|date('H:i') : '' }}</td>
         </tr>
         <tr>
             <th>Heure de fin</th>
-            <td>{{ animation.hourEnd ? animation.hourEnd|date('H:i') : '' }}</td>
+            <td class="centerLegend">{{ animation.hourEnd ? animation.hourEnd|date('H:i') : '' }}</td>
         </tr>
-        <tr>
-            <th>Image</th>
-            <td><img class="img-crud" src="{{ vich_uploader_asset(animation, 'imageFile')}}" alt="image d'animation"></td>
-        </tr>
+
         </tbody>
     </table>
 </div>
 {% endblock %}
+
