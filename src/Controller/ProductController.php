@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\SearchProductType;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
+    const PRODUCT_PER_PAGES = 20;
+
     /**
      * @Route("/nos-produits", name="products")
      * @param ProductRepository $productRepository
@@ -22,7 +25,8 @@ class ProductController extends AbstractController
     public function index(
         ProductRepository $productRepository,
         Request $request,
-        CategoryRepository $categoryRepository
+        CategoryRepository $categoryRepository,
+        PaginatorInterface $paginator
     ): Response {
 
         $products = $productRepository->findAll();
@@ -37,6 +41,12 @@ class ProductController extends AbstractController
         }
 
         $categories = $categoryRepository->selectAllCategories();
+
+        $products = $paginator->paginate(
+            $products,
+            $request->query->getInt('page', 1),
+            self::PRODUCT_PER_PAGES
+        );
 
         return $this->render('products/index.html.twig', [
             'products' => $products,
@@ -56,6 +66,7 @@ class ProductController extends AbstractController
         $categoryId,
         ProductRepository $productRepository,
         CategoryRepository $categoryRepository,
+        PaginatorInterface $paginator,
         Request $request
     ): Response {
 
@@ -74,6 +85,12 @@ class ProductController extends AbstractController
             $this->redirect('#productSection');
             $products = $productRepository->findByName($data['search']);
         }
+
+        $products = $paginator->paginate(
+            $products,
+            $request->query->getInt('page', 1),
+            self::PRODUCT_PER_PAGES
+        );
 
         return $this->render('products/index.html.twig', [
             'products' => $products,
