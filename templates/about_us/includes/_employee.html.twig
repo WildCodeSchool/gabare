@@ -1,6 +1,6 @@
 <section class="bgEmployee links" id="les-salaries">
     <h2 class="text-center mt-5">Les salariés</h2>
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center p-0">
         <div class="scroll-arrow" id="scroll-left">
             <i class="fas fa-chevron-left"></i>
         </div>
@@ -14,7 +14,7 @@
                                      alt="{{ employee.firstname }} {{ employee.lastname }}">
                             {% else %}
                                 <img class="img-fluid profile-img"
-                                     src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
+                                     src="{{ asset('build/images/Portrait_Placeholder.png') }}"
                                      alt="{{ employee.firstname }} {{ employee.lastname }}">
                             {% endif %}
                         </div>

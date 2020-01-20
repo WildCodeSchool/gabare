@@ -1,5 +1,5 @@
 .bgPartner {
-    background-image:$texture-background;
+    background-image: $texture-background;
 }
 
 .logo-partner {
@@ -13,4 +13,10 @@
     height: 100%;
     width: 75%;
     object-fit: contain;
+}
+
+@media screen and (max-width: 640px) {
+    .logo-partner {
+        width: 50%;
+    }
 }

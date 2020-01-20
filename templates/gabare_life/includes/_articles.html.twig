@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row flex-wrap m-0 justify-content-around">
             {% for article in articles %}
-                <div class="card m-0 mb-5 m-md-5 box col-11 col-md-3">
+                <div class="card card-shadow m-0 mb-5 m-md-5 box col-11 col-md-3">
                     {% if article.imageName %}
                         <img class="card-img-top image-size-article"
                              src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}"/>

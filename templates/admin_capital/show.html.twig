@@ -9,20 +9,20 @@
             <a href="{{ path('capital_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
             <a href="{{ path('capital_edit', {'id': capital.id}) }}" class="btn btn-success ml-3">Éditer<i
                         class="fas fa-pen ml-1"></i></a>
-        </div>
-        <div class="ml-3">
-            {{ include('admin_capital/_delete_form.html.twig') }}
+            <div class="ml-3">
+                {{ include('admin_capital/_delete_form.html.twig') }}
+            </div>
         </div>
 
         <table class="table">
             <tbody>
             <tr>
                 <th>Titre</th>
-                <td>{{ capital.title }}</td>
+                <td class="centerLegendBis">{{ capital.title }}</td>
             </tr>
             <tr>
                 <th>Nombre</th>
-                <td>{{ capital.number }}</td>
+                <td class="centerLegendBis">{{ capital.number }}</td>
             </tr>
 
             </tbody>
