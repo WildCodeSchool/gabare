@@ -12,7 +12,7 @@
         <div class="row justify-content-start justify-content-lg-center scrolling-wrapper-flexbox">
             {% for timetable in timetables %}
                 <div class="mr-4 mb-4">
-                    <div class="card card-timetable mx-auto">
+                    <div class="card card-timetable mx-auto card-shadow">
                         <div class="card-header header-timetable text-center">
                             <p class="timetableDate">{{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'EEEE') }}
                                 {{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'd MMMM') }}</p>
