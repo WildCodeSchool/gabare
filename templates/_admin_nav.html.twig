@@ -13,13 +13,13 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 {% if app.user %}
                     <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
-                        <a href="{{ path('admin_home') }}"><i class="fas fa-home mr-3"></i>Manuel d'utilisation</a>
+                        <a href="{{ path('admin_home') }}" class="menulink"><i class="fas fa-home mr-3"></i>Manuel d'utilisation</a>
                         <p><i class="fas fa-user-shield mr-3"></i>{{ app.user.username }}</p>
-                        <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt mr-3"></i>Se déconnecter</a>
+                        <a href="{{ path('app_logout') }}" class="menulink"><i class="fas fa-sign-out-alt mr-3"></i>Se déconnecter</a>
                     </div>
                 {% endif %}
                 <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
-                    <a href="{{ path('home') }}">Retour vers le site</a>
+                    <a href="{{ path('home') }}" class="menulink">Retour vers le site</a>
                 </div>
             </div>
         </div>
