@@ -25,16 +25,6 @@ class RegistrationFormType extends AbstractType
                 ]),
             ])
 
-            ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'Accepter les conditions',
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez accepter les conditions !',
-                    ]),
-                ],
-            ])
-
             ->add('roles', ChoiceType::class, [
                 'choices' => [
                     'HomePage' => 'ROLE_ADMIN_HOME',
