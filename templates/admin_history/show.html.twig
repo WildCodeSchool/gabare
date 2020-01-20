@@ -9,14 +9,18 @@
     <div class="container-fluid p-5">
         <h1 class="ml-2 mb-4">Notre histoire</h1>
         <div class="row ml-2 mb-4">
+
+            <a href="{{ path('history_index') }}" class="btn btn-outline-dark m-3">Retour à la liste</a>
+
             <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success m-3">Éditer<i
                         class="fas fa-pen"></i></a>
+
 
             <table class="table">
                 <tbody>
                 <tr>
-                    <th>Titre</th>
-                    <td class="centerLegendBis">Notre histoire</td>
+                    <th>Sous-Titre</th>
+                    <td class="centerLegendBis">{{ history.title }}</td>
                 </tr>
                 <tr>
                     <th>Description</th>

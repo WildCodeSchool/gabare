@@ -16,14 +16,14 @@ class HistoryType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre',
+                'label' => 'Sous-Titre',
             ])
             ->add('description', CKEditorType::class, [
                 'label' => 'Description',
                 'trim' => true,
             ])
             ->add('imageFile', VichImageType::class, [
-                'required' => true,
+                'required' => false,
                 'allow_delete' => false,
                 'download_uri' => false,
                 'image_uri' => true,
