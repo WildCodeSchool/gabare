@@ -12,7 +12,7 @@
                             <div class="profile">
                                 {% if CAFriend.imageName %}
                                     <img class="img-fluid profile-img"
-                                         src="{{ vich_uploader_asset(employee, 'imageFile') }}"
+                                         src="{{ vich_uploader_asset(CAFriend, 'imageFile') }}"
                                          alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
                                 {% else %}
                                     <img class="img-fluid profile_img"
