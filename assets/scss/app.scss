@@ -57,13 +57,20 @@ h5 {
     color: $secondary-color;
     background-color: $light-color;
     border-color: $secondary-color;
+    border-radius: 30px;
 }
 
 .btn-primary:hover {
-    background-color: $primary-color;
-    border-color: $primary-color;
+    color: $light-color;
+    background-color: $secondary-color;
+    border-color: $light-color;
 }
 
+.btn-warning {
+    color: $light-color;
+    background-color: $third-color;
+    border-color: $third-color;
+}
 
 main {
     min-height: 50vh;
@@ -154,3 +161,4 @@ p {
     border-radius: 5px;
     box-shadow: 0 3px 10px -3px $photo-hue;
 }
+
