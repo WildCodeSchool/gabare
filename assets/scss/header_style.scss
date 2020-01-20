@@ -58,9 +58,12 @@ header {
             width: 150px;
             border-radius: 17px;
             background-color: $secondary-color;
-            color: $light-color;
             font-weight: 700;
             border: solid 2px $secondary-color;
+
+            a {
+                color: $light-color;
+            }
 
             .md-icon {
                 height: 22px;
@@ -70,10 +73,13 @@ header {
             }
 
             &:hover {
-                color: $primary-color;
                 background-color: $light-color;
                 border-color: $primary-color;
                 transition-duration: 0.2s;
+
+                a {
+                    color: $primary-color;
+                }
 
                 svg {
                     fill: $primary-color;
@@ -137,4 +143,30 @@ header {
     .message-alert-font {
         font-size: 1em;
     }
+}
+
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        margin-top: 50px;
+    }
+
+    .reseaux_connection .flex-column {
+        flex-direction: row-reverse !important;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
+}
+
+
+.fill_navbar {
+    height:100px;
 }
