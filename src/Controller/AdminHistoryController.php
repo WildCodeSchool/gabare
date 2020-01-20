@@ -44,6 +44,13 @@ class AdminHistoryController extends AbstractController
      */
     public function edit(Request $request, History $history): Response
     {
+        $history = $this->getDoctrine()
+            ->getRepository(History::class)
+            ->findOneBy([]);
+        if (!$history instanceof History) {
+            $history = new History();
+        }
+
         $form = $this->createForm(HistoryType::class, $history);
         $form->handleRequest($request);
 
