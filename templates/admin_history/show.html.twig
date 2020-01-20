@@ -6,27 +6,29 @@
 
     {% include '_flash_message.html.twig' %}
 
-    <h1>Notre histoire</h1>
+    <div class="container-fluid p-5">
+        <h1 class="ml-2 mb-4">Notre histoire</h1>
+        <div class="row ml-2 mb-4">
+            <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success m-3">Éditer<i
+                        class="fas fa-pen"></i></a>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Titre</th>
-                <td>Notre histoire</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ history.description|raw }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ history.imageName }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Titre</th>
+                    <td class="centerLegendBis">Notre histoire</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td class="centerLegendBis">{{ history.description|raw }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td class="centerLegendBis">{{ history.imageName }}</td>
+                </tr>
+                </tbody>
+            </table>
 
-    <div class="card-footer text-muted">
-        <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success m-3">Modifier<i class="fas fa-pen"></i></a>
+        </div>
     </div>
-
 {% endblock %}
