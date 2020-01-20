@@ -40,6 +40,6 @@ yarn-error.log
 
 /src/Migrations/*
 
-/.DS_Store/
+.DS_Store
 
 public/uploads/

@@ -1,6 +1,6 @@
 <header class="position-fixed w-100">
     <nav class="navbar navbar-expand-lg navbar-light p-0 align-items-end">
-        <a class="navbar-brand logo_nav p-0" href="/"><img src="{{ asset('build/images/logo.png') }}"
+        <a class="navbar-brand logo_nav p-0 m-0" href="/"><img src="{{ asset('build/images/logo.png') }}"
                                                            alt="Logo de la gabare"></a>
         <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,89 +13,104 @@
                 </li>
                 <li class="dropdown nav-item d-flex {% if page == 'about_us' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('about_us') }}">QUI SOMMES-NOUS ?</a>
-                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton" data-toggle="dropdown"></a>
+                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton"
+                       data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="{{ path('about_us') }}#notre-histoire">Notre histoire</a>
                         <a class="dropdown-item" href="{{ path('about_us') }}#nos-valeurs">Nos valeurs</a>
                         <a class="dropdown-item" href="{{ path('about_us') }}#nos-partenaires">Nos partenaires</a>
                         <a class="dropdown-item" href="{{ path('about_us') }}#les-salaries">Les salariés</a>
-                        <a class="dropdown-item" href="{{ path('about_us') }}#le-conseil-administration">Le Conseil d'Administration</a>
-                        <a class="dropdown-item" href="{{ path('about_us') }}#le-conseil-administration-ami">Les amis de La Gabare</a>
+                        <a class="dropdown-item" href="{{ path('about_us') }}#le-conseil-administration">Le Conseil
+                            d'Administration</a>
+                        <a class="dropdown-item" href="{{ path('about_us') }}#le-conseil-administration-ami">Les amis de
+                            La Gabare</a>
                         <a class="dropdown-item" href="{{ path('about_us') }}#les-pionniers">Les pionniers</a>
                     </div>
                 </li>
                 <li class="dropdown nav-item d-flex {% if page == 'gabare_life' %}active{% endif %}">
-                        <a class="nav-link" href="{{ path('gabare_life') }}">LA VIE DE LA GABARE</a>
-                        <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton" data-toggle="dropdown"></a>
+                    <a class="nav-link" href="{{ path('gabare_life') }}">LA VIE DE LA GABARE</a>
+                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton"
+                       data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{ path('gabare_life') }}#planning-des-animations">Planning des animations</a>
-                        <a class="dropdown-item" href="{{ path('gabare_life') }}#actualites-de-la-gabare">Actualités de La Gabare</a>
+                        <a class="dropdown-item" href="{{ path('gabare_life') }}#planning-des-animations">Planning des
+                            animations</a>
+                        <a class="dropdown-item" href="{{ path('gabare_life') }}#actualites-de-la-gabare">Actualités de
+                            La Gabare</a>
                         <a class="dropdown-item" href="{{ path('gabare_life') }}#dans-la-presse">Dans la presse</a>
                     </div>
                 </li>
                 <li class="dropdown nav-item d-flex {% if page == 'join_us' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('join_us') }}">NOUS REJOINDRE</a>
-                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton" data-toggle="dropdown"></a>
+                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton"
+                       data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{ path('join_us') }}#comment-devenir-cooperateur">Comment devenir coopérateur</a>
-                        <a class="dropdown-item" href="{{ path('join_us') }}#agenda-des-reunions-information">L'agenda des réunions d'information</a>
+                        <a class="dropdown-item" href="{{ path('join_us') }}#comment-devenir-cooperateur">Comment
+                            devenir coopérateur</a>
+                        <a class="dropdown-item" href="{{ path('join_us') }}#agenda-des-reunions-information">L'agenda
+                            des réunions d'information</a>
                         <a class="dropdown-item" href="{{ path('join_us') }}#bulletion-adhesion">Bulletin d'adhésion</a>
                     </div>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ path('products') }}">NOS PRODUITS</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ path('home') }}#contact">CONTACT</a>
                 </li>
-                <ul class="logos_nav_content navbar-nav justify-content-between flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://fr-fr.facebook.com/LaGabare45/" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.instagram.com/la_gabare_orleans/" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://twitter.com/lagabare45?lang=fr" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.youtube.com/channel/UCsB2C5GroQ0VVslYROY-gbw"
-                           target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube">
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-                <button type="button"
-                        class="btn mb-2 connexion_button d-flex justify-content-between py-1 ">
-                    {% if app.user %}
-                        <a href="/admin/article"> Vers Admin</a>
-                    {% else %}
-                        <a href="{{ path('app_login') }}"> Connexion</a>
-                    {% endif %}
-                    <svg class="md-icon align-items-center" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"
-                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
-                        <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"/>
-                    </svg>
-                </button>
+
+                <div class="reseaux_connection d-flex flex-column align-items-center">
+                    <button type="button"
+                            class="btn mb-0 connexion_button d-flex justify-content-between py-1 ">
+                        {% if app.user %}
+                            <a href="/admin/article">Vers Admin</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}"> Connexion</a>
+                        {% endif %}
+                        <svg class="md-icon align-items-center" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"
+                             preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+                            <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"/>
+                        </svg>
+                    </button>
+                    <ul class="logos_nav_content navbar-nav justify-content-between flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://fr-fr.facebook.com/LaGabare45/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/la_gabare_orleans/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/lagabare45?lang=fr" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com/channel/UCsB2C5GroQ0VVslYROY-gbw"
+                               target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </ul>
         </div>
     </nav>
@@ -105,3 +120,5 @@
         )) }}
     </div>
 </header>
+
+<div class="fill_navbar"></div>
