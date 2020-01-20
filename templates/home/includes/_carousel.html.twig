@@ -13,7 +13,7 @@
                     <div class="title_carousel">
                         <h4>{{ carousel.title }}</h4>
                     </div>
-                    <a href="{% if carousel.link is defined%}{{carousel.link}}{% endif %}" class="{% if carousel.link == "" %}d-none{% endif %}">En savoir plus</a>
+                    <a href="{% if carousel.link is defined%}{{carousel.link}}{% endif %}" class="{% if carousel.link == "" %}d-none{% endif %}"><button class="logButton"> En savoir plus</button></a>
                 </div>
             </div>
         {% endfor %}

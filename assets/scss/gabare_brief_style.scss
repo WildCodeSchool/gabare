@@ -1,12 +1,12 @@
-.firstImage{
+.firstImage {
     width: 85%;
 }
 
-.secondImage{
+.secondImage {
     width: 90%;
 }
 
-.brief{
+.brief {
     font-family: var(--text-font);
     font-size: 18px;
     background-image: $texture-background;
@@ -52,26 +52,4 @@
         box-shadow: 0 0 5px $primary-color;
         text-shadow: 0 0 5px $primary-color;
     }
-}
-
-.more-info-button{
-    display: block;
-    margin : auto;
-    height: 35px;
-    width: 140px;
-    border-radius: 10px;
-    background-color: $secondary-color;
-    color: $light-color;
-    border: solid 2px $secondary-color;
-}
-
-.download-membership {
-    display: block;
-    margin : auto;
-    height: 65px;
-    width: 227px;
-    border-radius: 10px;
-    background-color: $secondary-color;
-    color: $light-color;
-    border: solid 2px $secondary-color;
 }
