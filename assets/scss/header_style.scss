@@ -111,18 +111,11 @@ header {
 /* message d'alerte activé */
 .message-alert {
     height: 50px;
-    text-align: center;
     border-radius: 0;
     border: none;
     background-color: $third-color;
-    color: $light-color;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-
-    & h5 {
+    h5 {
         color: $light-color;
         font-weight: bold;
     }
