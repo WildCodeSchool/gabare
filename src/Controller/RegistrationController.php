@@ -109,7 +109,7 @@ class RegistrationController extends AbstractController
 
             $this->addFlash(
                 'danger',
-                'le compte administrateur a été supprimer'
+                'le compte administrateur a été supprimé'
             );
         }
 
