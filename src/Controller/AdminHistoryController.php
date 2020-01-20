@@ -23,7 +23,7 @@ class AdminHistoryController extends AbstractController
     public function index(HistoryRepository $historyRepository): Response
     {
         return $this->render('admin_history/index.html.twig', [
-            'historys' => $historyRepository->findAll(),
+            'histories' => $historyRepository->findAll(),
         ]);
     }
 
