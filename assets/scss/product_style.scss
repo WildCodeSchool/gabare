@@ -1,7 +1,166 @@
 .productSection {
-    margin-top:90px;
+    background-image: $texture-background;
+    padding-top: 90px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 120px auto;
+    grid-template-areas: "title title" "category product";
+
+    .title_category {
+        grid-area: title;
+    }
+
+    .search_categories {
+        grid-area: category;
+
+        .search {
+            display: flex;
+            border: solid 0.8px $primary-color;
+            border-left: none;
+        }
+
+        .search_champ {
+            border-radius: 0;
+            border: none;
+
+            &::placeholder {
+                color: $primary-color;
+                opacity: 50%;
+            }
+        }
+
+        .search_button {
+            border: none;
+            background-color: $light-color;
+            transition-duration: 0.08s;
+            padding: 0;
+            width: 50px;
+
+            .svg_search {
+                width: 22px;
+                height: 22px;
+                fill: $primary-color;
+            }
+
+            &:hover {
+                transition-duration: 0.08s;
+                background-color: $primary-color;
+
+                .svg_search {
+                    fill: $light-color;
+                }
+            }
+        }
+
+        .category {
+            background-color: $light-color;
+            height: 40px;
+            border: solid 0.6px $primary-color;
+            border-left: none;
+            border-top: none;
+            display: flex;
+
+            .non_active_category {
+                height: 100%;
+                width: 5px;
+            }
+
+            .category_name {
+                color: $primary-color;
+                font-weight: 300;
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+            }
+
+            &:hover {
+                transition-duration: 0.2s;
+                background-color: $primary-color;
+
+                .category_name {
+                    color: $light-color;
+                }
+            }
+        }
+
+        .active_category {
+            background-color: $primary-color;
+
+            .category_name {
+                color: $light-color;
+            }
+        }
+    }
+
+    .product {
+        grid-area: product;
+    }
 }
 
 .card_product {
-    width: 14rem;
+    background-color: $light-color;
+    width: 15rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px -3px $photo-hue;
+    transition-duration: 0.15s;
+
+    &:hover {
+        transition-duration: 0.15s;
+        transform: scale(1.04);
+        box-shadow: 0 3px 15px -3px $photo-hue;
+    }
+
+    .card_body {
+        h5 {
+            font-weight: 600;
+            height: 75px;
+            font-size: 1.3em;
+        }
+
+        .card_category {
+            color: $primary-color;
+            opacity: 50%;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .card_image {
+
+            img {
+                height: 11rem;
+                width: 11rem;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .card_truncated {
+        &:hover {
+            .truncated_text {
+                display: none;
+            }
+
+            .not_truncated_text {
+                display: block;
+                height: 109px;
+            }
+
+            .card_category {
+                display: none;
+            }
+        }
+
+        .not_truncated_text {
+            display: none;
+        }
+    }
+
+
+    .card_text {
+        color: $secondary-color;
+        font-size: 1.2em;
+    }
+
 }

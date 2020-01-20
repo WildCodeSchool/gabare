@@ -32,6 +32,11 @@ footer {
 
         span {
             font-weight: bold;
+            color:$light-color;
         }
     }
+
+    a:visited {
+        color:$light-color;
+    };
 }

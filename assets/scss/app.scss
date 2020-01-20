@@ -16,23 +16,24 @@
 @import "profile_card";
 @import "login_style";
 @import "carousel";
-@import "alert_style";
 @import "product_style";
 @import "values.style";
 @import "article";
 @import "partners_style";
 @import "error_style";
+@import "pioneer_style";
+@import "CAMember_style";
 
-@mixin headings($from: 1, $to: 6){
-    @for $i from $from through $to{
-        h#{$i}{
+@mixin headings($from: 1, $to: 6) {
+    @for $i from $from through $to {
+        h#{$i} {
             @content
         }
     }
 }
 
-@include headings(){
-    font-family:$title-font;
+@include headings() {
+    font-family: $title-font;
     color: $primary-color;
 }
 
@@ -59,10 +60,16 @@ h5 {
 }
 
 .btn-primary:hover {
-    background-color: $primary-color;
-    border-color: $primary-color;
+    color: $light-color;
+    background-color: $secondary-color;
+    border-color: $light-color;
 }
 
+.btn-warning {
+    color: $light-color;
+    background-color: $third-color;
+    border-color: $third-color;
+}
 
 main {
     min-height: 50vh;
@@ -108,7 +115,7 @@ p {
     width: 20rem;
 }
 
-.photoStripe{
+.photoStripe {
     position: relative;
     height: 95vh;
     min-height: 550px;
@@ -126,8 +133,8 @@ p {
     padding-bottom: 50px;
 }
 
-.titlePhoto{
-    color:$light-color;
+.titlePhoto {
+    color: $light-color;
     font-family: $photo-font;
     font-size: calc(65px + 6 * ((100vw - 320px) / 680));
     text-shadow: 0 0 10px $dark-color;
@@ -141,10 +148,23 @@ p {
 }
 
 .links {
-    margin-top: -90px;
-    padding-top: 90px;
+    margin-top: -138px;
+    padding-top: 138px;
 }
 
-.list_article{
-    margin-top:100px;
+.list_article {
+    margin-top: 100px;
 }
+
+.card-shadow {
+    border-radius: 5px;
+    box-shadow: 0 3px 10px -3px $photo-hue;
+}
+
+.image-transition {
+    height: 400px;
+    background-size: cover;
+    background-blend-mode: color;
+    background-attachment: fixed;
+}
+

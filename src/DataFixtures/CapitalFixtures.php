@@ -15,7 +15,7 @@ class CapitalFixtures extends Fixture
         for ($i = 0; $i < 4; $i++) {
             $capital = new Capital();
             $capital->setNumber($faker->numberBetween(0, 9000));
-            $capital->setTitle($faker->sentence);
+            $capital->setTitle($faker->sentence(1, true));
             $manager->persist($capital);
         }
         $manager->flush();

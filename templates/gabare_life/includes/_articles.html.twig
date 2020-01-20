@@ -1,10 +1,10 @@
 <section class="bgActualities">
-    <div class="jumbotron mb-0 d-none d-sm-block mb-3"></div>
+    <div class="image-transition gabare-life-image mb-0 d-none d-sm-block"></div>
     <h2 class="text-center links" id="actualites-de-la-gabare">Les actualités de la Gabare</h2>
     <div class="container-fluid">
         <div class="row flex-wrap m-0 justify-content-around">
             {% for article in articles %}
-                <div class="card m-0 mb-5 m-md-5 box col-11 col-md-3">
+                <div class="card card-shadow m-0 mb-5 m-md-5 box col-11 col-md-3">
                     {% if article.imageName %}
                         <img class="card-img-top image-size-article"
                              src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}"/>
@@ -24,7 +24,7 @@
             {% endfor %}
         </div>
         <div class="text-center">
-            <a href="{{ path('article_list') }}" class="btn btn-info btn-lg actu">Voir plus d'actualités</a>
+            <a href="{{ path('article_list') }}"><button type="button" class="logButton">Voir plus d'actualités</button></a>
         </div>
     </div>
 </section>

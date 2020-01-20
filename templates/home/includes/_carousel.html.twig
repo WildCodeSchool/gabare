@@ -8,12 +8,12 @@
         {% for carousel in carousels %}
             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
                 <img src="{{ vich_uploader_asset(carousel, 'imageFile')}}"
-                     alt="{{ carousel.title }}">
+                     alt="{{ carousel.title }}" class="carouselImageSize">
                 <div class="carousel-caption">
                     <div class="title_carousel">
                         <h4>{{ carousel.title }}</h4>
                     </div>
-                    <a href="{% if carousel.link is defined%}{{carousel.link}}{% endif %}" class="{% if carousel.link == "" %}d-none{% endif %}">En savoir plus</a>
+                    <a href="{% if carousel.link is defined%}{{carousel.link}}{% endif %}" class="{% if carousel.link == "" %}d-none{% endif %}"><button class="logButton"> En savoir plus</button></a>
                 </div>
             </div>
         {% endfor %}

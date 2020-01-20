@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('timetable_delete', {'id': timetable.id}) }}" onsubmit="return confirm('Voulez-vous supprimer cette réunion ?);">
+<form method="post" action="{{ path('timetable_delete', {'id': timetable.id}) }}" onsubmit="return confirm('Voulez-vous supprimer cette réunion ?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ timetable.id) }}">
     <button class="btn btn-danger">Supprimer<i class="fas fa-trash-alt ml-1"></i></button>

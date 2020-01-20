@@ -1,0 +1,38 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Notre histoire{% endblock %}
+
+{% block body %}
+    <div class="container-fluid p-5">
+    <h1>Notre histoire</h1>
+
+    <table class="table table-striped">
+        <thead class="thBackground">
+        <thead>
+        <tr>
+            <th>Sous-Titre</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for history in histories %}
+            <tr>
+                <td>{{ history.title }}</td>
+                <td>{{ history.description|truncate(79, true)|raw }}</td>
+                <td class="d-flex pt-3">
+                    <a href="{{ path('history_show', {'id': history.id}) }}" class="btn btn-secondary mr-4">Aperçu<i
+                                class="fas fa-file-alt ml-1"></i></a>
+                    <a href="{{ path('history_edit', {'id': history.id}) }}" class="btn btn-success mr-4">Éditer<i
+                                class="fas fa-pen ml-1"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucune histoire trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

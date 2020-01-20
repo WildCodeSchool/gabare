@@ -1,0 +1,14 @@
+<div class="container-fluid p-0">
+    <div class="row no-gutters p-0 m-0">
+        <div class="col-lg-2 m-0 p-0">
+            <h5 class="customersAdd m-0">{{ customers }} Coopérateurs</h5>
+        </div>
+        <div class="col-lg-10 m-0 p-0">
+            {% if alert.activated == true %}
+                <div class="message-alert alert d-flex align-items-center justify-content-center" role="alert">
+                   <h5 class="message-alert-font m-0"> {{ alert.message }} </h5>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

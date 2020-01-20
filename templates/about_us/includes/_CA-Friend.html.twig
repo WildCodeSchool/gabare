@@ -1,25 +1,39 @@
-<section class="bgCA-Friend links" id="le-conseil-administration-ami">
-    <h2 class="text-center mt-md-5 title-animation">Le conseil d'administration des amis de La Gabare</h2>
-    <div class="container-fluid">
-        <div class="row justify-content-start justify-content-lg-center scrolling-wrapper-flexbox m-2">
-            {% for CAFriend in CAFriends %}
-                <div class="card profile m-4">
-                    {% if CAFriend.imageName %}
-                        <img class="profile-img" src="{{ CAFriend.imageName }}"
-                             alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
-                    {% else %}
-                        <img class="profile_img" src="{{ asset('build/images/Portrait_Placeholder.jpg') }}"
-                             alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
-                    {% endif %}
-                    <div class="text-center">
-                        <h3 class="m-3">{{ CAFriend.firstname }} {{ CAFriend.lastname }}</h3>
-                        <p>{{ CAFriend.function }}</p>
-                        <div class="email-CA">
-                            <a href="mailto:{{ CAFriend.email }}"><i class="far fa-envelope"></i></a>
+<section class="links" id="le-conseil-administration-ami">
+    <div class="pt-4 pt-md-5 pb-5">
+        <h2 class="text-center">Le conseil d'administration des amis de La Gabare</h2>
+        <div class="container-fluid text-center p-0">
+            <div class="scroll-arrow" id="scroll-leftTwo">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <ul id="imgListTwo" class="ul-scroll">
+                {% for CAFriend in CAFriends %}
+                    <li class="li-scroll">
+                        <div class="img-scroll">
+                            <div class="profile">
+                                {% if CAFriend.imageName %}
+                                    <img class="img-fluid profile-img"
+                                         src="{{ vich_uploader_asset(CAFriend, 'imageFile') }}"
+                                         alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
+                                {% else %}
+                                    <img class="img-fluid profile_img"
+                                         src="{{ asset('build/images/Portrait_Placeholder.png') }}"
+                                         alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
+                                {% endif %}
+                            </div>
+                            <div class="text-center">
+                                <h3 class="m-3">{{ CAFriend.firstname }} {{ CAFriend.lastname }}</h3>
+                                <p>{{ CAFriend.function }}</p>
+                                <div class="email-CA">
+                                    <a href="mailto:{{ CAFriend.email }}"><i class="far fa-envelope"></i></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            {% endfor %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="scroll-arrow" id="scroll-rightTwo" onclick="scrollRight()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
         </div>
     </div>
 </section>

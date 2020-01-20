@@ -84,7 +84,7 @@ class RegistrationController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre administrateur a été mise à jour'
+                'Votre administrateur a été mis à jour'
             );
 
             return $this->redirectToRoute('admin_index');
@@ -109,7 +109,7 @@ class RegistrationController extends AbstractController
 
             $this->addFlash(
                 'danger',
-                'Votre revue de presse a bien été supprimée'
+                'le compte administrateur a été supprimé'
             );
         }
 

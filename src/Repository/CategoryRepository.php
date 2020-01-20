@@ -27,19 +27,31 @@ class CategoryRepository
 
         $categoryIds = $client->search('product.category', [], 0, 150);
 
-        $productFields = ['complete_name', 'parent_id'];
+        $productFields = ['complete_name', 'parent_id', 'child_id'];
 
 
         $categoriesApi = $client->read('product.category', $categoryIds, $productFields);
 
-
         $productsCategories = [];
+
         foreach ($categoriesApi as $category) {
-            if ($category['parent_id'] == false) {
+            if ($category['parent_id'] == null) {
                 $productCategory = new Category();
                 $productCategory->setName($category['complete_name']);
                 $productCategory->setId($category['id']);
-                $productsCategories[] = $productCategory;
+                $productCategory->setChildIds($category['child_id']);
+                $productsCategories[$category['id']] = $productCategory;
+            }
+        }
+
+
+        foreach ($categoriesApi as $category) {
+            foreach ($productsCategories as $productsCategory) {
+                if ($category['parent_id'] != null && $productsCategory->getChildIds() != null) {
+                    if (in_array($category['parent_id'][0], $productsCategory->getChildIds())) {
+                        $productsCategory->setChildIds($category['child_id']);
+                    }
+                }
             }
         }
 

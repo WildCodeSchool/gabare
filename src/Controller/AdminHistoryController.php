@@ -17,6 +17,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminHistoryController extends AbstractController
 {
     /**
+     * @Route("/", name="history_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
+     */
+    public function index(HistoryRepository $historyRepository): Response
+    {
+        return $this->render('admin_history/index.html.twig', [
+            'histories' => $historyRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}", name="history_show", methods={"GET"})
      * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
@@ -33,6 +44,13 @@ class AdminHistoryController extends AbstractController
      */
     public function edit(Request $request, History $history): Response
     {
+        $history = $this->getDoctrine()
+            ->getRepository(History::class)
+            ->findOneBy([]);
+        if (!$history instanceof History) {
+            $history = new History();
+        }
+
         $form = $this->createForm(HistoryType::class, $history);
         $form->handleRequest($request);
 

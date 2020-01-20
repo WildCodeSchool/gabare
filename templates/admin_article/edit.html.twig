@@ -8,13 +8,13 @@
         <div class="mb-3">
             <a href="{{ path('article_index') }}" class="btn btn-outline-dark mr-5">Retour à la liste</a>
         </div>
-        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
+        <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron img-admin-view">
             {{ form_start(form) }}
             {{ form_row(form.title) }}
             {{ form_row(form.description) }}
-            {{ form_row(form.imageFile) }}
             {{ form_row(form.date) }}
             {{ form_row(form.theme) }}
+            {{ form_row(form.imageFile) }}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
             <div class="mt-4">

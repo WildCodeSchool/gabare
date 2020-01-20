@@ -16,6 +16,7 @@ class TimetableFixtures extends Fixture
             $timetable = new Timetable();
             $timetable->setVisitDate($faker->dateTimeBetween('-7 days', '+1 month', 'Europe/Paris'));
             $timetable->setVisitTime($faker->dateTime);
+            $timetable->setVisitPlace($faker->address);
             $manager->persist($timetable);
         }
         $manager->flush();

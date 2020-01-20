@@ -1,23 +1,19 @@
-<section class="history_section links" id="notre-histoire">
-    <div class="container">
+<section class="history_section links pb-3" id="notre-histoire">
+    <div class="container-fluid">
         {% if history is defined %}
+            <h2 class="m-5 text-center">Notre histoire</h2>
             {% for historic in history %}
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="mt-md-4 mx-auto title_history">Notre histoire</h2>
-                        <div class="gabare_image">
-                            <img src="{{ vich_uploader_asset(historic, 'imageFile') }}" alt="Image de La Gabare" class="w-75"/>
+                <div class="row m-0 m-lg-5">
+                    <div class="col-12 col-md-12 col-lg-5 offset-lg-1 text-center">
+                        <div>
+                            <img src="{{ vich_uploader_asset(historic, 'imageFile') }}" alt="Image de La Gabare"
+                                 class="img-fluid history-image rounded"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row align-items-center h-100">
-                            <div class="col">
-                                <p class="lead">{{ historic.description|raw }}</p>
-                                <div class="button_join_us_div">
-                                    <button class="button_join_us">Nous rejoindre</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-12 col-lg-5 d-flex flex-column justify-content-around align-items-center">
+                        <h3 class="mt-3">{{ historic.title }}</h3>
+                        <p>{{ historic.description|raw }}</p>
+                        <button class="logButton mb-3">Nous rejoindre</button>
                     </div>
                 </div>
             {% endfor %}

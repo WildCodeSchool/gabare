@@ -19,19 +19,19 @@
             <tbody>
             <tr>
                 <th>Titre</th>
-                <td>{{ article.title }}</td>
+                <td class="centerLegendBis">{{ article.title }}</td>
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{{ article.date ? article.date|date('d/m/Y') : '' }}</td>
+                <td class="centerLegendBis">{{ article.date ? article.date|date('d/m/Y') : '' }}</td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ article.description|raw }}</td>
+                <td class="centerLegendBis">{{ article.description|raw }}</td>
             </tr>
             <tr>
                 <th>Image</th>
-                <td><img class="img-crud" src="{{ article.imageName }}" alt="{{ article.title }}"></td>
+                <td class="centerLegendBis"><img class="img-crud" src="{{ article.imageName }}" alt="{{ article.title }}"></td>
             </tr>
             </tbody>
         </table>

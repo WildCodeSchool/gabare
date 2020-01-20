@@ -47,14 +47,11 @@ class HomeController extends AbstractController
             return $this->redirect('#contact');
         }
 
-        $alert = $this->getDoctrine()
-            ->getRepository(Alert::class)
-            ->findOneBy([]);
+
 
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
             'carousels' => $carouselRepository->findAll(),
-            'alert' => $alert,
         ]);
     }
 }

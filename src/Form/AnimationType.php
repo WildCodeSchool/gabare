@@ -36,7 +36,7 @@ class AnimationType extends AbstractType
                 'widget' => 'choice',
             ])
             ->add('imageFile', VichImageType::class, [
-                'required' => true,
+                'required' => false,
                 'allow_delete' => false,
                 'download_uri' => false,
                 'image_uri' => true,
