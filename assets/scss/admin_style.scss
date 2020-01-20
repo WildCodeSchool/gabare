@@ -7,11 +7,17 @@
     background-color: $primary-color;
     color: $light-color;
 }
-
 .table td {
     padding-top: 23px;
 }
 
+.table .centerLegend{
+    padding-top:20px;
+}
+
+.table .centerLegendBis{
+    padding-top:11px;
+}
 .table .worker-show {
     padding-top: 23px;
 }
