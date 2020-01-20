@@ -154,3 +154,10 @@ p {
     border-radius: 5px;
     box-shadow: 0 3px 10px -3px $photo-hue;
 }
+
+.image-transition {
+    height: 400px;
+    background-size: cover;
+    background-blend-mode: color;
+    background-attachment: fixed;
+}
