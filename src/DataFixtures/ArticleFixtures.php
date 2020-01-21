@@ -14,10 +14,10 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for ($i = 0; $i <= 50; $i++) {
+        for ($i = 0; $i <= 27; $i++) {
             $articles = new Article();
             $articles->setTitle($faker->sentence())
-                ->setDescription($faker->text(4000))
+                ->setDescription($faker->text(2500))
                 ->setDate($faker->DateTime())
                 ->setUpdatedAt($faker->DateTime());
             $articles->setImageName('');
