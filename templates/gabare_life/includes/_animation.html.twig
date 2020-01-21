@@ -7,7 +7,11 @@
             {% for animation in animations %}
                 <div class="mt-0 mt-3 ">
                     <div class="card box m-3 m-md-5 card-animation card-shadow">
+                        {% if animation.imageName %}
                         <img src="{{ vich_uploader_asset(animation, 'imageFile') }}" class="card-img-top image-size-animation" alt="">
+                        {% else %}
+                            <img src="{{ asset('build/images/logo.png') }}" class="card-img-top image-size-animation">
+                        {% endif %}
                         <div class="card-body text-center">
                             <h4 class="card-title animation">{{ animation.title }}</h4>
                             <p class="card-title animation">{{ animation.description }}</p>
