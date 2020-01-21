@@ -34,7 +34,7 @@
 
     <div class="container-fluid product">
         <div class="card_product_container row justify-content-center">
-            {% if products == [] %}
+            {% if products.items == [] %}
                 <h4 class="mt-5">Pas de
                     produits {% if app.request.get('search_product') is not null %}correspondant à votre recherche{% else %}dans cette catégorie{% endif %}
                     ...</h4>
