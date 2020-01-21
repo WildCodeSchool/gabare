@@ -8,13 +8,14 @@
     <section class="bgActualities pb-5 list_article">
         <h2 class="text-center pb-2 pb-md-0 links" id="actualites-de-la-gabare">Intégralité de tous les articles</h2>
         <div class="container-fluid">
-            <div class="row mt-a">
-                <div class="col-sm-12">
+            <div class="row mt-a themeInputPart justify-content-center">
+                <div class="col-sm-3 mb-4 mt-4">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <button class="btn btn-primary">Rechercher</button>
+                    <button class="btn btn-primary test col-md-4 offset-md-4">Rechercher</button>
                     {{ form_end(form) }}
                 </div>
+
             </div>
 
             <div class="row flex-wrap m-0 justify-content-around">
@@ -37,15 +38,15 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="text-center">
-                <a href="{{ path('gabare_life') }}"><button class="logButton">Retour</button></a>
-            </div>
         </div>
 
-        <nav class="page_navigation ml-5">
+        <nav class="page_navigation paginationStyle">
             {{ knp_pagination_render(articles) }}
         </nav>
 
+        <div class="text-center">
+            <a href="{{ path('gabare_life') }}"><button class="logButton">Retour</button></a>
+        </div>
     </section>
 
 {% endblock %}
