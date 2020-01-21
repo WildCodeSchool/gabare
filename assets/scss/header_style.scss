@@ -57,32 +57,38 @@ header {
             height: 34px;
             width: 150px;
             border-radius: 17px;
-            background-color: $secondary-color;
-            font-weight: 700;
-            border: solid 2px $secondary-color;
+            background-color: $light-color;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: solid 2px $primary-color;
+
 
             a {
-                color: $light-color;
+                padding-top: 3px;
+                padding-left:5px;
+                letter-spacing: 1px;
+                color: $primary-color;
             }
 
             .md-icon {
                 height: 22px;
                 width: 22px;
-                fill: $light-color;
+                fill: $primary-color;
                 transform: rotate(360deg);
             }
 
             &:hover {
-                background-color: $light-color;
-                border-color: $primary-color;
+                background-color: $primary-color;
+                border-color: $light-color;
                 transition-duration: 0.2s;
 
                 a {
-                    color: $primary-color;
+                    color: $light-color;
                 }
 
                 svg {
-                    fill: $primary-color;
+                    fill: $light-color;
                     transition-duration: 0.2s;
                 }
             }
