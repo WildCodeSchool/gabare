@@ -2,39 +2,21 @@
 {% set page ='show_article' %}
 
 {% block body %}
-
-    <div class="container-fluid container-title container-article article_show">
-        <div class="row no-gutters">
-            <div class="col-lg-12 col-xs-1">
-                <h1 class="title text-center"> {{ article.title }}</h1>
-            </div>
+    <section>
+    <div class="container pt-5 mt-5">
+        <div class="photoShowArticle">
+            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}" class="photoShowArticle">
         </div>
+        <h1 class="titleShowArticle"> {{ article.title }}</h1>
+        <div class="contentArticle">{{ article.description | raw }}</div>
+        <p>{{ article.date | date("d/m/Y") }}</p>
     </div>
-
-    <hr class="delimite_line_title">
-
     <div class="container">
-        <p class="card-text date_show_article">{{ article.date | date("d/m/Y") }}</p>
-        <div class="card mb-3 border-none">
-            <img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="{{ article.title }}" class="w-auto h-auto">
-            <div class="card-body">
-                <p class="card-text text_article_show">{{ article.description|truncate(500, true)|raw }}</p>
-                <p class="card-text text_article_show">{{ article.description|slice(100)|raw }}</p>
-                <p class="card-text text_article_show">{{ article.description|truncate(500, true)|raw }}</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row mt-5 mb-5">
-            <div class="col-xs-5 mr-2 text-right">
+        <div class="row mt-5 mb-5 justify-content-center">
+            <div class="col-xs-5">
                 <a href="{{ path('article_list') }}"><button class="logButton">Liste des articles</button></a>
-            </div>
-            <div class="col-xs-5 mr-2 text-right">
-                <a href="{{ path('gabare_life') }}"><button class="logButton">La Vie de la Gabare</button></a>
             </div>
         </div>
     </div>
     </section>
-
 {% endblock %}
