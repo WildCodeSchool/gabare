@@ -1,3 +1,4 @@
+
 <section class="bgAnimation pb-5 links" id="planning-des-animations">
     <h2 class="text-center mt-md-5 mb-3 title-animation">Planning des animations</h2>
     <h4 class="text-center">Réservez dès maintenant votre participation aux différentes animations de La Gabare</h4>
@@ -10,8 +11,10 @@
                         <div class="card-body text-center">
                             <h4 class="card-title animation">{{ animation.title }}</h4>
                             <p class="card-title animation">{{ animation.description }}</p>
-                            <p class="card-text">{{ animation.schedule | date("d/m/Y") }}</p>
-                            <p class="card-text">{{ animation.hourStart | date("H:i") }}
+                            <p class="card-text">{{ animation.schedule | localizeddate('none', 'none', app.request.locale, null, 'EEEE') }}
+                                {{ animation.schedule|localizeddate('none', 'none', app.request.locale, null, 'd MMMM') }}</p>
+                            <p class="card-text"><i
+                                        class="fas fa-clock mr-1"></i>{{ animation.hourStart | date("H:i") }}
                                 - {{ animation.hourEnd | date("H:i") }}</p>
                             <a href="mailto:animation@la-gabare-orleans.coop" class="btn btn-primary">Inscrivez-vous</a>
                         </div>
