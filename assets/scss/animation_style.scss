@@ -1,5 +1,6 @@
 .card-animation {
     width: 300px;
+    height: 500px;
 }
 
 .bgAnimation{
@@ -10,6 +11,27 @@
     max-width: 300px;
     height: 200px;
     object-fit: cover;
+    background-color: $light-color;
+}
+
+.card_truncated {
+    &:hover {
+        .truncated_text {
+            display: none;
+        }
+
+        .not_truncated_text {
+            display: block;
+        }
+
+        .card_category {
+            display: none;
+        }
+    }
+
+    .not_truncated_text {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 640px) {

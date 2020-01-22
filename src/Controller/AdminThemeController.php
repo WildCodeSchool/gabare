@@ -68,7 +68,7 @@ class AdminThemeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/éditer", name="theme_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="theme_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Theme $theme): Response

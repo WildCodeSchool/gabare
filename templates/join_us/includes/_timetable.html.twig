@@ -1,5 +1,5 @@
 <div class="image-transition join-us-image mb-0 d-none d-sm-block"></div>
-<section class="bgTimetable p-5" id="agenda-des-reunions-information">
+<section class="bgTimetable links pt-5 pb-5" id="agenda-des-reunions-information">
     <h2 class="text-center title-animation">Agenda des réunions d'information</h2>
     <h4 class="text-center">La réunion d'information est le passage obligé pour rejoindre la coopérative !</h4>
     <div class="container  mt-3 mb-5">
@@ -24,12 +24,10 @@
                                 {{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'd MMMM') }}</p>
                         </div>
                         <div class="card-body body-timetable text-left">
-                            <p class="timetableHour"><i
-                                        class="fas fa-clock mr-1"></i>{{ timetable.visitTime | date("H:i") }}</p>
-                            <div class="align-self-center">
-                            <p class="timetablePlace">
-                                <i class="fas fa-map-marker-alt mr-1"></i>La gabare</p>
-                            </div>
+                            <p><i  class="fas fa-clock mr-1"></i>{{ timetable.visitTime | date("H:i") }}</p>
+                           <div class="addressCard">
+                            <i class="fas fa-map-marker-alt mr-1"></i>{{ timetable.visitPlace}}
+                           </div>
                         </div>
                         <div class="card-footer text-center pt-0">
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform"

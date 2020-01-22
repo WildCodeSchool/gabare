@@ -42,16 +42,24 @@ class ProductController extends AbstractController
 
         $categories = $categoryRepository->selectAllCategories();
 
+        if ($this->isMobile()) {
+            $mobile = true;
+        } else {
+            $mobile = false;
+        }
+
         $products = $paginator->paginate(
             $products,
             $request->query->getInt('page', 1),
             self::PRODUCT_PER_PAGES
         );
 
+
         return $this->render('products/index.html.twig', [
             'products' => $products,
             'form' => $form->createView(),
             'categories' => $categories,
+            'mobile' => $mobile,
         ]);
     }
 
@@ -86,6 +94,12 @@ class ProductController extends AbstractController
             $products = $productRepository->findByName($data['search']);
         }
 
+        if ($this->isMobile()) {
+            $mobile = true;
+        } else {
+            $mobile = false;
+        }
+
         $products = $paginator->paginate(
             $products,
             $request->query->getInt('page', 1),
@@ -96,6 +110,16 @@ class ProductController extends AbstractController
             'products' => $products,
             'form' => $form->createView(),
             'categories' => $categories,
+            'mobile' => $mobile,
         ]);
+    }
+
+    private function isMobile()
+    {
+        return preg_match(
+            "/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone
+|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i",
+            $_SERVER["HTTP_USER_AGENT"]
+        );
     }
 }

@@ -27,8 +27,8 @@ class RegistrationFormType extends AbstractType
 
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'HomePage' => 'ROLE_ADMIN_HOME',
-                    'Qui-Sommes Nous?' => 'ROLE_ADMIN_WHO',
+                    'Page d\'accueil' => 'ROLE_ADMIN_HOME',
+                    'Qui Sommes-Nous?' => 'ROLE_ADMIN_WHO',
                     'La Vie de La Gabare'=> 'ROLE_ADMIN_GABARE_LIFE',
                     'Nous Rejoindre' => 'ROLE_ADMIN_JOIN_US',
                     'Super Admin' => 'ROLE_SUPER_ADMIN'

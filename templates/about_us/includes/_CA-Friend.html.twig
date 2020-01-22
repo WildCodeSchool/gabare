@@ -1,6 +1,6 @@
 <section class="links" id="le-conseil-administration-ami">
     <div class="pt-4 pt-md-5 pb-5">
-        <h2 class="text-center">Le conseil d'administration des amis de La Gabare</h2>
+        <h2 class="text-center mb-5">Le conseil d'administration des amis de La Gabare</h2>
         <div class="container-fluid text-center p-0">
             <div class="scroll-arrow" id="scroll-leftTwo">
                 <i class="fas fa-chevron-left"></i>
@@ -20,8 +20,9 @@
                                          alt="{{ CAFriend.firstname }} {{ CAFriend.lastname }}">
                                 {% endif %}
                             </div>
-                            <div class="text-center">
-                                <h3 class="m-3">{{ CAFriend.firstname }} {{ CAFriend.lastname }}</h3>
+                            <div class="profile-text text-center pt-2">
+                                <h3>{{ CAFriend.firstname }}</h3>
+                                <h3>{{ CAFriend.lastname }}</h3>
                                 <p>{{ CAFriend.function }}</p>
                                 <div class="email-CA">
                                     <a href="mailto:{{ CAFriend.email }}"><i class="far fa-envelope"></i></a>

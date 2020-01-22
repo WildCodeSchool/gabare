@@ -1,6 +1,6 @@
-<section class="bgActualities">
+<section class="bgActualities links pb-5">
     <div class="image-transition gabare-life-image mb-0 d-none d-sm-block"></div>
-    <h2 class="text-center links" id="actualites-de-la-gabare">Les actualités de la Gabare</h2>
+    <h2 class="text-center pt-5" id="actualites-de-la-gabare">Les actualités de la Gabare</h2>
     <div class="container-fluid">
         <div class="row flex-wrap m-0 justify-content-around">
             {% for article in articles %}
@@ -24,7 +24,8 @@
             {% endfor %}
         </div>
         <div class="text-center">
-            <a href="{{ path('article_list') }}"><button type="button" class="logButton">Voir plus d'actualités</button></a>
+            <button type="button" class="logButton" onclick="window.location.href = '{{ path('article_list') }}'">
+                Voir plus d'actualités</button>
         </div>
     </div>
 </section>

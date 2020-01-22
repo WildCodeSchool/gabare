@@ -1,6 +1,6 @@
 <div class="image-transition about-us-image mb-0 d-none d-sm-block"></div>
 <section class="bgEmployee links" id="les-salaries">
-    <h2 class="text-center mt-5">Les salariés</h2>
+    <h2 class="text-center mt-5 mb-5">Les salariés</h2>
     <div class="container-fluid text-center p-0">
         <div class="scroll-arrow" id="scroll-left">
             <i class="fas fa-chevron-left"></i>
@@ -19,8 +19,9 @@
                                      alt="{{ employee.firstname }} {{ employee.lastname }}">
                             {% endif %}
                         </div>
-                        <div class="text-center">
-                            <h3 class="m-3">{{ employee.firstname }} {{ employee.lastname }}</h3>
+                        <div class="profile-text text-center m-2">
+                            <h4>{{ employee.firstname |title }}</h4>
+                            <h4>{{ employee.lastname |title }}</h4>
                             <p>{{ employee.function }}</p>
                         </div>
                     </div>
