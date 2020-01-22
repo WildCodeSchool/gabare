@@ -16,22 +16,6 @@
     font-weight: bold;
 }
 
-.logButton {
-    border-radius: 30px;
-    background-color: $primary-color;
-    color: $light-color;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    &.ghost {
-        background-color: $light-color;
-        color: $primary-color;
-    }
-}
-
 .membreText {
     font-size: 20px;
     line-height: 20px;
