@@ -54,7 +54,7 @@ class ArticleController extends AbstractController
         ]);
     }
     /**
-     * @Route("/show/{slug}", name="show")
+     * @Route("/afficher/{slug}", name="show")
      * @param Article $article
      * @return Response
      */

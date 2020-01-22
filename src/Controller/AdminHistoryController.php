@@ -39,7 +39,7 @@ class AdminHistoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/modifier", name="history_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="history_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, History $history): Response

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/associé")
+ * @Route("/admin/associe")
  */
 class AdminWorkerController extends AbstractController
 {
@@ -68,7 +68,7 @@ class AdminWorkerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/éditer", name="worker_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="worker_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Worker $worker): Response

@@ -69,7 +69,7 @@ class AdminArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/éditer", name="article_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="article_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Article $article): Response

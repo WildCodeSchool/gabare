@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/carousel")
+ * @Route("/admin/carrousel")
  */
 class AdminCarouselController extends AbstractController
 {
@@ -68,7 +68,7 @@ class AdminCarouselController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="carousel_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="carousel_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_HOME", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Carousel $carousel): Response

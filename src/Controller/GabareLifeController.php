@@ -36,7 +36,11 @@ class GabareLifeController extends AbstractController
 
         $animations = $this->getDoctrine()
             ->getRepository(Animation::class)
-            ->findAll();
+            ->findBy(
+                [],
+                ['schedule' => 'ASC'],
+                6
+            );
 
         return $this->render('gabare_life/index.html.twig', [
             'pressArticles' => $pressArticle,
