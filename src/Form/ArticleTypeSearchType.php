@@ -20,6 +20,7 @@ class ArticleTypeSearchType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Thème',
                 'required' => false,
+                'placeholder' => "Afficher tous les articles",
             ])
         ;
     }
