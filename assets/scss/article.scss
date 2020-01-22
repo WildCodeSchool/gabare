@@ -1,3 +1,41 @@
+.themeInputPart {
+
+    label {
+        display: flex;
+        justify-content: center;
+        font-size: 23px;
+        color: $primary-color;
+    }
+}
+
+.page-item.active .page-link{
+    background-color: $third-color;
+    border-color:$light-color;
+}
+
+.paginationStyle {
+    display: flex;
+    justify-content: center;
+
+    nav {
+
+        ul {
+
+            li {
+                a {
+                    border: none;
+                    font-size: 18px;
+                }
+
+                span {
+                    border-radius: 20px;
+                }
+
+            }
+        }
+    }
+}
+
 .photoShowArticle {
     height:350px;
     object-fit: cover;
