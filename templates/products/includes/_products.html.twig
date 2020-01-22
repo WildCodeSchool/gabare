@@ -1,5 +1,5 @@
 <section class="productSection">
-    <h2 class="text-center p-4 title_category">{% if app.request.get('search_product') is not null %}Résultats de recherche : "{{ app.request.get('search_product')['search'] }}"{% else %}Nos produits{% endif %}</h2>
+    <h2 class="text-center title_category">{% if app.request.get('search_product') is not null %}Résultats de recherche : "{{ app.request.get('search_product')['search'] }}"{% else %}Nos produits{% endif %}</h2>
     <div class="search_categories">
         {{ form_start(form, {'attr': {'class': 'search'}}) }}
 
@@ -63,7 +63,7 @@
                 {% endfor %}
             {% endif %}
 
-            <nav class="page_navigation ml-5">
+            <nav class="page_navigation ml-5 paginationStyle">
                 {{ knp_pagination_render(products) }}
             </nav>
 
