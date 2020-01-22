@@ -1,3 +1,18 @@
+NOTE POUR LES DEVS POUR LE SITE DE LA GABARE
+
+Pour faire fonctionner l'API sur le projet, il faut installer le package xlmrpc
+En commande Linux :
+sudo apt-get install php7.2-xmlrpc
+
+L'API se trouve dans un dossier Service (elle est appelée sur toutes les pages via l'onglet nb de coopérateurs (HeaderController) sous le menu, ainsi que sur la page Nos Produits (ProductController),
+et la page Qui sommes-nous dans la section de style (AboutUsController).
+
+Il faut le package langue
+En commande Linux :
+sudo apt-get install php-intl
+
+
+
 # Project 3 - Starter Kit - Symfony 4.4.*
 
 ![Wild Code School](https://wildcodeschool.fr/wp-content/uploads/2019/01/logo_pink_176x60.png)
