@@ -24,12 +24,10 @@
                                 {{ timetable.visitDate|localizeddate('none', 'none', app.request.locale, null, 'd MMMM') }}</p>
                         </div>
                         <div class="card-body body-timetable text-left">
-                            <p class="timetableHour"><i
-                                        class="fas fa-clock mr-1"></i>{{ timetable.visitTime | date("H:i") }}</p>
-                            <div class="align-self-center">
-                            <p class="timetablePlace">
-                                <i class="fas fa-map-marker-alt mr-1"></i>La gabare</p>
-                            </div>
+                            <p><i  class="fas fa-clock mr-1"></i>{{ timetable.visitTime | date("H:i") }}</p>
+                           <div class="addressCard">
+                            <i class="fas fa-map-marker-alt mr-1"></i>{{ timetable.visitPlace}}
+                           </div>
                         </div>
                         <div class="card-footer text-center pt-0">
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScyrdjtXQx-55ydGSLB3HX6zRe7zwS4aFEv8chaDyXl1wUAQg/viewform"

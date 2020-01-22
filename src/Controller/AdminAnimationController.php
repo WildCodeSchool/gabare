@@ -68,7 +68,7 @@ class AdminAnimationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="animation_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="animation_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Animation $animation): Response

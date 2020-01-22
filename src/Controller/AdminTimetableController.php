@@ -57,7 +57,7 @@ class AdminTimetableController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="timetable_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="timetable_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_ADMIN_JOIN_US", message = "Vous ne passerez pas!")
      */
     public function edit(Request $request, Timetable $timetable): Response
