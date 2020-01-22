@@ -6,23 +6,27 @@
 
 .nameHeader {
     color: $light-color;
+    text-decoration: none;
 }
 
 .menulink {
     color: $light-color;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
 
     &:hover {
         color: $third-color;
+        text-decoration: none;
     }
 
     &:active {
         color: $third-color;
+        text-decoration: none;
     }
 
     &:visited {
         color: $light-color;
+        text-decoration: none;
     }
 }
 
@@ -48,7 +52,7 @@
     background-color: $dark-bootstrap;
 }
 
-.fa-cogs, .fa-user-shield, .fa-lock-open, .fa-home, .fa-sign-out-alt {
+.fa-cogs, .fa-user-shield, .fa-lock-open, .fa-home, .fa-sign-out-alt, .fa-book {
     color: $light-color;
 }
 
