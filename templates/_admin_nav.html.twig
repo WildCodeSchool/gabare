@@ -6,21 +6,30 @@
                     <button class="btn btn-link menulink collapsed" data-toggle="collapse"
                             data-target="#collapseOne"
                             aria-expanded="false" aria-controls="collapseOne">
-                        <p><i class="fas fa-cogs mr-3"></i>LA GABARE</p>
+                        <p><i class="fas fa-cogs"></i> LA GABARE</p>
                     </button>
                 </h5>
             </div>
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 {% if app.user %}
                     <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
-                        <a href="{{ path('admin_home') }}" class="menulink"><i class="fas fa-home mr-3"></i>Manuel d'utilisation</a>
-                        <p><i class="fas fa-user-shield mr-3"></i>{{ app.user.username }}</p>
-                        <a href="{{ path('app_logout') }}" class="menulink"><i class="fas fa-sign-out-alt mr-3"></i>Se déconnecter</a>
+                        <div>
+                            <a href="{{ path('admin_home') }}" class="menulink"><i class="fas fa-book"></i>
+                                Manuel d'utilisation</a>
+                        </div>
+                        <div>
+                            <a><i class="fas fa-user-shield"></i> {{ app.user.username }}</a>
+                        </div>
+                        <div>
+                            <a href="{{ path('app_logout') }}" class="menulink"><i class="fas fa-sign-out-alt"></i> Se
+                                déconnecter</a>
+                        </div>
+                        <div>
+                            <a href="{{ path('home') }}" class="menulink"><i class="fas fa-home"></i> Retour vers le
+                                site</a>
+                        </div>
                     </div>
                 {% endif %}
-                <div class="card-body rounded-0 border-0 bkm nameHeader pl-4">
-                    <a href="{{ path('home') }}" class="menulink">Retour vers le site</a>
-                </div>
             </div>
         </div>
 
@@ -37,8 +46,10 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body bkm rounded-0 border-0">
                     <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('alert_edit') }}" class="linkAdmin">Éditer l'alerte</a></li>
-                        <li class="bulletNav"><a href="{{ path('carousel_index') }}" class="linkAdmin">Carrousel</a></li>
+                        <li class="bulletNav"><a href="{{ path('alert_edit') }}" class="linkAdmin">Éditer l'alerte</a>
+                        </li>
+                        <li class="bulletNav"><a href="{{ path('carousel_index') }}" class="linkAdmin">Carrousel</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +69,8 @@
                 <div class="card-body bkm rounded-0 border-0">
                     <ul class="listNav pl-3">
                         <li class="bulletNav"><a href="{{ path('history_index') }}" class="linkAdmin">Histoire</a></li>
-                        <li class="bulletNav"><a href="{{ path('capital_index') }}" class="linkAdmin">Valeurs en chiffres</a></li>
+                        <li class="bulletNav"><a href="{{ path('capital_index') }}" class="linkAdmin">Valeurs en
+                                chiffres</a></li>
                         <li class="bulletNav"><a href="{{ path('worker_index') }}" class="linkAdmin">Associés</a></li>
                     </ul>
                 </div>
@@ -81,7 +93,8 @@
                         <li class="bulletNav"><a href="{{ path('animation_index') }} " class="linkAdmin">Animations</a>
                         </li>
                         <li class="bulletNav"><a href="{{ path('article_index') }}" class="linkAdmin">Articles</a></li>
-                        <li class="bulletNav"><a href="{{ path('theme_index') }}" class="linkAdmin">Thèmes des articles</a></li>
+                        <li class="bulletNav"><a href="{{ path('theme_index') }}" class="linkAdmin">Thèmes des
+                                articles</a></li>
                         <li class="bulletNav"><a href="{{ path('presse_index') }}" class="linkAdmin">Presse</a></li>
                     </ul>
                 </div>
@@ -120,8 +133,10 @@
             <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
                 <div class="card-body bkm">
                     <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('app_register') }}" class="linkAdmin">Création d'un administrateur</a></li>
-                        <li class="bulletNav"><a href="{{ path('admin_index') }}" class="linkAdmin">Gestion des administrateurs</a></li>
+                        <li class="bulletNav"><a href="{{ path('app_register') }}" class="linkAdmin">Création d'un
+                                administrateur</a></li>
+                        <li class="bulletNav"><a href="{{ path('admin_index') }}" class="linkAdmin">Gestion des
+                                administrateurs</a></li>
                     </ul>
                 </div>
             </div>

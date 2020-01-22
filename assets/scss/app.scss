@@ -53,10 +53,40 @@ h5 {
     font-size: 1.2rem;
 }
 
+.logButton {
+    border-radius: 30px;
+    background-color: $primary-color;
+    color: $light-color;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $light-color;
+        color: $primary-color;
+    }
+
+    &.ghost {
+        background-color: $light-color;
+        color: $primary-color;
+    }
+
+    &.ghost:hover {
+        background-color: $primary-color;
+        color: $light-color;
+    }
+}
+
 .btn-primary {
     color: $secondary-color;
     background-color: $light-color;
     border-color: $secondary-color;
+
+    &:visited {
+        color: $secondary-color;
+    }
 }
 
 .btn-primary:hover {
