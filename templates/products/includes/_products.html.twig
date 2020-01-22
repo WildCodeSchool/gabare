@@ -15,26 +15,49 @@
         </button>
         {{ form_end(form) }}
         <a href="{{ path('products') }}">
-            <div class="category {% if app.request.attributes.get('_route') == 'products' and app.request.get('search_product') == null %}active_category{% endif %}">
+            <div class="category pl-2 {% if app.request.attributes.get('_route') == 'products' and app.request.get('search_product') == null %}active_category{% endif %}">
                 <div class="category_name">
                     Nouveautés
                 </div>
             </div>
         </a>
-        {% for category in categories %}
-            <a href="{{ path('products_category', {'categoryId' : category.id}) }}">
-                <div class="category {% if app.request.attributes.get('_route_params') != null %}{% if app.request.attributes.get('_route_params').categoryId | number_format == category.id and app.request.get('search_product') == null %}active_category{% endif %}{% endif %}">
+        {% if mobile == true %}
+            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+               aria-controls="collapseExample">
+                <div class="category pl-2">
                     <div class="category_name">
-                        {{ category.name | capitalize }}
+                        Voir toutes les categories
                     </div>
                 </div>
             </a>
-        {% endfor %}
+            <div class="collapse" id="collapseExample">
+                {% for category in categories %}
+                    <a href="{{ path('products_category', {'categoryId' : category.id}) }}">
+                        <div class="category pl-2 {% if app.request.attributes.get('_route_params') != null %}{% if app.request.attributes.get('_route_params').categoryId | number_format == category.id and app.request.get('search_product') == null %}active_category{% endif %}{% endif %}">
+                            <div class="category_name">
+                                {{ category.name | capitalize }}
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            {% for category in categories %}
+                <a href="{{ path('products_category', {'categoryId' : category.id}) }}">
+                    <div class="category category_hover pl-2 {% if app.request.attributes.get('_route_params') != null %}{% if app.request.attributes.get('_route_params').categoryId | number_format == category.id and app.request.get('search_product') == null %}active_category{% endif %}{% endif %}">
+                        <div class="category_name">
+                            {{ category.name | capitalize }}
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
     </div>
 
-    <div class="container-fluid product">
-        <div class="card_product_container row justify-content-center">
-            {% if products.items == [] %}
+
+    <div class="container-fluid product p-0">
+        <div class="card_product_container w-100 d-flex flex-wrap justify-content-center">
+            {% if products.items is empty %}
                 <h4 class="mt-5">Pas de
                     produits {% if app.request.get('search_product') is not null %}correspondant à votre recherche{% else %}dans cette catégorie{% endif %}
                     ...</h4>
@@ -51,10 +74,10 @@
                             <div class="mb-2 card_category">{{ product.category.childName | upper | truncate(20) }}</div>
                             {% if product.picture == null %}
                                 <div class="mb-3 card_image"><img
-                                            src="{{ asset('build/images/logo.png') }}"></div>
+                                            src="{{ asset('build/images/logo.png') }}" alt="Logo La Gabare"></div>
                             {% else %}
                                 <div class="mb-3 card_image"><img
-                                            src="data:image/jpeg;base64, {{ product.picture }}"></div>
+                                            src="data:image/jpeg;base64, {{ product.picture }}" alt="Picture of product.name"></div>
                             {% endif %}
 
                         </div>
@@ -62,11 +85,9 @@
                     </div>
                 {% endfor %}
             {% endif %}
-
-            <nav class="page_navigation ml-5">
-                {{ knp_pagination_render(products) }}
-            </nav>
-
         </div>
+        <nav class="page_navigation ml-5">
+            {{ knp_pagination_render(products) }}
+        </nav>
     </div>
 </section>
