@@ -7,9 +7,9 @@
                 <div class="col-12 col-md-4 mt-0 mt-3 d-flex justify-content-center align-items-center">
                     <div class="card box m-3 card-animation card-shadow d-flex flex-column align-items-stretch">
                         {% if animation.imageName %}
-                        <img src="{{ vich_uploader_asset(animation, 'imageFile') }}" class="card-img-top image-size-animation" alt="">
+                        <img src="{{ vich_uploader_asset(animation, 'imageFile') }}" class="card-img-top image-size-animation" alt="photo Animation">
                         {% else %}
-                            <img src="{{ asset('build/images/logo.png') }}" class="card-img-top image-size-animation">
+                            <img src="{{ asset('build/images/logo.png') }}" class="card-img-top image-size-animation" alt="logo Gabare">
                         {% endif %}
                         <div class="card-body text-center d-flex flex-column justify-content-around {% if (animation.title | length) > 25 %} card_truncated {% endif %}">
                             {% if (animation.title | length) > 25 %}
