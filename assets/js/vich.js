@@ -7,8 +7,8 @@ const filePath = document.getElementById('history_imageFile_file')
 function displayImageName() {
     if (filePath.value !== '') {
         const imageName = filePath.value.split('\\');
-        const imageNameLast = imageName.pop();
-        document.getElementById('displayVich').innerHTML = imageNameLast;
+        const imageLastName = imageName.pop();
+        document.getElementById('displayVich').innerHTML = imageLastName;
     }
 }
 
