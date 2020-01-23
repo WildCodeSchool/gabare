@@ -2,10 +2,6 @@
     background-image:$texture-background;
 }
 
-.button_join_us {
-    height: 35px;
-    border-radius: 9px;
-    background-color: $secondary-color;
-    color: $light-color;
-    border: solid 2px $secondary-color;
+.history_button {
+    border: solid 2px $dark-color;
 }

@@ -63,6 +63,11 @@ h5 {
     letter-spacing: 1px;
     text-transform: uppercase;
 
+    &:visited {
+      background-color: $primary-color;
+      color: $light-color;
+    }
+
     &:hover {
         background-color: $light-color;
         color: $primary-color;
