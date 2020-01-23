@@ -6,13 +6,23 @@
 <div class="container-fluid p-5">
     <h1>Ajouter un article</h1>
     <div class="col-lg-8 pt-3 pb-3 m-0 jumbotron">
-
-    {{ include('admin_article/_form.html.twig') }}
-
+        {{ form_start(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.theme) }}
+        <p id="displayVich"></p>
+        {{ form_row(form.imageFile) }}
+        <button class="btn btn-primary mt-2">Ajouter</button>
+        {{ form_end(form) }}
+        <div class="mt-4">
         <div class="mt-4">
             <a href="{{ path('article_index') }}" class="btn btn-outline-dark">Retour à la liste</a>
         </div>
     </div>
 
 </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('vich') }}
 {% endblock %}

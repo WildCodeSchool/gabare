@@ -35,6 +35,7 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('scroll', './assets/js/scroll.js')
+    .addEntry('vich', './assets/js/vich.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
