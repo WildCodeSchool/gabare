@@ -1,12 +1,17 @@
-let filePath = document.getElementById('history_imageFile_file');
+const filePath = document.getElementById('history_imageFile_file')
+    || document.getElementById('worker_imageFile_file')
+    || document.getElementById('carousel_imageFile_file')
+    || document.getElementById('article_imageFile_file')
+    || document.getElementById('animation_imageFile_file');
 
-
-filePath.onchange = function displayImageName() {
+function displayImageName() {
     if (filePath.value !== '') {
-        let imageName = filePath.value.split('\\');
-        let imageNameLast = imageName.pop();
-        let vich = document.getElementById('displayVich').innerHTML = imageNameLast;
-        vich.textContent;
+        const imageName = filePath.value.split('\\');
+        const imageNameLast = imageName.pop();
+        document.getElementById('displayVich').innerHTML = imageNameLast;
     }
-};
+}
 
+filePath.addEventListener('change', () => {
+    displayImageName();
+});

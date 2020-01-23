@@ -15,6 +15,7 @@
             {{ form_row(form.lastName) }}
             {{ form_row(form.function) }}
             {{ form_row(form.email) }}
+            <p id="displayVich"></p>
             {{ form_row(form.imageFile) }}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
@@ -23,4 +24,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('vich') }}
 {% endblock %}
