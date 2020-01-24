@@ -24,9 +24,14 @@
                                 <p class="worker-name mb-0">{{ CAFriend.firstname }}</p>
                                 <p class="worker-name">{{ CAFriend.lastname }}</p>
                                 <p>{{ CAFriend.function }}</p>
+                                {% if CAFriend.email is not empty %}
                                 <div class="email-CA">
                                     <a href="mailto:{{ CAFriend.email }}"><i class="far fa-envelope"></i></a>
                                 </div>
+                                {% else %}
+                                    <div class="email-disabled">
+                                    </div>
+                                    {% endif %}
                             </div>
                         </div>
                     </li>
