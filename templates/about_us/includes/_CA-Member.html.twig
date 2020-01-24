@@ -21,8 +21,8 @@
                                 {% endif %}
                             </div>
                             <div class="profile-text text-center worker-card d-flex flex-column justify-content-between pt-2">
-                                <h4>{{ CAMember.firstname }}</h4>
-                                <h4>{{ CAMember.lastname }}</h4>
+                                <p class="worker-name mb-0">{{ CAMember.firstname }}</p>
+                                <p class="worker-name">{{ CAMember.lastname }}</p>
                                 <p>{{ CAMember.function }}</p>
                                 <div class="email-CA">
                                     <a href="mailto:{{ CAMember.email }}"><i class="far fa-envelope"></i></a>

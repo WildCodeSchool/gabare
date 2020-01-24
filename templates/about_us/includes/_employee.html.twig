@@ -20,8 +20,8 @@
                             {% endif %}
                         </div>
                         <div class="profile-text text-center worker-card d-flex flex-column justify-content-between pt-2 pb-2">
-                            <h4>{{ employee.firstname |title }}</h4>
-                            <h4>{{ employee.lastname |title }}</h4>
+                            <p class="worker-name mb-0">{{ employee.firstname |title }}</p>
+                            <p class="worker-name">{{ employee.lastname |title }}</p>
                             <p>{{ employee.function }}</p>
                         </div>
                     </div>
