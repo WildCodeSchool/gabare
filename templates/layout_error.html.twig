@@ -2,6 +2,7 @@
 
 {% block layout %}
     <main>
+        <title>{% block title %}{{ status_code }} : {{ status_text }}</title>{% endblock %}
         {% block body %}{% endblock %}
     </main>
 {% endblock %}
