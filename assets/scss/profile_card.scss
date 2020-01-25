@@ -53,6 +53,7 @@
 
 .ul-scroll {
     padding: 0;
+    padding-bottom: 5px;
     width: 75%;
     scroll-behavior: smooth;
     display: inline-block;
@@ -86,6 +87,12 @@
 
 .worker-card {
     white-space: normal;
+    height: 175px;
+}
+
+.worker-card-employee {
+    white-space: normal;
+    height: 150px;
 }
 
 .worker-name {

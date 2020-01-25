@@ -7,7 +7,7 @@
         </div>
         <ul id="imgList" class="ul-scroll">
             {% for employee in employees %}
-                <li class="li-scroll">
+                <li class="li-scroll card-shadow">
                     <div class="img-scroll">
                         <div class="profile">
                             {% if employee.imageName %}
@@ -19,7 +19,7 @@
                                      alt="{{ employee.firstname }} {{ employee.lastname }}">
                             {% endif %}
                         </div>
-                        <div class="profile-text text-center worker-card d-flex flex-column justify-content-between pt-2 pb-2">
+                        <div class="text-center worker-card-employee d-flex flex-column justify-content-start pt-2">
                             <p class="worker-name mb-0">{{ employee.firstname |title }}</p>
                             <p class="worker-name">{{ employee.lastname |title }}</p>
                             <p>{{ employee.function }}</p>
