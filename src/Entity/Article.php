@@ -54,7 +54,7 @@ class Article
     /**
      * @Vich\UploadableField(mapping="uploads_images", fileNameProperty="imageName")
      * @Assert\File(
-     *     maxSize = "200k",
+     *     maxSize = "500k",
      *     mimeTypes = {"image/jpeg", "image/JPEG", "image/png", "image/PNG", "image/jpg", "image/JPG"},
      *     mimeTypesMessage = "Seuls les formats JEPG, JPG et PNG sont acceptés"
      * )
