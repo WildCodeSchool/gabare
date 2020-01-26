@@ -1,5 +1,6 @@
-a:link {
+.presseLink, .presseLink:visited {
     text-decoration: none;
+    color:$secondary-color;
 }
 
 .show-link {
