@@ -13,7 +13,7 @@
                 </li>
                 <li class="dropdown nav-item d-flex {% if page == 'about_us' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('about_us') }}">QUI SOMMES-NOUS ?</a>
-                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton"
+                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButtonOne"
                        data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="{{ path('about_us') }}#notre-histoire">Notre histoire</a>
@@ -29,7 +29,7 @@
                 </li>
                 <li class="dropdown nav-item d-flex {% if page == 'gabare_life' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('gabare_life') }}">LA VIE DE LA GABARE</a>
-                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton"
+                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButtonTwo"
                        data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="{{ path('gabare_life') }}#planning-des-animations">Planning des
@@ -41,7 +41,7 @@
                 </li>
                 <li class="dropdown nav-item d-flex {% if page == 'join_us' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('join_us') }}">NOUS REJOINDRE</a>
-                    <a class=" dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButton"
+                    <a class="dropdown-toggle dropdown-toggle-split pt-2 d-none d-sm-block" id="dropdownMenuButtonThree"
                        data-toggle="dropdown"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="{{ path('join_us') }}#comment-devenir-cooperateur">Comment
@@ -59,19 +59,20 @@
                 </li>
 
                 <div class="reseaux_connection d-flex flex-column align-items-center">
-                    <button type="button"
-                            class="btn mb-0 connexion_button d-flex justify-content-between py-1 ">
+                    <a class="btn mb-0 connexion_button d-flex align-items-center justify-content-around"
                         {% if app.user %}
-                            <a href="/admin/article">Vers Admin</a>
+                             href="{{ path('admin_home') }}" class="connexion_button mb-3">Vers Admin
                         {% else %}
-                            <a href="{{ path('app_login') }}"> Connexion</a>
+                             href="{{ path('app_login') }}"> Connexion
                         {% endif %}
+
                         <svg class="md-icon align-items-center" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"
                              preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
                             <path d="M256 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96z"/>
                         </svg>
-                    </button>
+                    </a>
+
                     <ul class="logos_nav_content navbar-nav justify-content-between flex-row">
                         <li class="nav-item">
                             <a class="nav-link" href="https://fr-fr.facebook.com/LaGabare45/" target="_blank">
