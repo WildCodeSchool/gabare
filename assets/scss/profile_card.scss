@@ -53,6 +53,7 @@
 
 .ul-scroll {
     padding: 0;
+    padding-bottom: 5px;
     width: 75%;
     scroll-behavior: smooth;
     display: inline-block;
@@ -82,4 +83,25 @@
 
 .li-scroll, .img-scroll {
     width: 250px;
+}
+
+.worker-card {
+    white-space: normal;
+    height: 175px;
+}
+
+.worker-card-employee {
+    white-space: normal;
+    height: 150px;
+}
+
+.worker-name {
+    color: $primary-color;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.email-disabled {
+    background-color: $primary-color;
+    padding: 21px;
 }
