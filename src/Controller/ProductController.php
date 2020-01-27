@@ -60,6 +60,7 @@ class ProductController extends AbstractController
             'form' => $form->createView(),
             'categories' => $categories,
             'mobile' => $mobile,
+            'categoryName' => null,
         ]);
     }
 
@@ -111,6 +112,7 @@ class ProductController extends AbstractController
             'form' => $form->createView(),
             'categories' => $categories,
             'mobile' => $mobile,
+            'categoryName' => $categories[intval($categoryId)]->getName(),
         ]);
     }
 
