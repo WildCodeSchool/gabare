@@ -12,7 +12,11 @@
             {{ form_start(form) }}
             {{ form_row(form.email) }}
             {{ form_row(form.plainPassword) }}
+            {% if user.id == 1 %}
+            <div style="display: none">{{ form_row(form.roles) }}</div>
+            {% else %}
             {{ form_row(form.roles) }}
+            {% endif %}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
         </div>
