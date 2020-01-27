@@ -9,6 +9,7 @@
         {{ form_start(form) }}
         {{ form_row(form.title) }}
         {{ form_row(form.description) }}
+        <p id="displayVich"></p>
         {{ form_row(form.imageFile) }}
         {{ form_row(form.schedule) }}
         {{ form_row(form.hourStart) }}
@@ -20,4 +21,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('vich') }}
 {% endblock %}

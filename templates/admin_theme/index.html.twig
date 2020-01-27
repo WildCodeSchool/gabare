@@ -25,9 +25,6 @@
                     <td class="d-flex pt-3">
                         <a href="{{ path('theme_edit', {'id': theme.id}) }}" class="btn btn-success mr-4">Éditer<i
                                     class="fas fa-pen ml-1"></i></a>
-                        <div>
-                            {{ include('admin_theme/_delete_form.html.twig') }}
-                        </div>
                     </td>
                 </tr>
             {% else %}

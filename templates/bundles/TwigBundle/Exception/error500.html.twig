@@ -1,12 +1,11 @@
 {% extends 'layout_error.html.twig' %}
 
 {% block body %}
-    <div class="bgError">
+    <div class="bgErrorServor">
         <div class="flex-column">
             <div class="error-box text-center">
                 <h1 class="error-text p-4">La Gabare supermarché coopératif</h1>
-                <p class="error-text p-4">Oups,Page non trouvée : {{ status_code }}</p>
-                <p class="error-text p-4">Votre recherche a échoué</p>
+                <p class="error-text p-4">Erreur interne du serveur : {{ status_code }}</p>
                 <a class="btn btn-error text-center" href="{{ path('home') }}">Revenez sur notre site</a>
             </div>
 
