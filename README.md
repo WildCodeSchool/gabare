@@ -14,7 +14,7 @@ sudo apt-get install php-intl
 
 PHOTOS
 Pour changer les images des bandeaux sur les pages Qui sommes-Nous, la Vie de La Gabare et Nous rejoindre
-- Mettre les photos (de bonne qualité, au min 1920 px de largeur, pas de format carré, ni de montage mosaïque pour de question de visibilité) dans le dossier assets > images > stripe.
+- Mettre les photos (de bonne qualité, au min 1920 px de largeur, pas de format carré, ni de montage mosaïque pour une question de visibilité) dans le dossier assets > images > stripe.
 -Aller dans template > about_us > includes > _stripe et changer le nom de la photo sans toucher au chemin.
 -Aller dans template > gabare_life > includes > _stripe et changer le nom de la photo sans toucher au chemin.
 -Aller dans template > join_us > includes > _stripe et changer le nom de la photo sans toucher au chemin.
