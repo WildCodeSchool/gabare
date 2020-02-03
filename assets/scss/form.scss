@@ -6,3 +6,9 @@
     height: 350px;
     width: 100%
 }
+
+@media screen and (max-width: 640px) {
+    .button_send {
+        text-align: center;
+  }
+}
