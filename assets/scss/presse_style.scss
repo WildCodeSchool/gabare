@@ -8,6 +8,12 @@
     margin-left: 75%;
 }
 
+@media screen and (max-width: 760px) {
+    .show-link {
+        margin-left: 35%;
+    }
+}
+
 .show-link:hover {
     transform: translate(10px);
 }
