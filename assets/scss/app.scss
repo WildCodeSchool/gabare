@@ -5,7 +5,7 @@
 @import "admin_style";
 @import "presse_style";
 @import "footer_style";
-@import "actualities_style";
+@import "article";
 @import "phone_style";
 @import "gabare_brief_style";
 @import "form";
@@ -23,6 +23,8 @@
 @import "error_style";
 @import "pioneer_style";
 @import "CAMember_style";
+@import "actualities_style";
+@import "parralax";
 
 @mixin headings($from: 1, $to: 6) {
     @for $i from $from through $to {
@@ -51,6 +53,10 @@ h4 {
 
 h5 {
     font-size: 1.2rem;
+}
+
+.buttonShadow {
+    box-shadow: 4px 4px $button-shadow;
 }
 
 .logButton {
@@ -152,7 +158,7 @@ p {
 
 .photoStripe {
     position: relative;
-    height: 95vh;
+    height: calc(100vh - 89px);
     min-height: 550px;
     width: 100%;
     -webkit-filter: contrast(90%) brightness(90%);
@@ -172,14 +178,14 @@ p {
     color: $light-color;
     font-family: $photo-font;
     font-size: calc(65px + 6 * ((100vw - 320px) / 680));
-    text-shadow: 0 0 10px $dark-color;
+    text-shadow: 0 5px 5px $dark-color;
 }
 
 .paraPhoto {
     color: $light-color;
     font-family: $photo-font;
     font-size: calc(25px + 6 * ((100vw - 320px) / 680));
-    text-shadow: 0 0 15px $dark-color;
+    text-shadow: 0 5px 5px $dark-color;
 }
 
 .links {

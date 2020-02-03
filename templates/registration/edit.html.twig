@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container-fluid p-5">
-        <h1>Éditer une revue de presse</h1>
+        <h1>Éditer un administrateur</h1>
         <div class="mb-3">
             <a href="{{ path('admin_index') }}" class="btn btn-outline-dark mr-5">Retour à la liste</a>
         </div>
@@ -12,7 +12,11 @@
             {{ form_start(form) }}
             {{ form_row(form.email) }}
             {{ form_row(form.plainPassword) }}
-            {{ form_row(form.roles) }}
+            {% if user.roles[0] == "ROLE_SUPER_ADMIN" %}
+                <div class="hide">{{ form_row(form.roles) }}</div>
+            {% else %}
+                {{ form_row(form.roles) }}
+            {% endif %}
             <button class="btn btn-primary mt-2">Mettre à jour</button>
             {{ form_end(form) }}
         </div>

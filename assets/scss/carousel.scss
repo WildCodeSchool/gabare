@@ -8,7 +8,6 @@
         .carousel-caption {
             z-index: 1;
             width: -moz-fit-content;
-            width: fit-content;
             margin: auto;
         }
 
@@ -17,10 +16,14 @@
             margin: 20px auto;
             padding: 10px 20px 5px 20px;
 
-            h4 {
+            h4, p {
                 font-family: "Satisfy", cursive;
                 font-size: 2em;
                 color: $light-color;
+            }
+
+            p {
+                font-size: 1.5em;
             }
         }
 

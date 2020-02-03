@@ -1,7 +1,7 @@
 <section class="history_section links pb-3" id="notre-histoire">
     <div class="container-fluid">
         {% if history is defined %}
-            <h2 class="m-5 text-center">Notre histoire</h2>
+            <h2 class="m-5 text-center title_history">Notre histoire</h2>
             {% for historic in history %}
                 <div class="row m-0 m-lg-5">
                     <div class="col-12 col-md-12 col-lg-5 offset-lg-1 text-center">
@@ -13,7 +13,7 @@
                     <div class="col-12 col-md-12 col-lg-5 d-flex flex-column justify-content-around align-items-center">
                         <h3 class="mt-3 mt-md-0">{{ historic.title }}</h3>
                         <div>{{ historic.description | raw }}</div>
-                        <a href="{{ path('join_us') }}" class="logButton mb-3">Nous rejoindre</a>
+                        <a href="{{ path('join_us') }}" class="logButton buttonShadow mb-3">Nous rejoindre</a>
                     </div>
                 </div>
             {% endfor %}

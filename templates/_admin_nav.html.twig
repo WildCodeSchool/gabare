@@ -33,93 +33,110 @@
             </div>
         </div>
 
-        <div class="card rounded-0 border-0">
-            <div class="card-header bkm rounded-0 border-0" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
-                            data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseTwo">
-                        Accueil
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body bkm rounded-0 border-0">
-                    <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('alert_edit') }}" class="linkAdmin">Éditer l'alerte</a>
-                        </li>
-                        <li class="bulletNav"><a href="{{ path('carousel_index') }}" class="linkAdmin">Carrousel</a>
-                        </li>
-                    </ul>
+        {% if is_granted('ROLE_ADMIN_HOME') %}
+            <div class="card rounded-0 border-0">
+                <div class="card-header bkm rounded-0 border-0" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                                data-target="#collapseTwo"
+                                aria-expanded="true" aria-controls="collapseTwo">
+                            Accueil
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body bkm rounded-0 border-0  pt-0">
+                        <ul class="listNav pl-3">
+                            <li class="bulletNav ml-3"><a href="{{ path('alert_edit') }}" class="linkAdmin">Éditer
+                                    l'alerte</a>
+                            </li>
+                            <li class="bulletNav ml-3"><a href="{{ path('carousel_index') }}"
+                                                          class="linkAdmin">Carrousel</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="card rounded-0 border-0">
-            <div class="card-header bkm rounded-0 border-0" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
-                            data-target="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree">
-                        Qui sommes-nous ?
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body bkm rounded-0 border-0">
-                    <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('history_index') }}" class="linkAdmin">Histoire</a></li>
-                        <li class="bulletNav"><a href="{{ path('capital_index') }}" class="linkAdmin">Valeurs en
-                                chiffres</a></li>
-                        <li class="bulletNav"><a href="{{ path('worker_index') }}" class="linkAdmin">Associés</a></li>
-                    </ul>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN_WHO') %}
+            <div class="card rounded-0 border-0">
+                <div class="card-header bkm rounded-0 border-0" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                                data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                            Qui sommes-nous ?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body bkm rounded-0 border-0  pt-0">
+                        <ul class="listNav pl-3">
+                            <li class="bulletNav ml-3"><a href="{{ path('history_index') }}"
+                                                          class="linkAdmin">Histoire</a>
+                            </li>
+                            <li class="bulletNav ml-3"><a href="{{ path('capital_index') }}" class="linkAdmin">Valeurs
+                                    en
+                                    chiffres</a></li>
+                            <li class="bulletNav ml-3"><a href="{{ path('worker_index') }}"
+                                                          class="linkAdmin">Associés</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="card rounded-0 border-0">
-            <div class="card-header bkm rounded-0 border-0" id="headingFour">
-                <h5 class="mb-0">
-                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
-                            data-target="#collapseFour"
-                            aria-expanded="false" aria-controls="collapseFour">
-                        La vie de la Gabare
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                <div class="card-body bkm rounded-0 border-0">
-                    <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('animation_index') }} " class="linkAdmin">Animations</a>
-                        </li>
-                        <li class="bulletNav"><a href="{{ path('article_index') }}" class="linkAdmin">Articles</a></li>
-                        <li class="bulletNav"><a href="{{ path('theme_index') }}" class="linkAdmin">Thèmes des
-                                articles</a></li>
-                        <li class="bulletNav"><a href="{{ path('presse_index') }}" class="linkAdmin">Presse</a></li>
-                    </ul>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN_GABARE_LIFE') %}
+            <div class="card rounded-0 border-0">
+                <div class="card-header bkm rounded-0 border-0" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                                data-target="#collapseFour"
+                                aria-expanded="false" aria-controls="collapseFour">
+                            La vie de la Gabare
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body bkm rounded-0 border-0  pt-0">
+                        <ul class="listNav pl-3">
+                            <li class="bulletNav ml-3"><a href="{{ path('animation_index') }} "
+                                                          class="linkAdmin">Animations</a>
+                            </li>
+                            <li class="bulletNav ml-3"><a href="{{ path('article_index') }}"
+                                                          class="linkAdmin">Articles</a>
+                            </li>
+                            <li class="bulletNav ml-3"><a href="{{ path('theme_index') }}" class="linkAdmin">Thèmes des
+                                    articles</a></li>
+                            <li class="bulletNav ml-3"><a href="{{ path('presse_index') }}" class="linkAdmin">Presse</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="card rounded-0 border-0">
-            <div class="card-header bkm rounded-0 border-0" id="headingFive">
-                <h5 class="mb-0">
-                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
-                            data-target="#collapseFive"
-                            aria-expanded="false" aria-controls="collapseFive">
-                        Nous rejoindre
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                <div class="card-body bkm rounded-0 border-0">
-                    <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('timetable_index') }}" class="linkAdmin">Agenda</a></li>
-                    </ul>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN_JOIN_US') %}
+            <div class="card rounded-0 border-0">
+                <div class="card-header bkm rounded-0 border-0" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                                data-target="#collapseFive"
+                                aria-expanded="false" aria-controls="collapseFive">
+                            Nous rejoindre
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                    <div class="card-body bkm rounded-0 border-0  pt-0">
+                        <ul class="listNav pl-3">
+                            <li class="bulletNav ml-3"><a href="{{ path('timetable_index') }}"
+                                                          class="linkAdmin">Agenda</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        {% endif %}
+        {% if is_granted('ROLE_SUPER_ADMIN')%}
         <div class="card rounded-0 border-0">
             <div class="card-header bkm rounded-0 border-0" id="headingSix">
                 <h5 class="mb-0">
@@ -131,15 +148,16 @@
                 </h5>
             </div>
             <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-                <div class="card-body bkm">
+                <div class="card-body bkm pt-0">
                     <ul class="listNav pl-3">
-                        <li class="bulletNav"><a href="{{ path('app_register') }}" class="linkAdmin">Création d'un
+                        <li class="bulletNav ml-3"><a href="{{ path('app_register') }}" class="linkAdmin">Création d'un
                                 administrateur</a></li>
-                        <li class="bulletNav"><a href="{{ path('admin_index') }}" class="linkAdmin">Gestion des
+                        <li class="bulletNav ml-3"><a href="{{ path('admin_index') }}" class="linkAdmin">Gestion des
                                 administrateurs</a></li>
                     </ul>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </nav>
