@@ -5,10 +5,7 @@
         <div class="container">
             <div class="row justify-content-center p-3">
                 {% for pioneer in pioneers %}
-                        <p class="worker-name">{{ pioneer.firstname }} {{ pioneer.lastname }}</p>
-                    <div>
-                        <i class="fas fa-circle pl-2 pr-2"></i>
-                    </div>
+                        <p class="pionnier-name">{{ pioneer.firstname }} {{ pioneer.lastname }} <span class="p-2">•</span></p>
                 {% endfor %}
             </div>
         </div>
