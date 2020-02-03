@@ -12,6 +12,24 @@ En commande Linux :
 sudo apt-get install php-intl
 
 
+PHOTOS
+Pour changer les images des bandeaux sur les pages Qui sommes-Nous, la Vie de La Gabare et Nous rejoindre
+- Mettre les photos (de bonne qualité, au min 1920 px de largeur, pas de format carré, ni de montage mosaïque pour de question de visibilité) dans le dossier assets > images > stripe.
+-Aller dans template > about_us > includes > _stripe et changer le nom de la photo sans toucher au chemin.
+-Aller dans template > gabare_life > includes > _stripe et changer le nom de la photo sans toucher au chemin.
+-Aller dans template > join_us > includes > _stripe et changer le nom de la photo sans toucher au chemin.
+
+Pour changer les images des photos de "parralax" au milieur des pages Qui sommes-Nous, la Vie de La Gabare et Nous rejoindre
+- Mettre les photos (de bonne qualité, au min 1920 px de largeur, pas de format carré) dans le dossier assets > images.
+- Aller changer le nom de la photo dans assets > scss > parralax.scss
+
+! Pour changer la photo de téléphone sur la page d'accueil
+- Mettre les photos (de bonne qualité, au min 1920 px de largeur, pas de format carré) dans le dossier assets > images.
+- Aller dans template > home > includes > _phone et changer le nom de la photo sans toucher au chemin.
+
+
+
+
 
 # Project 3 - Starter Kit - Symfony 4.4.*
 
