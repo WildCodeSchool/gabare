@@ -13,29 +13,6 @@
     border-color:$light-color;
 }
 
-.paginationStyle {
-    display: flex;
-    justify-content: center;
-
-    nav {
-
-        ul {
-
-            li {
-                a {
-                    border: none;
-                    font-size: 18px;
-                }
-
-                span {
-                    border-radius: 20px;
-                }
-
-            }
-        }
-    }
-}
-
 .theme_card {
     z-index: auto;
 }
