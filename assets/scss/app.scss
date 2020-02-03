@@ -23,6 +23,7 @@
 @import "error_style";
 @import "pioneer_style";
 @import "CAMember_style";
+@import "actualities_style";
 
 @mixin headings($from: 1, $to: 6) {
     @for $i from $from through $to {
