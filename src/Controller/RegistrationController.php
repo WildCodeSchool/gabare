@@ -57,7 +57,7 @@ class RegistrationController extends AbstractController
      * @IsGranted("ROLE_SUPER_ADMIN", message = "Vous ne passerez pas!")
      * @return Response
      */
-    public function index(UserRepository $userRepository) :Response
+    public function index(UserRepository $userRepository): Response
     {
         return $this->render('registration/index.html.twig', [
             'users' => $userRepository->findAll(),
@@ -74,12 +74,16 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
+            if ($form->get('plainPassword')->getData()) {
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+            }
+
+
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash(
@@ -102,7 +106,7 @@ class RegistrationController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
