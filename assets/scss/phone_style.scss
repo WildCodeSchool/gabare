@@ -1,5 +1,5 @@
 .bgPhone {
-    background-image: url("../images/permanence.jpg");
+    background-image: url("../images/jam.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 
@@ -19,9 +19,9 @@
 }
 
 .phone {
-    font-style: $text-font;
+    font-family: $photo-font;
     color: $light-color;
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 500;
     text-shadow: 0 0 10px $dark-color;
     padding: 110px;

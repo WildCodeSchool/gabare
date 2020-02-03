@@ -1,4 +1,4 @@
-<section class="bgAnimation links" id="planning-des-animations">
+<section class="bgAnimation links pb-5" id="planning-des-animations">
     <h2 class="text-center mt-5 mb-3 title-animation">Planning des animations</h2>
     <h4 class="text-center">Réservez dès maintenant votre participation aux différentes animations de La Gabare</h4>
     <div class="container">
@@ -7,17 +7,17 @@
                 <div class="col-12 col-md-4 mt-0 mt-3 d-flex justify-content-center align-items-center">
                     <div class="card box m-3 card-animation card-shadow d-flex flex-column align-items-stretch">
                         {% if animation.imageName %}
-                        <img src="{{ vich_uploader_asset(animation, 'imageFile') }}" class="card-img-top image-size-animation" alt="photo Animation">
+                            <img src="{{ vich_uploader_asset(animation, 'imageFile') }}" class="card-img-top image-size-animation" alt="photo Animation">
                         {% else %}
                             <img src="{{ asset('build/images/logo.png') }}" class="card-img-top image-size-animation" alt="logo Gabare">
                         {% endif %}
                         <div class="card-body text-center d-flex flex-column justify-content-around {% if (animation.title | length) > 25 %} card_truncated {% endif %}">
                             {% if (animation.title | length) > 25 %}
-                            <h4 class="card-title truncated_text">{{ animation.title | truncate(26, true) }}</h4>
-                            <h4 class="card-title not_truncated_text">{{ animation.title }}</h4>
+                                <h4 class="card-title truncated_text">{{ animation.title | truncate(26, true) }}</h4>
+                                <h4 class="card-title not_truncated_text">{{ animation.title }}</h4>
                             {% else %}
-                            <h4 class="card-title">{{ animation.title }}</h4>
-                                {% endif %}
+                                <h4 class="card-title">{{ animation.title }}</h4>
+                            {% endif %}
                             <p class="card-title card_category">{{ animation.description }}</p>
                             <p class="card-text">{{ animation.schedule | localizeddate('none', 'none', app.request.locale, null, 'EEEE') }}
                                 {{ animation.schedule|localizeddate('none', 'none', app.request.locale, null, 'd MMMM') }}</p>
