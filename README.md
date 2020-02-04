@@ -23,7 +23,7 @@ Pour changer les images des photos de "parralax" au milieur des pages Qui sommes
 - Mettre les photos (de bonne qualité, au min 1920 px de largeur, pas de format carré) dans le dossier assets > images.
 - Aller changer le nom de la photo dans assets > scss > parralax.scss
 
-! Pour changer la photo de téléphone sur la page d'accueil
+Pour changer la photo de téléphone sur la page d'accueil
 - Mettre la photo (de bonne qualité, au min 1920 px de largeur, pas de format carré) dans le dossier assets > images.
 - Aller dans template > home > includes > _phone et changer le nom de la photo sans toucher au chemin.
 
