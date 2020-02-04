@@ -18,7 +18,7 @@ class AdminHistoryController extends AbstractController
 {
     /**
      * @Route("/", name="history_index", methods={"GET"})
-     * @IsGranted("ROLE_ADMIN_GABARE_LIFE", message = "Vous ne passerez pas!")
+     * @IsGranted("ROLE_ADMIN_WHO", message = "Vous ne passerez pas!")
      */
     public function index(HistoryRepository $historyRepository): Response
     {

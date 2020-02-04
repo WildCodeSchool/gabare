@@ -1,175 +1,175 @@
-{% if is_granted('ROLE_ADMIN_GABARE_LIFE') %}
-    <h3 class="manualTitle">Onglet La Vie de La Gabare
-        <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseLife" role="button"
-           aria-expanded="false" aria-controls="collapseLife">
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </h3>
-    <div class="collapse" id="collapseLife">
-        <div class="card card-body mb-3">
-            <ol>
-                <li class="manualSubTitle">Animations</li>
-                <p>En cliquant sur Animations, l'administrateur arrive sur la page où sont listées toutes les
-                    animations qui peuvent être renvoyées sur la page "La Vie de La Gabare" où les 6 dernières
-                    animations créées sont affichées. Il s'agit des animations organisées par La Gabare et qui ont
-                    lieu au supermarché.
-                    Sur la page de la liste, on peut voir dans l'en-tête du tableau "Titre", "Date" et
-                    "Actions". Dans la colonne "Actions" se trouvent les boutons "Aperçu", "Editer" et
-                    Supprimer".</p>
-                <p><span class="boldText">Création d'une nouvelle animation :</span> Appuyer sur le bouton <span
-                            class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
+<h3 class="manualTitle">Onglet La Vie de La Gabare
+    <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseLife" role="button"
+       aria-expanded="false" aria-controls="collapseLife">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</h3>
+<div class="collapse" id="collapseLife">
+    <div class="card card-body mb-3">
+        <ol>
+            <li class="manualSubTitle">Animations</li>
+            <p>En cliquant sur Animations, l'administrateur arrive sur la page où sont listées toutes les
+                animations qui peuvent être renvoyées sur la page "La Vie de La Gabare" où les 6 dernières
+                animations créées sont affichées. Il s'agit des animations organisées par La Gabare et qui ont
+                lieu au supermarché.
+                Sur la page de la liste, on peut voir dans l'en-tête du tableau "Titre", "Date" et
+                "Actions". Dans la colonne "Actions" se trouvent les boutons "Aperçu", "Editer" et
+                Supprimer".</p>
+            <p><span class="boldText">Création d'une nouvelle animation :</span> Appuyer sur le bouton <span
+                        class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
                         </i></span>en dessous du titre. </br>Dans la page Ajouter une nouvelle animation, il faut
-                    remplir tous les champs : "Titre", "Description", "Date", "Heure de début" et "Heure de fin"
-                    (sélectionner dans la liste déroulante),
-                    "Prénom", "Nom", "Fonction" et "Image". Pour "Image", sélectionner une photo depuis
-                    un dossier en cliquant sur le bouton "Parcourir. (<span class="boldText">Attention</span> ! Le
-                    titre du fichier de la photo n'apparait pas dans le champ même une fois chargée). Ensuite
-                    cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
-                    L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
-                    confirme la création de l'animation dans la base de données.</p>
-                <p><span class="boldText">Modification d'une animation existante :</span> depuis la page de la
-                    liste, appuyer sur le bouton Editer sur la ligne correspondante à l'animation à
-                    modifier.</p>
-                <p>Dans la page Editer une animation, la fiche de l'animation est pré-remplie, modifier
-                    directement les renseignements dans les champs si besoin. Puis cliquer sur
-                    <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
-                    L'administrateur est ensuite redirigé vers la page de la liste,
-                    un message dans un bandeau vert confirme la modification de l'associé dans la base de données.
-                </p>
-                <p><span class="boldText">Aperçu d'une animation existante :</span> depuis la page de la liste,
-                    appuyer sur le bouton Aperçu sur la ligne correspondante à l'animation à voir.</p>
-                Dans la page Aperçu d'une animation, la fiche de l'animation est renseignée.</p>
-                <p><span class="boldText">Suppression d'une animation existante :</span> depuis la la page de la
-                    liste, appuyer sur le bouton Supprimer sur la ligne correspondante à l'animation à
-                    supprimer.
-                </p>
+                remplir tous les champs : "Titre", "Description", "Date", "Heure de début" et "Heure de fin"
+                (sélectionner dans la liste déroulante),
+                "Prénom", "Nom", "Fonction" et "Image". Pour "Image", sélectionner une photo depuis
+                un dossier en cliquant sur le bouton "Parcourir. (<span class="boldText">Attention</span> ! Le
+                titre du fichier de la photo n'apparait pas dans le champ même une fois chargée). Ensuite
+                cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
+                confirme la création de l'animation dans la base de données.</p>
+            <p><span class="boldText">Modification d'une animation existante :</span> depuis la page de la
+                liste, appuyer sur le bouton Editer sur la ligne correspondante à l'animation à
+                modifier.</p>
+            <p>Dans la page Editer une animation, la fiche de l'animation est pré-remplie, modifier
+                directement les renseignements dans les champs si besoin. Puis cliquer sur
+                <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste,
+                un message dans un bandeau vert confirme la modification de l'associé dans la base de données.
+            </p>
+            <p><span class="boldText">Aperçu d'une animation existante :</span> depuis la page de la liste,
+                appuyer sur le bouton Aperçu sur la ligne correspondante à l'animation à voir.</p>
+            Dans la page Aperçu d'une animation, la fiche de l'animation est renseignée.</p>
+            <p><span class="boldText">Suppression d'une animation existante :</span> depuis la la page de la
+                liste, appuyer sur le bouton Supprimer sur la ligne correspondante à l'animation à
+                supprimer.
+            </p>
 
-                <li class="manualSubTitle">Articles</li>
-                <p>En cliquant sur Articles, l'administrateur arrive sur la page où sont listés tous les
-                    articles qui peuvent être renvoyés sur la page "La Vie de La Gabare" du site internet de La
-                    Gabare.
-                    Les 3 derniers articles créés sont affichés dans la section Actualités de la page.
-                    Il s'agit des articles écrits par La Gabare.
-                    Sur la page de la liste, on peut voir dans l'en-tête du tableau "Titre", "Date", "Thème" et
-                    "Actions". Dans la colonne "Actions" se trouvent les boutons "Aperçu", "Editer" et
-                    Supprimer".</p>
-                <p><span class="boldText">Création d'un nouvel article :</span> Appuyer sur le bouton <span
-                            class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
+            <li class="manualSubTitle">Articles</li>
+            <p>En cliquant sur Articles, l'administrateur arrive sur la page où sont listés tous les
+                articles qui peuvent être renvoyés sur la page "La Vie de La Gabare" du site internet de La
+                Gabare.
+                Les 3 derniers articles créés sont affichés dans la section Actualités de la page.
+                Il s'agit des articles écrits par La Gabare.
+                Sur la page de la liste, on peut voir dans l'en-tête du tableau "Titre", "Date", "Thème" et
+                "Actions". Dans la colonne "Actions" se trouvent les boutons "Aperçu", "Editer" et
+                Supprimer".</p>
+            <p><span class="boldText">Création d'un nouvel article :</span> Appuyer sur le bouton <span
+                        class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
                         </i></span>en dessous du titre. </br>Dans la page Ajouter un nouvel article, il faut remplir
-                    tous les champs : "Titre", "Description" (il y a une barre avec des icônes pour styliser la mise
-                    en forme du texte
-                    au survol de l'icône avec la souris, un petite bulle apparait avec sa fonction indiquée),
-                    "Image", "Date de publication"
-                    et "Thème" (sélectionner dans la liste déroulante). Pour "Image", sélectionner une photo depuis
-                    un dossier en cliquant sur le bouton "Parcourir. (<span class="boldText">Attention</span> ! Le
-                    titre du fichier de la photo n'apparait pas dans le champ même une fois chargée). Ensuite
-                    cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
-                    L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
-                    confirme la création de l'article dans la base de données.</p>
-                <p><span class="boldText">Modification d'un article existant :</span> depuis la la page de la liste,
-                    appuyer sur le bouton Editer sur la ligne correspondante à l'article à modifier.</p>
-                <p>Dans la page Editer un article, la fiche de l'article est pré-remplie, modifier directement les
-                    renseignements dans les champs si besoin. Puis cliquer sur
-                    <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
-                    L'administrateur est ensuite redirigé vers la page de la liste,
-                    un message dans un bandeau vert confirme la modification de l'article dans la base de données.
-                </p>
-                <p><span class="boldText">Aperçu d'un article existant :</span> depuis la page de la liste, appuyer
-                    sur le bouton Aperçu sur la ligne correspondante à l'article à voir.
-                    L'administrateur est renvoyé vers l'article tel qu'il apparait sur le site de La Gabare</p>
-                <p><span class="boldText">Suppression d'un article existant :</span> depuis la page de la liste,
-                    appuyer sur le bouton Supprimer sur la ligne correspondante à l'article à supprimer.
-                </p>
+                tous les champs : "Titre", "Description" (il y a une barre avec des icônes pour styliser la mise
+                en forme du texte
+                au survol de l'icône avec la souris, un petite bulle apparait avec sa fonction indiquée),
+                "Image", "Date de publication"
+                et "Thème" (sélectionner dans la liste déroulante). Pour "Image", sélectionner une photo depuis
+                un dossier en cliquant sur le bouton "Parcourir. (<span class="boldText">Attention</span> ! Le
+                titre du fichier de la photo n'apparait pas dans le champ même une fois chargée). Ensuite
+                cliquer sur <span class="btn btn-primary add ml-2 mr-2">Ajouter</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste, un message dans un bandeau vert
+                confirme la création de l'article dans la base de données.</p>
+            <p><span class="boldText">Modification d'un article existant :</span> depuis la la page de la liste,
+                appuyer sur le bouton Editer sur la ligne correspondante à l'article à modifier.</p>
+            <p>Dans la page Editer un article, la fiche de l'article est pré-remplie, modifier directement les
+                renseignements dans les champs si besoin. Puis cliquer sur
+                <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste,
+                un message dans un bandeau vert confirme la modification de l'article dans la base de données.
+            </p>
+            <p><span class="boldText">Aperçu d'un article existant :</span> depuis la page de la liste, appuyer
+                sur le bouton Aperçu sur la ligne correspondante à l'article à voir.
+                L'administrateur est renvoyé vers l'article tel qu'il apparait sur le site de La Gabare</p>
+            <p><span class="boldText">Suppression d'un article existant :</span> depuis la page de la liste,
+                appuyer sur le bouton Supprimer sur la ligne correspondante à l'article à supprimer.
+            </p>
 
-                <li class="manualSubTitle">Thèmes des Articles</li>
-                <p>En cliquant sur Thèmes des Articles, l'administrateur arrive sur la page où sont listés tous les
-                    thèmes des articles d'actualités. Il s'agit de la vignette colorée en haut d'une carte
-                    article d'actualités qui apparait dans la page "La Vie de La Gabare" du site internet de La
-                    Gabare.
-                    Sur la page de la liste, on peut voir dans l'en-tête du tableau "Nom", "Couleur" et
-                    "Actions".
-                    Dans la colonne "Actions", il y a un un bouton vert "Editer" et bouton rouge
-                    "Supprimer".</p>
-                <p>
-                <p><span class="boldText">Création d'un nouveau thème :</span> Appuyer sur le bouton <span
-                            class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
+            <li class="manualSubTitle">Thèmes des Articles</li>
+            <p>En cliquant sur Thèmes des Articles, l'administrateur arrive sur la page où sont listés tous les
+                thèmes des articles d'actualités. Il s'agit de la vignette colorée en haut d'une carte
+                article d'actualités qui apparait dans la page "La Vie de La Gabare" du site internet de La
+                Gabare.
+                Sur la page de la liste, on peut voir dans l'en-tête du tableau "Nom", "Couleur" et
+                "Actions".
+                Dans la colonne "Actions", il y a un un bouton vert "Editer" et bouton rouge
+                "Supprimer".</p>
+            <p>
+            <p><span class="boldText">Création d'un nouveau thème :</span> Appuyer sur le bouton <span
+                        class="btn btn-primary add ml-2 mr-2">Ajouter<i class="fas fa-plus ml-2">
                         </i></span>en dessous du titre. </br>Dans la page Ajouter un nouveau thème, il faut remplir
-                    tous les champs : "Nom" et "Couleur'. En cliquant dans le champ "Couleur", qui est par défaut
-                    noir, une fenêtre s'ouvre pour choisir la couleur.
-                    Tourner le curseur (trait blanc) de la roue chromatique pour choisir une couleur, par
-                    défaut il est mis sur rouge, puis cliquer au milieu du triangle et déplacer le petit rond blanc
-                    pour choisir une nuance de cette couleur.
-                    L'autre possibilité est de remplir les champs à droite de la roue. "Nom de la couleur" : il s'agit d'un code
-                    hexadécimale. "Rouge", "Vert", "Bleu" : il s'agit d'un format de codage de fusion des trois
-                    couleurs primaires, la valeur maximum est 255. Cela correspond au code
-                    couleur RGB). La couleur peut être affinée par les champ "Teinte", "Saturation". Le champ
-                    "Valeur" fait déplacer le curseur sur la roue chromatique. Une fois la couleur choisie
-                    cliquer sur "Sélectionner", cela ferme la fenêtre.
-                    Cliquer ensuite sur "Ajouter".</p>
-                <p><span class="boldText">Modification d'un thème existant :</span> depuis la la page de la liste,
-                    appuyer sur le bouton Editer sur la ligne correspondante au thème à modifier.</p>
-                <p>Dans la page Editer un thème, la fiche du thème est pré-remplie, modifier directement les
-                    renseignements dans les champs si besoin. Puis cliquer sur
-                    <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
-                    L'administrateur est ensuite redirigé vers la page de la liste,
-                    un message dans un bandeau vert confirme la modification du thème dans la base de données.
+                tous les champs : "Nom" et "Couleur'. En cliquant dans le champ "Couleur", qui est par défaut
+                noir, une fenêtre s'ouvre pour choisir la couleur.
+                Tourner le curseur (trait blanc) de la roue chromatique pour choisir une couleur, par
+                défaut il est mis sur rouge, puis cliquer au milieu du triangle et déplacer le petit rond blanc
+                pour choisir une nuance de cette couleur.
+                L'autre possibilité est de remplir les champs à droite de la roue. "Nom de la couleur" : il s'agit d'un
+                code
+                hexadécimale. "Rouge", "Vert", "Bleu" : il s'agit d'un format de codage de fusion des trois
+                couleurs primaires, la valeur maximum est 255. Cela correspond au code
+                couleur RGB). La couleur peut être affinée par les champ "Teinte", "Saturation". Le champ
+                "Valeur" fait déplacer le curseur sur la roue chromatique. Une fois la couleur choisie
+                cliquer sur "Sélectionner", cela ferme la fenêtre.
+                Cliquer ensuite sur "Ajouter".</p>
+            <p><span class="boldText">Modification d'un thème existant :</span> depuis la la page de la liste,
+                appuyer sur le bouton Editer sur la ligne correspondante au thème à modifier.</p>
+            <p>Dans la page Editer un thème, la fiche du thème est pré-remplie, modifier directement les
+                renseignements dans les champs si besoin. Puis cliquer sur
+                <span class="btn btn-primary add mr-2 ml-2">Mettre à jour</span> pour sauvegarder.
+                L'administrateur est ensuite redirigé vers la page de la liste,
+                un message dans un bandeau vert confirme la modification du thème dans la base de données.
 
-                <li class="manualSubTitle">Presse</li>
-                {# ici instructions Presse#}
-                <p>En cliquant sur Presse, l'administrateur sera redirigé vers la page où sont listés l'intégralité des
-                    articles publiés sur le site. La page se divise en quatre parties : "Lien vidéo", "Lien image",
-                    "Titre" et "Actions". Dans la colonne "Actions" se trouvent les boutons "Aperçu", "Editer" et
-                    Supprimer".</p>
+            <li class="manualSubTitle">Presse</li>
+            {# ici instructions Presse#}
+            <p>En cliquant sur Presse, l'administrateur sera redirigé vers la page où sont listés l'intégralité des
+                articles publiés sur le site. La page se divise en quatre parties : "Lien vidéo", "Lien image",
+                "Titre" et "Actions". Dans la colonne "Actions" se trouvent les boutons "Aperçu", "Editer" et
+                Supprimer".</p>
 
-                <p><span class="boldText">Précisions : </span>La catégorie presse comprend également les vidéos. Lorsque
-                    vous souhaitez ajouter une nouvelle revue, vous devrez en parallèle ajouter obligatoirement
-                    une nouvelle vidéo.</p>
+            <p><span class="boldText">Précisions : </span>La catégorie presse comprend également les vidéos. Lorsque
+                vous souhaitez ajouter une nouvelle revue, vous devrez en parallèle ajouter obligatoirement
+                une nouvelle vidéo.</p>
 
-                <p><span class="boldText">Ajout d'une nouvelle revue de presse : </span> En cliquant sur le bouton <span
-                            class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>vous serez
-                    redirigé vers la page d'ajout d'une revue de presse. Cette section comporte
-                    cinq champs qui devront obligatoirement être complétés :</p>
+            <p><span class="boldText">Ajout d'une nouvelle revue de presse : </span> En cliquant sur le bouton <span
+                        class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>vous serez
+                redirigé vers la page d'ajout d'une revue de presse. Cette section comporte
+                cinq champs qui devront obligatoirement être complétés :</p>
 
-                <p><span class="font-italic ml-5">Lien de la vidéo : </span>Ce champ correspond à la publication d'une
-                    vidéo hébergée à partir d'une plateforme de vidéos en ligne. Pour comprendre le fonctionnement, nous
-                    allons nous appuyer sur un exemple. La vidéo suivante : https://www.youtube.com/watch?v=<span
-                            class="boldText">0I4XEPtiWmA</span>
-                    est actuellement hébergée sur YouTube, pour pouvoir la publier sur le site de La Gabare, vous devrez
-                    récupérer seulement <span class="boldText">une partie du lien de la vidéo</span> en l'occurrence, la
-                    partie surlignée en gras que vous apercevez dans l'exemple. Pour vous donner un point de repère,
-                    vous devez prendre uniquement les données situées après le signe "=". Une fois les éléments
-                    récupérés, copiez le lien dans le premier champ.</p>
+            <p><span class="font-italic ml-5">Lien de la vidéo : </span>Ce champ correspond à la publication d'une
+                vidéo hébergée à partir d'une plateforme de vidéos en ligne. Pour comprendre le fonctionnement, nous
+                allons nous appuyer sur un exemple. La vidéo suivante : https://www.youtube.com/watch?v=<span
+                        class="boldText">0I4XEPtiWmA</span>
+                est actuellement hébergée sur YouTube, pour pouvoir la publier sur le site de La Gabare, vous devrez
+                récupérer seulement <span class="boldText">une partie du lien de la vidéo</span> en l'occurrence, la
+                partie surlignée en gras que vous apercevez dans l'exemple. Pour vous donner un point de repère,
+                vous devez prendre uniquement les données situées après le signe "=". Une fois les éléments
+                récupérés, copiez le lien dans le premier champ.</p>
 
-                <p><span class="font-italic ml-5">Ajout de l'image de l'article : </span>Le système de chargement des
-                    images
-                    diffère par rapport aux autres sections. Pour charger une image, vous devez copier directement son
-                    url. Exemple : si vous souhaitez charger l'image suivante :
-                    <span class="boldText">https://lorempixel.com/640/480/?55870</span>, vous devrez directement copier
-                    ce lien dans le deuxième champ.</p>
+            <p><span class="font-italic ml-5">Ajout de l'image de l'article : </span>Le système de chargement des
+                images
+                diffère par rapport aux autres sections. Pour charger une image, vous devez copier directement son
+                url. Exemple : si vous souhaitez charger l'image suivante :
+                <span class="boldText">https://lorempixel.com/640/480/?55870</span>, vous devrez directement copier
+                ce lien dans le deuxième champ.</p>
 
-                    <span class="font-italic ml-5">Lien de l'article : </span>Le système de chargement d'un article de
-                    presse conserve le même principe que pour le chargement des images. Pour récupérer un article de
-                    presse, vous
-                    devez copier son url et le placer dans le champ correspondant. Exemple : si vous souhaitez charger
-                    l'article suivant :
-                    <span class="boldText">https://www.lanouvellerepublique.fr/loiret/cannes-1939-orleans-fait-son-cinema?queryId%5Bquery1%5D=57cd2206459a452f008b4594&queryId%5Bquery2%5D=5d7a6dd184a98c0d238b45be&page=15&pageId=5d7a6a2b3d755d8b2f8b45d3</span>,
-                    vous devrez directement copier l'url et l'insérer dans le champ correspondant.
-                    </p>
+            <span class="font-italic ml-5">Lien de l'article : </span>Le système de chargement d'un article de
+            presse conserve le même principe que pour le chargement des images. Pour récupérer un article de
+            presse, vous
+            devez copier son url et le placer dans le champ correspondant. Exemple : si vous souhaitez charger
+            l'article suivant :
+            <span class="boldText">https://www.lanouvellerepublique.fr/loiret/cannes-1939-orleans-fait-son-cinema?queryId%5Bquery1%5D=57cd2206459a452f008b4594&queryId%5Bquery2%5D=5d7a6dd184a98c0d238b45be&page=15&pageId=5d7a6a2b3d755d8b2f8b45d3</span>,
+            vous devrez directement copier l'url et l'insérer dans le champ correspondant.
+            </p>
 
-                <p>Voici un aperçu pour mieux comprendre le fonctionnement : </p>
-                <img class="w-75" src="https://zupimages.net/up/20/03/y9oc.png"
-                     alt="Explication du fonctionnement pour l'ajout d'un article de presse."/>
-                <br>
+            <p>Voici un aperçu pour mieux comprendre le fonctionnement : </p>
+            <img class="w-75" src="https://zupimages.net/up/20/03/y9oc.png"
+                 alt="Explication du fonctionnement pour l'ajout d'un article de presse."/>
+            <br>
 
-                <p><span class="boldText">Éditer une revue de presse : </span>En cliquant sur le bouton <span
-                            class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>vous aurez la
-                    possibilité d'apporter des modifications sur l'article sélectionné. Vous pouvez reprendre la
-                    procédure en suivant l'exemple indiqué ci-dessus.</p>
+            <p><span class="boldText">Éditer une revue de presse : </span>En cliquant sur le bouton <span
+                        class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>vous aurez la
+                possibilité d'apporter des modifications sur l'article sélectionné. Vous pouvez reprendre la
+                procédure en suivant l'exemple indiqué ci-dessus.</p>
 
-                <p><span class="boldText">Supprimer une revue de presse : </span>En cliquant sur le bouton <span
-                            class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span>vous aurez
-                    la possibilité de supprimer l'article sélectionné.</p>
-            </ol>
-        </div>
+            <p><span class="boldText">Supprimer une revue de presse : </span>En cliquant sur le bouton <span
+                        class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span>vous aurez
+                la possibilité de supprimer l'article sélectionné.</p>
+        </ol>
     </div>
-{% endif %}
+</div>
+

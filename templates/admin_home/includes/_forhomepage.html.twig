@@ -1,52 +1,53 @@
-{% if is_granted('ROLE_ADMIN_HOME') %}
-    <h3 class="manualTitle">Onglet Accueil
-        <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseHome" role="button"
-           aria-expanded="false" aria-controls="collapseHome">
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </h3>
-    <div class="collapse" id="collapseHome">
-        <div class="card card-body mb-3">
-            <ol>
-                <li class="manualSubTitle">Alerte <i class="fas fa-chevron-down ml-2"></i></li>
-                <p>En cliquant sur Alerte, l'administrateur peut gérer une notification qui s'affiche sur le site
-                    internet de La Gabare.
-                    C'est un bandeau jaune avec un message qui apparait en dessous de la barre de navigation sur le
-                    site internet de La Gabare une fois activé. Il s'agit notamment d'indiquer les jours de
-                    fermeture ou d'ouverture inhabituels.
-                    Un message par défaut est inscrit, il suffit de cliquer dans le champ du message pour le
-                    modifier.</p>
-                <p>Cocher la case "activé", active le message qui apparait sur le site.</p>
-                <p>Décocher la case "activé", désactive le message qui n'apparait plus sur le site.</p>
-                <p>Cliquer sur le bouton <span class="btn btn-primary add ml-2">Mettre à jour</span> permet
-                    d'enregister les modifications.</p>
+<h3 class="manualTitle">Onglet Accueil
+    <a class="btn btn-outline-dark btn-sm ml-2" data-toggle="collapse" href="#collapseHome" role="button"
+       aria-expanded="false" aria-controls="collapseHome">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</h3>
+<div class="collapse" id="collapseHome">
+    <div class="card card-body mb-3">
+        <ol>
+            <li class="manualSubTitle">Alerte <i class="fas fa-chevron-down ml-2"></i></li>
+            <p>En cliquant sur Alerte, l'administrateur peut gérer une notification qui s'affiche sur le site
+                internet de La Gabare.
+                C'est un bandeau jaune avec un message qui apparait en dessous de la barre de navigation sur le
+                site internet de La Gabare une fois activé. Il s'agit notamment d'indiquer les jours de
+                fermeture ou d'ouverture inhabituels.
+                Un message par défaut est inscrit, il suffit de cliquer dans le champ du message pour le
+                modifier.</p>
+            <p>Cocher la case "activé", active le message qui apparait sur le site.</p>
+            <p>Décocher la case "activé", désactive le message qui n'apparait plus sur le site.</p>
+            <p>Cliquer sur le bouton <span class="btn btn-primary add ml-2">Mettre à jour</span> permet
+                d'enregister les modifications.</p>
 
-                <li class="manualSubTitle">Carrousel <i class="fas fa-chevron-down ml-2"></i></li>
+            <li class="manualSubTitle">Carrousel <i class="fas fa-chevron-down ml-2"></i></li>
 
-                <p>En cliquant sur Carrousel, vous serez redirigé vers la page de contenu où sont listés tous
-                    les contenus du carrousel du site de La Gabare. La section se divise en trois parties : "Titre", "Photo" et
-                    "Actions", les actions permettent d'afficher et d'apporter des modifications au contenu sélectionné.
-                    Trois options possibles : "Aperçu", "Éditer", et "Supprimer".</p>
+            <p>En cliquant sur Carrousel, vous serez redirigé vers la page de contenu où sont listés tous
+                les contenus du carrousel du site de La Gabare. La section se divise en trois parties : "Titre", "Photo"
+                et
+                "Actions", les actions permettent d'afficher et d'apporter des modifications au contenu sélectionné.
+                Trois options possibles : "Aperçu", "Éditer", et "Supprimer".</p>
 
-                <p><span class="boldText">Ajouter un nouveau contenu : </span>En cliquant sur le bouton <span
-                            class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>en dessous du
-                    titre, vous aurez la possibilité d'ajouter un nouveau contenu au carrousel. Dans cette page, les champs "Titre"
-                    et "Image" doivent obligatoirement être remplis (les autres restent facultatifs). Après avoir
-                    complété le formulaire, cliquez sur le bouton <span class="btn btn-primary add mr-2">Ajouter</span>
-                    pour valider l'ajout du contenu au carrousel.</p>
+            <p><span class="boldText">Ajouter un nouveau contenu : </span>En cliquant sur le bouton <span
+                        class="btn btn-primary add mr-2">Ajouter<i class="fas fa-plus ml-2"></i></span>en dessous du
+                titre, vous aurez la possibilité d'ajouter un nouveau contenu au carrousel. Dans cette page, les champs
+                "Titre"
+                et "Image" doivent obligatoirement être remplis (les autres restent facultatifs). Après avoir
+                complété le formulaire, cliquez sur le bouton <span class="btn btn-primary add mr-2">Ajouter</span>
+                pour valider l'ajout du contenu au carrousel.</p>
 
-                <p><span class="boldText">Editer ce contenu du carrousel : </span>En cliquant sur le bouton <span
-                            class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>vous aurez la
-                    possibilité d'apporter des modifications sur le contenu sélectionné. la fiche est pré-remplie, modifier
-                    directement les renseignements dans les champs si besoin. Une fois les modifications effectuées, cliquez
-                    sur le bouton <span class="btn btn-primary mt-2">Mettre à jour</span> pour valider vos changements.
-                </p>
+            <p><span class="boldText">Editer ce contenu du carrousel : </span>En cliquant sur le bouton <span
+                        class="btn btn-success mr-2">Editer<i class="fas fa-pen ml-1"></i></span>vous aurez la
+                possibilité d'apporter des modifications sur le contenu sélectionné. la fiche est pré-remplie, modifier
+                directement les renseignements dans les champs si besoin. Une fois les modifications effectuées, cliquez
+                sur le bouton <span class="btn btn-primary mt-2">Mettre à jour</span> pour valider vos changements.
+            </p>
 
-                <p><span class="boldText">Supprimer un carrousel : </span>En cliquant sur le bouton <span
-                            class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span>vous aurez
-                    la possibilité de supprimer le contenu sélectionné. Un message de demande de confirmation
-                    apparaîtra pour confirmer la suppression du contenu, cliquez sur "OK", pour confirmer.</p>
-            </ol>
-        </div>
+            <p><span class="boldText">Supprimer un carrousel : </span>En cliquant sur le bouton <span
+                        class="btn btn-danger mr-2">Supprimer<i class="fas fa-trash-alt ml-1"></i></span>vous aurez
+                la possibilité de supprimer le contenu sélectionné. Un message de demande de confirmation
+                apparaîtra pour confirmer la suppression du contenu, cliquez sur "OK", pour confirmer.</p>
+        </ol>
     </div>
-{% endif  %}
+</div>
+

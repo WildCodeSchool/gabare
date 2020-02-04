@@ -136,28 +136,29 @@
                 </div>
             </div>
         {% endif %}
-        {% if is_granted('ROLE_SUPER_ADMIN')%}
-        <div class="card rounded-0 border-0">
-            <div class="card-header bkm rounded-0 border-0" id="headingSix">
-                <h5 class="mb-0">
-                    <button class="btn btn-link menulink collapsed" data-toggle="collapse"
-                            data-target="#collapseSix"
-                            aria-expanded="false" aria-controls="collapseFive">
-                        Super Admin
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-                <div class="card-body bkm pt-0">
-                    <ul class="listNav pl-3">
-                        <li class="bulletNav ml-3"><a href="{{ path('app_register') }}" class="linkAdmin">Création d'un
-                                administrateur</a></li>
-                        <li class="bulletNav ml-3"><a href="{{ path('admin_index') }}" class="linkAdmin">Gestion des
-                                administrateurs</a></li>
-                    </ul>
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <div class="card rounded-0 border-0">
+                <div class="card-header bkm rounded-0 border-0" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link menulink collapsed" data-toggle="collapse"
+                                data-target="#collapseSix"
+                                aria-expanded="false" aria-controls="collapseFive">
+                            Super Admin
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                    <div class="card-body bkm pt-0">
+                        <ul class="listNav pl-3">
+                            <li class="bulletNav ml-3"><a href="{{ path('app_register') }}" class="linkAdmin">Création
+                                    d'un
+                                    administrateur</a></li>
+                            <li class="bulletNav ml-3"><a href="{{ path('admin_index') }}" class="linkAdmin">Gestion des
+                                    administrateurs</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            {% endif %}
-        </div>
+        {% endif %}
     </div>
 </nav>
