@@ -8,18 +8,29 @@
         {% include 'admin_home/includes/_intro.html.twig' %}
 
         {#---Section instructions pour accueil---#}
+        {% if is_granted('ROLE_ADMIN_HOME') %}
         {% include 'admin_home/includes/_forhomepage.html.twig' %}
+        {% endif %}
 
         {#---Section instructions pour page qui sommes nous---#}
+        {% if is_granted('ROLE_ADMIN_WHO') %}
         {% include 'admin_home/includes/_foraboutus.html.twig' %}
+        {% endif %}
 
         {#---Section instructions pour page vie de la gabare---#}
+        {% if is_granted('ROLE_ADMIN_GABARE_LIFE') %}
         {% include 'admin_home/includes/_forgabarelife.html.twig' %}
+        {% endif %}
 
         {#---Section instructions pour page vie de la gabare---#}
+        {% if is_granted('ROLE_ADMIN_JOIN_US') %}
         {% include 'admin_home/includes/_forjoinus.html.twig' %}
+        {% endif %}
 
         {#---Section instructions pour page vie de la gabare---#}
+        {% if is_granted('ROLE_SUPER_ADMIN')%}
         {% include 'admin_home/includes/_superadmin.html.twig' %}
+        {% endif %}
+
     </div>
 {% endblock %}
