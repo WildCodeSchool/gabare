@@ -2,12 +2,12 @@
 
 {% block layout %}
     <div class="row container-fluid">
-        <header class="col-lg-2 p-0">
+        <div class="col-lg-2 p-0">
             {% block header %}{% include '_admin_nav.html.twig' %}{% endblock %}
-        </header>
-        <main class="col-lg-10 no-gutters">
+        </div>
+        <div class="col-lg-10 no-gutters">
             {% include '_flash_message.html.twig' %}
             {% block body %}{% endblock %}
-        </main>
+        </div>
     </div>
 {% endblock %}
